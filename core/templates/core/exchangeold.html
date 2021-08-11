@@ -1,0 +1,477 @@
+
+{% extends 'authentication/base.html' %}
+{% load static %}
+
+{% block exchange %}
+<body>
+
+  <!-- navbar start here -->
+  <nav class="nav_menu navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="javascript:;">
+        <img src="{% static 'authentication/assets/images/logo.png' %}" class="img-fluid logo" alt="Cryptolinkx">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="exchange.html">Exchange</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="p2p.html">P2P</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="signup.html">Signup</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- navbar close here -->
+
+  <!-- exchange section start here -->
+  <section class="exchange_section_style">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-12 col-12">
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="#inr">INR</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#usdt">USDT</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#wrx">WRX</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#btc">BTC</a>
+            </li>
+          </ul>
+
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div id="inr" class="container tab-pane active"><br>
+              <input type="text" placeholder="Search.." class="exchange_search_style">
+              <table class="w-100">
+                <tr>
+                  <th>Pair</th>
+                  <th>Vol <i class="fas fa-arrow-down"></i></th>
+                  <th>Change</th>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>DOGE</td>
+                  <td>₹25.8003</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>BTC</td>
+                  <td>₹25.8003</td>
+                </tr>
+              </table>
+
+            </div>
+            <div id="usdt" class="container tab-pane fade"><br>
+              <input type="text" placeholder="Search.." class="exchange_search_style">
+              <table class="w-100">
+                <tr>
+                  <th>Pair</th>
+                  <th>Vol <i class="fas fa-arrow-down"></i></th>
+                  <th>Change</th>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>DOGE</td>
+                  <td>₹25.8003</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>BTC</td>
+                  <td>₹25.8003</td>
+                </tr>
+              </table>
+            </div>
+            <div id="wrx" class="container tab-pane fade"><br>
+              <input type="text" placeholder="Search.." class="exchange_search_style">
+              <table class="w-100">
+                <tr>
+                  <th>Pair</th>
+                  <th>Vol <i class="fas fa-arrow-down"></i></th>
+                  <th>Change</th>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>DOGE</td>
+                  <td>₹25.8003</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>BTC</td>
+                  <td>₹25.8003</td>
+                </tr>
+              </table>
+            </div>
+            <div id="btc" class="container tab-pane fade"><br>
+              <input type="text" placeholder="Search.." class="exchange_search_style">
+              <table class="w-100">
+                <tr>
+                  <th>Pair</th>
+                  <th>Vol <i class="fas fa-arrow-down"></i></th>
+                  <th>Change</th>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>DOGE</td>
+                  <td>₹25.8003</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>BTC</td>
+                  <td>₹25.8003</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+          <div class="exchange_page_heading">
+            <h6 class="heading_font_style">HOW P2P WORKS</h6>
+            <p>₹45,33,359</p>
+          </div>
+
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="#1M">1M</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#5M">5M</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#15M">15M</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#30M">30M</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " data-toggle="tab" href="#1H">1H</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#2H">2H</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#4H">4H</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#6H">6H</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#12H">12H</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#1D">1D</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#1W">1W</a>
+            </li>
+          </ul>
+
+          <!-- Tab panes -->
+          <div class="tab-content ">
+            <div id="1M" class="container tab-pane active"><br>
+              <!-- <p>inr</p> -->
+              <img src="{% static 'authentication/assets/images/Graf_Img.png' %}" class="w-100" alt="Cryptolinkx">
+            </div>
+            <div id="5M" class="container tab-pane fade"><br>
+              <p>usdt</p>
+            </div>
+            <div id="15M" class="container tab-pane fade"><br>
+              <p>wrx</p>
+            </div>
+            <div id="30M" class="container tab-pane fade"><br>
+              <p>btc</p>
+            </div>
+            <div id="1H" class="container tab-pane"><br>
+              <p>inr</p>
+            </div>
+            <div id="2H" class="container tab-pane fade"><br>
+              <p>usdt</p>
+            </div>
+            <div id="4H" class="container tab-pane fade"><br>
+              <p>wrx</p>
+            </div>
+            <div id="6H" class="container tab-pane fade"><br>
+              <p>btc</p>
+            </div>
+            <div id="12H" class="container tab-pane"><br>
+              <p>inr</p>
+            </div>
+            <div id="2D" class="container tab-pane fade"><br>
+              <p>usdt</p>
+            </div>
+            <div id="1W" class="container tab-pane fade"><br>
+              <p>wrx</p>
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="col-md-8">
+              <h6>ORDER BOOK</h6>
+
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs">
+                <li class="nav-item">
+                  <a class="nav-link active" data-toggle="tab" href="#MarketDepth">Market Depth</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#OrderVolume">Order Volume</a>
+                </li>
+
+              </ul>
+
+              <!-- Tab panes -->
+              <div class="tab-content">
+                <div id="MarketDepth" class="container tab-pane active"><br>
+                  <table class="w-100">
+                    <tr>
+                      <th>VOLUME</th>
+                      <th>BUY PRICE</th>
+                      <th>SELL PRICE</th>
+                      <th>VOLUME</th>
+                    </tr>
+                    <tr>
+                      <td>0.0376</td>
+                      <td>0.0376</td>
+                      <td>43,84,995</td>
+                      <td>0.0191</td>
+                    </tr>
+                    <tr>
+                      <td>0.0376</td>
+                      <td>0.0376</td>
+                      <td>43,84,995</td>
+                      <td>0.0191</td>
+                    </tr>
+                  </table>
+                </div>
+                <div id="OrderVolume" class="container tab-pane fade"><br>
+
+                </div>
+
+              </div>
+
+            </div>
+            <div class="col-md-4">
+              <h6>TRADE HISTORY</h6>
+              <table class="history_tbl_style">
+                <tr>
+                  <th>PRICE</th>
+                  <th>VOLUME</th>
+                  <th>TIME</th>
+                </tr>
+                <tr>
+                  <td>43,84,995</td>
+                  <td>43,84,995</td>
+                  <td>0.0032</td>
+                </tr>
+                <tr>
+                  <td>43,84,980</td>
+                  <td>43,84,980</td>
+                  <td>0.0025</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-12 col-12">
+          <div>
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs">
+              <li class="nav-item exchange_li_style">
+                <a class="nav-link disabled" data-toggle="tab" href="#openOrders">OPEN ORDERS</a>
+              </li>
+              <li class="nav-item exchange_li_style">
+                <a class="nav-link disabled" data-toggle="tab" href="#completedOrders">COMPLETED ORDERS</a>
+              </li>
+
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content exchange_tab_panes_style">
+              <div id="openOrders" class="container tab-pane active"><br>
+                <div>
+                  <button type="button" class="btn btn-primary exchange_LoginBtn_style mt-5">Login</button>
+                  <p class="text-center mt-2">or</p>
+                  <button type="button" class="btn btn-primary exchange_AccountBtn_style mt-1">Create An
+                    Account</button>
+                </div>
+              </div>
+              <div id="completedOrders" class="container tab-pane fade"><br>
+                <h3>Menu 1</h3>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                  consequat.</p>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="m-4">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs">
+              <li class="nav-item exchange_li_style">
+                <a class="nav-link active" data-toggle="tab" href="#exchangeBuy">BUY</a>
+              </li>
+              <li class="nav-item exchange_li_style">
+                <a class="nav-link" data-toggle="tab" href="#exchangeSell">SELL</a>
+              </li>
+
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content exchange_tab_panes_style">
+              <div id="exchangeBuy" class="container tab-pane active"><br>
+                <form>
+                  <label for="fname">AT PRICE INR</label><br>
+                  <input type="email" id="uname" name="priceInr" placeholder="Enter UserName" class="login_input_style"><br>
+                  
+                  <label for="lname">AMOUNT BTC</label><br>
+                  <input type="password" id="pass" name="amountBtc" placeholder="Enter Password" class="login_input_style"><br>
+
+                  <label for="lname">TOTAL INR</label><br>
+                  <input type="password" id="pass" name="totalInr" placeholder="Enter Password" class="login_input_style"><br><br>
+                  
+                  
+                  <!-- <hr /> -->
+                  <button type="button" class="btn btn-primary login_btn_style w-100 mt-3">Buy Btc</button>
+                </form>
+              </div>
+              <div id="exchangeSell" class="container tab-pane fade"><br>
+                <form>
+                  <label for="fname">AT PRICE INR</label><br>
+                  <input type="email" id="uname" name="priceInr" placeholder="Enter UserName" class="login_input_style"><br>
+                  
+                  <label for="lname">AMOUNT BTC</label><br>
+                  <input type="password" id="pass" name="amountBtc" placeholder="Enter Password" class="login_input_style"><br>
+
+                  <label for="lname">TOTAL INR</label><br>
+                  <input type="password" id="pass" name="totalInr" placeholder="Enter Password" class="login_input_style"><br><br>
+                  
+                  
+                  <!-- <hr /> -->
+                  <button type="button" class="btn btn-danger w-100 mt-3">Sell Btc</button>
+                </form>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- exchange section start here -->
+
+
+  <!-- footer section start here -->
+  <footer>
+    <div class="container">
+      <div class="footer_box">
+        <dv class="row">
+          <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+            <div class="foot_box">
+              <h5>About</h5>
+              <ul class="list-unstyled">
+                <li>
+                  <a href="javascript:;">CryptolinkX Token</a>
+                </li>
+                <li>
+                  <a href="javascript:;">Blog</a>
+                </li>
+                <li>
+                  <a href="javascript:;">Careers</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+            <div class="foot_box">
+              <h5>Support</h5>
+              <ul class="list-unstyled">
+                <li>
+                  <a href="javascript:;">Help Center</a>
+                </li>
+                <li>
+                  <a href="javascript:;">Corporate Account</a>
+                </li>
+                <li>
+                  <a href="javascript:;">Security</a>
+                </li>
+                <li>
+                  <a href="javascript:;">Partnerships & Enquiries</a>
+                </li>
+                <li>
+                  <a href="javascript:;">Trading, Deposit & Withdrawal Fees</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+            <div class="foot_box">
+              <h5>Legal</h5>
+              <ul class="list-unstyled">
+                <li>
+                  <a href="javascript:;">Terms of use</a>
+                </li>
+                <li>
+                  <a href="javascript:;">Privacy Policy</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+            <div class="foot_box">
+              <h5>Socials</h5>
+              <ul class="list-unstyled">
+                <li>
+                  <a href="javascript:;">
+                    <i class="fab fa-telegram-plane font_icon"></i>
+                    Telegram
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:;">
+                    <i class="fab fa-linkedin-in font_icon"></i>
+                    Linkedin
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:;">
+                    <i class="fab fa-twitter font_icon"></i>
+                    Twitter
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:;">
+                    <i class="fab fa-youtube font_icon"></i>
+                    Youtube
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </dv>
+      </div>
+    </div>
+  </footer>
+  <!-- footer section close here -->
+
+  {% endblock exchange %}

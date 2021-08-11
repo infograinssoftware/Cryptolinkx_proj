@@ -1,0 +1,73 @@
+{% extends 'authentication/base.html' %}
+{% load static %}
+
+{% block register %}
+
+  <div class="top_header">
+    <img src="{% static 'authentication/assets/img/logo.png' %}" class="img-fluid logo">
+  </div>
+  
+ <div class="signin_page">
+   <div class="container">
+     <div class="row">
+       <div class="col-lg-6 offset-lg-3 col-md-6 offset-md-3 col-sm-8 offset-sm-2 col-12">
+         <div class="sign_lg_form">
+           <h2>SignIn</h2>
+           {% for message in messages %}
+            <div class="alert alert-{{message.extra_tags}} text-center" role="alert">
+              {{message}}
+            </div>
+           {% endfor %}
+          <form id="reg_form" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="full_name" required class="form-control" maxlength="20" minlength="2">
+            </div>
+            <div class="form-group">
+              <label for="email">Email Id</label>
+              <input type="email" id="email" name="email" required class="form-control" maxlength="50" minlength="5">
+            </div>
+            <div class="form-group">
+              <label for="paas">Password</label>
+              <input type="password" id="paas" name="password" required class="form-control" maxlength="20" minlength="3">
+            </div>
+            <div class="form-group">
+              <label for="cnf-paas">Confirm Password</label>
+              <input type="password" id="cnf-paas" name="cfm_password" required class="form-control" maxlength="20" minlength="3">
+            </div>
+            <button type="submit" class="btn sign_btn" data-toggle="modal" data-target="#otp_modal">Submit</button>
+          </form>
+        </div>
+       </div>
+     </div>  
+   </div>
+ </div>
+
+ 
+<!-- otp modal start here -->
+
+<div class="modal fade forgot_modal" id="otp_modal" tabindex="-1" role="dialog" aria-labelledby="otp_modalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content forgot_form">
+      <button type="button" class="close cls_mdl" data-dismiss="modal" aria-label="Close">
+          <i class="fas fa-times font_icon"></i>
+        </button>
+      <div class="modal-body">
+          <h3>OTP</h3>
+          <p>Please check the email</p>
+          <form>
+              <div class="form-group">
+                <label for="otp">Enter OTP</label>
+                <input type="text" id="otp" class="form-control">
+              </div>
+              <button type="button" class="btn rest_btn">Submit Your OTP</button>
+            </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- otp modal close here -->
+
+{% endblock register %}

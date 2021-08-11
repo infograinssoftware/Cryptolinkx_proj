@@ -1,0 +1,1253 @@
+{% extends 'authentication/base.html' %}
+{% load static %}
+
+
+{% block exchange %}
+
+<style>
+  /* .table td,
+  .table th {
+    border-top: 0 !important;
+  }
+
+  .exchange_Btn_style {
+    padding: 3px 10px !important;
+    font-size: 14px !important;
+  }
+
+  .exchange_Btn_style.active {
+    padding: 2px 10px !important;
+    font-size: 13px !important;
+    margin: 0px 8px !important;
+  }
+
+  .exchange_tbody_style td {
+    padding: 8px 5px !important;
+  }
+
+  .exchange_tbody_style {
+    padding-right: 0 !important;
+    width: 220px;
+  } */
+
+
+
+  /* -------------------------------------------------- 03 / July / 2021 changes End---------------------------------------------------- */
+</style>
+
+<!-- exchange section start here -->
+<section class="exchange_section_style">
+  <div class="container-fluid">
+    <div class="exchange_box">
+      <div class="exchange_box1">
+        <div class="exchange_Col3_style">
+          <!-- Nav tabs -->
+          <div class="nav_div">
+            <ul class="nav nav-tabs left_nav">
+              <li class="nav-item">
+                <button class="active exchange_BtnOne_style" data-toggle="tab" href="#inr">USD</button>
+              </li>
+              <li class="nav-item">
+                <button class="exchange_BtnOne_style" data-toggle="tab" href="#usdt">USDT</button>
+              </li>
+              <li class="nav-item">
+                <button class="exchange_BtnOne_style" data-toggle="tab" href="#wrx">CRX</button>
+              </li>
+              <li class="nav-item">
+                <button class="exchange_BtnOne_style" data-toggle="tab" href="#btc">BTC</button>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div id="inr" class="tab-pane active">
+              <input type="text" placeholder="Search.." class="exchange_search_style">
+              <div class="exchng_left_data">
+                <div class="list_head_txt">
+                  <div class="pair">
+                    <a href="javascript:;" class="">Pair</a>
+                  </div>
+                  <div class="vol">
+                    <a href="javascript:;" class="">Vol
+                      <svg class="svg-inline--fa fa-arrow-down fa-w-14" aria-hidden="true" focusable="false"
+                        data-prefix="fas" data-icon="arrow-down" role="img" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 448 512" data-fa-i2svg="">
+                        <path fill="currentColor"
+                          d="M413.1 222.5l22.2 22.2c9.4 9.4 9.4 24.6 0 33.9L241 473c-9.4 9.4-24.6 9.4-33.9 0L12.7 278.6c-9.4-9.4-9.4-24.6 0-33.9l22.2-22.2c9.5-9.5 25-9.3 34.3.4L184 343.4V56c0-13.3 10.7-24 24-24h32c13.3 0 24 10.7 24 24v287.4l114.8-120.5c9.3-9.8 24.8-10 34.3-.4z">
+                        </path>
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="change">
+                    <a href="javascript:;" class="">Change</a>
+                  </div>
+                </div>
+              </div>
+              <div class="data_list_scrll" id="usd_data">
+                <div class="list_data_div">
+                  <a class="a_div" href="javascript:;">
+                    <div class="market_div">
+                      <div class="currency_icon">
+                        $
+                      </div>
+                      <div class="market">
+                        <div class="market_name">
+                          <span class="market_name_txt">BTC<span class="sub_txt">/INR</span></span>
+                        </div>
+                        <div class="market_change">
+                          <span class="market_change_data">1.24%</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="price">
+                      <span class="price_value">$250.54</span>
+                      <span class="price_btm">2.3088 USDT</span>
+                    </div>
+                  </a>
+                </div>
+                <!-- <div class="list_data_div">
+                  <a class="a_div" href="javascript:;">
+                    <div class="market_div">
+                      <div class="currency_icon">
+                        $
+                      </div>
+                      <div class="market">
+                        <div class="market_name">
+                          <span class="market_name_txt">BTC<span class="sub_txt">/INR</span></span>
+                        </div>
+                        <div class="market_change">
+                          <span class="market_change_data">1.24%</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="price">
+                      <span class="price_value">$250.54</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="list_data_div">
+                  <a class="a_div" href="javascript:;">
+                    <div class="market_div">
+                      <div class="currency_icon">
+                        $
+                      </div>
+                      <div class="market">
+                        <div class="market_name">
+                          <span class="market_name_txt">BTC<span class="sub_txt">/INR</span></span>
+                        </div>
+                        <div class="market_change">
+                          <span class="market_change_data">1.24%</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="price">
+                      <span class="price_value">$250.54</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="list_data_div">
+                  <a class="a_div" href="javascript:;">
+                    <div class="market_div">
+                      <div class="currency_icon">
+                        $
+                      </div>
+                      <div class="market">
+                        <div class="market_name">
+                          <span class="market_name_txt">BTC<span class="sub_txt">/INR</span></span>
+                        </div>
+                        <div class="market_change">
+                          <span class="market_change_data">1.24%</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="price">
+                      <span class="price_value">$250.54</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="list_data_div">
+                  <a class="a_div" href="javascript:;">
+                    <div class="market_div">
+                      <div class="currency_icon">
+                        $
+                      </div>
+                      <div class="market">
+                        <div class="market_name">
+                          <span class="market_name_txt">BTC<span class="sub_txt">/INR</span></span>
+                        </div>
+                        <div class="market_change">
+                          <span class="market_change_data">1.24%</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="price">
+                      <span class="price_value">$250.54</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="list_data_div">
+                  <a class="a_div" href="javascript:;">
+                    <div class="market_div">
+                      <div class="currency_icon">
+                        $
+                      </div>
+                      <div class="market">
+                        <div class="market_name">
+                          <span class="market_name_txt">BTC<span class="sub_txt">/INR</span></span>
+                        </div>
+                        <div class="market_change">
+                          <span class="market_change_data">1.24%</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="price">
+                      <span class="price_value">$250.54</span>
+                    </div>
+                  </a>
+                </div> -->
+              </div>
+            </div>
+            <div id="usdt" class="tab-pane fade"><br>
+               <input type="text" placeholder="Search.." class="exchange_search_style">
+              <div class="exchng_left_data">
+                <div class="list_head_txt">
+                  <div class="pair">
+                    <a href="javascript:;" class="">Pair</a>
+                  </div>
+                  <div class="vol">
+                    <a href="javascript:;" class="">Vol
+                      <svg class="svg-inline--fa fa-arrow-down fa-w-14" aria-hidden="true" focusable="false"
+                        data-prefix="fas" data-icon="arrow-down" role="img" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 448 512" data-fa-i2svg="">
+                        <path fill="currentColor"
+                          d="M413.1 222.5l22.2 22.2c9.4 9.4 9.4 24.6 0 33.9L241 473c-9.4 9.4-24.6 9.4-33.9 0L12.7 278.6c-9.4-9.4-9.4-24.6 0-33.9l22.2-22.2c9.5-9.5 25-9.3 34.3.4L184 343.4V56c0-13.3 10.7-24 24-24h32c13.3 0 24 10.7 24 24v287.4l114.8-120.5c9.3-9.8 24.8-10 34.3-.4z">
+                        </path>
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="change">
+                    <a href="javascript:;" class="">Change</a>
+                  </div>
+                </div>
+              </div>
+              <div class="data_list_scrll" id="usdt_data">
+                <div class="list_data_div">
+                  <a class="a_div" href="javascript:;">
+                    <div class="market_div">
+                      <div class="currency_icon">
+                        $
+                      </div>
+                      <div class="market">
+                        <div class="market_name">
+                          <span class="market_name_txt">BTC<span class="sub_txt">/INR</span></span>
+                        </div>
+                        <div class="market_change">
+                          <span class="market_change_data">1.24%</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="price">
+                      <span class="price_value">$250.54</span>
+                      <span class="price_btm">2.3088 USDT</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="list_data_div">
+                  <a class="a_div" href="javascript:;">
+                    <div class="market_div">
+                      <div class="currency_icon">
+                        $
+                      </div>
+                      <div class="market">
+                        <div class="market_name">
+                          <span class="market_name_txt">BTC<span class="sub_txt">/INR</span></span>
+                        </div>
+                        <div class="market_change">
+                          <span class="market_change_data">1.24%</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="price">
+                      <span class="price_value">$250.54</span>
+                      <span class="price_btm">2.3088 USDT</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="list_data_div">
+                  <a class="a_div" href="javascript:;">
+                    <div class="market_div">
+                      <div class="currency_icon">
+                        $
+                      </div>
+                      <div class="market">
+                        <div class="market_name">
+                          <span class="market_name_txt">BTC<span class="sub_txt">/INR</span></span>
+                        </div>
+                        <div class="market_change">
+                          <span class="market_change_data">1.24%</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="price">
+                      <span class="price_value">$250.54</span>
+                      <span class="price_btm">2.3088 USDT</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="list_data_div">
+                  <a class="a_div" href="javascript:;">
+                    <div class="market_div">
+                      <div class="currency_icon">
+                        $
+                      </div>
+                      <div class="market">
+                        <div class="market_name">
+                          <span class="market_name_txt">BTC<span class="sub_txt">/INR</span></span>
+                        </div>
+                        <div class="market_change">
+                          <span class="market_change_data">1.24%</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="price">
+                      <span class="price_value">$250.54</span>
+                      <span class="price_btm">2.3088 USDT</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="list_data_div">
+                  <a class="a_div" href="javascript:;">
+                    <div class="market_div">
+                      <div class="currency_icon">
+                        $
+                      </div>
+                      <div class="market">
+                        <div class="market_name">
+                          <span class="market_name_txt">BTC<span class="sub_txt">/INR</span></span>
+                        </div>
+                        <div class="market_change">
+                          <span class="market_change_data">1.24%</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="price">
+                      <span class="price_value">$250.54</span>
+                      <span class="price_btm">2.3088 USDT</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="list_data_div">
+                  <a class="a_div" href="javascript:;">
+                    <div class="market_div">
+                      <div class="currency_icon">
+                        $
+                      </div>
+                      <div class="market">
+                        <div class="market_name">
+                          <span class="market_name_txt">BTC<span class="sub_txt">/INR</span></span>
+                        </div>
+                        <div class="market_change">
+                          <span class="market_change_data">1.24%</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="price">
+                      <span class="price_value">$250.54</span>
+                      <span class="price_btm">2.3088 USDT</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div id="wrx" class="tab-pane fade"><br>
+              <input type="text" placeholder="Search.." class="exchange_search_style">
+              <div class="exchng_left_data">
+                <div class="list_head_txt">
+                  <div class="pair">
+                    <a href="javascript:;" class="">Pair</a>
+                  </div>
+                  <div class="vol">
+                    <a href="javascript:;" class="">Vol
+                      <svg class="svg-inline--fa fa-arrow-down fa-w-14" aria-hidden="true" focusable="false"
+                        data-prefix="fas" data-icon="arrow-down" role="img" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 448 512" data-fa-i2svg="">
+                        <path fill="currentColor"
+                          d="M413.1 222.5l22.2 22.2c9.4 9.4 9.4 24.6 0 33.9L241 473c-9.4 9.4-24.6 9.4-33.9 0L12.7 278.6c-9.4-9.4-9.4-24.6 0-33.9l22.2-22.2c9.5-9.5 25-9.3 34.3.4L184 343.4V56c0-13.3 10.7-24 24-24h32c13.3 0 24 10.7 24 24v287.4l114.8-120.5c9.3-9.8 24.8-10 34.3-.4z">
+                        </path>
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="change">
+                    <a href="javascript:;" class="">Change</a>
+                  </div>
+                </div>
+              </div>
+              <div class="data_list_scrll">
+                <div class="list_data_div">
+                  <a class="a_div" href="javascript:;">
+                    <div class="market_div">
+                      <div class="currency_icon">
+                        $
+                      </div>
+                      <div class="market">
+                        <div class="market_name">
+                          <span class="market_name_txt">BTC<span class="sub_txt">/INR</span></span>
+                        </div>
+                        <div class="market_change">
+                          <span class="market_change_data">1.24%</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="price">
+                      <span class="price_value">$250.54</span>
+                      <span class="price_btm">2.3088 USDT</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="list_data_div">
+                  <a class="a_div" href="javascript:;">
+                    <div class="market_div">
+                      <div class="currency_icon">
+                        $
+                      </div>
+                      <div class="market">
+                        <div class="market_name">
+                          <span class="market_name_txt">BTC<span class="sub_txt">/INR</span></span>
+                        </div>
+                        <div class="market_change">
+                          <span class="market_change_data">1.24%</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="price">
+                      <span class="price_value">$250.54</span>
+                      <span class="price_btm">2.3088 USDT</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="list_data_div">
+                  <a class="a_div" href="javascript:;">
+                    <div class="market_div">
+                      <div class="currency_icon">
+                        $
+                      </div>
+                      <div class="market">
+                        <div class="market_name">
+                          <span class="market_name_txt">BTC<span class="sub_txt">/INR</span></span>
+                        </div>
+                        <div class="market_change">
+                          <span class="market_change_data">1.24%</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="price">
+                      <span class="price_value">$250.54</span>
+                      <span class="price_btm">2.3088 USDT</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="list_data_div">
+                  <a class="a_div" href="javascript:;">
+                    <div class="market_div">
+                      <div class="currency_icon">
+                        $
+                      </div>
+                      <div class="market">
+                        <div class="market_name">
+                          <span class="market_name_txt">BTC<span class="sub_txt">/INR</span></span>
+                        </div>
+                        <div class="market_change">
+                          <span class="market_change_data">1.24%</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="price">
+                      <span class="price_value">$250.54</span>
+                      <span class="price_btm">2.3088 USDT</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="list_data_div">
+                  <a class="a_div" href="javascript:;">
+                    <div class="market_div">
+                      <div class="currency_icon">
+                        $
+                      </div>
+                      <div class="market">
+                        <div class="market_name">
+                          <span class="market_name_txt">BTC<span class="sub_txt">/INR</span></span>
+                        </div>
+                        <div class="market_change">
+                          <span class="market_change_data">1.24%</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="price">
+                      <span class="price_value">$250.54</span>
+                      <span class="price_btm">2.3088 USDT</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="list_data_div">
+                  <a class="a_div" href="javascript:;">
+                    <div class="market_div">
+                      <div class="currency_icon">
+                        $
+                      </div>
+                      <div class="market">
+                        <div class="market_name">
+                          <span class="market_name_txt">BTC<span class="sub_txt">/INR</span></span>
+                        </div>
+                        <div class="market_change">
+                          <span class="market_change_data">1.24%</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="price">
+                      <span class="price_value">$250.54</span>
+                      <span class="price_btm">2.3088 USDT</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div id="btc" class="tab-pane fade"><br>
+              <input type="text" placeholder="Search.." class="exchange_search_style">
+              <div class="exchng_left_data">
+                <div class="list_head_txt">
+                  <div class="pair">
+                    <a href="javascript:;" class="">Pair</a>
+                  </div>
+                  <div class="vol">
+                    <a href="javascript:;" class="">Vol
+                      <svg class="svg-inline--fa fa-arrow-down fa-w-14" aria-hidden="true" focusable="false"
+                        data-prefix="fas" data-icon="arrow-down" role="img" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 448 512" data-fa-i2svg="">
+                        <path fill="currentColor"
+                          d="M413.1 222.5l22.2 22.2c9.4 9.4 9.4 24.6 0 33.9L241 473c-9.4 9.4-24.6 9.4-33.9 0L12.7 278.6c-9.4-9.4-9.4-24.6 0-33.9l22.2-22.2c9.5-9.5 25-9.3 34.3.4L184 343.4V56c0-13.3 10.7-24 24-24h32c13.3 0 24 10.7 24 24v287.4l114.8-120.5c9.3-9.8 24.8-10 34.3-.4z">
+                        </path>
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="change">
+                    <a href="javascript:;" class="">Change</a>
+                  </div>
+                </div>
+              </div>
+              <div class="data_list_scrll" id="btc_data">
+                <div class="list_data_div">
+                  <a class="a_div" href="javascript:;">
+                    <div class="market_div">
+                      <div class="currency_icon">
+                        $
+                      </div>
+                      <div class="market">
+                        <div class="market_name">
+                          <span class="market_name_txt">BTC<span class="sub_txt">/INR</span></span>
+                        </div>
+                        <div class="market_change">
+                          <span class="market_change_data">1.24%</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="price">
+                      <span class="price_value">$250.54</span>
+                      <span class="price_btm">2.3088 USDT</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="list_data_div">
+                  <a class="a_div" href="javascript:;">
+                    <div class="market_div">
+                      <div class="currency_icon">
+                        $
+                      </div>
+                      <div class="market">
+                        <div class="market_name">
+                          <span class="market_name_txt">BTC<span class="sub_txt">/INR</span></span>
+                        </div>
+                        <div class="market_change">
+                          <span class="market_change_data">1.24%</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="price">
+                      <span class="price_value">$250.54</span>
+                      <span class="price_btm">2.3088 USDT</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="list_data_div">
+                  <a class="a_div" href="javascript:;">
+                    <div class="market_div">
+                      <div class="currency_icon">
+                        $
+                      </div>
+                      <div class="market">
+                        <div class="market_name">
+                          <span class="market_name_txt">BTC<span class="sub_txt">/INR</span></span>
+                        </div>
+                        <div class="market_change">
+                          <span class="market_change_data">1.24%</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="price">
+                      <span class="price_value">$250.54</span>
+                      <span class="price_btm">2.3088 USDT</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="list_data_div">
+                  <a class="a_div" href="javascript:;">
+                    <div class="market_div">
+                      <div class="currency_icon">
+                        $
+                      </div>
+                      <div class="market">
+                        <div class="market_name">
+                          <span class="market_name_txt">BTC<span class="sub_txt">/INR</span></span>
+                        </div>
+                        <div class="market_change">
+                          <span class="market_change_data">1.24%</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="price">
+                      <span class="price_value">$250.54</span>
+                      <span class="price_btm">2.3088 USDT</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="list_data_div">
+                  <a class="a_div" href="javascript:;">
+                    <div class="market_div">
+                      <div class="currency_icon">
+                        $
+                      </div>
+                      <div class="market">
+                        <div class="market_name">
+                          <span class="market_name_txt">BTC<span class="sub_txt">/INR</span></span>
+                        </div>
+                        <div class="market_change">
+                          <span class="market_change_data">1.24%</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="price">
+                      <span class="price_value">$250.54</span>
+                      <span class="price_btm">2.3088 USDT</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="list_data_div">
+                  <a class="a_div" href="javascript:;">
+                    <div class="market_div">
+                      <div class="currency_icon">
+                        $
+                      </div>
+                      <div class="market">
+                        <div class="market_name">
+                          <span class="market_name_txt">BTC<span class="sub_txt">/INR</span></span>
+                        </div>
+                        <div class="market_change">
+                          <span class="market_change_data">1.24%</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="price">
+                      <span class="price_value">$250.54</span>
+                      <span class="price_btm">2.3088 USDT</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="exchange_box2">
+        <div class="exchange_Col6Div_style">
+          <div class="exchange_Col6_style">
+            <div class="exchange_page_heading">
+              <h6 class="heading_font_style"> BTC/INR <span>Bitcoin</span></h6>
+              <p>₹45,33,359</p>
+            </div>
+
+            <!-- Nav tabs -->
+            <!-- <ul class="nav nav-tabs">
+              <li class="nav-item">
+                <button class="nav-link active exchange_Btn_style" data-toggle="tab" href="#1M">1M</button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link exchange_Btn_style" data-toggle="tab" href="#5M">5M</button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link exchange_Btn_style" data-toggle="tab" href="#15M">15M</button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link exchange_Btn_style" data-toggle="tab" href="#30M">30M</button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link exchange_Btn_style" data-toggle="tab" href="#1H">1H</button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link exchange_Btn_style" data-toggle="tab" href="#2H">2H</button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link exchange_Btn_style" data-toggle="tab" href="#4H">4H</button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link exchange_Btn_style" data-toggle="tab" href="#6H">6H</button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link exchange_Btn_style" data-toggle="tab" href="#12H">12H</button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link exchange_Btn_style" data-toggle="tab" href="#1D">1D</button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link exchange_Btn_style" data-toggle="tab" href="#1W">1W</button>
+              </li>
+            </ul>
+
+ -->
+
+            <!-- Tab panes -->
+            <div class="tab-content ">
+              <div id="1M" class="container tab-pane active"><br>
+                <!-- <img id="graph-img" src="{% static 'authentication/assets/images/Graf_Img.png' %}" class="w-100" alt="Cryptolinkx"> -->
+                <!-- TradingView Widget BEGIN -->
+                <div class="tradingview-widget-container">
+                  <div id="tradingview_9480b" class="w-10"></div>
+                  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-AAPL/"
+                      rel="noopener" target="_blank"><span class="blue-text">{{pair_name}} Chart</span></a> by
+                    TradingView
+                  </div>
+                  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                  <script type="text/javascript">
+                    var pair_name = "{{pair_name}}";
+                    new TradingView.widget(
+                      {
+                        "width": 850,
+                        "height": 330,
+                        "symbol": pair_name,
+                        "interval": "D",
+                        "timezone": "Etc/UTC",
+                        "theme": "light",
+                        "style": "1",
+                        "locale": "en",
+                        "toolbar_bg": "#f1f3f6",
+                        "enable_publishing": false,
+                        "allow_symbol_change": true,
+                        "container_id": "tradingview_9480b"
+                      }
+                    );
+                  </script>
+                </div>
+                <!-- TradingView Widget END -->
+              </div>
+              <div id="5M" class="container tab-pane fade"><br>
+                <p>usdt</p>
+              </div>
+              <div id="15M" class="container tab-pane fade"><br>
+                <p>wrx</p>
+              </div>
+              <div id="30M" class="container tab-pane fade"><br>
+                <p>btc</p>
+              </div>
+              <div id="1H" class="container tab-pane"><br>
+                <p>inr</p>
+              </div>
+              <div id="2H" class="container tab-pane fade"><br>
+                <p>usdt</p>
+              </div>
+              <div id="4H" class="container tab-pane fade"><br>
+                <p>wrx</p>
+              </div>
+              <div id="6H" class="container tab-pane fade"><br>
+                <p>btc</p>
+              </div>
+              <div id="12H" class="container tab-pane"><br>
+                <p>inr</p>
+              </div>
+              <div id="2D" class="container tab-pane fade"><br>
+                <p>usdt</p>
+              </div>
+              <div id="1W" class="container tab-pane fade"><br>
+                <p>wrx</p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+        <div class="row exchange_row_style">
+          <div class="col8_style">
+            <div class="exchange_Col8_style">
+              <div class="order_book">
+                <h6>ORDER BOOK</h6>
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs">
+                  <li class="nav-item">
+                    <button class="nav-link active exchange_Btn_style" data-toggle="tab" href="#MarketDepth">Market
+                      Depth</button>
+                  </li>
+                  <li class="nav-item">
+                    <button class="nav-link exchange_Btn_style" data-toggle="tab" href="#OrderVolume">Order
+                      Volume</button>
+                  </li>
+                </ul>
+              </div>
+  
+  
+              <!-- Tab panes -->
+              <div class="tab-content">
+                <div id="MarketDepth" class="tab-pane active"><br>
+                  <table class="w-100" style="overflow: hidden;">
+                    <thead>
+                      <tr>
+                        <th class="exchange_MarketDepthTH_style">VOLUME</th>
+                        <th class="exchange_MarketDepthTH_style">BUY PRICE</th>
+                        <th class="exchange_MarketDepthTH_style">SELL PRICE</th>
+                        <th class="exchange_MarketDepthTH_style">VOLUME</th>
+                      </tr>
+                    </thead>
+                    <tbody id="bids">
+                      <tr>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div id="OrderVolume" class="container tab-pane fade"><br>
+                  <table id="asks" class="w-100" style="overflow: hidden;">
+                    <thead>
+                      <tr>
+                        <th class="exchange_MarketDepthTH_style">VOLUME</th>
+                        <th class="exchange_MarketDepthTH_style">BUY PRICE</th>
+                        <th class="exchange_MarketDepthTH_style">SELL PRICE</th>
+                        <th class="exchange_MarketDepthTH_style">VOLUME</th>
+                      </tr>
+                    </thead>
+                    <tbody id="order-vol">
+  
+                    </tbody>
+                  </table>
+                </div>
+  
+              </div>
+            </div>
+          </div>
+          <div class="col5_style">
+            <div class="exchange_Col4_style">
+              <h6 class="pl-3">TRADE HISTORY</h6>
+              <table class="history_tbl_style">
+                <thead>
+                  <tr>
+                    <th>PRICE</th>
+                    <th>VOLUME</th>
+                    <th>TIME</th>
+                  </tr>
+                </thead>
+                <tbody id="trade-history">
+  
+                  <!-- <tr>
+                    <td>43,84,980</td>
+                    <td>43,84,980</td>
+                    <td>0.0025</td>
+                  </tr> -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="exchange_box3">
+        <div class="exchange_Col3DivRight_style">
+          <div class="exchange_Col3Threed_style">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs ul">
+              <li class="nav-item exchange_liOne_style">
+                <a class="nav-link active exchange_orderBtn_style" data-toggle="tab" href="#openOrders">OPEN
+                  ORDERS</a>
+              </li>
+              <li class="nav-item exchange_liOne_style">
+                <a class="nav-link exchange_orderBtn_style" data-toggle="tab" href="#completedOrders">COMPLETED
+                  ORDERS</a>
+              </li>
+
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content exchange_tab_panes_style">
+              <div id="openOrders" class="container tab-pane active"><br>
+                <div>
+                  <button type="button" class="btn btn-primary exchange_LoginBtn_style mt-5">Login</button>
+                  <p class="text-center mt-2">or</p>
+                  <button type="button" class="btn btn-primary exchange_AccountBtn_style mt-1">Create An
+                    Account</button>
+                </div>
+              </div>
+              <div id="completedOrders" class="container tab-pane fade"><br>
+                <p>COMPLETED ORDERS</p>
+              </div>
+
+            </div>
+          </div>
+          <div class="exchange_Col3Threed_style exchange_Threed_style">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs ul">
+              <li class="nav-item exchange_li_style">
+                <button class="nav-link active exchange_Btn_style" data-toggle="tab" href="#exchangeBuy">BUY</button>
+              </li>
+              <li class="nav-item exchange_li_style">
+                <button class="nav-link exchange_Btn_style" data-toggle="tab" href="#exchangeSell">SELL</button>
+              </li>
+
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <div id="exchangeBuy" class="container tab-pane active"><br>
+                <form>
+                  <label for="fname"><b>AT PRICE INR :</b></label><br>
+                  <input type="number" class="exchange_input_style buy-input" id="uname" name="priceInr"
+                    placeholder="Enter UserName" class="login_input_style"><br>
+
+                  <label for="lname"><b>AMOUNT BTC :</b></label>
+                  <input type="number" class="exchange_input_style" id="pass" name="amountBtc"
+                    placeholder="Enter Password" class="login_input_style"><br>
+
+                  <label for="lname"><b>TOTAL INR :</b></label>
+                  <input type="number" class="exchange_input_style" id="pass" name="totalInr"
+                    placeholder="Enter Password" class="login_input_style"><br><br>
+
+
+                  <!-- <hr /> -->
+                  <button type="button" class="btn btn-primary exchange_loginbtn_style w-100 mt-3">Buy Btc</button>
+                </form>
+              </div>
+              <div id="exchangeSell" class="container tab-pane fade"><br>
+                <form>
+                  <label for="fname"><b>AT PRICE INR :</b></label><br>
+                  <input type="number" class="exchange_input_style buy-input" name="priceInr"
+                    placeholder="Enter UserName" class="login_input_style"><br>
+
+                  <label for="lname"><b>AMOUNT BTC :</b></label>
+                  <input type="number" class="exchange_input_style" id="pass" name="amountBtc"
+                    placeholder="Enter Password" class="login_input_style"><br>
+
+                  <label for="lname"><b>TOTAL INR :</b></label>
+                  <input type="number" class="exchange_input_style" id="pass" name="totalInr"
+                    placeholder="Enter Password" class="login_input_style"><br><br>
+
+
+                  <!-- <hr /> -->
+                  <button type="button" class="btn btn-danger exchange_sellbtn_style w-100 mt-3">Sell Btc</button>
+                </form>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<!-- exchange section start here -->
+
+<!-- Optional JavaScript -->
+
+<script>
+  function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+</script>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="></script> -->
+
+<script>
+
+  // let response = fetch("https://api.wazirx.com/api/v2/tickers/",[{Origin: 'https://api.wazirx.com/'}]);
+  // console.log(response);
+  // https://api.wazirx.com/api/v2/tickers/?&format=json
+  // function fetch1(){  
+  //   var url = "https://api.wazirx.com/api/v2/tickers/";
+  //   console.log('hello');
+
+  //   fetch('https://api.github.com/users)
+  //   .then(response => response.json())
+  //   .then(data => {
+  //     console.log(data) // Prints result from `response.json()` in getRequest
+  //   })
+  //   .catch(error => console.error(error))
+  // }
+  //   function getData(){
+  //     console.log("Started getData")
+  //     url = "https://api1.binance.com/api/v3/ticker/24hr";
+  //     fetch(url).then((response)=>{
+  //         console.log("Inside first then")
+  //         return response.json();
+  //     }).then((data)=>{
+  //         console.log("Inside second then")
+  //         console.log(data);
+  //     })
+  // }
+  // getData()
+  // function live_data() {
+  //   $.ajax({
+  //     url: "https://api1.binance.com/api/v3/ticker/24hr",
+  //     dataType: "json",
+  //     type: "GET",
+  //     success: function (event) {
+  //       data = "";
+  //       for (let i = 0; i <= 99; i++) {
+  //         let text_color = "";
+  //         let price_color = "";
+  //         let row_bg = "";
+  //         let price_bg_color = "";
+  //         if (event[i]['symbol'] == "{{pair_name}}") {
+  //           text_color = "white";
+  //           row_bg = "bg-dark ";
+  //           price_color = "white";
+  //           price_bg_color = "dark";
+  //         }
+  //         else {
+  //           row_bg = "bg-white";
+  //           text_color = "primary";
+  //           price_color = "success";
+  //           price_bg_color = "white";
+  //         };
+  //         data += "<tr class =" + row_bg + "><td ><a href=" + event[i]['symbol'] + " class = 'text-decoration-none font-weight-bold text-" + text_color + "' >" + event[i]['symbol'] + "</a></td><td class = 'text-" + price_color + " bg-" + price_bg_color + " '>₹" + event[i]['volume'] + "</td><td></td></tr>";
+  //       }
+  //       document.getElementById('live-data').innerHTML = data;
+  //     },
+  //     error: function (event) {
+  //       console.log(event, "sjdfihasdjfsdf");
+  //     },
+  //   });
+  // };
+  // live_data();
+
+  // setInterval(function () {
+  //   live_data();
+
+  // }, 3000);
+</script>
+
+
+
+<script>
+
+  function call_django() {
+    $.ajax(
+      {
+        url: "{% url 'exchange' %}",
+        dataType: "json",
+        type: "GET",
+        success: function (event) {
+          // if (event['url'] != "/exchange") {
+          //   window.location.href = event['url'];
+          // }
+          // data = "";
+          btc_data = "";
+          usdt_data = "";
+          eth_data = "";
+          usd_data = "";
+          usd_list = event['usd_list'];
+          console.log(usd_list);
+          btc_list = event['btc_list'];
+          usdt_list = event['usdt_list'];
+          eth_list = event['eth_list'];
+
+          // document.getElementById('usd-data').innerHTML = usd_list;
+          for (let i = 0; i < 30; i++) {
+
+            let text_color = "";
+            let price_color = "";
+            let row_bg = "";
+            let price_bg_color = "";
+            if (btc_list[i]['pair_name'] == "{{pair_name}}") {
+              text_color = "white";
+              row_bg = "bg-dark ";
+              price_color = "white";
+              price_bg_color = "dark";
+            }
+            else if (usdt_list[i]['pair_name'] == "{{pair_name}}") {
+              text_color = "white";
+              row_bg = "bg-dark ";
+              price_color = "white";
+              price_bg_color = "dark";
+            }
+            else if (usd_list[i]['pair_name'] == "{{pair_name}}") {
+              text_color = "white";
+              row_bg = "bg-dark ";
+              price_color = "white";
+              price_bg_color = "dark";
+            }
+            else {
+              row_bg = "bg-white";
+              text_color = "primary";
+              price_color = "success";
+              price_bg_color = "white";
+            };
+            let num1 = new Number(btc_list[i]['pair_vol']);
+            let num2 = new Number(usdt_list[i]['pair_vol']);
+            let num3 = new Number(usd_list[i]['pair_vol']);
+            let base_value1 = (num1/num2)/100;
+            let base_value2 = (num1/num3)/100;
+            btc_data += '<div class="list_data_div"><a class="a_div" href="javascript:;"><div class="market_div"><div class="currency_icon">$</div><div class="market"> <div class="market_name"><span class="market_name_txt">'+ btc_list[i]['pair_name'] +'<span class="sub_txt"></span></span></div><div class="market_change"> <span class="market_change_data">1.24%</span></div></div> </div><div class="price"><span class="price_value">$'+num1.toFixed(3)+'</span><span class="price_btm"></span></div></a></div>';
+            usdt_data += '<div class="list_data_div"><a class="a_div" href="javascript:;"><div class="market_div"><div class="currency_icon">$</div><div class="market"> <div class="market_name"><span class="market_name_txt">'+ usdt_list[i]['pair_name'] +'<span class="sub_txt"></span></span></div><div class="market_change"> <span class="market_change_data">1.24%</span></div></div> </div><div class="price"><span class="price_value">$'+num2.toFixed(3)+'</span><span class="price_btm">'+base_value1 +' BTC</span></div></a></div>';
+            usd_data += '<div class="list_data_div"><a class="a_div" href="javascript:;"><div class="market_div"><div class="currency_icon">$</div><div class="market"> <div class="market_name"><span class="market_name_txt">'+ usd_list[i]['pair_name'] +'<span class="sub_txt"></span></span></div><div class="market_change"> <span class="market_change_data">1.24%</span></div></div> </div><div class="price"><span class="price_value">$'+num3.toFixed(3)+'</span><span class="price_btm">'+base_value2 +' BTC</span></div></a></div>';
+            // eth_data += "<tr class =" + row_bg + "><td ><a href=" + eth_list[i]['pair_name'] + " class = 'text-decoration-none font-weight-bold text-" + text_color + "' >" + eth_list[i]['pair_name'] + "</a></td><td class = 'text-" + price_color + " bg-" + price_bg_color + " '>₹" + eth_list[i]['pair_vol'] + "</td><td></td></tr>";
+
+            // console.log();
+          }
+
+          document.getElementById('btc_data').innerHTML = btc_data;
+          document.getElementById('usdt_data').innerHTML = usdt_data;
+          document.getElementById('usd_data').innerHTML = usd_data;
+
+        },
+        error: function (event) {
+          console.log(event, "sjdfihasdjfsdf");
+        },
+      });
+  };
+  call_django();
+  function market_depth() {
+    // var pair= 
+    $.ajax({
+      url: "https://api.binance.com/api/v3/depth?symbol=BTCUSDT",
+      dataType: "json",
+      type: "GET",
+      success: function (event) {
+        bids = "";
+        asks = "";
+        for (let i = 0; i <= 4; i++) {
+          let num1 = new Number(event['bids'][i][0]);
+          let num2 = new Number(event['asks'][i][0]);
+          bids += '<tr><td class="exchange_MarketDepthTD_style text-success ">' + event['bids'][i][1] + '</td><td class="exchange_MarketDepthTD_style text-success font-weight-bold">' + num1.toFixed(3) + '</td><td class="exchange_MarketDepthTD_style text-danger font-weight-bold">' + num2.toFixed(3) + '</td><td class="exchange_MarketDepthTD_style text-danger">' + event['asks'][i][1] + '</td></tr>';
+        }
+        document.getElementById('bids').innerHTML = bids;
+        document.getElementById('order-vol').innerHTML = bids;
+
+      }
+    });
+  };
+  setInterval(function () {
+    call_django();
+    market_depth();
+    trade_history();
+  }, 4000);
+// setInterval(function () {
+// function order_volume(){
+//     // var pair= 
+//     $.ajax({
+//       url:"https://api.binance.com/api/v3/depth?symbol=BTCUSDT",
+//       dataType: "json",
+//       type: "GET",
+//       success: function(event) {
+//         bids="";
+//         asks= "";
+//           for(let i = 0; i<=4; i++){
+//             bids += '<tr><td class="exchange_MarketDepthTD_style text-success ">'+event['bids'][i][1]+'</td><td class="exchange_MarketDepthTD_style text-success font-weight-bold">'+event['bids'][i][0]+'</td><td class="exchange_MarketDepthTD_style text-danger font-weight-bold">'+event['asks'][i][0]+'</td><td class="exchange_MarketDepthTD_style text-danger">'+event['asks'][i][1]+'</td></tr>';
+//           }
+//           document.getElementById('order-vol').innerHTML  = bids;
+//       }
+//     });
+//   };
+//   setInterval(function () {
+//   order_volume();                                                                                           
+// }, 3000); 
+
+</script>
+
+<script>
+
+  function trade_history() {
+    $.ajax({
+      url: "https://api.binance.com/api/v3/trades?symbol={{pair_name}}&limit=10",
+      type: "GET",
+      dataType: "json",
+      success: function (event) {
+        t_history = "";
+        prev = 0;
+        for (let i = 0; i < 5; i++) {
+          let tt = event[i]['time'];
+          let t_time = new Date(tt).toTimeString("en-US").slice(0, 8);
+          prev = event[i]['price'];
+          if (parseInt(event[i + 1]['price']) > parseInt(prev)) {
+            price_color = "danger";
+          }
+          else {
+            price_color = "success";
+          };
+          // console.log(parseInt(event[0]['price'])); 
+          document.getElementsByClassName("buy-input")[0].value = parseFloat(event[0]['price']);
+          document.getElementsByClassName("buy-input")[1].value = parseFloat(event[0]['price']);
+          let num1 = new Number(event[i]['price']);
+          t_history += '<tr class="bg-' + price_color + '" ><td class="text-white' + ' bg-' + price_color + ' font-weight-bold">' + num1.toFixed(3) + '</td><td class="text-white bg-' + price_color + '">' + event[i]['qty'] + '</td><td class="text-white bg-' + price_color + '">' + t_time + '</td></tr>';
+        }
+        document.getElementById('trade-history').innerHTML = t_history;
+      }
+    });
+  };
+
+
+</script>
+<!-- Adding websockets for showing data in realtime  -->
+<script>
+  console.log(window.location.host);
+
+  const socket = new WebSocket(
+
+    'ws://' + window.location.host + '/ws/exchange/'
+  )
+
+  socket.onopen = function (e) {
+    console.log('Connected successfully');
+    socket.send(JSON.stringify({ 'msg': 'we are connected' }));
+  }
+
+  socket.onmessage = function (e) {
+    // data = JSON.parse(e);
+
+    console.log(e.data);
+    all_data = JSON.parse(e.data);
+    console.log(JSON.parse(all_data['all_coins']));
+    // console.log
+
+    // console.log(e['message'], 'sdfd');
+    // // console.log(e['all_coins']);
+    socket.send(JSON.stringify({ 'msg': 'hello from front-end' }));
+  }
+
+  socket.onclose = function (e) {
+    console.log('closed connection');
+  }
+</script>
+
+{% endblock exchange %}

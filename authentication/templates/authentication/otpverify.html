@@ -1,0 +1,67 @@
+{% extends 'authentication/base.html' %}
+{% load static %}
+{% block bstyle %}
+  style="background-color: rgb(236, 239, 241);"
+{% endblock bstyle %}
+{% block tnavbar %}
+{% endblock tnavbar %}
+{% block otpverify %}
+  <!-- Opt form start here -->
+
+  <section class="loginForm_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 offset-lg-3 col-md-6 offset-md-3 col-sm-8 offset-sm-2 col-12">
+          <div class="loginForm_div_style">
+            <a class="pt-0 logo_aTag_style" href="index.html">
+              <img src="{% static 'authentication/assets/images/logo.png'%}" class="img-fluid login_logo_style" alt="Cryptolinkx">
+            </a>
+            <h3 class="lgn_heading">Please enter the 4-digit verification code we sent via Email:</h3>
+            <hr />
+            <div id="error_msg" class="alert alert-info text-center" role="alert" hidden>
+
+            </div>
+
+            <form id="otp_form"  method="POST">
+              {% csrf_token %}
+              <div class="form-group">
+                <label for="fname">Enter OTP</label><br>
+                <div class="otp_userInput_style">
+                  <input type="text" name="otp1" class="opt_input_style" id='ist' maxlength="1" onkeyup="clickEvent(this,'sec')">
+                  <input type="text" name="otp2" class="opt_input_style" id="sec" maxlength="1" onkeyup="clickEvent(this,'third')">
+                  <input type="text" name="otp3" class="opt_input_style" id="third" maxlength="1" onkeyup="clickEvent(this,'fourth')">
+                  <input type="text" name="otp4" class="opt_input_style" id="fourth" maxlength="1" onkeyup="clickEvent(this,'fifth')">
+                  <input type="text" name="otp5" class="opt_input_style" id="fifth" maxlength="1" onkeyup="clickEvent(this,'sixth')">
+                  <input type="text" name="otp6" class="opt_input_style" id="sixth" maxlength="1">
+                
+                </div>
+                <!-- <div class="form_grp">
+                  <span class="icon_box"><i class="fas fa-envelope font_icon"></i></span>
+                  <input type="email" id="email" name="email" placeholder="Enter Your Email" class="form-control">
+                </div> -->
+              </div>
+
+
+              <!-- <hr /> -->
+              <button type="submit" class="btn btn-primary login_btn_style w-100 mt-3">Verify</button>
+            </form>
+            <hr />
+
+            <div class="login_linkBtn_style">
+              <a type="button" class="login_link_style" href="{% url 'resend_otp' %}">Resend OTP</a>
+              <!-- <a type="button" class="login_link_style" href="forgotPassword.html">Forgot Password</a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Otp form end here -->
+  
+  <!-- script start -->
+
+ 
+{% endblock otpverify %}
+
+  

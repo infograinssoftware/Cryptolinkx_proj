@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+    <link rel="stylesheet" href="/static/authentication/assets/css/all.css">
+    <link rel="stylesheet" href="/static/authentication/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/authentication/assets/css/style.css">
+    <style>
+            /* --------------------------------------------------------------- Account Page Start ------------------------------------------------------- */
+.account_page {
+    display: flex;
+    margin: 50px auto;
+    width: 75%;
+}
+
+.menu_div {
+    align-items: flex-start;
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 16%);
+}
+
+.nav-link {
+    color: #1c1b21;
+    font-weight: 500;
+    padding: 15px;
+}
+
+.nav-link .menu_txt {
+    padding-left: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+    color: #3067F0;
+    background-color: transparent;
+    border-left: 2px solid #3067F0;
+    border-radius: 0px;
+}
+
+.nav-link:focus,
+.nav-link:hover {
+    color: #3067F0;
+}
+
+.nav-pills .nav-link {
+    width: 100%;
+    text-align: left;
+    border-bottom: 1px solid lightgrey;
+    border-radius: 0px;
+    display: flex;
+    align-items: center;
+}
+
+.account_menu {
+    width: 30%;
+}
+
+.tab-content {
+    width: 70%;
+    margin-left: 10px;
+}
+
+.account_container {
+    width: 100%;
+    display: flex;
+}
+
+/* -----------------------------------------------------side menu end ---------------------------------------------------- */
+
+/* -------------------------------------------------profile section start---------------------------------------------------  */
+.profile_section {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile_section_header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 9px;
+}
+
+.profile_section_header_txt {
+    padding-left: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.profile_section_body {
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 16%);
+    display: flex;
+    flex-direction: column;
+    padding: 16px 18px;
+}
+
+.email_div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+}
+
+.mobile_div {
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile_div a {
+    width: 225px;
+}
+
+.profile_section_body label {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+}
+
+.mobile_div .btn {
+    padding: 2px 15px;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+/* -------------------------------------------------profile section end---------------------------------------------------  */
+
+/* -------------------------------------------------currency preference section start------------------------------------------  */
+.currency_pre_section {
+    display: flex;
+    flex-direction: column;
+}
+
+.currency_pre_header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 9px;
+}
+
+.currency_pre_section_header_txt {
+    padding-left: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.currency_pre_body {
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 16%);
+    display: flex;
+    flex-direction: column;
+    padding: 16px 18px;
+    overflow: hidden;
+}
+
+.radio_div {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid lightgrey;
+}
+
+.radio_dot {
+    position: absolute;
+    top: 22px;
+    right: 20px;
+}
+
+.currency_img_div {
+    position: absolute;
+    top: 18px;
+    left: 0px;
+}
+
+.radio_div label {
+    padding-left: 15px;
+}
+
+.radio_div input {
+    cursor: pointer;
+}
+
+.radio_div input::after {
+    content: '';
+    position: absolute;
+    top: -204%;
+    right: 0%;
+    width: 644px;
+    height: 64px;
+    background-color: #a52a2a00;
+}
+
+.currency_pre_bottom {
+    background-color: white;
+    margin-top: 20px;
+    padding: 15px;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 16%);
+    text-decoration: none;
+}
+
+.currency_pre_bottom:hover {
+    background-color: rgb(255 252 252);
+}
+
+.currency_pre_bottom_txt {
+    color: red;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* -------------------------------------------------currency preference section end------------------------------------------  */
+/* -------------------------------------------------payment option section start------------------------------------------  */
+
+.payment_opt_section {
+    display: flex;
+    flex-direction: column;
+}
+
+.payment_opt_header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 9px;
+}
+
+.payment_opt_section_header_txt {
+    padding-left: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.payment_body_top {
+    display: flex;
+    background-color: rgb(247, 250, 252);
+    padding: 16px 12px;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    position: relative;
+}
+
+.submit_div {
+    display: flex;
+    flex-direction: column;
+    margin: 8px 16px 0px;
+    align-items: center;
+    z-index: 1;
+    background-color: #f7fafc;
+}
+
+.submit_div::after {
+    content: "";
+    position: absolute;
+    top: 40%;
+    margin-top: -1px;
+    height: 2px;
+    width: calc(100% - 135px);
+    left: 65px;
+    background: rgb(48, 103, 240);
+    z-index: -1;
+}
+
+.review_div {
+    display: flex;
+    flex-direction: column;
+    margin: 8px 16px 0px;
+    align-items: center;
+    z-index: 1;
+    background-color: #f7fafc;
+}
+
+.done_div {
+    display: flex;
+    flex-direction: column;
+    margin: 8px 16px 0px;
+    align-items: center;
+    z-index: 1;
+    background-color: #f7fafc;
+}
+
+.payment_body_container {
+    background-color: #fff;
+    padding: 15px;
+}
+
+.payment_kyc_titletxt {
+    font-size: 20px;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 6px;
+    margin-bottom: 5px;
+}
+
+.payment_kyc_para {
+    font-size: 15px;
+}
+
+.table_div {
+    display: flex;
+    justify-content: center;
+}
+
+.table_tag {
+    width: 80%;
+    border: 1px solid lightgray;
+    margin: 15px 0;
+}
+
+thead {
+    background-color: grey;
+    text-align: center;
+}
+
+.tbody_list {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.submit_btn {
+    width: 100%;
+}
+
+.table_title_div {
+    padding: 15px;
+}
+
+/* -------------------------------------------------payment option section end------------------------------------------  */
+/* -------------------------------------------------Notification prefrence section start------------------------------------------  */
+.notification_pre_section {
+    display: flex;
+    flex-direction: column;
+}
+
+.notification_pre_header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 9px;
+}
+
+.notification_pre_section_header_txt {
+    padding-left: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.price_div {
+    display: flex;
+    background-color: white;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+.price_txt {
+    font-weight: 500;
+}
+
+.referral_div {
+    display: flex;
+    background-color: white;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+.referral_txt {
+    font-weight: 500;
+}
+
+/* -------------------------------------------------Notification prefrence section end------------------------------------------  */
+/* -------------------------------------------------Fees section start------------------------------------------  */
+.fee_section {
+    display: flex;
+    flex-direction: column;
+}
+
+.fee_header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 9px;
+}
+
+.fee_section_header_txt {
+    padding-left: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.fee_body {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 16%);
+    padding: 20px;
+}
+
+.fee_body_title {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.fee_body_content {
+    font-size: 14px;
+    color: #9a9797;
+}
+
+/* -------------------------------------------------Fees section end------------------------------------------  */
+/* ------------------------------------------------two factor authentication start---------------------------------- */
+.authentication_section {
+    display: flex;
+    flex-direction: column;
+}
+
+.authentication_header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 9px;
+}
+
+.authentication_section_header_txt {
+    padding-left: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.authentication_list_div {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    align-items: center;
+}
+
+.authentication_head {
+    display: flex;
+    align-items: center;
+}
+
+.authentication_app {
+    font-weight: 500;
+}
+
+.highly_secure {
+    font-size: 14px;
+    color: lightgray;
+}
+
+.recommended {
+    color: #00d800;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 10px;
+}
+
+.authentication_radiobtn input {
+    cursor: pointer;
+}
+
+.authentication_bottom {
+    margin-top: 10px;
+    font-size: 15px;
+    padding: 15px;
+}
+
+/* ------------------------------------------------two factor authentication end---------------------------------- */
+/* ------------------------------------------------activity logs start---------------------------------- */
+.activity_log_section {
+    display: flex;
+    flex-direction: column;
+}
+
+.activity_log_header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 9px;
+}
+
+.activity_log_section_header_txt {
+    padding-left: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.activity_logs_row {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    letter-spacing: .7px;
+    line-height: 2;
+    border-bottom: 1px solid lightgray;
+}
+
+.activity_logs_row_content {
+    display: flex;
+}
+
+.activity_logs_row_title {
+    width: 20%;
+    font-size: 14px;
+    font-weight: 600;
+    color: gray;
+}
+
+.activity_logs_row_descp {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.activity_logs_row_descp3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb(5, 92, 255);
+}
+
+.activity_logs_body {
+    position: relative;
+}
+
+.activity_paging {
+    position: absolute;
+    right: 0;
+}
+
+/* ------------------------------------------------activity logs end---------------------------------- */
+/* ------------------------------------------------download trading report start---------------------------------- */
+.trading_repo_section {
+    display: flex;
+    flex-direction: column;
+}
+
+.trading_repo_header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 9px;
+}
+
+.trading_repo_section_header_txt {
+    padding-left: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.trading_repo_body {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 20px;
+}
+
+.trading_repo_body_date {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.trading_repo_from_date {
+    display: flex;
+    flex-direction: column;
+    padding: 2px 20px 10px 20px;
+    border: 1px solid lightgray;
+    border-radius: 5px 0 0 5px;
+}
+
+.trading_repo_to_date {
+    display: flex;
+    flex-direction: column;
+    padding: 2px 20px 10px 20px;
+    border: 1px solid lightgray;
+    border-radius: 0 5px 5px 0;
+}
+
+.trading_repo_from_date .from_date_txt {
+    font-size: 12px;
+    color: grey;
+}
+
+.trading_repo_to_date .to_date_txt {
+    font-size: 12px;
+    color: grey;
+}
+
+.trading_repo_body_title {
+    font-weight: bold;
+    margin-bottom: 10px;
+    border-bottom: 1px solid grey;
+    padding-bottom: 5px;
+}
+
+.trading_repo_list_head {
+    margin: 10px 0;
+}
+
+/* ------------------------------------------------download trading report end---------------------------------- */
+/* ------------------------------------------------privacy control start---------------------------------- */
+.privacy_control_section {
+    display: flex;
+    flex-direction: column;
+}
+
+.privacy_control_header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 9px;
+}
+
+.privacy_control_section_header_txt {
+    padding-left: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.privacy_control_body {
+    padding: 15px;
+    background-color: #fff;
+}
+
+.privacy_control_title {
+    font-weight: bold;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+.privacy_control_para {
+    padding-bottom: 10px;
+}
+
+/* ------------------------------------------------privacy control end---------------------------------- */
+/* ------------------------------------------------coupon rewards start---------------------------------- */
+.coupon_rewards_section {
+    display: flex;
+    flex-direction: column;
+}
+
+.coupon_rewards_header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 9px;
+}
+
+.coupon_rewards_section_header_txt {
+    padding-left: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.coupon_rewards_body {
+    padding: 20px;
+    background-color: #fff;
+}
+
+.coupon_rewards_head {
+    display: flex;
+    justify-content: space-between;
+}
+
+.coupon_rewards_head_txt {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.coupon_rewards_head_para {
+    font-size: 14px;
+}
+
+.coupon_rewards_title {
+    font-size: 15px;
+    font-weight: bold;
+    color: #504f4f;
+    padding-bottom: 10px;
+}
+
+.coupon_rewards_input {
+    display: flex;
+    justify-content: space-between;
+}
+
+.coupon_rewards_input input {
+    width: 80%;
+}
+
+.coupon_rewards_input button {
+    width: 18%;
+}
+
+/* ------------------------------------------------coupon rewards end---------------------------------- */
+
+/* -----------------------------------------------------responsive account page start------------------------------------------------------------------------- */
+@media screen and (max-width:1024px) {
+    .account_page {
+        margin: 30px auto;
+    }
+}
+
+@media screen and (max-width:830px) {
+    .account_container {
+        flex-wrap: wrap-reverse;
+    }
+
+    .account_menu,
+    .tab-content {
+        width: 100%;
+    }
+
+    .account_menu h4 {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width:425px) {
+    .activity_logs_row_content {
+        justify-content: space-between;
+    }
+
+    .activity_paging {
+        top: -30px;
+    }
+
+    .coupon_rewards_input input {
+        width: 65%;
+    }
+
+    .coupon_rewards_input button {
+        width: 34%;
+    }
+
+    .account_page {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width:375px) {
+    .coupon_rewards_head {
+        flex-wrap: wrap-reverse;
+    }
+}
+
+/* -----------------------------------------------------responsive account page end------------------------------------------------------------------------- */
+
+</style>
+</head>
+
+<body>
+    <div class="account_page">
+        <div class="account_container">
+            <div class="account_menu">
+                <h4>Account Settings</h4>
+                <div class="nav flex-column nav-pills menu_div" id="v-pills-tab" role="tablist"
+                    aria-orientation="vertical">
+                    <a class="nav-link active" id="v-pills-profile-tab" data-toggle="pill" href="#profile" role="tab"
+                        aria-controls="v-pills-profile" aria-selected="true">
+                        <svg viewBox="0 0 20 20" width="20" height="20" fill="#FFFFFF">
+                            <g fill-rule="nonzero">
+                                <path fill="#FFF"
+                                    d="M7.024 15.68L4.04 17.308a2.681 2.681 0 0 0-.479.34A9.954 9.954 0 0 0 10 20a9.96 9.96 0 0 0 6.402-2.318 2.647 2.647 0 0 0-.527-.353l-3.195-1.597a1.218 1.218 0 0 1-.673-1.09v-1.254c.09-.102.192-.233.302-.388a7.352 7.352 0 0 0 .993-2.002c.41-.126.712-.505.712-.955V8.705a.999.999 0 0 0-.334-.741V6.029s.397-3.01-3.68-3.01c-4.076 0-3.679 3.01-3.679 3.01v1.935a.998.998 0 0 0-.334.741v1.338c0 .353.185.663.462.842.335 1.456 1.21 2.503 1.21 2.503v1.223c0 .445-.244.855-.635 1.069z">
+                                </path>
+                                <path fill="#3067F0"
+                                    d="M10.17.002C4.65-.093.097 4.307.003 9.829a9.971 9.971 0 0 0 3.563 7.816c.146-.127.301-.243.475-.337l2.983-1.628c.392-.213.635-.623.635-1.07v-1.222s-.875-1.048-1.21-2.503a1.004 1.004 0 0 1-.462-.842V8.705c0-.294.131-.557.334-.742V6.03S5.923 3.02 10 3.02c4.076 0 3.679 3.01 3.679 3.01v1.934a.998.998 0 0 1 .334.742v1.338c0 .45-.302.828-.711.955a7.352 7.352 0 0 1-.994 2.001c-.11.155-.212.287-.302.389v1.254c0 .461.26.883.674 1.09l3.195 1.597c.191.096.365.217.524.351a9.974 9.974 0 0 0 3.599-7.51C20.093 4.65 15.693.097 10.17.003z">
+                                </path>
+                            </g>
+                        </svg>
+                        <span class="menu_txt">PROFILE</span>
+                    </a>
+                    <a class="nav-link" id="v-pills-currencypre-tab" data-toggle="pill" href="#currency_pre" role="tab"
+                        aria-controls="v-pills-currencypre" aria-selected="false">
+                        <svg viewBox="0 0 100 98" width="19" height="19" fill="#3067f0">
+                            <path fill="#3067f0"
+                                d="M28.035059,66.1580284 C12.1346272,63.5737555 -1.27897692e-13,49.8453488 -1.27897692e-13,33.2976445 C-1.27897692e-13,14.9078633 14.9866328,7.10542736e-15 33.4735812,7.10542736e-15 C49.4409678,7.10542736e-15 62.7971285,11.1212248 66.1411278,26.0016379 C58.5383462,26.0710603 51.4620519,28.3441852 45.5200901,32.2131674 C44.9065578,31.9202944 44.2171248,31.6856457 43.4517964,31.5092522 C45.9303768,30.291176 47.0196168,28.2238058 46.7205652,25.306805 C46.62059,24.2490396 46.3171689,23.332304 45.8096026,22.555251 C45.3016867,21.7780297 44.61628,21.1532046 43.7507606,20.6805234 C42.8859403,20.2072527 41.9453522,19.8469743 40.9311809,19.5985935 C39.9167474,19.3502127 38.7520891,19.169863 37.4379922,19.0577969 L37.4379922,13 L33.5959391,13 L33.5959391,18.8894874 C32.9306323,18.8894874 31.916024,18.9054848 30.5522018,18.9375638 L30.5522018,13 L26.7096244,13 L26.7096244,19.0577969 C26.1605474,19.0738786 25.3539295,19.0820456 24.289421,19.0820456 L19,19.0577969 L19,23.0002315 L21.7693299,23.0002315 C23.0335265,23.0002315 23.7737274,23.5452379 23.9899325,24.6348297 L23.9899325,31.5340903 C24.1564995,31.5340903 24.289421,31.5423416 24.3893088,31.558339 L23.9899325,31.558339 L23.9899325,41.2215304 C23.8570109,42.0386611 23.3747006,42.4476053 22.5429141,42.4476053 L19.7737589,42.4476053 L19.0001748,46.846808 L23.9903694,46.846808 C24.3064623,46.846808 24.763604,46.8508494 25.3626686,46.8580904 C25.9613835,46.8661733 26.4103106,46.8702147 26.7097991,46.8702147 L26.7097991,53 L29.7468724,53 C28.6117328,56.6315716 28,60.4943469 28,64.5 C28,65.0555025 28.0117649,65.6082572 28.035059,66.1580284 Z M30.5529883,50.6847365 L30.5529883,46.9422873 C30.9860545,46.9524676 31.5406832,46.9593461 32.2168537,46.9631033 C31.5991693,48.1682041 31.0431589,49.4101371 30.5529883,50.6847365 Z M34.622348,42.9046524 C34.2975778,42.9285399 33.9335641,42.9486166 33.5301563,42.9650763 C32.9505771,42.9880848 32.4983995,43 32.1745197,43 C31.8504606,43 31.4411087,42.995727 30.9465535,42.9880848 C30.4517296,42.9807714 30.1365402,42.9768271 30,42.9768271 L30,35.0466745 C30.1362715,35.0466745 30.5413229,35.0390324 31.2150647,35.0230908 C31.8888961,35.0073134 32.4385512,35 32.8649258,35 C33.2912109,35 33.8797495,35.0230908 34.6303624,35.0703405 C35.3802585,35.1169329 36.0112643,35.1870269 36.5232902,35.280869 C37.0346889,35.3748755 37.5927657,35.5193364 38.1985958,35.7150737 C38.8037988,35.9104823 39.2943222,36.1489497 39.6696287,36.4304761 C39.7580765,36.496955 39.8431937,36.5677214 39.9249852,36.6427979 C37.9443701,38.532805 36.1650182,40.6318961 34.622348,42.9046524 Z M30,24.0358228 C30.1170485,24.0358228 30.4471199,24.0320182 30.9903021,24.0244092 C31.5337477,24.0166415 31.9848189,24.009191 32.3441305,24.0015819 C32.7035299,23.9941313 33.1882317,24.0129955 33.7984995,24.0582537 C34.4085037,24.103512 34.9223579,24.1639883 35.3400621,24.2392866 C35.7577662,24.3145849 36.2177939,24.4391044 36.7187402,24.6126074 C37.2205647,24.7859519 37.6214096,24.9972626 37.9218896,25.2461432 C38.2229843,25.4950237 38.477804,25.8119898 38.6863487,26.1967242 C38.8955081,26.5813794 39,27.0226272 39,27.5203883 C39,27.9428512 38.9249239,28.3276649 38.7746839,28.6748295 C38.6247073,29.0217563 38.3985131,29.312249 38.0980331,29.5460699 C37.7974653,29.7799701 37.4876776,29.9838302 37.1700749,30.1571747 C36.8528235,30.3305192 36.4471492,30.4701777 35.9542811,30.5756745 C35.4615009,30.6813299 35.0311524,30.7643165 34.6636747,30.8245551 C34.2959335,30.8849522 33.8364326,30.9265644 33.2848209,30.9490746 C32.7331213,30.9715848 32.3151538,30.9869615 32.0311817,30.9944121 C31.7469462,31.0018626 31.3584823,31.0018626 30.865263,30.9944121 C30.371956,30.9869615 30.0840325,30.9829984 30.0002634,30.9829984 L30.0002634,24.0357435 L30,24.0357435 L30,24.0358228 Z M66.4735812,97.5952891 C47.9866328,97.5952891 33,82.6874258 33,64.2976445 C33,45.9078633 47.9866328,31 66.4735812,31 C84.9605296,31 99.9471624,45.9078633 99.9471624,64.2976445 C99.9471624,82.6874258 84.9605296,97.5952891 66.4735812,97.5952891 Z M72.3681449,61.807551 C70.8534766,61.0051698 69.243145,60.3938317 67.6487573,59.7595685 C66.7240124,59.3927657 65.8391272,58.964829 65.0578772,58.3687745 C63.5192931,57.1919487 63.8142548,55.2815173 65.6159129,54.5249865 C66.126117,54.3110181 66.6602369,54.2422426 67.2023287,54.2116757 C69.2909766,54.1046915 71.2759893,54.4714944 73.1653388,55.3426511 C74.1060275,55.7782295 74.4169331,55.6406784 74.7358107,54.7007461 C75.0706321,53.7073218 75.3496499,52.698614 75.6605555,51.697548 C75.8678259,51.0250761 75.6127239,50.581856 74.951053,50.2991122 C73.7393183,49.7871166 72.4956959,49.4203137 71.188298,49.2216289 C69.4823031,48.9694519 69.4823031,48.9618102 69.4743312,47.3188392 C69.4663593,45.0033963 69.4663593,45.0033963 67.0428899,45.0033963 C66.6921246,45.0033963 66.3413593,44.9957546 65.990594,45.0033963 C64.8585788,45.0339632 64.6672522,45.2250064 64.6353645,46.3177731 C64.6194206,46.8068436 64.6353645,47.295914 64.6273926,47.7926262 C64.6194206,49.244554 64.6114487,49.2216289 63.1605559,49.7259828 C59.6529029,50.9486589 57.4845356,53.2411766 57.2533494,56.9092049 C57.046079,60.1569382 58.8158493,62.3501135 61.5980559,63.9472342 C63.3120227,64.9330168 65.2093441,65.5137879 67.0269461,66.2856022 C67.7364486,66.5836295 68.4140634,66.9275072 69.0039868,67.4012941 C70.7498414,68.7844465 70.4309638,71.0846059 68.3582598,71.9557626 C67.2501603,72.4219079 66.0782854,72.5365338 64.8745226,72.391341 C63.017061,72.1697309 61.2393187,71.7035857 59.5652116,70.8706376 C58.5846631,70.3815671 58.2976733,70.5114765 57.9628519,71.527826 C57.6758621,72.4066244 57.4207601,73.2930646 57.1656581,74.1795048 C56.8228647,75.371614 56.9504157,75.6543578 58.1382346,76.2122038 C59.6529029,76.9152426 61.2712064,77.2744037 62.9213977,77.5265806 C64.2128517,77.7252655 64.2527114,77.7787576 64.2686553,79.0625675 C64.2766273,79.6433386 64.2766273,80.2317515 64.2845992,80.8125226 C64.2925711,81.5461283 64.6592803,81.9740649 65.4485022,81.9893484 C66.3413593,82.0046318 67.2421884,82.0046318 68.1350455,81.9817066 C68.8684639,81.9664232 69.243145,81.5843369 69.243145,80.8736564 C69.243145,80.078917 69.2830047,79.2765358 69.2511169,78.4817963 C69.2112572,77.6717734 69.5779664,77.2591202 70.3911041,77.0451519 C72.2645097,76.5560815 73.8588974,75.593224 75.086576,74.1565796 C78.4985657,70.1828823 77.1991397,64.3675291 72.3681449,61.807551 Z">
+                            </path>
+                        </svg>
+                        <span class="menu_txt">CURRENCY PREFERENCE</span>
+                    </a>
+                    <a class="nav-link" data-toggle="pill" href="javascript:;" role="tab" aria-selected="false">
+                        <svg viewBox="0 0 20 20" width="20" height="20" fill="#FFFFFF">
+                            <g stroke="#3067F0" stroke-width="1.693">
+                                <path
+                                    d="M2.646 11.334a6.728 6.728 0 0 1-.098-1.132c0-2.916 1.885-5.4 4.53-6.362M13.932 15.428A7.023 7.023 0 0 1 9.5 16.985a7.023 7.023 0 0 1-4.432-1.557M11.922 3.838c2.645.96 4.53 3.446 4.53 6.362 0 .385-.033.764-.098 1.132">
+                                </path>
+                                <path fill="#3067F0"
+                                    d="M11.961 3.417c0 .144-.013.286-.037.423-.204 1.124-1.212 1.979-2.422 1.979-1.21 0-2.218-.853-2.422-1.979a2.48 2.48 0 0 1-.037-.423c0-1.327 1.102-2.402 2.461-2.402 1.36 0 2.457 1.075 2.457 2.402zM17.65 14.793c-.678 1.149-2.183 1.542-3.36.878a2.464 2.464 0 0 1-.358-.246 2.363 2.363 0 0 1-.542-3.035c.605-1.024 1.865-1.447 2.966-1.058.135.049.267.108.395.18 1.175.665 1.579 2.134.9 3.28zM5.068 15.428c-.109.09-.23.17-.358.245-1.177.662-2.682.269-3.36-.878-.68-1.147-.276-2.616.899-3.28a2.63 2.63 0 0 1 .395-.18c1.099-.39 2.359.035 2.966 1.058a2.363 2.363 0 0 1-.542 3.035z">
+                                </path>
+                            </g>
+                        </svg>
+                        <span class="menu_txt">REFERRAL</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <a class="nav-link" data-toggle="pill" href="#v-pills-settings" role="tab" aria-selected="false">
+                        <svg viewBox="0 0 20 20" width="20" height="20" fill="#FFFFFF">
+                            <path fill="#3067F0" fill-rule="nonzero"
+                                d="M0 0v19.934h14.965V4.6h-3.99c-.262 0-.5-.243-.5-.51V0H0zm7.352 5.161h.002a2.15 2.15 0 0 1 .019 0c1.12.006 2.028.888 2.028 1.975 0 1.088-.908 1.97-2.03 1.975h-.019c-1.122-.005-2.029-.887-2.029-1.975 0-1.087.907-1.97 2.029-1.975zm4.121-4.65l2.993 3.067h-2.993V.51zM7.517 9.404c1.842.009 3.337 1.393 3.337 3.094a.262.262 0 0 1-.263.261H4.133a.262.262 0 0 1-.263-.261c0-1.701 1.496-3.085 3.337-3.094h.31zm-5.13 5.469h9.951a.511.511 0 0 1 0 1.022H2.386a.511.511 0 0 1 0-1.022zm0 2.044h5.96a.511.511 0 0 1 0 1.023h-5.96a.511.511 0 0 1 0-1.023z">
+                            </path>
+                        </svg>
+                        <span class="menu_txt">VERIFY KYC</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <a class="nav-link" id="v-pills-paymentopt-tab" data-toggle="pill" href="#payment_opt" role="tab"
+                        aria-controls="v-pills-paymentopt" aria-selected="false">
+                        <svg viewBox="0 0 71 70" width="20" height="20" fill="#FFFFFF">
+                            <path fill="#3067f0"
+                                d="M64.4,56.6 L64.4,66.1 C64.4,68 62.9,69.5 61,69.5 L4.2,69.5 C2.3,69.5 0.8,68 0.8,66.1 L0.8,27.4 C0.8,25.5 2.3,24 4.2,24 L61,24 C62.9,24 64.4,25.5 64.4,27.4 L64.4,36.4 L45.7,36.4 C43.6,36.4 41.8,38.2 41.8,40.3 L41.8,52.7 C41.8,54.8 43.6,56.6 45.7,56.6 L64.4,56.6 Z M70.3,41.1 L70.3,51.9 C70.3,53.7 68.8,55.1 67.1,55.1 L46.5,55.1 C44.7,55.1 43.3,53.6 43.3,51.9 L43.3,41.1 C43.3,39.3 44.8,37.9 46.5,37.9 L67,37.9 C68.8,37.9 70.3,39.3 70.3,41.1 Z M56,44.4 C56,43.9 55.6,43.4 55,43.4 L50,43.4 C49.5,43.4 49,43.8 49,44.4 L49,48.7 C49,49.2 49.4,49.7 50,49.7 L55,49.7 C55.5,49.7 56,49.3 56,48.7 L56,44.4 Z M36.3,15.7 C33.6,16.2 31.9,18.4 32.1,20.9 L45.5,20.9 C44.4,17.1 40.6,14.9 36.3,15.7 Z M25.3,20.9 L28.6,20.9 C28.8,20.6 28.9,20.1 29.2,19.5 C30.3,16.5 31.3,13.4 32.5,10.3 C32.7,9.8 33.4,9.1 33.8,9.2 C37.1,9.7 39.1,8.1 40.7,5.3 C43.1,6.1 45.3,7 47.7,7.8 C46.9,10.8 47.7,13.2 50.2,14.8 C51.3,15.5 51.4,16.1 51,17.2 C50.5,18.4 50.2,19.6 49.7,21 L53,21 C53,20.9 53.1,20.9 53.1,20.8 C54.1,18 55.1,15.2 56,12.4 C56.9,9.4 56,7.4 53,6.3 C47.9,4.4 42.7,2.6 37.5,0.9 C34.4,-0.1 32.3,1.1 31.2,4.1 C29.9,7.7 28.6,11.4 27.3,15.1 C26.6,16.9 25.9,18.9 25.3,20.9 Z M16.1,20.9 C17.5,14.9 18.9,9 20.4,3 C17.6,2.8 15.9,3.9 15.4,6.4 C14.8,9.4 14.5,12.5 14,15.5 C13.7,17.3 13.5,19.1 13.2,20.9 L16.1,20.9 Z M22.2,20.9 C22.4,20.6 22.5,20.1 22.8,19.5 C24.9,13.3 27.1,7.2 29.2,1 C26.4,-2.17603713e-14 23.8,1.1 23.1,4 C21.7,9.6 20.4,15.2 19,20.9 L22.2,20.9 Z">
+                            </path>
+                        </svg>
+                        <span class="menu_txt">PAYMENT OPTIONS</span>
+                    </a>
+                    <a class="nav-link" id="v-pills-notificationpre-tab" data-toggle="pill" href="#notification_pre"
+                        role="tab" aria-controls="v-pills-notificationpre" aria-selected="false">
+                        <svg viewBox="0 0 43 43" width="20" height="20" fill="#3067f0">
+                            <path
+                                d="M24.889 35.556c0 1.956-1.6 3.556-3.556 3.556s-3.556-1.6-3.556-3.556h7.111M21.333 3.556c0.978 0 1.778 0.8 1.778 1.778v1.92c5.049 0.853 8.889 5.244 8.889 10.524v10.667l5.333 5.333h-32l5.333-5.333v-10.667c0-5.28 3.84-9.671 8.889-10.524v-1.92c0-0.978 0.8-1.778 1.778-1.778z">
+                            </path>
+                        </svg>
+                        <span class="menu_txt">NOTIFICATION PREFERENCES</span>
+                    </a>
+                    <a class="nav-link" id="v-pills-fee-tab" data-toggle="pill" href="#fees" role="tab"
+                        aria-controls="v-pills-fees" aria-selected="false">
+                        <svg x="0" y="0" width="20" height="20" viewBox="0 0 100 100" fill="#3067f0">
+                            <circle fill="#3067f0" cx="50" cy="50" r="50"></circle>
+                            <path fill="#ffffff"
+                                d="M44.781 46.9c1.932-1.932 2.896-4.329 2.896-7.191s-.964-5.261-2.896-7.192c-1.934-1.933-4.331-2.899-7.193-2.899-2.863 0-5.259.967-7.192 2.899-1.931 1.932-2.897 4.33-2.897 7.192s.967 5.26 2.897 7.191c1.934 1.933 4.329 2.897 7.192 2.897 2.862.001 5.26-.964 7.193-2.897zM33.83 43.491c-.947-1.019-1.422-2.289-1.422-3.811 0-1.52.475-2.785 1.422-3.796.948-1.012 2.165-1.517 3.65-1.517 1.521 0 2.755.505 3.705 1.517.948 1.011 1.42 2.276 1.42 3.796 0 1.521-.472 2.792-1.42 3.811-.95 1.021-2.176 1.531-3.678 1.531-1.503 0-2.729-.51-3.677-1.531z">
+                            </path>
+                            <path fill="#ffffff"
+                                d="M58.17 29.913L50 44.333 35.362 70.168 41.963 70.168 50 55.952 64.72 29.913z"></path>
+                            <path fill="#ffffff"
+                                d="M69.633 53.233c-1.918-1.915-4.297-2.871-7.141-2.871s-5.226.956-7.139 2.871c-1.914 1.915-2.871 4.294-2.871 7.139s.957 5.225 2.871 7.138c1.913 1.915 4.295 2.873 7.139 2.873s5.223-.958 7.141-2.873c1.912-1.913 2.869-4.293 2.869-7.138s-.957-5.224-2.869-7.139zm-3.681 10.829c-.929.993-2.127 1.489-3.593 1.489-1.469 0-2.667-.496-3.597-1.489-.932-.992-1.396-2.231-1.396-3.716 0-1.467.464-2.697 1.396-3.69.93-.993 2.118-1.489 3.568-1.489 1.485 0 2.692.496 3.621 1.489.932.993 1.396 2.224 1.396 3.69.002 1.484-.463 2.723-1.395 3.716z">
+                            </path>
+                        </svg>
+                        <span class="menu_txt">FEES</span>
+                    </a>
+                    <a class="nav-link" id="v-pills-authentication-tab" data-toggle="pill" href="#authentication"
+                        role="tab" aria-controls="v-pills-authentication" aria-selected="false">
+                        <svg viewBox="0 0 17 20" width="19" height="19" fill="#3067f0">
+                            <g fill="none" fill-rule="evenodd">
+                                <path
+                                    d="m16.9079786 3.12454023c-3.4927059 0-6.1684706-.97494253-8.43111764-3.12454023-2.26241177 2.1495977-4.93805883 3.12454023-8.43047059 3.12454023 0 5.59798851-1.18558824 13.61706897 8.43041176 16.87379307 9.61670587-3.2566666 8.43117647-11.27574709 8.43117647-16.87379307z"
+                                    fill="#3067f0" fill-rule="nonzero"></path>
+                                <path
+                                    d="m12.3380658 7.25561029c-.1558986-.15200997-.408655-.15200997-.5645848 0l-4.78290836 4.66318491-1.83847173-1.7924344c-.15589864-.15201001-.40865497-.15199481-.5645848 0-.15591423.1519947-.15591423.3984218 0 .5504318l2.12076413 2.0676275c.15585185.1519948.40879532.1518884.5645848 0l5.06520076-4.93836281c.1559142-.15199477.1558987-.39843703 0-.550447z"
+                                    fill="#fff"></path>
+                            </g>
+                        </svg> <span class="menu_txt">TWO FACTOR AUTHENTICATION</span>
+                    </a>
+                    <a class="nav-link" id="v-pills-activitylogs-tab" data-toggle="pill" href="#activity_logs"
+                        role="tab" aria-controls="v-pills-activitylogs" aria-selected="false">
+                        <svg viewBox="0 0 75 78" width="19" height="19" fill="#3067f0">
+                            <g fill="#3067F0" fill-rule="nonzero">
+                                <path
+                                    d="M52.8,29.8c-9.2,0-16.6-7.4-16.6-16.6c0-1.7,0.3-3.3,0.7-4.8H4.2c-1.1,0-2.2,0.4-3,1.2c-0.8,0.8-1.2,1.9-1.2,3  v62.9c0,1.1,0.4,2.2,1.2,3c0.8,0.8,1.9,1.2,3,1.2h48.9c2.3,0,4.2-1.9,4.2-4.2V29.1C55.9,29.5,54.3,29.8,52.8,29.8z M12.2,35.8h14  c1.6,0,2.9,1.3,2.9,3c0,1.7-1.3,3-2.9,3h-14c-1.6,0-2.9-1.3-2.9-3C9.3,37.1,10.6,35.8,12.2,35.8z M12.2,47.8h23.6  c1.6,0,2.9,1.3,2.9,3c0,1.7-1.3,3-2.9,3H12.2c-1.6,0-2.9-1.3-2.9-3C9.3,49.1,10.6,47.8,12.2,47.8z M42.2,65.8h-30  c-1.6,0-2.9-1.3-2.9-3c0-1.7,1.3-3,2.9-3h30c1.6,0,2.9,1.3,2.9,3C45.1,64.4,43.8,65.8,42.2,65.8z">
+                                </path>
+                                <path
+                                    d="M75.2,29.6l-7.9-7.9c-0.6-0.6-1.6-0.7-2.3-0.3l-1-1c3.3-5.2,2.6-12-1.9-16.4c-5-5-13-5.2-18.3-0.5  s-5.9,12.7-1.5,18.2c4.2,5.3,11.7,6.5,17.4,2.9l1,1c-0.4,0.7-0.3,1.7,0.3,2.3l7.9,7.9c0.4,0.4,0.9,0.6,1.4,0.6c0.5,0,1-0.2,1.4-0.6  l3.4-3.4c0.4-0.4,0.6-0.9,0.6-1.4C75.8,30.5,75.6,30,75.2,29.6z M57.7,18.5c-1.4,1.4-3.2,2.2-5.2,2.2c0,0,0,0,0,0c0,0,0,0,0,0  c0,0,0,0,0,0c-1.9,0-3.8-0.8-5.1-2.2c-2.8-2.8-2.8-7.5,0-10.3c2.8-2.8,7.5-2.8,10.3,0C60.6,11,60.6,15.6,57.7,18.5z">
+                                </path>
+                            </g>
+                        </svg>
+                        <span class="menu_txt">ACTIVITY LOGS</span>
+                    </a>
+                    <a class="nav-link" id="v-pills-tradingrepo-tab" data-toggle="pill" href="#trading_repo" role="tab"
+                        aria-controls="v-pills-tradingrepo" aria-selected="false">
+                        <svg viewBox="0 0 16 19" width="19" height="19" fill="#3067f0">
+                            <path
+                                d="M13.7634409,12.0676651 C13.3181936,11.8966937 12.8348662,11.8030303 12.3297491,11.8030303 C10.112692,11.8030303 8.31541219,13.6074584 8.31541219,15.8333333 C8.31541219,16.8199032 8.6684896,17.7236795 9.25470173,18.4242424 L1.05693232e-13,18.4242424 L1.05693232e-13,6.92779167e-14 L11.5468901,6.92779167e-14 L13.7634409,2.14071854 L13.7634409,12.0676651 Z M11.1827957,2.59090909 L13.4767025,2.59090909 L11.1827957,0.287878788 L11.1827957,2.59090909 Z M7.16845878,4.03030303 L7.16845878,7.1969697 L10.3225806,7.1969697 C10.3225806,5.44798695 8.91051291,4.03030303 7.16845878,4.03030303 Z M6.59498208,4.60606061 C4.85292795,4.60606061 3.44086022,6.02398167 3.44086022,7.77272727 C3.44086022,9.52171002 4.85292795,10.9393939 6.59498208,10.9393939 C8.3370362,10.9393939 9.74910394,9.52171002 9.74910394,7.77272727 L6.59498208,7.77272727 L6.59498208,4.60606061 Z M12.3297491,12.6666667 C14.0690721,12.6666667 15.483871,14.0874444 15.483871,15.8333333 C15.483871,17.5792222 14.0690721,19 12.3297491,19 C10.6741856,19 9.29373158,17.7027222 9.1868419,16.0458519 C9.17983274,15.9811111 9.17562724,15.9093333 9.17562724,15.8333333 C9.17562724,14.2675926 10.3387973,12.9214074 11.8811629,12.7018519 C12.0010195,12.6786296 12.1485623,12.6666667 12.3297491,12.6666667 Z M13.0211672,17.4100106 L14.3942652,16.1415511 L13.7077162,15.5095624 L12.8166633,16.329803 L12.8166633,13.8242593 L11.8428349,13.8242593 L11.8428349,16.329803 L10.951782,15.5095624 L10.265233,16.1415511 L11.638331,17.4100106 L11.8428349,17.5982626 L12.1252451,17.8582295 L12.3297491,18.0464815 L12.5342531,17.8582295 L12.8166633,17.5982626 L13.0211672,17.4100106 Z"
+                                id="report_download_icon" fill="#3067F0" fill-rule="nonzero"></path>
+                        </svg>
+                        <span class="menu_txt">DOWNLOAD TRADING REPORT</span>
+                    </a>
+                    <a class="nav-link" id="v-pills-privacycontrol" data-toggle="pill" href="#privacy_control"
+                        role="tab" aria-controls="v-pills-privacycontrol" aria-selected="false">
+                        <svg viewBox="0 0 93 112" width="19" height="19" fill="#3067f0">
+                            <path fill="#3067f0"
+                                d="M50.5586692,96 L8.0000625,96 C3.5878125,96 -7.10542736e-15,92.4121875 -7.10542736e-15,88.000125 L-7.10542736e-15,38.0000625 C-7.10542736e-15,36.8945625 0.8945625,36 2.0000625,36 L8.0000625,36 L8.0000625,27.9999375 C8.0000625,12.560625 20.5605,-7.10542736e-15 36,-7.10542736e-15 C51.4395,-7.10542736e-15 63.9999375,12.560625 63.9999375,27.9999375 L63.9999375,36 L69.9999375,36 C71.1054375,36 72,36.8945625 72,38.0000625 C72,44.9955621 72,50.2421868 72,53.7399366 C72,59.6414338 72.0251416,60.0230788 72.0300988,63.0425569 C70.5623741,62.9593101 69.089282,62.9979416 67.622433,63.160678 C66.8541289,63.2454734 66.2844086,63.9072713 66.3102422,64.6769368 C66.3966172,67.1342266 64.9404681,69.4057554 62.6815043,70.3310105 C60.515226,71.2158399 57.6977825,70.5711982 56.1213393,68.8374295 C55.6003282,68.2663428 54.7284924,68.1961402 54.1215007,68.6692192 C52.5332253,69.9153162 51.0887111,71.3422441 49.8343009,72.9076053 C49.3450395,73.5161597 49.4170187,74.3982283 49.992458,74.9217902 C51.8369004,76.592061 52.4324544,79.2491127 51.4742436,81.5338539 C50.5594175,83.7121078 48.2974956,85.1159635 45.7080191,85.1159635 C44.8677358,85.0889473 44.2692238,85.6529349 44.1773271,86.4168816 C43.9442328,88.4077971 43.9414719,90.4363774 44.1658893,92.4434632 C44.2491091,93.191634 45.1442149,93.7465505 45.9036448,93.7465505 C47.698184,93.700699 49.4370318,94.5544746 50.5586692,96 Z M41.988375,77.7793125 L40.726875,66.4336875 C42.7756875,64.9434375 44.00025,62.586 44.00025,60 C44.00025,55.58775 40.4124375,51.9999375 36.0001875,51.9999375 C31.5879375,51.9999375 28.000125,55.5879375 28.000125,60 C28.000125,62.586 29.2246875,64.9434375 31.2735,66.4336875 L30.0118125,77.7793125 C29.9491875,78.343875 30.130875,78.9103125 30.5098125,79.3340625 C30.88875,79.7578125 31.43175,80.0000625 32.0000625,80.0000625 L40.000125,80.0000625 C40.5684375,80.0000625 41.1114375,79.7578125 41.490375,79.3340625 C41.8693125,78.910125 42.0508125,78.3436875 41.988375,77.7793125 Z M51.9999375,36 L51.9999375,27.9999375 C51.9999375,19.1776875 44.82225,12 36,12 C27.17775,12 20.0000625,19.1776875 20.0000625,27.9999375 L20.0000625,36 L51.9999375,36 Z M92.8273606,88.0959649 C93.0092714,89.7229314 93.0070335,91.3658831 92.8177695,92.9811805 C92.743119,93.6098757 92.1764461,94.0843143 91.560539,94.0342809 L91.2948662,94.0274073 C89.3959926,94.0274073 87.6305948,95.1971991 86.9003941,96.9394184 C86.1236766,98.7901768 86.6088253,100.944333 88.1039145,102.298273 C88.5727584,102.722519 88.6287063,103.438653 88.2322751,103.930835 C87.2106654,105.203251 86.0421524,106.358976 84.7571078,107.366679 C84.262368,107.748883 83.5606208,107.693095 83.1358959,107.231125 C81.8578848,105.827151 79.5836803,105.298682 77.8158848,106.020731 C75.9871859,106.769474 74.8047658,108.610801 74.8768587,110.601589 C74.8977993,111.226608 74.4363086,111.763069 73.813368,111.831805 C73.0273792,111.919244 72.2412305,111.962404 71.4552416,111.962404 C70.6272119,111.962404 69.8014201,111.914608 68.9805836,111.818857 C68.3531673,111.746604 67.889119,111.196236 67.9263643,110.564024 C68.0404981,108.551177 66.874223,106.67724 65.0201078,105.901641 C63.2499145,105.158653 60.9501338,105.684723 59.6649294,107.106281 C59.2382862,107.576404 58.5221524,107.632352 58.0299703,107.23576 C56.7751375,106.22582 55.629803,105.068976 54.6316914,103.797679 C54.2443717,103.306775 54.3027175,102.601192 54.76229,102.179024 C56.2316431,100.832117 56.7143941,98.6981025 55.9634126,96.8671657 C55.2100335,95.0338311 53.4141041,93.8757084 51.5435242,93.9235039 C50.9279368,93.9235039 50.2023717,93.4736824 50.1349145,92.8672065 C49.9530037,91.24024 49.9552416,89.5958497 50.1441859,87.9819909 C50.2186766,87.362727 50.7038253,86.9055523 51.3849517,86.9274519 C53.4839591,86.9274519 55.3174535,85.7894705 56.0590037,84.023753 C56.8357212,82.1717158 56.3529703,80.0178794 54.857881,78.6639389 C54.3914349,78.2395337 54.3330892,77.5245188 54.7296803,77.0312177 C55.7464944,75.7623181 56.9174052,74.6056341 58.2048476,73.5955337 C58.6968699,73.2120504 59.4035725,73.2689575 59.8258996,73.7318868 C61.1037509,75.1372995 63.3875465,75.6598534 65.143513,74.9426006 C66.9746097,74.1925783 68.1549517,72.3512512 68.0849368,70.3593441 C68.0639963,69.7354445 68.5258067,69.1989835 69.1485874,69.1302474 C70.7579703,68.9516935 72.3766245,68.9574482 73.9812119,69.1430355 C74.6111859,69.2164073 75.0729963,69.7658162 75.0354312,70.3977084 C74.9212974,72.409437 76.0875725,74.2835337 77.937052,75.06153 C79.7142788,75.8030801 82.0142193,75.2760504 83.2946283,73.8580095 C83.7191933,73.3878868 84.4375651,73.3332177 84.9271896,73.7261322 C86.1775465,74.7277604 87.3227212,75.8834854 88.3302639,77.1629352 C88.7175836,77.6538385 88.6614758,78.3605411 88.1996654,78.7827084 C86.7325502,80.1284965 86.2499591,82.2637902 86.9983829,84.094727 C87.7309814,85.8823441 89.4778364,87.0382288 91.4464052,87.0382288 C92.0552788,87.0382288 92.7594238,87.4920467 92.8273606,88.0959649 Z M71.5151859,97.6918385 C75.4662305,97.6918385 78.6802007,94.4778683 78.6802007,90.5266638 C78.6802007,86.5756192 75.4662305,83.3614891 71.5151859,83.3614891 C67.5639814,83.3614891 64.3500112,86.5756192 64.3500112,90.5266638 C64.3500112,94.4778683 67.5639814,97.6918385 71.5151859,97.6918385 Z">
+                            </path>
+                        </svg>
+                        <span class="menu_txt">PRIVACY CONTROL</span>
+                    </a>
+                    <a class="nav-link" id="v-pills-couponrewards-tab" data-toggle="pill" href="#coupon_rewards"
+                        role="tab" aria-controls="v-pills-couponrewards" aria-selected="false">
+                        <svg width="18" height="16" fill="#FFFFFF" viewBox="0 0 18 16">
+                            <path fill="#3067F0"
+                                d="M4.79.125A2.65 2.65 0 003.99 0c-.761 0-1.477.323-1.8.866-.178.31-.118.78.152 1.2.114.205.283.38.491.505.209.126.449.2.697.213h4.725C7.2 1.807 5.512.359 4.79.125zM15.644 2.081c.272-.417.333-.891.155-1.2-.42-.734-1.574-1.068-2.587-.747-.722.234-2.412 1.676-3.476 2.65h4.725c.246-.012.484-.083.691-.207.208-.123.377-.294.492-.496zM18 3.48H9.376v3.13H18V3.48zM16.65 7.305H9.376V16h7.274V7.305zM1.339 16h7.285V7.305H1.34V16zM0 6.61h8.624V3.48H0v3.13z">
+                            </path>
+                        </svg>
+                        <span class="menu_txt">COUPONS REWARDS</span>
+                    </a>
+                    <a class="nav-link" data-toggle="pill" href="javascript:;" role="tab" aria-selected="false">
+                        <span class="menu_txt">CRYPTOLINK UNLOCK PROGRAM</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                    <div class="profile_section">
+                        <div class="profile_section_header">
+                            <svg viewBox="0 0 20 20" width="20" height="20" fill="#FFFFFF">
+                                <g fill-rule="nonzero">
+                                    <path fill="#FFF"
+                                        d="M7.024 15.68L4.04 17.308a2.681 2.681 0 0 0-.479.34A9.954 9.954 0 0 0 10 20a9.96 9.96 0 0 0 6.402-2.318 2.647 2.647 0 0 0-.527-.353l-3.195-1.597a1.218 1.218 0 0 1-.673-1.09v-1.254c.09-.102.192-.233.302-.388a7.352 7.352 0 0 0 .993-2.002c.41-.126.712-.505.712-.955V8.705a.999.999 0 0 0-.334-.741V6.029s.397-3.01-3.68-3.01c-4.076 0-3.679 3.01-3.679 3.01v1.935a.998.998 0 0 0-.334.741v1.338c0 .353.185.663.462.842.335 1.456 1.21 2.503 1.21 2.503v1.223c0 .445-.244.855-.635 1.069z">
+                                    </path>
+                                    <path fill="#3067F0"
+                                        d="M10.17.002C4.65-.093.097 4.307.003 9.829a9.971 9.971 0 0 0 3.563 7.816c.146-.127.301-.243.475-.337l2.983-1.628c.392-.213.635-.623.635-1.07v-1.222s-.875-1.048-1.21-2.503a1.004 1.004 0 0 1-.462-.842V8.705c0-.294.131-.557.334-.742V6.03S5.923 3.02 10 3.02c4.076 0 3.679 3.01 3.679 3.01v1.934a.998.998 0 0 1 .334.742v1.338c0 .45-.302.828-.711.955a7.352 7.352 0 0 1-.994 2.001c-.11.155-.212.287-.302.389v1.254c0 .461.26.883.674 1.09l3.195 1.597c.191.096.365.217.524.351a9.974 9.974 0 0 0 3.599-7.51C20.093 4.65 15.693.097 10.17.003z">
+                                    </path>
+                                </g>
+                            </svg>
+                            <span class="profile_section_header_txt">Profile</span>
+                        </div>
+                        <div class="profile_section_body">
+                            <div class="email_div">
+                                <label for="">EMAIL</label>
+                                <span>{{request.user.email}}</span>
+                            </div>
+                            {% if request.user.phone %}
+                            <div class="mobile_div">
+                                <label for="">MOBILE</label>
+                                <a class="btn btn-primary" href="javascript:;">{{request.user.phone}}</a>
+                            </div>
+                            {% else %}
+                            <div class="mobile_div">
+                                <label for="">MOBILE</label>
+                                <a class="btn btn-primary" href="javascript:;">REGISTER YOUR PHONE</a>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="currency_pre" role="tabpanel" aria-labelledby="v-pills-currencypre-tab">
+                    <div class="currency_pre_section">
+                        <div class="currency_pre_header">
+                            <svg viewBox="0 0 100 98" width="19" height="19" fill="#3067f0">
+                                <path fill="#3067f0"
+                                    d="M28.035059,66.1580284 C12.1346272,63.5737555 -1.27897692e-13,49.8453488 -1.27897692e-13,33.2976445 C-1.27897692e-13,14.9078633 14.9866328,7.10542736e-15 33.4735812,7.10542736e-15 C49.4409678,7.10542736e-15 62.7971285,11.1212248 66.1411278,26.0016379 C58.5383462,26.0710603 51.4620519,28.3441852 45.5200901,32.2131674 C44.9065578,31.9202944 44.2171248,31.6856457 43.4517964,31.5092522 C45.9303768,30.291176 47.0196168,28.2238058 46.7205652,25.306805 C46.62059,24.2490396 46.3171689,23.332304 45.8096026,22.555251 C45.3016867,21.7780297 44.61628,21.1532046 43.7507606,20.6805234 C42.8859403,20.2072527 41.9453522,19.8469743 40.9311809,19.5985935 C39.9167474,19.3502127 38.7520891,19.169863 37.4379922,19.0577969 L37.4379922,13 L33.5959391,13 L33.5959391,18.8894874 C32.9306323,18.8894874 31.916024,18.9054848 30.5522018,18.9375638 L30.5522018,13 L26.7096244,13 L26.7096244,19.0577969 C26.1605474,19.0738786 25.3539295,19.0820456 24.289421,19.0820456 L19,19.0577969 L19,23.0002315 L21.7693299,23.0002315 C23.0335265,23.0002315 23.7737274,23.5452379 23.9899325,24.6348297 L23.9899325,31.5340903 C24.1564995,31.5340903 24.289421,31.5423416 24.3893088,31.558339 L23.9899325,31.558339 L23.9899325,41.2215304 C23.8570109,42.0386611 23.3747006,42.4476053 22.5429141,42.4476053 L19.7737589,42.4476053 L19.0001748,46.846808 L23.9903694,46.846808 C24.3064623,46.846808 24.763604,46.8508494 25.3626686,46.8580904 C25.9613835,46.8661733 26.4103106,46.8702147 26.7097991,46.8702147 L26.7097991,53 L29.7468724,53 C28.6117328,56.6315716 28,60.4943469 28,64.5 C28,65.0555025 28.0117649,65.6082572 28.035059,66.1580284 Z M30.5529883,50.6847365 L30.5529883,46.9422873 C30.9860545,46.9524676 31.5406832,46.9593461 32.2168537,46.9631033 C31.5991693,48.1682041 31.0431589,49.4101371 30.5529883,50.6847365 Z M34.622348,42.9046524 C34.2975778,42.9285399 33.9335641,42.9486166 33.5301563,42.9650763 C32.9505771,42.9880848 32.4983995,43 32.1745197,43 C31.8504606,43 31.4411087,42.995727 30.9465535,42.9880848 C30.4517296,42.9807714 30.1365402,42.9768271 30,42.9768271 L30,35.0466745 C30.1362715,35.0466745 30.5413229,35.0390324 31.2150647,35.0230908 C31.8888961,35.0073134 32.4385512,35 32.8649258,35 C33.2912109,35 33.8797495,35.0230908 34.6303624,35.0703405 C35.3802585,35.1169329 36.0112643,35.1870269 36.5232902,35.280869 C37.0346889,35.3748755 37.5927657,35.5193364 38.1985958,35.7150737 C38.8037988,35.9104823 39.2943222,36.1489497 39.6696287,36.4304761 C39.7580765,36.496955 39.8431937,36.5677214 39.9249852,36.6427979 C37.9443701,38.532805 36.1650182,40.6318961 34.622348,42.9046524 Z M30,24.0358228 C30.1170485,24.0358228 30.4471199,24.0320182 30.9903021,24.0244092 C31.5337477,24.0166415 31.9848189,24.009191 32.3441305,24.0015819 C32.7035299,23.9941313 33.1882317,24.0129955 33.7984995,24.0582537 C34.4085037,24.103512 34.9223579,24.1639883 35.3400621,24.2392866 C35.7577662,24.3145849 36.2177939,24.4391044 36.7187402,24.6126074 C37.2205647,24.7859519 37.6214096,24.9972626 37.9218896,25.2461432 C38.2229843,25.4950237 38.477804,25.8119898 38.6863487,26.1967242 C38.8955081,26.5813794 39,27.0226272 39,27.5203883 C39,27.9428512 38.9249239,28.3276649 38.7746839,28.6748295 C38.6247073,29.0217563 38.3985131,29.312249 38.0980331,29.5460699 C37.7974653,29.7799701 37.4876776,29.9838302 37.1700749,30.1571747 C36.8528235,30.3305192 36.4471492,30.4701777 35.9542811,30.5756745 C35.4615009,30.6813299 35.0311524,30.7643165 34.6636747,30.8245551 C34.2959335,30.8849522 33.8364326,30.9265644 33.2848209,30.9490746 C32.7331213,30.9715848 32.3151538,30.9869615 32.0311817,30.9944121 C31.7469462,31.0018626 31.3584823,31.0018626 30.865263,30.9944121 C30.371956,30.9869615 30.0840325,30.9829984 30.0002634,30.9829984 L30.0002634,24.0357435 L30,24.0357435 L30,24.0358228 Z M66.4735812,97.5952891 C47.9866328,97.5952891 33,82.6874258 33,64.2976445 C33,45.9078633 47.9866328,31 66.4735812,31 C84.9605296,31 99.9471624,45.9078633 99.9471624,64.2976445 C99.9471624,82.6874258 84.9605296,97.5952891 66.4735812,97.5952891 Z M72.3681449,61.807551 C70.8534766,61.0051698 69.243145,60.3938317 67.6487573,59.7595685 C66.7240124,59.3927657 65.8391272,58.964829 65.0578772,58.3687745 C63.5192931,57.1919487 63.8142548,55.2815173 65.6159129,54.5249865 C66.126117,54.3110181 66.6602369,54.2422426 67.2023287,54.2116757 C69.2909766,54.1046915 71.2759893,54.4714944 73.1653388,55.3426511 C74.1060275,55.7782295 74.4169331,55.6406784 74.7358107,54.7007461 C75.0706321,53.7073218 75.3496499,52.698614 75.6605555,51.697548 C75.8678259,51.0250761 75.6127239,50.581856 74.951053,50.2991122 C73.7393183,49.7871166 72.4956959,49.4203137 71.188298,49.2216289 C69.4823031,48.9694519 69.4823031,48.9618102 69.4743312,47.3188392 C69.4663593,45.0033963 69.4663593,45.0033963 67.0428899,45.0033963 C66.6921246,45.0033963 66.3413593,44.9957546 65.990594,45.0033963 C64.8585788,45.0339632 64.6672522,45.2250064 64.6353645,46.3177731 C64.6194206,46.8068436 64.6353645,47.295914 64.6273926,47.7926262 C64.6194206,49.244554 64.6114487,49.2216289 63.1605559,49.7259828 C59.6529029,50.9486589 57.4845356,53.2411766 57.2533494,56.9092049 C57.046079,60.1569382 58.8158493,62.3501135 61.5980559,63.9472342 C63.3120227,64.9330168 65.2093441,65.5137879 67.0269461,66.2856022 C67.7364486,66.5836295 68.4140634,66.9275072 69.0039868,67.4012941 C70.7498414,68.7844465 70.4309638,71.0846059 68.3582598,71.9557626 C67.2501603,72.4219079 66.0782854,72.5365338 64.8745226,72.391341 C63.017061,72.1697309 61.2393187,71.7035857 59.5652116,70.8706376 C58.5846631,70.3815671 58.2976733,70.5114765 57.9628519,71.527826 C57.6758621,72.4066244 57.4207601,73.2930646 57.1656581,74.1795048 C56.8228647,75.371614 56.9504157,75.6543578 58.1382346,76.2122038 C59.6529029,76.9152426 61.2712064,77.2744037 62.9213977,77.5265806 C64.2128517,77.7252655 64.2527114,77.7787576 64.2686553,79.0625675 C64.2766273,79.6433386 64.2766273,80.2317515 64.2845992,80.8125226 C64.2925711,81.5461283 64.6592803,81.9740649 65.4485022,81.9893484 C66.3413593,82.0046318 67.2421884,82.0046318 68.1350455,81.9817066 C68.8684639,81.9664232 69.243145,81.5843369 69.243145,80.8736564 C69.243145,80.078917 69.2830047,79.2765358 69.2511169,78.4817963 C69.2112572,77.6717734 69.5779664,77.2591202 70.3911041,77.0451519 C72.2645097,76.5560815 73.8588974,75.593224 75.086576,74.1565796 C78.4985657,70.1828823 77.1991397,64.3675291 72.3681449,61.807551 Z">
+                                </path>
+                            </svg>
+                            <span class="currency_pre_section_header_txt">Currency Preference</span>
+                        </div>
+                        <div class="currency_pre_body">
+                            <div class="currency_pre_subtitle">
+                                <span class="currency_pre_subtitle_txt">Select your preferred display currency for all
+                                    markets</span>
+                            </div>
+                            <div class="currency_pre_select_list">
+                                <div class="form-check radio_div">
+                                    <div class="currency_img_div">
+                                        <img src="https://media.wazirx.com/media/usdt/84.png" alt="" height="24"
+                                            width="24" class="currency_img">
+                                    </div>
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                        Tether USD (USDT)
+                                    </label>
+                                    <input class="form-check-input radio_dot" type="radio" name="flexRadioDefault"
+                                        id="flexRadioDefault1" checked>
+                                </div>
+                                <div class="form-check radio_div">
+                                    <div class="currency_img_div">
+                                        <img src="https://media.wazirx.com/media/btc/84.png" alt="btc" height="24"
+                                            width="24" class="currency_img">
+                                    </div>
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                        Bitcoin (BTC)
+                                    </label>
+                                    <input class="form-check-input radio_dot" type="radio" name="flexRadioDefault"
+                                        id="flexRadioDefault2">
+                                </div>
+                                <div class="form-check radio_div">
+                                    <div class="currency_img_div">
+                                        <img src="https://media.wazirx.com/media/inr/84.png" alt="btc" height="24"
+                                            width="24" class="currency_img">
+                                    </div>
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                        Rupee (INR)
+                                    </label>
+                                    <input class="form-check-input radio_dot" type="radio" name="flexRadioDefault"
+                                        id="flexRadioDefault2">
+                                </div>
+                                <div class="form-check radio_div">
+                                    <div class="currency_img_div">
+                                        <img src="https://media.wazirx.com/media/idr/84.png" alt="btc" height="24"
+                                            width="24" class="currency_img">
+                                    </div>
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                        Rupiah (IDR)
+                                    </label>
+                                    <input class="form-check-input radio_dot" type="radio" name="flexRadioDefault"
+                                        id="flexRadioDefault2">
+                                </div>
+                                <div class="form-check radio_div">
+                                    <div class="currency_img_div">
+                                        <img src="https://media.wazirx.com/media/rub/84.png" alt="btc" height="24"
+                                            width="24" class="currency_img">
+                                    </div>
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                        Russian Ruble (RUB)
+                                    </label>
+                                    <input class="form-check-input radio_dot" type="radio" name="flexRadioDefault"
+                                        id="flexRadioDefault2">
+                                </div>
+                                <div class="form-check radio_div">
+                                    <div class="currency_img_div">
+                                        <img src="https://media.wazirx.com/media/uah/84.png" alt="btc" height="24"
+                                            width="24" class="currency_img">
+                                    </div>
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                        Hryvnia (UAH)
+                                    </label>
+                                    <input class="form-check-input radio_dot" type="radio" name="flexRadioDefault"
+                                        id="flexRadioDefault2">
+                                </div>
+                                <div class="form-check radio_div">
+                                    <div class="currency_img_div">
+                                        <img src="https://media.wazirx.com/media/ngn/84.png" alt="btc" height="24"
+                                            width="24" class="currency_img">
+                                    </div>
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                        Nigerian Naira (NGN)
+                                    </label>
+                                    <input class="form-check-input radio_dot" type="radio" name="flexRadioDefault"
+                                        id="flexRadioDefault2">
+                                </div>
+                                <div class="form-check radio_div">
+                                    <div class="currency_img_div">
+                                        <img src="https://media.wazirx.com/media/sar/84.png" alt="btc" height="24"
+                                            width="24" class="currency_img">
+                                    </div>
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                        Saudi Riyal (SAR)
+                                    </label>
+                                    <input class="form-check-input radio_dot" type="radio" name="flexRadioDefault"
+                                        id="flexRadioDefault2">
+                                </div>
+                                <div class="form-check radio_div">
+                                    <div class="currency_img_div">
+                                        <img src="https://media.wazirx.com/media/eur/84.png" alt="btc" height="24"
+                                            width="24" class="currency_img">
+                                    </div>
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                        Euro (EUR)
+                                    </label>
+                                    <input class="form-check-input radio_dot" type="radio" name="flexRadioDefault"
+                                        id="flexRadioDefault2">
+                                </div>
+                                <div class="form-check radio_div">
+                                    <div class="currency_img_div">
+                                        <img src="https://media.wazirx.com/media/try/84.png" alt="btc" height="24"
+                                            width="24" class="currency_img">
+                                    </div>
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                        Turkish Lira (TRY)
+                                    </label>
+                                    <input class="form-check-input radio_dot" type="radio" name="flexRadioDefault"
+                                        id="flexRadioDefault2">
+                                </div>
+                            </div>
+                        </div>
+                        <a class="currency_pre_bottom" href="javascript:;">
+                            <span class="currency_pre_bottom_txt">
+                                RESET
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="payment_opt" role="tabpanel" aria-labelledby="v-pills-paymentopt-tab">
+                    <div class="payment_opt_section">
+                        <div class="payment_opt_header">
+                            <svg viewBox="0 0 71 70" width="20" height="20" fill="#FFFFFF">
+                                <path fill="#3067f0"
+                                    d="M64.4,56.6 L64.4,66.1 C64.4,68 62.9,69.5 61,69.5 L4.2,69.5 C2.3,69.5 0.8,68 0.8,66.1 L0.8,27.4 C0.8,25.5 2.3,24 4.2,24 L61,24 C62.9,24 64.4,25.5 64.4,27.4 L64.4,36.4 L45.7,36.4 C43.6,36.4 41.8,38.2 41.8,40.3 L41.8,52.7 C41.8,54.8 43.6,56.6 45.7,56.6 L64.4,56.6 Z M70.3,41.1 L70.3,51.9 C70.3,53.7 68.8,55.1 67.1,55.1 L46.5,55.1 C44.7,55.1 43.3,53.6 43.3,51.9 L43.3,41.1 C43.3,39.3 44.8,37.9 46.5,37.9 L67,37.9 C68.8,37.9 70.3,39.3 70.3,41.1 Z M56,44.4 C56,43.9 55.6,43.4 55,43.4 L50,43.4 C49.5,43.4 49,43.8 49,44.4 L49,48.7 C49,49.2 49.4,49.7 50,49.7 L55,49.7 C55.5,49.7 56,49.3 56,48.7 L56,44.4 Z M36.3,15.7 C33.6,16.2 31.9,18.4 32.1,20.9 L45.5,20.9 C44.4,17.1 40.6,14.9 36.3,15.7 Z M25.3,20.9 L28.6,20.9 C28.8,20.6 28.9,20.1 29.2,19.5 C30.3,16.5 31.3,13.4 32.5,10.3 C32.7,9.8 33.4,9.1 33.8,9.2 C37.1,9.7 39.1,8.1 40.7,5.3 C43.1,6.1 45.3,7 47.7,7.8 C46.9,10.8 47.7,13.2 50.2,14.8 C51.3,15.5 51.4,16.1 51,17.2 C50.5,18.4 50.2,19.6 49.7,21 L53,21 C53,20.9 53.1,20.9 53.1,20.8 C54.1,18 55.1,15.2 56,12.4 C56.9,9.4 56,7.4 53,6.3 C47.9,4.4 42.7,2.6 37.5,0.9 C34.4,-0.1 32.3,1.1 31.2,4.1 C29.9,7.7 28.6,11.4 27.3,15.1 C26.6,16.9 25.9,18.9 25.3,20.9 Z M16.1,20.9 C17.5,14.9 18.9,9 20.4,3 C17.6,2.8 15.9,3.9 15.4,6.4 C14.8,9.4 14.5,12.5 14,15.5 C13.7,17.3 13.5,19.1 13.2,20.9 L16.1,20.9 Z M22.2,20.9 C22.4,20.6 22.5,20.1 22.8,19.5 C24.9,13.3 27.1,7.2 29.2,1 C26.4,-2.17603713e-14 23.8,1.1 23.1,4 C21.7,9.6 20.4,15.2 19,20.9 L22.2,20.9 Z">
+                                </path>
+                            </svg>
+                            <span class="payment_opt_section_header_txt">Payment Option</span>
+                        </div>
+                        <div class="payment_opt_section_body">
+                            <div class="payment_body_top">
+                                <div class="submit_div">
+                                    <svg viewBox="0 0 40 40" width="40" height="40" fill="#FFFFFF">
+                                        <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1">
+                                            <g>
+                                                <circle cx="20" cy="20" r="19" fill="#ECF5FF" stroke="#3D68E4"
+                                                    stroke-width="2"></circle>
+                                                <path fill="#3D68E4" fill-rule="nonzero"
+                                                    d="M18.828 8.8v5.588c0 .377.309.684.689.684h5.624v3.914c3.085.33 5.482 2.947 5.459 6.083 0 3.372-2.777 6.131-6.17 6.131-3.157 0-5.792-2.381-6.124-5.447h-6.218a.687.687 0 01-.688-.684V9.484c0-.377.309-.684.688-.684h6.74zm5.625 11.507c-2.658 0-4.794 2.122-4.794 4.762 0 2.641 2.16 4.763 4.794 4.763 2.634 0 4.794-2.122 4.794-4.763 0-2.64-2.136-4.762-4.794-4.762zm-.214 1.697a.274.274 0 01.404 0l2.373 2.547c.142.165.024.448-.214.448h-1.21v2.782a.288.288 0 01-.285.283H23.6a.288.288 0 01-.285-.283V25h-1.21c-.238 0-.38-.283-.214-.448zM20.23 8.871a.56.56 0 01.213.141l4.486 4.386a.831.831 0 01.19.306h-4.89z">
+                                                </path>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                    <span class="submit_txt">Submit</span>
+                                </div>
+                                <div class="review_div">
+                                    <svg viewBox="0 0 40 40" width="40" height="40" fill="#FFFFFF">
+                                        <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1">
+                                            <g>
+                                                <circle cx="20" cy="20" r="19" stroke="#E1E4E6" stroke-width="2">
+                                                </circle>
+                                                <g fill="#E1E4E6" transform="translate(12 8.8)">
+                                                    <path
+                                                        d="M10.6 11.078a4.517 4.517 0 014.519 4.518c0 .841-.226 1.626-.621 2.298l2.53 2.525c.44.446.44 1.158 0 1.598-.44.44-1.15.448-1.599 0l-2.53-2.53a4.52 4.52 0 01-6.817-3.891 4.52 4.52 0 014.519-4.518zm-8.18-8.21v1.074c0 .404.314.75.706.8l.1.007h8.601c.404 0 .75-.315.8-.707l.007-.1V2.867h1.612c.413 0 .751.307.8.705l.007.102v8.857a5.376 5.376 0 10-7.397 7.54H.805a.804.804 0 01-.8-.706L0 19.264V3.674c0-.413.306-.751.705-.8l.101-.007H2.42zm8.18 9.34a3.391 3.391 0 00-3.388 3.388c0 1.87 1.52 3.388 3.389 3.388a3.394 3.394 0 003.388-3.388c0-1.87-1.519-3.389-3.388-3.389zM8.624 0c.955 0 1.573.754 1.638 1.625l.006.146h1.645a.27.27 0 01.266.195l.008.058v2.024c0 .12-.09.22-.211.246l-.063.007h-8.77a.27.27 0 01-.268-.195l-.007-.058V2.024c0-.12.09-.22.211-.246l.063-.007h1.645C4.782.889 5.356.089 6.274.007L6.43 0h2.193z">
+                                                    </path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                    <span class="review_txt">Review</span>
+                                </div>
+                                <div class="done_div">
+                                    <svg viewBox="0 0 40 40" width="40" height="40" fill="#FFFFFF">
+                                        <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1">
+                                            <g>
+                                                <circle cx="20" cy="20" r="19" stroke="#E1E4E6" stroke-width="2">
+                                                </circle>
+                                                <g transform="translate(12 8.8)">
+                                                    <path fill="#E1E4E6"
+                                                        d="M18.316 19.216v1.259c0 .442-.306.81-.7.863l-.1.007h-.259v.173c0 .08-.052.148-.124.172l-.057.01h-4.984a.182.182 0 01-.172-.124l-.01-.058v-.173h-.258c-.407 0-.745-.333-.794-.761l-.006-.11v-1.258h7.464zM14.56 0c.738 0 1.337.598 1.337 1.337v10.137a3.346 3.346 0 00-1.313-.274c-1.172 0-2.765.685-2.765 2.342 0 .51.104 1.327.428 1.678.44.477.682.733.722 1.307l.006.182v.947h-.31l-.098.008c-.25.042-.4.246-.431.503l-.006.099v.323H9.839l-.001 1.643H1.337A1.337 1.337 0 010 18.895V1.337C0 .598.598 0 1.337 0H14.56zm.024 12.187a1.884 1.884 0 011.398 3.147c-.4.443-.621.95-.665 1.529l-.008.22v.901h.289c.288 0 .528.212.573.487l.008.094v.289h-3.19v-.29c0-.287.212-.527.487-.572l.094-.008h.29v-.9c0-.673-.223-1.252-.675-1.75a1.884 1.884 0 011.398-3.147zm-7.651 3.972H3.087a.67.67 0 00-.674.666.67.67 0 00.674.665h3.846a.67.67 0 00.673-.665.67.67 0 00-.673-.666zm1.123-2.715H3.015a.67.67 0 00-.674.665.67.67 0 00.674.666h5.04a.67.67 0 00.674-.666.67.67 0 00-.673-.665zM6.347 3.619a2.452 2.452 0 00-.136 3.425 3.72 3.72 0 00-1.9 3.232.67.67 0 00.674.665.67.67 0 00.673-.665c0-1.323 1.086-2.396 2.425-2.396 1.34 0 2.425 1.073 2.425 2.396a.67.67 0 00.674.665.67.67 0 00.673-.665 3.72 3.72 0 00-1.902-3.232 2.452 2.452 0 00-.136-3.425c-.97-.92-2.501-.92-3.47 0zm1.736.643c.638 0 1.156.511 1.156 1.142 0 .63-.518 1.142-1.156 1.142a1.152 1.152 0 01-1.156-1.142c0-.63.518-1.142 1.156-1.142z">
+                                                    </path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                    <span class="done_txt">Done</span>
+                                </div>
+                            </div>
+                            <div class="payment_body_container">
+                                <div class="payment_kyc_titletxt">
+                                    PLEASE COMPLETE YOUR KYC
+                                </div>
+                                <span class="payment_kyc_para">You haven't completed your KYC. Your KYC will be approved
+                                    instantly if your
+                                    documents are clearly visible, and your information is correct.</span>
+                                <div class="table_div">
+                                    <table class="table_tag">
+                                        <thead>
+                                            <tr>
+                                                <th class="table_title_div">
+                                                    <span class="table_title">HERE’S WHAT YOU CAN DO:</span>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="tbody_list">
+                                                <td>
+                                                    <span>
+                                                        TRADE
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span>
+                                                        <svg viewBox="0 0 48 48" width="16" height="16" fill="#FFC800">
+                                                            <path
+                                                                d="m24 48c-13.254834 0-24-10.745166-24-24s10.745166-24 24-24 24 10.745166 24 24-10.745166 24-24 24zm12.5693021-33.5729524c-.5066705-.502545-1.3281286-.502545-1.8349005 0l-15.5444523 15.4164894-5.9750331-5.9257883c-.5066706-.502545-1.3281287-.5024947-1.8349006 0-.5067213.5024947-.5067213 1.3171825 0 1.8197275l6.8924834 6.8355767c.5065185.5024947 1.3285848.5021429 1.8349006 0l16.4619025-16.3262275c.5067213-.5024947.5066706-1.3172328 0-1.8197778z"
+                                                                fill="#55bd6c"></path>
+                                                        </svg>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr class="tbody_list">
+                                                <td>
+                                                    <span>
+                                                        DEPOSIT CRYPTO
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span>
+                                                        <svg viewBox="0 0 48 48" width="16" height="16" fill="#FFC800">
+                                                            <path
+                                                                d="m24 48c-13.254834 0-24-10.745166-24-24s10.745166-24 24-24 24 10.745166 24 24-10.745166 24-24 24zm12.5693021-33.5729524c-.5066705-.502545-1.3281286-.502545-1.8349005 0l-15.5444523 15.4164894-5.9750331-5.9257883c-.5066706-.502545-1.3281287-.5024947-1.8349006 0-.5067213.5024947-.5067213 1.3171825 0 1.8197275l6.8924834 6.8355767c.5065185.5024947 1.3285848.5021429 1.8349006 0l16.4619025-16.3262275c.5067213-.5024947.5066706-1.3172328 0-1.8197778z"
+                                                                fill="#55bd6c"></path>
+                                                        </svg>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr class="tbody_list">
+                                                <td>
+                                                    <span>
+                                                        DEPOSIT INR
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span>
+                                                        <svg viewBox="0 0 48 48" width="16" height="16"
+                                                            fill="rgba(28, 27, 33, 0.24)">
+                                                            <path
+                                                                d="m24 48c-13.254834 0-24-10.745166-24-24s10.745166-24 24-24 24 10.745166 24 24-10.745166 24-24 24zm2.5259167-23.5067083 9.039-9.039c.5615833-.5611042.5615833-1.4715209 0-2.032625-.5615834-.5615834-1.4710417-.5615834-2.032625 0l-9.039 9.039-9.0394792-9.039c-.5615833-.5615834-1.4710417-.5615834-2.032625 0-.5615833.5611041-.5615833 1.4715208 0 2.032625l9.0394792 9.039-9.0394792 9.039c-.5615833.5611041-.5615833 1.4715208 0 2.032625.2807917.2803125.6487917.4207083 1.0163125.4207083s.7355208-.1403958 1.0163125-.4211875l9.0394792-9.039 9.039 9.039c.2807916.2807917.6487916.4211875 1.0163125.4211875.3675208 0 .7355208-.1403958 1.0163125-.4211875.5615833-.5611042.5615833-1.4715208 0-2.032625z">
+                                                            </path>
+                                                        </svg>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr class="tbody_list">
+                                                <td>
+                                                    <span>
+                                                        WITHDRAW
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span>
+                                                        <svg viewBox="0 0 48 48" width="16" height="16"
+                                                            fill="rgba(28, 27, 33, 0.24)">
+                                                            <path
+                                                                d="m24 48c-13.254834 0-24-10.745166-24-24s10.745166-24 24-24 24 10.745166 24 24-10.745166 24-24 24zm2.5259167-23.5067083 9.039-9.039c.5615833-.5611042.5615833-1.4715209 0-2.032625-.5615834-.5615834-1.4710417-.5615834-2.032625 0l-9.039 9.039-9.0394792-9.039c-.5615833-.5615834-1.4710417-.5615834-2.032625 0-.5615833.5611041-.5615833 1.4715208 0 2.032625l9.0394792 9.039-9.0394792 9.039c-.5615833.5611041-.5615833 1.4715208 0 2.032625.2807917.2803125.6487917.4207083 1.0163125.4207083s.7355208-.1403958 1.0163125-.4211875l9.0394792-9.039 9.039 9.039c.2807916.2807917.6487916.4211875 1.0163125.4211875.3675208 0 .7355208-.1403958 1.0163125-.4211875.5615833-.5611042.5615833-1.4715208 0-2.032625z">
+                                                            </path>
+                                                        </svg>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <hr>
+                                <button class="btn btn-primary submit_btn">SUMBIT KYC</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="notification_pre" role="tabpanel"
+                    aria-labelledby="v-pills-notificationpre-tab">
+                    <div class="notification_pre_section">
+                        <div class="notification_pre_header">
+                            <svg viewBox="0 0 43 43" width="20" height="20" fill="#3067f0">
+                                <path
+                                    d="M24.889 35.556c0 1.956-1.6 3.556-3.556 3.556s-3.556-1.6-3.556-3.556h7.111M21.333 3.556c0.978 0 1.778 0.8 1.778 1.778v1.92c5.049 0.853 8.889 5.244 8.889 10.524v10.667l5.333 5.333h-32l5.333-5.333v-10.667c0-5.28 3.84-9.671 8.889-10.524v-1.92c0-0.978 0.8-1.778 1.778-1.778z">
+                                </path>
+                            </svg>
+                            <span class="notification_pre_section_header_txt">Notification Prefrence</span>
+                        </div>
+                        <div class="notification_pre_body">
+                            <div class="price_div">
+                                <div class="price_txt">Price Alerts</div>
+                                <div>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked"
+                                            checked>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="referral_div">
+                                <div class="referral_txt">Referral Commission Alerts</div>
+                                <div>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked"
+                                            checked>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="fees" role="tabpanel" aria-labelledby="v-pills-fee-tab">
+                    <div class="fee_section">
+                        <div class="fee_header">
+                            <svg x="0" y="0" width="20" height="20" viewBox="0 0 100 100" fill="#3067f0">
+                                <circle fill="#3067f0" cx="50" cy="50" r="50"></circle>
+                                <path fill="#ffffff"
+                                    d="M44.781 46.9c1.932-1.932 2.896-4.329 2.896-7.191s-.964-5.261-2.896-7.192c-1.934-1.933-4.331-2.899-7.193-2.899-2.863 0-5.259.967-7.192 2.899-1.931 1.932-2.897 4.33-2.897 7.192s.967 5.26 2.897 7.191c1.934 1.933 4.329 2.897 7.192 2.897 2.862.001 5.26-.964 7.193-2.897zM33.83 43.491c-.947-1.019-1.422-2.289-1.422-3.811 0-1.52.475-2.785 1.422-3.796.948-1.012 2.165-1.517 3.65-1.517 1.521 0 2.755.505 3.705 1.517.948 1.011 1.42 2.276 1.42 3.796 0 1.521-.472 2.792-1.42 3.811-.95 1.021-2.176 1.531-3.678 1.531-1.503 0-2.729-.51-3.677-1.531z">
+                                </path>
+                                <path fill="#ffffff"
+                                    d="M58.17 29.913L50 44.333 35.362 70.168 41.963 70.168 50 55.952 64.72 29.913z">
+                                </path>
+                                <path fill="#ffffff"
+                                    d="M69.633 53.233c-1.918-1.915-4.297-2.871-7.141-2.871s-5.226.956-7.139 2.871c-1.914 1.915-2.871 4.294-2.871 7.139s.957 5.225 2.871 7.138c1.913 1.915 4.295 2.873 7.139 2.873s5.223-.958 7.141-2.873c1.912-1.913 2.869-4.293 2.869-7.138s-.957-5.224-2.869-7.139zm-3.681 10.829c-.929.993-2.127 1.489-3.593 1.489-1.469 0-2.667-.496-3.597-1.489-.932-.992-1.396-2.231-1.396-3.716 0-1.467.464-2.697 1.396-3.69.93-.993 2.118-1.489 3.568-1.489 1.485 0 2.692.496 3.621 1.489.932.993 1.396 2.224 1.396 3.69.002 1.484-.463 2.723-1.395 3.716z">
+                                </path>
+                            </svg>
+                            <span class="fee_section_header_txt">Fees</span>
+                        </div>
+                        <div class="fee_body">
+                            <div class="fee_body_lft_content">
+                                <div class="fee_body_title">
+                                    Pay trading fees with Cryptolink
+                                </div>
+                                <div class="fee_body_content">
+                                    Enable this option to pay trading fees with:
+                                    <ul>
+                                        <li>Cryptolink you buy from the exchange</li>
+                                        <li>Unlocked Cryptolink balance reserved for trading fees</li>
+                                    </ul>
+                                    <strong>Note:</strong>
+                                    You'll get 50% discount if you pay fees via Cryptolink
+                                </div>
+                            </div>
+                            <div>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="authentication" role="tabpanel"
+                    aria-labelledby="v-pills-authentication-tab">
+                    <div class="authentication_section">
+                        <div class="authentication_header">
+                            <svg viewBox="0 0 17 20" width="19" height="19" fill="#3067f0">
+                                <g fill="none" fill-rule="evenodd">
+                                    <path
+                                        d="m16.9079786 3.12454023c-3.4927059 0-6.1684706-.97494253-8.43111764-3.12454023-2.26241177 2.1495977-4.93805883 3.12454023-8.43047059 3.12454023 0 5.59798851-1.18558824 13.61706897 8.43041176 16.87379307 9.61670587-3.2566666 8.43117647-11.27574709 8.43117647-16.87379307z"
+                                        fill="#3067f0" fill-rule="nonzero"></path>
+                                    <path
+                                        d="m12.3380658 7.25561029c-.1558986-.15200997-.408655-.15200997-.5645848 0l-4.78290836 4.66318491-1.83847173-1.7924344c-.15589864-.15201001-.40865497-.15199481-.5645848 0-.15591423.1519947-.15591423.3984218 0 .5504318l2.12076413 2.0676275c.15585185.1519948.40879532.1518884.5645848 0l5.06520076-4.93836281c.1559142-.15199477.1558987-.39843703 0-.550447z"
+                                        fill="#fff"></path>
+                                </g>
+                            </svg>
+                            <span class="authentication_section_header_txt">Two Factor Authentication</span>
+                        </div>
+                        <div class="authentication_body">
+                            <div class="authentication_list_div">
+                                <div class="authentication_content">
+                                    <div class="authentication_head">
+                                        <div class="authentication_app">Authenticator App</div>
+                                        <div class="recommended">Recommended</div>
+                                    </div>
+                                    <div class="highly_secure">Highly Secure</div>
+                                </div>
+                                <div class="authentication_radiobtn">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault1" checked>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="authentication_list_div">
+                                <div class="authentication_content">
+                                    <div class="authentication_head">
+                                        <div class="authentication_app">Mobile SMS</div>
+                                    </div>
+                                    <div class="highly_secure">Moderately Secure</div>
+                                </div>
+                                <div class="authentication_radiobtn">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault1">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="authentication_list_div">
+                                <div class="authentication_content">
+                                    <div class="authentication_head">
+                                        <div class="authentication_app">None</div>
+                                    </div>
+                                    <div class="highly_secure">Not Secure</div>
+                                </div>
+                                <div class="authentication_radiobtn">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="authentication_bottom">
+                            <strong>Note:</strong>
+                            If you change your 2FA settings, you will be unable to withdraw anything, and place P2P sell
+                            orders for 24 hours as a security measure.
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="activity_logs" role="tabpanel"
+                    aria-labelledby="v-pills-activitylogs-tab">
+                    <div class="activity_log_section">
+                        <div class="activity_log_header">
+                            <svg viewBox="0 0 75 78" width="20" height="20" fill="#3067f0">
+                                <g fill="#3067F0" fill-rule="nonzero">
+                                    <path
+                                        d="M52.8,29.8c-9.2,0-16.6-7.4-16.6-16.6c0-1.7,0.3-3.3,0.7-4.8H4.2c-1.1,0-2.2,0.4-3,1.2c-0.8,0.8-1.2,1.9-1.2,3  v62.9c0,1.1,0.4,2.2,1.2,3c0.8,0.8,1.9,1.2,3,1.2h48.9c2.3,0,4.2-1.9,4.2-4.2V29.1C55.9,29.5,54.3,29.8,52.8,29.8z M12.2,35.8h14  c1.6,0,2.9,1.3,2.9,3c0,1.7-1.3,3-2.9,3h-14c-1.6,0-2.9-1.3-2.9-3C9.3,37.1,10.6,35.8,12.2,35.8z M12.2,47.8h23.6  c1.6,0,2.9,1.3,2.9,3c0,1.7-1.3,3-2.9,3H12.2c-1.6,0-2.9-1.3-2.9-3C9.3,49.1,10.6,47.8,12.2,47.8z M42.2,65.8h-30  c-1.6,0-2.9-1.3-2.9-3c0-1.7,1.3-3,2.9-3h30c1.6,0,2.9,1.3,2.9,3C45.1,64.4,43.8,65.8,42.2,65.8z">
+                                    </path>
+                                    <path
+                                        d="M75.2,29.6l-7.9-7.9c-0.6-0.6-1.6-0.7-2.3-0.3l-1-1c3.3-5.2,2.6-12-1.9-16.4c-5-5-13-5.2-18.3-0.5  s-5.9,12.7-1.5,18.2c4.2,5.3,11.7,6.5,17.4,2.9l1,1c-0.4,0.7-0.3,1.7,0.3,2.3l7.9,7.9c0.4,0.4,0.9,0.6,1.4,0.6c0.5,0,1-0.2,1.4-0.6  l3.4-3.4c0.4-0.4,0.6-0.9,0.6-1.4C75.8,30.5,75.6,30,75.2,29.6z M57.7,18.5c-1.4,1.4-3.2,2.2-5.2,2.2c0,0,0,0,0,0c0,0,0,0,0,0  c0,0,0,0,0,0c-1.9,0-3.8-0.8-5.1-2.2c-2.8-2.8-2.8-7.5,0-10.3c2.8-2.8,7.5-2.8,10.3,0C60.6,11,60.6,15.6,57.7,18.5z">
+                                    </path>
+                                </g>
+                            </svg>
+                            <span class="activity_log_section_header_txt">Activity Logs</span>
+                        </div>
+                    </div>
+                    <div class="activity_logs_body">
+                        <div class="activity_paging">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination pagination-sm">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="activity_logs_row">
+                            <div class="activity_logs_row_content">
+                                <div class="activity_logs_row_title">DATE:</div>
+                                <div class="activity_logs_row_descp">6th July 2021, 19:51:48</div>
+                            </div>
+                            <div class="activity_logs_row_content">
+                                <div class="activity_logs_row_title">IP:</div>
+                                <div class="activity_logs_row_descp">50.34.21.135</div>
+                            </div>
+                            <div class="activity_logs_row_content">
+                                <div class="activity_logs_row_title">ACTIVITY:</div>
+                                <div class="activity_logs_row_descp3">Change 2fa Attempt</div>
+                            </div>
+                        </div>
+                        <div class="activity_logs_row">
+                            <div class="activity_logs_row_content">
+                                <div class="activity_logs_row_title">DATE:</div>
+                                <div class="activity_logs_row_descp">6th July 2021, 19:51:48</div>
+                            </div>
+                            <div class="activity_logs_row_content">
+                                <div class="activity_logs_row_title">IP:</div>
+                                <div class="activity_logs_row_descp">50.34.21.135</div>
+                            </div>
+                            <div class="activity_logs_row_content">
+                                <div class="activity_logs_row_title">ACTIVITY:</div>
+                                <div class="activity_logs_row_descp3">Change 2fa Attempt</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="trading_repo" role="tabpanel" aria-labelledby="v-pills-tradingrepo-tab">
+                    <div class="trading_repo_section">
+                        <div class="trading_repo_header">
+                            <svg viewBox="0 0 16 19" width="19" height="19" fill="#3067f0">
+                                <path
+                                    d="M13.7634409,12.0676651 C13.3181936,11.8966937 12.8348662,11.8030303 12.3297491,11.8030303 C10.112692,11.8030303 8.31541219,13.6074584 8.31541219,15.8333333 C8.31541219,16.8199032 8.6684896,17.7236795 9.25470173,18.4242424 L1.05693232e-13,18.4242424 L1.05693232e-13,6.92779167e-14 L11.5468901,6.92779167e-14 L13.7634409,2.14071854 L13.7634409,12.0676651 Z M11.1827957,2.59090909 L13.4767025,2.59090909 L11.1827957,0.287878788 L11.1827957,2.59090909 Z M7.16845878,4.03030303 L7.16845878,7.1969697 L10.3225806,7.1969697 C10.3225806,5.44798695 8.91051291,4.03030303 7.16845878,4.03030303 Z M6.59498208,4.60606061 C4.85292795,4.60606061 3.44086022,6.02398167 3.44086022,7.77272727 C3.44086022,9.52171002 4.85292795,10.9393939 6.59498208,10.9393939 C8.3370362,10.9393939 9.74910394,9.52171002 9.74910394,7.77272727 L6.59498208,7.77272727 L6.59498208,4.60606061 Z M12.3297491,12.6666667 C14.0690721,12.6666667 15.483871,14.0874444 15.483871,15.8333333 C15.483871,17.5792222 14.0690721,19 12.3297491,19 C10.6741856,19 9.29373158,17.7027222 9.1868419,16.0458519 C9.17983274,15.9811111 9.17562724,15.9093333 9.17562724,15.8333333 C9.17562724,14.2675926 10.3387973,12.9214074 11.8811629,12.7018519 C12.0010195,12.6786296 12.1485623,12.6666667 12.3297491,12.6666667 Z M13.0211672,17.4100106 L14.3942652,16.1415511 L13.7077162,15.5095624 L12.8166633,16.329803 L12.8166633,13.8242593 L11.8428349,13.8242593 L11.8428349,16.329803 L10.951782,15.5095624 L10.265233,16.1415511 L11.638331,17.4100106 L11.8428349,17.5982626 L12.1252451,17.8582295 L12.3297491,18.0464815 L12.5342531,17.8582295 L12.8166633,17.5982626 L13.0211672,17.4100106 Z"
+                                    id="report_download_icon" fill="#3067F0" fill-rule="nonzero"></path>
+                            </svg>
+                            <span class="trading_repo_section_header_txt">Download Trading Report</span>
+                        </div>
+                        <div class="trading_repo_body">
+                            <div class="trading_repo_body_title">Get your trading report on your email.</div>
+                            <div class="trading_repo_body_date">
+                                <div class="trading_repo_from_date">
+                                    <span class="from_date_txt">From Date</span>
+                                    <input type="date">
+                                </div>
+                                <div class="trading_repo_to_date">
+                                    <span class="to_date_txt">To Date</span>
+                                    <input type="date">
+                                </div>
+                            </div>
+                            <div class="trading_repo_list_head">The report will include:</div>
+                            <div>
+                                <ul>
+                                    <li>Exchange Trades</li>
+                                    <li>P2P Trades</li>
+                                    <li>STF Trades</li>
+                                    <li>Current Coin Balance</li>
+                                    <li>Deposit and Withdrawals</li>
+                                    <li>Ledger History</li>
+                                    <li>Airdrops and other distributions</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <button class="btn btn-primary">REQUEST TRADING REPORT</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="privacy_control" role="tabpanel"
+                    aria-labelledby="v-pills-privacycontrol-tab">
+                    <div class="privacy_control_section">
+                        <div class="privacy_control_header">
+                            <svg viewBox="0 0 93 112" width="20" height="20" fill="#3067f0">
+                                <path fill="#3067f0"
+                                    d="M50.5586692,96 L8.0000625,96 C3.5878125,96 -7.10542736e-15,92.4121875 -7.10542736e-15,88.000125 L-7.10542736e-15,38.0000625 C-7.10542736e-15,36.8945625 0.8945625,36 2.0000625,36 L8.0000625,36 L8.0000625,27.9999375 C8.0000625,12.560625 20.5605,-7.10542736e-15 36,-7.10542736e-15 C51.4395,-7.10542736e-15 63.9999375,12.560625 63.9999375,27.9999375 L63.9999375,36 L69.9999375,36 C71.1054375,36 72,36.8945625 72,38.0000625 C72,44.9955621 72,50.2421868 72,53.7399366 C72,59.6414338 72.0251416,60.0230788 72.0300988,63.0425569 C70.5623741,62.9593101 69.089282,62.9979416 67.622433,63.160678 C66.8541289,63.2454734 66.2844086,63.9072713 66.3102422,64.6769368 C66.3966172,67.1342266 64.9404681,69.4057554 62.6815043,70.3310105 C60.515226,71.2158399 57.6977825,70.5711982 56.1213393,68.8374295 C55.6003282,68.2663428 54.7284924,68.1961402 54.1215007,68.6692192 C52.5332253,69.9153162 51.0887111,71.3422441 49.8343009,72.9076053 C49.3450395,73.5161597 49.4170187,74.3982283 49.992458,74.9217902 C51.8369004,76.592061 52.4324544,79.2491127 51.4742436,81.5338539 C50.5594175,83.7121078 48.2974956,85.1159635 45.7080191,85.1159635 C44.8677358,85.0889473 44.2692238,85.6529349 44.1773271,86.4168816 C43.9442328,88.4077971 43.9414719,90.4363774 44.1658893,92.4434632 C44.2491091,93.191634 45.1442149,93.7465505 45.9036448,93.7465505 C47.698184,93.700699 49.4370318,94.5544746 50.5586692,96 Z M41.988375,77.7793125 L40.726875,66.4336875 C42.7756875,64.9434375 44.00025,62.586 44.00025,60 C44.00025,55.58775 40.4124375,51.9999375 36.0001875,51.9999375 C31.5879375,51.9999375 28.000125,55.5879375 28.000125,60 C28.000125,62.586 29.2246875,64.9434375 31.2735,66.4336875 L30.0118125,77.7793125 C29.9491875,78.343875 30.130875,78.9103125 30.5098125,79.3340625 C30.88875,79.7578125 31.43175,80.0000625 32.0000625,80.0000625 L40.000125,80.0000625 C40.5684375,80.0000625 41.1114375,79.7578125 41.490375,79.3340625 C41.8693125,78.910125 42.0508125,78.3436875 41.988375,77.7793125 Z M51.9999375,36 L51.9999375,27.9999375 C51.9999375,19.1776875 44.82225,12 36,12 C27.17775,12 20.0000625,19.1776875 20.0000625,27.9999375 L20.0000625,36 L51.9999375,36 Z M92.8273606,88.0959649 C93.0092714,89.7229314 93.0070335,91.3658831 92.8177695,92.9811805 C92.743119,93.6098757 92.1764461,94.0843143 91.560539,94.0342809 L91.2948662,94.0274073 C89.3959926,94.0274073 87.6305948,95.1971991 86.9003941,96.9394184 C86.1236766,98.7901768 86.6088253,100.944333 88.1039145,102.298273 C88.5727584,102.722519 88.6287063,103.438653 88.2322751,103.930835 C87.2106654,105.203251 86.0421524,106.358976 84.7571078,107.366679 C84.262368,107.748883 83.5606208,107.693095 83.1358959,107.231125 C81.8578848,105.827151 79.5836803,105.298682 77.8158848,106.020731 C75.9871859,106.769474 74.8047658,108.610801 74.8768587,110.601589 C74.8977993,111.226608 74.4363086,111.763069 73.813368,111.831805 C73.0273792,111.919244 72.2412305,111.962404 71.4552416,111.962404 C70.6272119,111.962404 69.8014201,111.914608 68.9805836,111.818857 C68.3531673,111.746604 67.889119,111.196236 67.9263643,110.564024 C68.0404981,108.551177 66.874223,106.67724 65.0201078,105.901641 C63.2499145,105.158653 60.9501338,105.684723 59.6649294,107.106281 C59.2382862,107.576404 58.5221524,107.632352 58.0299703,107.23576 C56.7751375,106.22582 55.629803,105.068976 54.6316914,103.797679 C54.2443717,103.306775 54.3027175,102.601192 54.76229,102.179024 C56.2316431,100.832117 56.7143941,98.6981025 55.9634126,96.8671657 C55.2100335,95.0338311 53.4141041,93.8757084 51.5435242,93.9235039 C50.9279368,93.9235039 50.2023717,93.4736824 50.1349145,92.8672065 C49.9530037,91.24024 49.9552416,89.5958497 50.1441859,87.9819909 C50.2186766,87.362727 50.7038253,86.9055523 51.3849517,86.9274519 C53.4839591,86.9274519 55.3174535,85.7894705 56.0590037,84.023753 C56.8357212,82.1717158 56.3529703,80.0178794 54.857881,78.6639389 C54.3914349,78.2395337 54.3330892,77.5245188 54.7296803,77.0312177 C55.7464944,75.7623181 56.9174052,74.6056341 58.2048476,73.5955337 C58.6968699,73.2120504 59.4035725,73.2689575 59.8258996,73.7318868 C61.1037509,75.1372995 63.3875465,75.6598534 65.143513,74.9426006 C66.9746097,74.1925783 68.1549517,72.3512512 68.0849368,70.3593441 C68.0639963,69.7354445 68.5258067,69.1989835 69.1485874,69.1302474 C70.7579703,68.9516935 72.3766245,68.9574482 73.9812119,69.1430355 C74.6111859,69.2164073 75.0729963,69.7658162 75.0354312,70.3977084 C74.9212974,72.409437 76.0875725,74.2835337 77.937052,75.06153 C79.7142788,75.8030801 82.0142193,75.2760504 83.2946283,73.8580095 C83.7191933,73.3878868 84.4375651,73.3332177 84.9271896,73.7261322 C86.1775465,74.7277604 87.3227212,75.8834854 88.3302639,77.1629352 C88.7175836,77.6538385 88.6614758,78.3605411 88.1996654,78.7827084 C86.7325502,80.1284965 86.2499591,82.2637902 86.9983829,84.094727 C87.7309814,85.8823441 89.4778364,87.0382288 91.4464052,87.0382288 C92.0552788,87.0382288 92.7594238,87.4920467 92.8273606,88.0959649 Z M71.5151859,97.6918385 C75.4662305,97.6918385 78.6802007,94.4778683 78.6802007,90.5266638 C78.6802007,86.5756192 75.4662305,83.3614891 71.5151859,83.3614891 C67.5639814,83.3614891 64.3500112,86.5756192 64.3500112,90.5266638 C64.3500112,94.4778683 67.5639814,97.6918385 71.5151859,97.6918385 Z">
+                                </path>
+                            </svg>
+                            <span class="privacy_control_section_header_txt">Privacy Control</span>
+                        </div>
+                        <div class="privacy_control_body">
+                            <div class="privacy_control_title">You control your data, and we respect that.</div>
+                            <div class="privacy_control_list_head">For requests regarding:</div>
+                            <div class="privacy_control_list">
+                                <ul>
+                                    <li>Copy of your data</li>
+                                    <li>Data export</li>
+                                    <li>Data correction</li>
+                                </ul>
+                            </div>
+                            <div class="privacy_control_para">Please reach out to us. Our team will be happy to help you
+                                out.</div>
+                            <div class="privacy_control_btn">
+                                <button class="btn btn-primary">CONTACT US</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="coupon_rewards" role="tabpanel"
+                    aria-labelledby="v-pills-couponrewards-tab">
+                    <div class="coupon_rewards_section">
+                        <div class="coupon_rewards_header">
+                            <svg width="18" height="16" fill="#FFFFFF" viewBox="0 0 18 16">
+                                <path fill="#3067F0"
+                                    d="M4.79.125A2.65 2.65 0 003.99 0c-.761 0-1.477.323-1.8.866-.178.31-.118.78.152 1.2.114.205.283.38.491.505.209.126.449.2.697.213h4.725C7.2 1.807 5.512.359 4.79.125zM15.644 2.081c.272-.417.333-.891.155-1.2-.42-.734-1.574-1.068-2.587-.747-.722.234-2.412 1.676-3.476 2.65h4.725c.246-.012.484-.083.691-.207.208-.123.377-.294.492-.496zM18 3.48H9.376v3.13H18V3.48zM16.65 7.305H9.376V16h7.274V7.305zM1.339 16h7.285V7.305H1.34V16zM0 6.61h8.624V3.48H0v3.13z">
+                                </path>
+                            </svg>
+                            <span class="coupon_rewards_section_header_txt">Coupon Rewards</span>
+                        </div>
+                        <div class="coupon_rewards_body">
+                            <div class="coupon_rewards_head">
+                                <div>
+                                    <div class="coupon_rewards_head_txt">Claim your coupon reward on WazirX</div>
+                                    <div class="coupon_rewards_head_para">Enter your coupon code and perform the
+                                        required activities to claim your reward.</div>
+                                </div>
+                                <div>
+                                    <svg width="86" height="62" fill="#FFFFFF" viewBox="0 0 86 62">
+                                        <circle cx="43" cy="31" r="31" fill="url(#paint0_angular)" opacity="0.8">
+                                        </circle>
+                                        <path fill="#3067F0" d="M0 50H86V52H0z"></path>
+                                        <path fill="#789AF0" fill-rule="evenodd"
+                                            d="M64 13a3 3 0 11-6 0H8a2 2 0 00-2 2v33a2 2 0 002 2h50a3 3 0 116 0h14a2 2 0 002-2V15a2 2 0 00-2-2H64z"
+                                            clip-rule="evenodd"></path>
+                                        <path fill="#3067F0" d="M8 15H57V48H8z"></path>
+                                        <path stroke="#224292" stroke-dasharray="0.1 2" stroke-linecap="square"
+                                            stroke-linejoin="round" stroke-width="0.5" d="M61.25 19.25L61.25 43.75">
+                                        </path>
+                                        <path fill="#224292"
+                                            d="M69.215 39.793c0 .456.172.809.516 1.059.34.25.817.375 1.43.375 1.273 0 1.91-.478 1.91-1.434 0-.401-.1-.887-.302-1.457h1.016c.196.469.293.992.293 1.57 0 .831-.251 1.466-.754 1.907-.505.44-1.229.66-2.172.66-.593 0-1.113-.108-1.558-.325a2.332 2.332 0 01-1.028-.93c-.24-.406-.359-.88-.359-1.425 0-.555.134-1.112.402-1.672l.985.39c-.102.214-.19.43-.266.645a1.924 1.924 0 00-.113.637zm1.922-7.86c.945 0 1.672.235 2.18.704.507.468.761 1.14.761 2.015 0 .875-.254 1.547-.762 2.016-.507.469-1.237.703-2.187.703-.95 0-1.676-.234-2.176-.703-.502-.471-.754-1.146-.754-2.023 0-.878.253-1.549.758-2.012.505-.466 1.232-.7 2.18-.7zm0 4.169c.638 0 1.118-.121 1.441-.364.323-.242.484-.604.484-1.086 0-.966-.641-1.449-1.925-1.449-1.287 0-1.93.48-1.93 1.441 0 .482.163.846.488 1.09.323.245.804.368 1.442.368zm-.047-10.09c.94 0 1.66.268 2.16.804.5.534.75 1.306.75 2.317v1.617h-5.71v-1.793c0-.932.245-1.656.737-2.172.492-.515 1.18-.773 2.063-.773zm.031 1.258c-1.227 0-1.84.541-1.84 1.625v.644H73v-.52c0-1.166-.626-1.75-1.879-1.75zM74 21.54v3.288h-5.71V21.54h.991v2.078h1.254v-1.933h.992v1.933H73V21.54h1z"
+                                            opacity="0.6"></path>
+                                        <path fill="#F2BB4E" d="M18.278 21.664L17.538 20l-.503.224.74 1.664.503-.224z">
+                                        </path>
+                                        <path fill="#9FB8CB"
+                                            d="M33.693 46l-14.395-3.406 10.542-3.445 14.505 2.724L33.693 46z"
+                                            opacity="0.47"></path>
+                                        <path fill="#567BD6"
+                                            d="M22.517 30.895l8.73-1.758 9.667 1.44-7.613 1.898-10.784-1.58z"></path>
+                                        <path fill="#2B4EA5"
+                                            d="M31.248 29.137l.247 11.3 8.408 1.437 1.011-11.296-9.666-1.441z"></path>
+                                        <path fill="#2147C0"
+                                            d="M33.3 44.363l-9.52-2.213-1.263-11.255 10.784 1.58v11.888z"></path>
+                                        <path fill="#153689"
+                                            d="M33.3 32.475l7.614-1.897-1.011 11.295-6.602 2.49V32.475z"></path>
+                                        <path fill="#EBB02A"
+                                            d="M35.95 43.363l1.623-.611 1.286-11.672-1.672.426-1.237 11.857zM26.767 42.844L25.54 31.336l2.07.306.852 11.596-1.696-.394z">
+                                        </path>
+                                        <path fill="#102A6A"
+                                            d="M40.82 27.268l-7.126 2.723.14 2.565 6.873-2.88.113-2.408z"></path>
+                                        <path fill="#4D91FF"
+                                            d="M40.82 27.268l-7.468-.495-2.498-.166-9.443 2.969 12.283.415 7.126-2.723z">
+                                        </path>
+                                        <path fill="#1C3DA7"
+                                            d="M21.96 31.851l11.873.705-.14-2.565-12.282-.415.549 2.275z"></path>
+                                        <path fill="#EBB02A" d="M24.363 29.671l2.48.111.532 2.39-2.196-.13-.816-2.37z">
+                                        </path>
+                                        <path fill="#F2BB4E"
+                                            d="M24.363 29.671l8.99-2.898 2.08.137-8.59 2.872-2.48-.11z"></path>
+                                        <path fill="#EBB02A"
+                                            d="M37.197 28.683l-.145 2.524 1.538-.645.165-2.505-1.558.626z"></path>
+                                        <path fill="#F2BB4E"
+                                            d="M38.755 28.057l-10.965-.486-1.773.556 11.18.556 1.558-.626z"></path>
+                                        <path fill="#E89A24"
+                                            d="M24.139 24.7s2.784 3.23 6.147 3.344c.781-.082 1.135-.312 1.135-.312l-4.852-3.148c.237-1.044.767-2 1.527-2.755.317-.316-.027-.84-.443-.675l-1.39.55-1.427 1.391-.697 1.606z">
+                                        </path>
+                                        <path fill="#F2BB4E"
+                                            d="M31.066 27.962l-2.732-4.91a.37.37 0 00-.272-.187c-.346-.05-1.14-.1-2.089.276-1.28.509-1.835 1.56-1.835 1.56l.697-1.606c.198-.456.486-.868.848-1.21a4.72 4.72 0 012.422-1.22l.819-.144c.34-.06.672.14.779.468l2.097 6.499-.734.474z">
+                                        </path>
+                                        <path fill="#E89A24"
+                                            d="M37.896 23.24s-2.044 3.742-5.308 4.56c-.78.083-1.175-.067-1.175-.067l4.084-4.097a5.648 5.648 0 00-2.072-2.373c-.377-.242-.15-.827.29-.753l1.476.247 1.686 1.06 1.019 1.423z">
+                                        </path>
+                                        <path fill="#F2BB4E"
+                                            d="M31.807 27.883l1.64-5.376a.368.368 0 01.226-.239c.328-.123 1.093-.337 2.1-.168 1.359.229 2.123 1.14 2.123 1.14l-1.02-1.425a3.697 3.697 0 00-1.082-1.005 4.717 4.717 0 00-2.624-.683l-.83.03a.691.691 0 00-.663.622l-.684 6.794.814.31zM41.561 25.694l1.314-.919-.278-.396-1.313.918.277.397zM44.55 25.939l1.313-.919-.277-.396-1.314.918.278.397z">
+                                        </path>
+                                        <path fill="#2B4EA5" d="M44.617 22.46l.63-1.474-.446-.19-.63 1.474.446.19z">
+                                        </path>
+                                        <path fill="#F2BB4E" d="M41.722 22.556l.369-1.56-.472-.111-.368 1.56.471.11z">
+                                        </path>
+                                        <path fill="#2B4EA5"
+                                            d="M41.732 28.508l1.589-.205-.062-.48-1.59.204.063.48zM48.52 25.405l1.461-.658-.199-.442-1.461.659.199.442z">
+                                        </path>
+                                        <path fill="#567BD6"
+                                            d="M34.903 31.733l1.078-1.185-.358-.326-1.078 1.185.358.326z"></path>
+                                        <path fill="#F2BB4E" d="M46.999 22.804l1.227-1.03-.311-.371-1.227 1.03.31.371z">
+                                        </path>
+                                        <path fill="#567BD6"
+                                            d="M37.636 30.632l1.133-1.133-.343-.343-1.133 1.134.343.342zM46.428 30.623l1.596-.145-.044-.483-1.596.146.044.482zM46.341 27.925l1.58-.267-.08-.477-1.58.266.08.478z">
+                                        </path>
+                                        <path fill="#2B4EA5"
+                                            d="M25.442 29.834l1.238 1.017.308-.374-1.24-1.017-.306.374z"></path>
+                                        <path fill="#F2BB4E"
+                                            d="M42.473 31.097l1.486-.6-.181-.448-1.486.6.18.448zM32.874 30.232l-.329 1.568.474.1.33-1.569-.475-.099zM29.755 29.873l.431 1.544.467-.13-.431-1.544-.467.13zM20.767 27.316l-1.313-.918-.277.397 1.313.918.277-.397z">
+                                        </path>
+                                        <path fill="#4363C9"
+                                            d="M18.32 27.806l-1.528-.484-.147.461 1.528.484.147-.461zM19.493 24.82l-1.066-1.197-.362.322 1.066 1.197.362-.322z">
+                                        </path>
+                                        <path fill="#F2BB4E" d="M22.012 24.453l-.8-1.387-.42.242.801 1.388.42-.243z">
+                                        </path>
+                                        <path fill="#2B4EA5" d="M22.047 29.7l-1.563.353.107.473 1.563-.354-.107-.472z">
+                                        </path>
+                                        <path fill="#F2BB4E"
+                                            d="M19.503 31.948l-1.564.353.107.473 1.564-.354-.107-.472z"></path>
+                                        <path fill="#4363C9" d="M13.67 27.326l-1.56-.367-.11.47 1.56.368.11-.471z">
+                                        </path>
+                                        <path fill="#2B4EA5"
+                                            d="M16.328 23.446l-1.133-1.133-.342.342 1.133 1.133.342-.342z"></path>
+                                        <path fill="#F2BB4E"
+                                            d="M16.205 25.745l-1.427-.729-.22.432 1.427.728.22-.431zM17.095 30.025l-1.555-.386-.117.47 1.555.386.117-.47z">
+                                        </path>
+                                        <defs>
+                                            <radialGradient id="paint0_angular" cx="0" cy="0" r="1"
+                                                gradientTransform="rotate(32.619 -31.473 88.979) scale(29.6816)"
+                                                gradientUnits="userSpaceOnUse">
+                                                <stop offset="0.998" stop-color="#80A0F0"></stop>
+                                                <stop offset="1" stop-color="#2A62EC" stop-opacity="0"></stop>
+                                            </radialGradient>
+                                        </defs>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="coupon_rewards_title">Enter a coupon code</div>
+                            <div class="coupon_rewards_input">
+                                <input type="text" placeholder="Enter Coupon Code">
+                                <button class="btn btn-primary">Apply</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/authentication/assets/js/jquery-3.2.1.slim.min.js"></script>
+    <script src="/static/authentication/assets/js/popper.min.js"></script>
+    <script src="/static/authentication/assets/js/bootstrap.min.js"></script>
+</body>
+
+</html>

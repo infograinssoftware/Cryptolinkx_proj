@@ -1,0 +1,88 @@
+{% extends 'authentication/base.html' %}
+{% load static %}
+{% block bstyle %}
+  style="background-color: rgb(236, 239, 241);"
+{% endblock bstyle %}
+{% block tnavbar %}
+{% endblock tnavbar %}
+{% block register %}
+  <!-- navbar start here -->
+  <!-- <nav class="nav_menu navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="javascript:;">
+        <img src="assets/images/logo.png" class="img-fluid logo" alt="Cryptolinkx">
+      </a>
+
+    </div>
+  </nav> -->
+  <!-- navbar close here -->
+
+  <!-- signup form start here -->
+
+  <section class="signupForm_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 offset-lg-3 col-md-6 offset-md-3 col-sm-8 offset-sm-2 col-12">
+          <div class="loginForm_div_style">
+            <a class="pt-0 logo_aTag_style" href="index.html">
+              <img src="{% static 'authentication/assets/images/logo.png' %}" class="img-fluid login_logo_style" alt="Cryptolinkx">
+            </a>
+            <h3 class="lgn_heading">SignUp to CryptoLinkX</h3>
+            <hr />
+            {% for message in messages %}
+            <div class="alert alert-{{message.extra_tags}} text-center" role="alert">
+              {{message}}
+            </div>
+           {% endfor %}
+            <form method="POST" action = "{% url 'register' %}">
+              {% csrf_token %}
+              <div class="form-group">
+                <label for="email">Full Name</label><br>
+                <div class="form_grp">
+                  <span class="icon_box"><i class="fas fa-user font_icon"></i></span>
+                  <input type="text" id="name" name="full_name" placeholder="Enter Full Name" class="form-control" value="{{full_name}}">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="fname">Email  Id</label><br>
+                <div class="form_grp">
+                  <span class="icon_box"><i class="fas fa-envelope font_icon"></i></span>
+                  <input type="email" id="email" name="email" placeholder="Enter Your Email" class="form-control" value="{{email}}">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="pass">Password</label><br>
+                <div class="form_grp">
+                  <span class="icon_box"><i class="fas fa-lock font_icon"></i></span>
+                  <input type="password" id="pass" name="password" placeholder="Enter Password" class="form-control" value="{{password}}">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="cnf-pass">Confirm Password</label><br>
+                <div class="form_grp">
+                  <span class="icon_box"><i class="fas fa-lock font_icon"></i></span>
+                  <input type="password" id="cnf-pass" name="cfm_password" placeholder="Re-Enter Password" class="form-control" value="{{cfm_password}}">
+                </div>
+              </div>
+              <!-- <hr /> -->
+              <button type="submit" class="btn btn-primary login_btn_style w-100 mt-3">Signup</button>
+            </form>
+            <hr />
+
+            <div class="login_linkBtn_style">
+              <a type="button" class="login_link_style" href="{% url 'login' %}">Login</a>
+              <!-- <a type="button" class="login_link_style" href="forgotPassword.html">Forgot Password</a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- signup form end here -->
+
+  
+  {% endblock register %}
+  {% block footer %}
+{% endblock footer %}

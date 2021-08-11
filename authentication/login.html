@@ -1,0 +1,67 @@
+{% extends 'authentication/base.html' %}
+{% load static %}
+
+{% block login %}
+<div class="top_header">
+  <img src="{% static 'authentication/assets/img/logo.png' %}" class="img-fluid logo">
+</div>
+
+<div class="signin_page">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 offset-lg-3 col-md-6 offset-md-3 col-sm-8 offset-sm-2 col-12">
+        <div class="sign_lg_form">
+          <h2>Login</h2>
+          {% for message in messages %}
+            <div class="alert alert-{{message.extra_tags}} text-center" role="alert">
+              {{message}}
+            </div>
+           {% endfor %}
+          <form method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="email">Email Id</label>
+              <input type="email" id="email" name="email" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="paas">Password</label>
+              <input type="password" id="paas" name="password" class="form-control">
+            </div>
+            <ul class="list-inline lgn_link">
+              <li class="list-inline-item">
+                <a href="{% url 'password_reset' %}" class="frg_pass">Forgot Password</a>
+                <!-- data-toggle="modal" data-target="#frgt_pass" -->
+              </li>
+              <li class="list-inline-item ml-auto">
+                <a href="{% url 'register' %}" class="sign_link">Registration</a> for new user
+              </li>
+            </ul>
+            <button type="submit" class="btn sign_btn">Log in</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade forgot_modal" id="frgt_pass" tabindex="-1" role="dialog" aria-labelledby="frgt_passLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content forgot_form">
+      <button type="button" class="close cls_mdl" data-dismiss="modal" aria-label="Close">
+        <i class="fas fa-times font_icon"></i>
+      </button>
+      <div class="modal-body">
+        <h3>Forgot your password</h3>
+        <p>Please enter the email address your l'd like your password reset information sent to</p>
+        <form>
+          <div class="form-group">
+            <label for="email">Enter Email Address</label>
+            <input type="email" id="email" class="form-control">
+          </div>
+          <button type="button" class="btn rest_btn">Requet reset link</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  {% endblock login %}

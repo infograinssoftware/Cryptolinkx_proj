@@ -1,0 +1,380 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="{% static 'authentication/assets/css/bootstrap.min.css' %}">
+  <!-- animation css -->
+  <link rel="stylesheet" href="{% static 'authentication/assets/css/aos.css' %}">
+  <!-- fontawesome css -->
+  <link rel="stylesheet" href="{% static 'authentication/assets/css/all.css' %}">
+  <!-- owl carousel css-->
+  <link rel="stylesheet" href="{% static 'authentication/assets/css/owl.carousel.min.css' %}">
+  <link rel="stylesheet" href="{% static 'authentication/assets/css/owl.theme.default.min.css' %}">
+  <!-- custom style css -->
+  <link rel="stylesheet" href="{% static 'authentication/assets/css/style.css' %}">
+  <title>Cryptolinkx</title>
+
+</head>
+
+<body {% block bstyle %}{% endblock bstyle %}>
+<!-- navbar start here -->
+{% block tnavbar %}
+
+    <nav class="nav_menu navbar navbar-expand-lg navbar-light bg-light">
+      <!-- <div class="container"> -->
+        <a class="navbar-brand" href="/exchange">
+          <img src="{% static 'authentication/assets/images/logo.png' %}" class="img-fluid logo" alt="Cryptolinkx">
+          <strong>CRYPTOLINKX</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+          aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active nav_li">
+              <a class="nav-link nav-anim" href="{% url 'exchange' %}"><i class="fas fa-exchange-alt"></i> Exchange</a>
+            </li>
+            <li class="nav-item nav_li">
+              <a class="nav-link nav-anim" href="{% url 'ptop' %}"><i class="far fa-credit-card"></i> P2P</a>
+            </li>
+            <li class="nav-item nav_li">
+              <a class="nav-link nav-anim" href="{% url 'stf' %}"><i class="fab fa-btc"></i> STF</a>
+            </li>
+            {% if not request.user.is_authenticated %}
+            
+            <li class="nav-item nav_li">
+              <a class="nav-link login_btn" href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i> Login</a>
+            </li>
+            <li class="nav-item nav_li">
+              <a class="nav-link nav-anim" href="{% url 'register' %}"><i class="fas fa-user-plus"></i> Signup</a>
+            </li>
+            {% else %}
+            <form method="POST" action="{% url 'logout' %}">
+              {% csrf_token %}
+            <input class="bg-white border-0 nav-link" style="cursor: pointer;" type="submit" value="Logout">
+            </form>
+            <li class="nav-item nav_li">
+              <a class="nav-link nav-anim" href="{% url 'funds' %}"><i class="fas fa-money-check-alt"></i> Funds</a>
+            </li>
+            <li class="nav-item nav_li">
+              <a class="nav-link nav-anim" href="{% url 'account' %}"><i class="fas fa-user"></i> Account</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link bg- text-white rounded-pill" style="border-radius: 9% 9%;">{{request.user.username}}</a>
+            </li> -->
+            {% endif %}      
+          </ul>
+        </div>  
+      <!-- </div> -->
+    </nav>
+    {% endblock tnavbar %}
+                                                                  
+    <!-- navbar close here -->
+    {% block register %}
+    {% endblock register %}
+
+    {% block login %}
+    {% endblock login %}
+
+    {% block forgotpass %}
+    {% endblock forgotpass %}
+
+    {% block resetform %}
+    {% endblock resetform %}
+
+    {% block resetpassword %}
+    {% endblock resetpassword %}
+
+    {% block confirm %}
+    {% endblock confirm %}
+
+    {% block complete %}
+    {% endblock complete %}
+
+    {% block otpverify %}
+    {% endblock otpverify %}
+
+    {% block p2p %}
+    {% endblock p2p %}
+
+    {% block p2p_login %}
+    {% endblock p2p_login %}
+
+    {% block stf %}
+    {% endblock stf %}
+
+    {% block funds %}
+    {% endblock funds %}
+
+
+    {% block index %}
+    {% endblock index %}
+
+    {% block exchange %}
+    {% endblock exchange %}
+
+    {% block verify %}
+    {% endblock verify %}
+
+
+    {% block footer %}
+  <!-- footer section start here -->
+  <!-- <footer>
+    <div class="container">
+      <div class="footer_box">
+        <dv class="row">
+          <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+            <div class="foot_box">
+              <h5>About</h5>
+              <ul class="list-unstyled">
+                <li>
+                  <a href="javascript:;">CryptolinkX Token</a>
+                </li>
+                <li>
+                  <a href="javascript:;">Blog</a>
+                </li>
+                <li>
+                  <a href="javascript:;">Careers</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+            <div class="foot_box">
+              <h5>Support</h5>
+              <ul class="list-unstyled">
+                <li>
+                  <a href="javascript:;">Help Center</a>
+                </li>
+                <li>
+                  <a href="javascript:;">Corporate Account</a>
+                </li>
+                <li>
+                  <a href="javascript:;">Security</a>
+                </li>
+                <li>
+                  <a href="javascript:;">Partnerships & Enquiries</a>
+                </li>
+                <li>
+                  <a href="javascript:;">Trading, Deposit & Withdrawal Fees</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+            <div class="foot_box">
+              <h5>Legal</h5>
+              <ul class="list-unstyled">
+                <li>
+                  <a href="javascript:;">Terms of use</a>
+                </li>
+                <li>
+                  <a href="javascript:;">Privacy Policy</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+            <div class="foot_box">
+              <h5>Socials</h5>
+              <ul class="list-unstyled">
+                <li>
+                  <a href="javascript:;">
+                    <i class="fab fa-telegram-plane font_icon"></i>
+                    Telegram
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:;">
+                    <i class="fab fa-linkedin-in font_icon"></i>
+                    Linkedin
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:;">
+                    <i class="fab fa-twitter font_icon"></i>
+                    Twitter
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:;">
+                    <i class="fab fa-youtube font_icon"></i>
+                    Youtube
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </dv>
+      </div>
+    </div>
+  </footer> -->
+    <footer>
+      <div class="container-fluid">
+        <div class="footer_div">
+          <div class="footer_div_top">
+            <div class="footer_logo">
+              <img src="{% static 'authentication/assets/images/logo.png' %}" class="img-fluid logo" alt="Cryptolinkx">
+              <span class="footer_companyname">CryptolinkX</span>
+            </div>
+            <div class="footer_app_img">
+              <img src="" alt="">
+              <img src="" alt="">
+              <img src="" alt="">
+              <img src="" alt="">
+            </div>
+          </div>
+          <div class="container-fluid">
+            <div class="row footer_div_body">
+              <div class="col-lg-2 col-md-4 col-sm-12 col-12"> 
+                <div class="about_div">
+                  <span class="about_divtxt">About</span>
+                  <ul>
+                    <li><a class="footer_link" href="javascript:;">CryptolinkX Token</a></li>
+                    <li><a class="footer_link" href="javascript:;">Blog</a></li>
+                    <li><a class="footer_link" href="javascript:;">Careers</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-2 col-md-4 col-sm-12 col-12">
+                <div class="product_div">
+                  <span class="product_divtxt">Product</span>
+                  <ul>
+                    <li><a class="footer_link" href="javscript:;">Exchange</a></li>
+                    <li><a class="footer_link" href="javscript:;">P2P</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-2 col-md-4 col-sm-12 col-12">
+                <div class="legal_div">
+                  <span class="legal_divtxt">Legal</span>
+                  <ul>
+                    <li><a class="footer_link" href="javascript:;">Terms of use</a></li>
+                    <li><a class="footer_link" href="javascript:;">Policy</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-2 col-md-4 col-sm-12 col-12">
+                <div class="Support_div">
+                  <span class="support_divtxt">Support</span>
+                  <ul>
+                    <li><a class="footer_link" href="javascript:;">Help Center</a></li>
+                    <li><a class="footer_link" href="javascript:;">Corporate Account</a></li>
+                    <li><a class="footer_link" href="javascript:;">Security</a></li>
+                    <li><a class="footer_link" href="javascript:;">Partnerships & Enquiries</a></li>
+                    <li><a class="footer_link" href="javascript:;">Trading, Deposit & Withdrawal</a></li>
+                    <li><a class="footer_link" href="javascript:;">Fees</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-2 col-md-4 col-sm-12 col-12">
+                <div class="social_div">
+                  <span class="social_divtxt">Social</span>
+                  <ul>
+                    <li><a class="footer_link" href="javascript:;"><span class="social_icon"><i class="fab fa-telegram-plane"></i></span>Telegram</a></li>
+                    <li><a class="footer_link" href="javascript:;"><span class="social_icon"><i class="fab fa-linkedin-in"></i></span>Linkedin</a></li>
+                    <li><a class="footer_link" href="javascript:;"><span class="social_icon"><i class="fab fa-twitter"></i></span>Twitter</a></li>
+                    <li><a class="footer_link" href="javascript:;"><span class="social_icon"><i class="fab fa-youtube"></i></span>Youtube</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-2 col-md-4 col-sm-12 col-12">
+                <div class="buy_crypto_div">
+                  <span class="buy_cryptotxt">Buy Crypto</span>
+                  <ul>
+                    <li><a class="footer_link" href="javascript:;">Buy Ethereum</a></li>
+                    <li><a class="footer_link" href="javascript:;">Buy Bitcoin</a></li>
+                    <li><a class="footer_link" href="javascript:;">Buy Ripple</a></li>
+                    <li><a class="footer_link" href="javascript:;">Buy Litecoin</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  <!-- footer section close here -->
+  {% endblock footer %}
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script src="{% static 'authentication/assets/js/jquery-3.2.1.slim.min.js' %}"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+
+    <script src="{% static 'authentication/assets/js/popper.min.js' %}"></script>
+    <script src="{% static 'authentication/assets/js/bootstrap.min.js' %}"></script>
+    <!-- animation js -->
+    <script src="{% static 'authentication/assets/js/all.js' %}"></script>
+    <script src="{% static 'authentication/assets/js/aos.js' %}"></script>
+    <!-- owl carousel js-->
+    <script src="{% static 'authentication/assets/js/owl.carousel.min.js' %}"></script>
+    <!-- Custom script js -->
+    <script src="{% static 'authentication/assets/js/script.js' %}"></script>
+
+
+    <script>
+
+      $('#otp_form').on('submit', function (e) {
+        e.preventDefault();
+        $.ajax({
+          type: "POST",
+          url: "{% url 'verifyotp' %}",
+          data: {
+            ist: $('#ist').val(),
+            sec: $('#sec').val(),
+            third: $('#third').val(),
+            fourth: $('#fourth').val(),
+            fifth: $('#fifth').val(),
+            sixth: $('#sixth').val(),
+
+            csrfmiddlewaretoken: '{{csrf_token}}',
+            dataType: 'json',
+          },
+          success: function (e) {
+            console.log('submited successfully');
+            console.log(e, e.status);
+            console.log('submited successfully');
+            if (e.status == "200") {
+              window.location = e.url;
+            }
+            if (e.status == "400") {
+              $('#error_msg').removeAttr('hidden')
+              document.getElementById('error_msg').innerHTML = e.msg;
+            }
+            else {
+              $('#error_msg').hide();
+            }
+          }
+        })
+
+      });
+    </script>
+
+    <script>
+      function clickEvent(first, last) {
+        if (first.value.length) {
+          document.getElementById(last).focus();
+        }
+      }
+    </script>
+    <!-- script end -->
+
+
+  </body>
+
+</html>

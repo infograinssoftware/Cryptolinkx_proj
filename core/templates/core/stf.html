@@ -1,0 +1,840 @@
+{% extends 'authentication/base.html' %}
+{% load static %}
+
+
+{% block stf %}
+
+<style>
+rect.highcharts-plot-border {
+    display: none;
+}
+</style>
+
+
+<!-- exchange section start here -->
+<section class="stf_section_style">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-3 col-md-4 col-sm-12 col-12">
+        <div class="stf_Col3_style">
+          <h5>MARKETS</h5>
+          <!-- <input type="text" placeholder="Search.." class="stf_search_style"> -->
+          <!-- <table class="table stf_Lefttable_style">
+                <thead class="stf_thead_style">
+                  <tr>
+                    <th class="stf_thOne_style">Pair</th>
+                    <th class="stf_thTwo_style">Vol <i class="fas fa-arrow-down"></i></th>
+                    <th class="stf_thThree_style">Change</th>
+                  </tr>
+                </thead>
+                <tbody class="stf_tbody_style">
+                  <tr>
+                    <td class="stf_tdOne_style"> <img src="/static/authentication/assets/images/one.png" class="stf_tdimg_style"
+                        alt="Cryptolinkx"></td>
+                    <td class="stf_tdTwo_style">
+                      <b>DOGE/</b><span class="stf_tdSpan_style">INR</span><br>
+                      <span style="color: red; font-size: 12px;"> <i class="fas fa-caret-down"></i>-20.2%</span>
+                    </td>
+                    <td class="stf_tdThree_style">₹25.8003</td>
+                  </tr>
+                  <tr>
+                    <td class="stf_tdOne_style"> <img src="/static/authentication/assets/images/two.png" class="stf_tdimg_style"
+                        alt="Cryptolinkx"></td>
+                    <td>
+                      <b>BTC/</b><span class="stf_tdSpan_style">INR</span> <br>
+                      <span style="color: green; font-size: 12px;"><i class="fas fa-sort-up"></i>20.2%</span>
+                    </td>
+                    <td>₹25.8003</td>
+                  </tr>
+
+                  <tr>
+                    <td class="stf_tdOne_style"> <img src="/static/authentication/assets/images/three.png" class="stf_tdimg_style"
+                        alt="Cryptolinkx"></td>
+                    <td>
+                      <b>BTC/</b><span class="stf_tdSpan_style">INR</span><br>
+                      <span style="color: red; font-size: 12px;"> <i class="fas fa-caret-down"></i>-20.2%</span>
+                    </td>
+                    <td>₹25.8003</td>
+                  </tr>
+                  <tr>
+                    <td class="stf_tdOne_style"> <img src="/static/authentication/assets/images/one.png" class="stf_tdimg_style"
+                        alt="Cryptolinkx"></td>
+                    <td>
+                      <b>DOGE/</b><span class="stf_tdSpan_style">INR</span><br>
+                      <span style="color: red; font-size: 12px;"> <i class="fas fa-caret-down"></i>-20.2%</span>
+                    </td>
+                    <td>₹25.8003</td>
+                  </tr>
+                  <tr>
+                    <td class="stf_tdOne_style"> <img src="/static/authentication/assets/images/two.png" class="stf_tdimg_style"
+                        alt="Cryptolinkx"></td>
+                    <td>
+                      <b>BTC/</b><span class="stf_tdSpan_style">INR</span> <br>
+                      <span style="color: green; font-size: 12px;"><i class="fas fa-sort-up"></i>20.2%</span>
+                    </td>
+                    <td>₹25.8003</td>
+                  </tr>
+
+                  <tr>
+                    <td class="stf_tdOne_style"> <img src="/static/authentication/assets/images/three.png" class="stf_tdimg_style"
+                        alt="Cryptolinkx"></td>
+                    <td>
+                      <b>BTC/</b><span class="stf_tdSpan_style">INR</span><br>
+                      <span style="color: red; font-size: 12px;"> <i class="fas fa-caret-down"></i>-20.2%</span>
+                    </td>
+                    <td>₹25.8003</td>
+                  </tr>
+                  <tr>
+                    <td class="stf_tdOne_style"> <img src="/static/authentication/assets/images/one.png" class="stf_tdimg_style"
+                        alt="Cryptolinkx"></td>
+                    <td>
+                      <b>DOGE/</b><span class="stf_tdSpan_style">INR</span><br>
+                      <span style="color: red; font-size: 12px;"> <i class="fas fa-caret-down"></i>-20.2%</span>
+                    </td>
+                    <td>₹25.8003</td>
+                  </tr>
+                  <tr>
+                    <td class="stf_tdOne_style"> <img src="/static/authentication/assets/images/two.png" class="stf_tdimg_style"
+                        alt="Cryptolinkx"></td>
+                    <td>
+                      <b>BTC/</b><span class="stf_tdSpan_style">INR</span> <br>
+                      <span style="color: green; font-size: 12px;"><i class="fas fa-sort-up"></i>20.2%</span>
+                    </td>
+                    <td>₹25.8003</td>
+                  </tr>
+
+                  <tr>
+                    <td class="stf_tdOne_style"> <img src="/static/authentication/assets/images/three.png" class="stf_tdimg_style"
+                        alt="Cryptolinkx"></td>
+                    <td>
+                      <b>BTC/</b><span class="stf_tdSpan_style">INR</span><br>
+                      <span style="color: red; font-size: 12px;"> <i class="fas fa-caret-down"></i>-20.2%</span>
+                    </td>
+                    <td>₹25.8003</td>
+                  </tr>
+                  <tr>
+                    <td class="stf_tdOne_style"> <img src="/static/authentication/assets/images/one.png" class="stf_tdimg_style"
+                        alt="Cryptolinkx"></td>
+                    <td>
+                      <b>DOGE/</b><span class="stf_tdSpan_style">INR</span><br>
+                      <span style="color: red; font-size: 12px;"> <i class="fas fa-caret-down"></i>-20.2%</span>
+                    </td>
+                    <td>₹25.8003</td>
+                  </tr>
+                  <tr>
+                    <td class="stf_tdOne_style"> <img src="/static/authentication/assets/images/two.png" class="stf_tdimg_style"
+                        alt="Cryptolinkx"></td>
+                    <td>
+                      <b>BTC/</b><span class="stf_tdSpan_style">INR</span> <br>
+                      <span style="color: green; font-size: 12px;"><i class="fas fa-sort-up"></i>20.2%</span>
+                    </td>
+                    <td>₹25.8003</td>
+                  </tr>
+
+                  <tr>
+                    <td class="stf_tdOne_style"> <img src="/static/authentication/assets/images/three.png" class="stf_tdimg_style"
+                        alt="Cryptolinkx"></td>
+                    <td>
+                      <b>BTC/</b><span class="stf_tdSpan_style">INR</span><br>
+                      <span style="color: red; font-size: 12px;"> <i class="fas fa-caret-down"></i>-20.2%</span>
+                    </td>
+                    <td>₹25.8003</td>
+                  </tr>
+                  <tr>
+                    <td class="stf_tdOne_style"> <img src="/static/authentication/assets/images/one.png" class="stf_tdimg_style"
+                        alt="Cryptolinkx"></td>
+                    <td>
+                      <b>DOGE/</b><span class="stf_tdSpan_style">INR</span><br>
+                      <span style="color: red; font-size: 12px;"> <i class="fas fa-caret-down"></i>-20.2%</span>
+                    </td>
+                    <td>₹25.8003</td>
+                  </tr>
+                  <tr>
+                    <td class="stf_tdOne_style"> <img src="/static/authentication/assets/images/two.png" class="stf_tdimg_style"
+                        alt="Cryptolinkx"></td>
+                    <td>
+                      <b>BTC/</b><span class="stf_tdSpan_style">INR</span> <br>
+                      <span style="color: green;  font-size: 12px;"><i class="fas fa-sort-up"></i>20.2%</span>
+                    </td>
+                    <td>₹25.8003</td>
+                  </tr>
+
+                  <tr>
+                    <td class="stf_tdOne_style"> <img src="/static/authentication/assets/images/three.png" class="stf_tdimg_style"
+                        alt="Cryptolinkx"></td>
+                    <td>
+                      <b>BTC/</b><span class="stf_tdSpan_style">INR</span><br>
+                      <span style="color: red;  font-size: 12px;"> <i class="fas fa-caret-down"></i>-20.2%</span>
+                    </td>
+                    <td>₹25.8003</td>
+                  </tr>
+                  <tr>
+                    <td class="stf_tdOne_style"> <img src="/static/authentication/assets/images/one.png" class="stf_tdimg_style"
+                        alt="Cryptolinkx"></td>
+                    <td>
+                      <b>DOGE/</b><span class="stf_tdSpan_style">INR</span><br>
+                      <span style="color: red;  font-size: 12px;"> <i class="fas fa-caret-down"></i>-20.2%</span>
+                    </td>
+                    <td>₹25.8003</td>
+                  </tr>
+                  <tr>
+                    <td class="stf_tdOne_style"> <img src="/static/authentication/assets/images/two.png" class="stf_tdimg_style"
+                        alt="Cryptolinkx"></td>
+                    <td>
+                      <b>BTC/</b><span class="stf_tdSpan_style">INR</span> <br>
+                      <span style="color: green;  font-size: 12px;"><i class="fas fa-sort-up"></i>20.2%</span>
+                    </td>
+                    <td>₹25.8003</td>
+                  </tr>
+
+                  <tr>
+                    <td class="stf_tdOne_style"> <img src="/static/authentication/assets/images/three.png" class="stf_tdimg_style"
+                        alt="Cryptolinkx"></td>
+                    <td>
+                      <b>BTC/</b><span class="stf_tdSpan_style">INR</span><br>
+                      <span style="color: red;  font-size: 12px;"> <i class="fas fa-caret-down"></i>-20.2%</span>
+                    </td>
+                    <td>₹25.8003</td>
+                  </tr>
+                  <tr>
+                    <td class="stf_tdOne_style"> <img src="/static/authentication/assets/images/one.png" class="stf_tdimg_style"
+                        alt="Cryptolinkx"></td>
+                    <td>
+                      <b>DOGE/</b><span class="stf_tdSpan_style">INR</span><br>
+                      <span style="color: red;  font-size: 12px;"> <i class="fas fa-caret-down"></i>-20.2%</span>
+                    </td>
+                    <td>₹25.8003</td>
+                  </tr>
+                  <tr>
+                    <td class="stf_tdOne_style"> <img src="/static/authentication/assets/images/two.png" class="stf_tdimg_style"
+                        alt="Cryptolinkx"></td>
+                    <td>
+                      <b>BTC/</b><span class="stf_tdSpan_style">INR</span> <br>
+                      <span style="color: green;  font-size: 12px;"><i class="fas fa-sort-up"></i>20.2%</span>
+                    </td>
+                    <td>₹25.8003</td>
+                  </tr>
+
+                  <tr>
+                    <td class="stf_tdOne_style"> <img src="/static/authentication/assets/images/three.png" class="stf_tdimg_style"
+                        alt="Cryptolinkx"></td>
+                    <td>
+                      <b>BTC/</b><span class="stf_tdSpan_style">INR</span><br>
+                      <span style="color: red;  font-size: 12px;"> <i class="fas fa-caret-down"></i>-20.2%</span>
+                    </td>
+                    <td>₹25.8003</td>
+                  </tr>
+                  <tr>
+                    <td class="stf_tdOne_style"> <img src="/static/authentication/assets/images/one.png" class="stf_tdimg_style"
+                        alt="Cryptolinkx"></td>
+                    <td>
+                      <b>DOGE/</b><span class="stf_tdSpan_style">INR</span><br>
+                      <span style="color: red;  font-size: 12px;"> <i class="fas fa-caret-down"></i>-20.2%</span>
+                    </td>
+                    <td>₹25.8003</td>
+                  </tr>
+                  <tr>
+                    <td class="stf_tdOne_style"> <img src="/static/authentication/assets/images/two.png" class="stf_tdimg_style"
+                        alt="Cryptolinkx"></td>
+                    <td>
+                      <b>BTC/</b><span class="stf_tdSpan_style">INR</span> <br>
+                      <span style="color: green;  font-size: 12px;"><i class="fas fa-sort-up"></i>20.2%</span>
+                    </td>
+                    <td>₹25.8003</td>
+                  </tr>
+
+                  <tr>
+                    <td class="stf_tdOne_style"> <img src="/static/authentication/assets/images/three.png" class="stf_tdimg_style"
+                        alt="Cryptolinkx"></td>
+                    <td>
+                      <b>BTC/</b><span class="stf_tdSpan_style">INR</span><br>
+                      <span style="color: red;  font-size: 12px;"> <i class="fas fa-caret-down"></i>-20.2%</span>
+                    </td>
+                    <td>₹25.8003</td>
+                  </tr>
+                  <tr>
+                    <td class="stf_tdOne_style"> <img src="/static/authentication/assets/images/one.png" class="stf_tdimg_style"
+                        alt="Cryptolinkx"></td>
+                    <td>
+                      <b>DOGE/</b><span class="stf_tdSpan_style">INR</span><br>
+                      <span style="color: red;  font-size: 12px;"> <i class="fas fa-caret-down"></i>-20.2%</span>
+                    </td>
+                    <td>₹25.8003</td>
+                  </tr>
+                  <tr>
+                    <td class="stf_tdOne_style"> <img src="/static/authentication/assets/images/two.png" class="stf_tdimg_style"
+                        alt="Cryptolinkx"></td>
+                    <td>
+                      <b>BTC/</b><span class="stf_tdSpan_style">INR</span> <br>
+                      <span style="color: green;  font-size: 12px;"><i class="fas fa-sort-up"></i>20.2%</span>
+                    </td>
+                    <td>₹25.8003</td>
+                  </tr>
+
+                  <tr>
+                    <td class="stf_tdOne_style"> <img src="/static/authentication/assets/images/three.png" class="stf_tdimg_style"
+                        alt="Cryptolinkx"></td>
+                    <td>
+                      <b>BTC/</b><span class="stf_tdSpan_style">INR</span><br>
+                      <span style="color: red;  font-size: 12px;"> <i class="fas fa-caret-down"></i>-20.2%</span>
+                    </td>
+                    <td>₹25.8003</td>
+                  </tr>
+                </tbody>
+              </table> -->
+          <div class=""><br>
+            <input type="text" placeholder="Search.." class="stf_exchange_search_style">
+            <div class="stf_exchng_left_data">
+              <div class="stf_list_head_txt">
+                <div class="pair">
+                  <a href="javascript:;" class="">Pair</a>
+                </div>
+                <div class="vol">
+                  <a href="javascript:;" class="">Vol
+                    <svg class="svg-inline--fa fa-arrow-down fa-w-14" aria-hidden="true" focusable="false"
+                      data-prefix="fas" data-icon="arrow-down" role="img" xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 448 512" data-fa-i2svg="">
+                      <path fill="currentColor"
+                        d="M413.1 222.5l22.2 22.2c9.4 9.4 9.4 24.6 0 33.9L241 473c-9.4 9.4-24.6 9.4-33.9 0L12.7 278.6c-9.4-9.4-9.4-24.6 0-33.9l22.2-22.2c9.5-9.5 25-9.3 34.3.4L184 343.4V56c0-13.3 10.7-24 24-24h32c13.3 0 24 10.7 24 24v287.4l114.8-120.5c9.3-9.8 24.8-10 34.3-.4z">
+                      </path>
+                    </svg>
+                  </a>
+                </div>
+                <div class="change">
+                  <a href="javascript:;" class="">Change</a>
+                </div>
+              </div>
+            </div>
+            <div class="data_list_scrll">
+              <div class="list_data_div">
+                <a class="a_div" href="javascript:;">
+                  <div class="market_div">
+                    <div class="currency_icon">
+                      $
+                    </div>
+                    <div class="market">
+                      <div class="market_name">
+                        <span class="market_name_txt">BTC<span class="sub_txt">/INR</span></span>
+                      </div>
+                      <div class="market_change">
+                        <span class="market_change_data">1.24%</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="price">
+                    <span class="price_value">$250.54</span>
+                    <span class="price_btm">2.3088 USDT</span>
+                  </div>
+                </a>
+              </div>
+              <div class="list_data_div">
+                <a class="a_div" href="javascript:;">
+                  <div class="market_div">
+                    <div class="currency_icon">
+                      $
+                    </div>
+                    <div class="market">
+                      <div class="market_name">
+                        <span class="market_name_txt">BTC<span class="sub_txt">/INR</span></span>
+                      </div>
+                      <div class="market_change">
+                        <span class="market_change_data">1.24%</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="price">
+                    <span class="price_value">$250.54</span>
+                    <span class="price_btm">2.3088 USDT</span>
+                  </div>
+                </a>
+              </div>
+              <div class="list_data_div">
+                <a class="a_div" href="javascript:;">
+                  <div class="market_div">
+                    <div class="currency_icon">
+                      $
+                    </div>
+                    <div class="market">
+                      <div class="market_name">
+                        <span class="market_name_txt">BTC<span class="sub_txt">/INR</span></span>
+                      </div>
+                      <div class="market_change">
+                        <span class="market_change_data">1.24%</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="price">
+                    <span class="price_value">$250.54</span>
+                    <span class="price_btm">2.3088 USDT</span>
+                  </div>
+                </a>
+              </div>
+              <div class="list_data_div">
+                <a class="a_div" href="javascript:;">
+                  <div class="market_div">
+                    <div class="currency_icon">
+                      $
+                    </div>
+                    <div class="market">
+                      <div class="market_name">
+                        <span class="market_name_txt">BTC<span class="sub_txt">/INR</span></span>
+                      </div>
+                      <div class="market_change">
+                        <span class="market_change_data">1.24%</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="price">
+                    <span class="price_value">$250.54</span>
+                    <span class="price_btm">2.3088 USDT</span>
+                  </div>
+                </a>
+              </div>
+              <div class="list_data_div">
+                <a class="a_div" href="javascript:;">
+                  <div class="market_div">
+                    <div class="currency_icon">
+                      $
+                    </div>
+                    <div class="market">
+                      <div class="market_name">
+                        <span class="market_name_txt">BTC<span class="sub_txt">/INR</span></span>
+                      </div>
+                      <div class="market_change">
+                        <span class="market_change_data">1.24%</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="price">
+                    <span class="price_value">$250.54</span>
+                    <span class="price_btm">2.3088 USDT</span>
+                  </div>
+                </a>
+              </div>
+              <div class="list_data_div">
+                <a class="a_div" href="javascript:;">
+                  <div class="market_div">
+                    <div class="currency_icon">
+                      $
+                    </div>
+                    <div class="market">
+                      <div class="market_name">
+                        <span class="market_name_txt">BTC<span class="sub_txt">/INR</span></span>
+                      </div>
+                      <div class="market_change">
+                        <span class="market_change_data">1.24%</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="price">
+                    <span class="price_value">$250.54</span>
+                    <span class="price_btm">2.3088 USDT</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-8 col-sm-12 col-12">
+        <div class="stf_Col6Div_style">
+          <div class="stf_Col6_style">
+            <div class="stf_xoom_head">
+              <h6 class="stf_xoom_txt">XOOM (XOOM)</h6>
+              <p>1,942.5549 USDT</p>
+            </div>
+            <hr />
+            <div class="stf_xoom_body">
+              <p>My trading strategy is medium risk, and medium returns.</p>
+              <p>I've been trading cryptos since early 2017. Did <b>20x</b> profits by just trading BTC and major alts
+                like ETH, LTC, XRP and BCH.</p>
+            </div>
+          </div>
+
+          <div class="stf_Col6One_style">
+
+            <h6 class="portfolio_headtxt">PORTFOLIO DETAILS</h6>
+            <div class="portfolio_headsec container-fluid">
+              <div class="row">
+                <div class="col-md-3 col-sm-6 col-6 stf_md3_style ">
+                  <p class="text-center">Initial price: <br><b>100.0000 USDT</b>
+                  </p>
+                </div>
+                <div class="col-md-3 col-sm-6 col-6 stf_md3_style">
+                  <p class="text-center">Since: <b>599 days</b>
+                  </p>
+                </div>
+                <div class="col-md-3 col-sm-6 col-6 stf_md3_style">
+                  <p class="text-center">Sell Interval: <br><b>24 hours</b> <i class="far fa-question-circle"></i>
+                  </p>
+                </div>
+                <div class="col-md-3 col-sm-6 col-6 stf_md3_style">
+                  <p class="text-center">Next Sell at: <br><b>01:00 AM</b> <i class="far fa-question-circle"></i>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs">
+
+              <li class="nav-item">
+                <button class="nav-link stf_Btn_style active" data-toggle="tab" href="#1H">1H</button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link stf_Btn_style" data-toggle="tab" href="#6H">6H</button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link stf_Btn_style" data-toggle="tab" href="#1D">1D</button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link stf_Btn_style" data-toggle="tab" href="#1W">1W</button>
+              </li>
+            </ul>
+
+
+
+            <!-- Tab panes -->
+            <div class="tab-content ">
+
+              <div id="1H" class="container tab-pane active"><br>
+                <!-- <img src="/static/authentication/assets/images/Graf_Img.png" class="w-100" alt="Cryptolinkx"> -->
+                <!-- TradingView Widget BEGIN -->
+                <div class="tradingview-widget-container">
+                  <div id="tradingview_9480b" class="w-25"></div>
+                  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-AAPL/"
+                      rel="noopener" target="_blank"><span class="blue-text">{{pair_name}} Chart</span></a> by
+                    TradingView</div>
+                  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                  <script type="text/javascript">
+                    var pair_name = "{{pair_name}}";
+                    new TradingView.widget(
+                      {
+                        "width": 850,
+                        "height": 330,
+                        "symbol": pair_name,
+                        "interval": "D",
+                        "timezone": "Etc/UTC",
+                        "theme": "light",
+                        "style": "1",
+                        "locale": "en",
+                        "toolbar_bg": "#f1f3f6",
+                        "enable_publishing": false,
+                        "allow_symbol_change": true,
+                        "container_id": "tradingview_9480b"
+                      }
+                    );
+                  </script>
+                </div>
+                <!-- TradingView Widget END -->
+
+              </div>
+              <div id="6H" class="container tab-pane fade"><br>
+                <p>btc</p>
+              </div>
+              <div id="1D" class="container tab-pane fade"><br>
+                <p>usdt</p>
+              </div>
+              <div id="1W" class="container tab-pane fade"><br>
+                <p>wrx</p>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="stf_row_style">
+
+            <div class="col-md-12 col-sm-12 col-12 stf_col5_style">
+              <div class="stf_Col4_style">
+                <h6 class="pl-3">ASSET ALLOCATION</h6>
+                <div class="container-fluid p-2">
+                  <div class="row">
+                    <div class="col-md-12 mb-3">
+                      <figure class="highcharts-figure">
+                        <div id="chart_container"></div>
+                      </figure>
+                      <!-- <img src="/static/authentication/assets/images/piefreq.png" class="w-100" alt="Cryptolinkx"> -->
+                    </div>
+                    <div class="col-md-12">
+                      <!-- <table class="w-100">
+                      <tr>
+                        <th>ASSETS</th>
+                        <th>ALLOCATION (PER TOKEN)</th>
+                        <th>% ALLOCATION</th>
+                      </tr>
+                      <tr>
+                        <td>43,84,995</td>
+                        <td>43,84,995</td>
+                        <td>0.0032</td>
+                      </tr>
+                      <tr>
+                        <td>43,84,980</td>
+                        <td>43,84,980</td>
+                        <td>0.0025</td>
+                      </tr>
+                    </table> -->
+                      <div class="asset_data_div">
+                        <div class="asset_data_div_head">
+                          <div>ASSETS</div>
+                          <div>ALLOCATION (PER TOKEN)</div>
+                          <div>% ALLOCATION</div>
+                        </div>
+                        <div class="asset_data_div_body">
+                          <div class="asset_data_div_row">
+                            <div class="col1"><i class="fas fa-circle"></i> COTI</div>
+                            <div>611.54231802</div>
+                            <div>25.05%</div>
+                          </div>
+                          <div class="asset_data_div_row">
+                            <div class="col2"><i class="fas fa-circle"></i> EOS</div>
+                            <div>611.54231802</div>
+                            <div>25.05%</div>
+                          </div>
+                          <div class="asset_data_div_row">
+                            <div class="col3"><i class="fas fa-circle"></i> DASH</div>
+                            <div>611.54231802</div>
+                            <div>25.05%</div>
+                          </div>
+                          <div class="asset_data_div_row">
+                            <div class="col4"><i class="fas fa-circle"></i> USDT</div>
+                            <div>611.54231802</div>
+                            <div>25.05%</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- <table class="history_tbl_style">
+                  <tr>
+                    <th>PRICE</th>
+                    <th>VOLUME</th>
+                    <th>TIME</th>
+                  </tr>
+                  <tr>
+                    <td>43,84,995</td>
+                    <td>43,84,995</td>
+                    <td>0.0032</td>
+                  </tr>
+                  <tr>
+                    <td>43,84,980</td>
+                    <td>43,84,980</td>
+                    <td>0.0025</td>
+                  </tr>
+                </table> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-12 col-sm-12 col-12 pl-0 stf_Col3DivRight_style">
+        <div class="stf_Col3Threed_style">
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs">
+            <li class="nav-item stf_liOne_style">
+              <a class="nav-link active stf_orderBtn_style" data-toggle="tab" href="#openOrders">OPEN
+                ORDERS</a>
+            </li>
+            <li class="nav-item stf_liOne_style">
+              <a class="nav-link stf_orderBtn_style" data-toggle="tab" href="#completedOrders">COMPLETED
+                ORDERS</a>
+            </li>
+
+          </ul>
+
+          <!-- Tab panes -->
+          <div class="tab-content stf_tab_panes_style">
+            <div id="openOrders" class="container tab-pane active"><br>
+              <div>
+                <div class="stf_btnDiv_style">
+                  <button type="button" class="btn stf_CancelAllBtn_style mt-3">Cancel All</button>
+                </div>
+
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Pair</th>
+                      <th>Quantity</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div id="completedOrders" class="container tab-pane fade"><br>
+              <div>
+
+                <table class="table stf_table_style">
+                  <thead>
+                    <tr>
+                      <th>Pair</th>
+                      <th>Price</th>
+                      <th>Quantity</th>
+                      <th>Total</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="stf_Col3Threed_style stf_Threed_style">
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs">
+            <li class="nav-item stf_li_style">
+              <button class="nav-link active stf_Btn_style" data-toggle="tab" href="#exchangeBuy">BUY</button>
+            </li>
+            <li class="nav-item stf_li_style">
+              <button class="nav-link stf_Btn_style" data-toggle="tab" href="#exchangeSell">SELL</button>
+            </li>
+
+          </ul>
+
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div id="exchangeBuy" class="container tab-pane active"><br>
+              <p>AT PRICE: <b>1946.6013 USDT</b> <i class="far fa-question-circle"></i></p>
+              <form>
+                <!-- <label for="fname"><b>VOLUME XOOM :</b></label><br>
+                <input type="email" class="stf_input_style" id="uname" name="priceInr" placeholder="Enter UserName"
+                  class="login_input_style"><br> -->
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text exchangeBuy_inputspn" id="basic-addon3">VOLUME<br>XOOM</span>
+                  </div>
+                  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                </div>
+
+                <!-- <label for="lname"><b>TOTAL USDT :</b></label>
+                <input type="password" class="stf_input_style" id="pass" name="amountBtc" placeholder="Enter Password"
+                  class="login_input_style"><br> -->
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text exchangeBuy_inputspn" id="basic-addon3">TOTAL<br>USDT</span>
+                  </div>
+                  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                </div>
+
+                <!-- <hr /> -->
+                <button type="button" class="btn btn-primary stf_loginbtn_style w-100 mt-3">Buy</button>
+              </form>
+            </div>
+            <div id="exchangeSell" class="container tab-pane fade"><br>
+              <p>SELL AT: <b>01:00 am</b> <i class="far fa-question-circle"></i></p>
+              <form>
+                <!-- <label for="fname"><b>TOTAL USDT :</b></label><br>
+                <input type="email" class="stf_input_style" id="uname" name="priceInr" placeholder="Enter UserName"
+                  class="login_input_style"><br> -->
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text exchangeBuy_inputspn" id="basic-addon3">VOLUME<br>XOOM</span>
+                  </div>
+                  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                </div>
+
+
+
+                <!-- <hr /> -->
+                <button type="button" class="btn btn-danger stf_sellbtn_style w-100 mt-3">Sell</button>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- exchange section start here -->
+
+<!-- Chart script  -->
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<script>
+  // Make monochrome colors
+  var pieColors = (function () {
+    var colors = [],
+      base = Highcharts.getOptions().colors[0],
+      i;
+
+    for (i = 0; i < 10; i += 1) {
+      // Start out with a darkened base color (negative brighten), and end
+      // up with a much brighter color
+      colors.push(Highcharts.color(base).brighten((i - 3) / 7).get());
+    }
+    return colors;
+  }());
+
+  // Build the chart
+  Highcharts.chart('chart_container', {
+    chart: {
+      plotBackgroundColor: null,
+      plotBorderWidth: null,
+      plotShadow: false,
+      type: 'pie'
+    },
+    title: {
+      text: ''
+    },
+    tooltip: {
+      pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    accessibility: {
+      point: {
+        valueSuffix: '%'
+      }
+    },
+    plotOptions: {
+      pie: {
+        allowPointSelect: true,
+        cursor: 'pointer',
+        colors: pieColors,
+        dataLabels: {
+          enabled: true,
+          format: '<b>{point.name}</b><br>{point.percentage:.1f} %',
+          distance: -50,
+          filter: {
+            property: 'percentage',
+            operator: '>',
+            value: 4
+          }
+        }
+      }
+    },
+    series: [{
+      name: 'Share',
+      data: [
+        { name: 'COTI', y: 40.00 },
+        { name: 'EOS', y: 20.00 },
+        { name: 'DASH', y: 20.00 },
+        { name: 'USDT', y: 20.00 }
+      ]
+    }]
+  });
+</script>
+<!-- Optional JavaScript -->
+
+<script>
+  function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+</script>
+{% endblock stf %}

@@ -1,0 +1,195 @@
+{% extends 'authentication/base.html' %}
+{% load static %}
+
+
+{% block funds %}
+
+
+  <!-- funds section start here -->
+  <section >
+    <div class="container">
+      <div class="funds_container_style">
+
+        <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+          <h5 class="ml-2 mt-3 mb-3">FUNDS AND TRANSFERS</h5>
+          <!-- Nav tabs -->
+
+         
+          <div class="fund_head">
+            <ul class="nav nav-tabs">
+              <li class="nav-item funds_liOne_style">
+                <a class="nav-link active funds_orderBtn_style" data-toggle="tab" href="#funds">FUNDS</a>
+              </li>
+              <li class="nav-item funds_liOne_style">
+                <a class="nav-link funds_orderBtn_style" data-toggle="tab" href="#transferHistory">TRANSFER HISTORY</a>
+              </li>
+            </ul>
+
+            <p>
+              Estimated Portfolio - $0.00
+            </p>
+          </div>
+           
+
+            <!-- Tab panes -->
+            <div class="tab-content funds_tab_panes_style">
+              <div id="funds" class="container tab-pane active"><br>
+                <div class="table-responsive">
+                  <div class="funds_row_style">
+                    <div class="d-flex">
+                      <input type="text" placeholder="Search.." class="funds_input_style">
+                      <label class="switch">
+                        <input type="checkbox" class="switch-input">
+                        <span class="switch-label" data-on="On" data-off="Off"></span>
+                        <span class="switch-handle"></span>
+                      </label>
+                    </div>
+                    
+                    <div class="d-flex mr-2">
+                      <img src="/static/authentication/assets/images/logo.png" class="funds_logoImg_style" alt="Logo">
+                      <p class="funds_pTag_style">Convert To CryptolinkX <i class="fas fa-arrow-right"></i></p>
+                    </div>
+                    
+                  </div>
+                  <table class="table">
+                    <thead class="">
+                      <tr class="fund_table_head">
+                        <th class="funds_thStyle_style"></th>
+                        <th class="funds_thStyle_style">Assets</th>
+                        <th class="funds_thStyle_style">Available Balance <i class="fas fa-arrow-down"></i></th>
+                        <th class="funds_thStyle_style">Locked </th>
+                        <th class="funds_thStyle_style">Total</th>
+                        <th class="funds_thStyle_style">INR Value</th>
+                        <th class="funds_thStyle_style">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for i in all_wallets %}
+                      <tr class="fund_table_body">
+                        <td class="funds_tdStyle_style "> <img src="/static/authentication/assets/images/one.png" class="funds_tdimg_style"
+                            alt="Cryptolinkx"></td>
+                        <td class="funds_tdTwoStyle_style">{{ i.coin_pair|truncatechars:4|cut:"..." }}</td>
+                        <td class="funds_tdStyle_style">{{i.available_bal}}</td>
+                        <td class="funds_tdStyle_style">{{i.locked_bal}}</td>
+                        <td class="funds_tdStyle_style">{{i.total_bal}}</td>
+                        <td class="funds_tdStyle_style">0</td>
+                        <td class="d-flex funds_tdStyle_style">
+                          <button type="button" class="btn btn-primary funds_Depositbtn_style w-100 ">Deposit</button>
+                            <button type="button" class="btn btn-danger funds_Withdrawbtn_style w-100 ">Withdraw</button>
+                        </td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                    </table> 
+                 
+                </div>
+              </div>
+              <div id="transferHistory" class="container tab-pane fade"><br>
+                <div class="table-responsive">
+                  <table class="table table-striped transfer_table">
+                    <thead class="">
+                      <tr>
+                        <th class="funds_thStyle_style">Assets</th>
+                        <th class="funds_thStyle_style">Type <i class="fas fa-arrow-down"></i></th>
+                        <th class="funds_thStyle_style">Volume</th>
+                        <th class="funds_thStyle_style">Status</th>
+                        <th class="funds_thStyle_style">Time</th>
+                      </tr>
+                    </thead>
+                    <tbody id="trade-history">
+                      <tr>
+                        <td class="funds_tdTwoStyle_style">Rupee (INR)</td>
+                        <td class="funds_tdStyle_style">0</td>
+                        <td class="funds_tdStyle_style">0</td>
+                        <td class="funds_tdStyle_style">0</td>
+                        <td class="funds_tdStyle_style">0</td>
+                      </tr>
+                      <tr>
+                        <td class="funds_tdTwoStyle_style">Rupee (INR)</td>
+                        <td class="funds_tdStyle_style">0</td>
+                        <td class="funds_tdStyle_style">0</td>
+                        <td class="funds_tdStyle_style">0</td>
+                        <td class="funds_tdStyle_style">0</td>
+                      </tr>
+                      <tr>
+                        <td class="funds_tdTwoStyle_style">Rupee (INR)</td>
+                        <td class="funds_tdStyle_style">0</td>
+                        <td class="funds_tdStyle_style">0</td>
+                        <td class="funds_tdStyle_style">0</td>
+                        <td class="funds_tdStyle_style">0</td>
+                      </tr>
+                      <tr>
+                        <td class="funds_tdTwoStyle_style">Rupee (INR)</td>
+                        <td class="funds_tdStyle_style">0</td>
+                        <td class="funds_tdStyle_style">0</td>
+                        <td class="funds_tdStyle_style">0</td>
+                        <td class="funds_tdStyle_style">0</td>
+                      </tr>
+                      <tr>
+                        <td class="funds_tdTwoStyle_style">Rupee (INR)</td>
+                        <td class="funds_tdStyle_style">0</td>
+                        <td class="funds_tdStyle_style">0</td>
+                        <td class="funds_tdStyle_style">0</td>
+                        <td class="funds_tdStyle_style">0</td>
+                      </tr> 
+                      <tr>
+                        <td class="funds_tdTwoStyle_style">Rupee (INR)</td>
+                        <td class="funds_tdStyle_style">0</td>
+                        <td class="funds_tdStyle_style">0</td>
+                        <td class="funds_tdStyle_style">0</td>
+                        <td class="funds_tdStyle_style">0</td>
+                      </tr>
+
+                    </tbody>
+                    </table>
+                </div>
+              </div>
+
+            </div>
+
+         
+        </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <!-- funds section close here -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+
+  <script>
+  
+  function trade_history(){
+    $.ajax({
+      url: "https://api.binance.com/api/v3/trades?symbol={{pair_name}}&limit=5",
+      type: "GET",
+      dataType: "json",
+      success: function(event){
+        t_history = "";
+        prev = 0;
+        for(let i = 0; i<5; i++)
+        {
+          let tt = event[i]['time'];
+          let t_time = new Date(tt).toTimeString("en-US").slice(0,8);
+          prev = event[i]['price'];
+          if(parseInt(event[i+1]['price']) >  parseInt(prev)){
+            price_color = "danger";
+          }
+          else{
+            price_color = "success";
+          };
+          // console.log(parseInt(event[0]['price'])); 
+          document.getElementsByClassName("buy-input")[0].value = parseFloat(event[0]['price']);
+          document.getElementsByClassName("buy-input")[1].value = parseFloat(event[0]['price']);
+          t_history +=  '<tr class="bg-'+price_color+'" ><td class="text-white'+' bg-'+price_color+' font-weight-bold">'+event[i]['price']+'</td><td class="text-white bg-'+price_color+'">'+event[i]['qty']+'</td><td class="text-white bg-'+price_color+'">'+t_time+'</td></tr>';
+        }
+        document.getElementById('trade-history').innerHTML = t_history;
+      }
+    });
+  };
+  trade_history()
+  
+</script>
+  {% endblock funds %}

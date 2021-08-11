@@ -1,0 +1,629 @@
+{% extends 'authentication/base.html' %}
+{% load static %}
+{% block p2p %}
+
+<body>
+
+  <!-- banner section start here -->
+  <section class="p2p_banner_section">
+    <div class="container-fluid">
+      <div class="row p2p_bannerRow_style">
+        <div class="col-lg-8 col-md-8 col-sm-12 col-12 p2p_bannerCol8_style">
+          <div class="banner_txt mt-3">
+            <!-- <img src="{% static 'authentication/assets/images/p2p-banner.svg" class="banner_img"> -->
+            <h4 class="banner_h4_style">Purchase&trade Bitcoin promptly with your bank account</h4>
+            <p class="banner_pTag_style">Free of cost, absolutely secure, and world's best digital currency exchange
+              with a
+              P2P engine</p>
+            <p class="banner_pTag_style">Cryptolinkx P2P is making Fiat <> Crypto exchangeinexpensive, quicker&easier
+                for
+                all our users!</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-12 pl-0 p2p_bannerCol4_style">
+          <div class="banner_img_box mt-3">
+
+            <img src="{% static 'authentication/assets/images/p2p-img.svg'%}" class="banner_img">
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+  <!-- banner section close here -->
+
+  <!-- Works section start here -->
+  <section class="Works_section_style">
+    <div class="container-fluid WorksSection_container_style">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+          <div class="Works_text_style">
+            <div class="page_heading">
+              <h2 class="heading_font_style">OUR P2P WORKINGS</h2>
+              <!-- HOW P2P WORKS -->
+            </div>
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs p2p_howWorkNavBar_style">
+              <li class="nav-item p2p_howWorkLi_style">
+                <a class="nav-link p2p_howWorkBtn_style active" data-toggle="tab" href="#buyer">Buyer</a>
+              </li>
+              <li class="nav-item p2p_howWorkLi_style">
+                <a class="nav-link p2p_howWorkBtn_style" data-toggle="tab" href="#seller">Seller</a>
+              </li>
+
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <div id="buyer" class="tab-pane active"><br>
+                <!-- <p class="Works_tabPTag_style">CryptolinkX P2P helps you convert your <b>money to crypto</b> instantly
+                  where
+                  CryptolinkX acts as an escrow for
+                  safekeeping of the transaction.
+                </p> -->
+
+                <div class="row mt-5">
+                  <div class="col-ld-4 col-md-4 col-sm-12 col-12 ">
+                    <div class="Works_tabCol4Div_style">
+
+                      <img src="{% static 'authentication/assets/images/submit.png'%}" class="tab_img_style center">
+                      <p class="Works_stapPTag_style">Step 1</p>
+                      <h6 class="text-center">PUT IN AN ORDER</h6>
+                      <p class="text-center">Get auto-matched instantly with a supplier right away</p>
+
+                    </div>
+
+                  </div>
+
+                  <div class="col-ld-4 col-md-4 col-sm-12 col-12">
+                    <div class="Works_tabCol4Div_style">
+                      <img src="{% static 'authentication/assets/images/direct-pay.png'%}" class="tab_img_style center">
+                      <p class="Works_stapPTag_style">Step 2</p>
+                      <h6 class="text-center">PAY DIRECTLY TO SELLER</h6>
+                      <p class="text-center">The seller will confirm your payment</p>
+                    </div>
+                  </div>
+
+                  <div class="col-ld-4 col-md-4 col-sm-12 col-12">
+                    <div class="Works_tabCol4Div_style">
+                      <img src="{% static 'authentication/assets/images/release.png'%}" class="tab_img_style center">
+                      <p class="Works_stapPTag_style">Step 3</p>
+                      <h6 class="text-center">CRYPTOLINKX OFFERS ESCROWED USDT</h6>
+                      <p class="text-center">We have the best and most authentic P2P method to exchange crypto to fiat
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div id="seller" class="tab-pane fade"><br>
+                <!-- <p class="Works_tabPTag_style">
+                  CryptolinkX P2P helps you convert your <b>crypto to money</b> instantly where CryptolinkX acts as an
+                  escrow for
+                  safekeeping of the transaction.
+                </p> -->
+
+                <div class="row mt-5">
+                  <div class="col-ld-4 col-md-4 col-sm-12 col-12">
+                    <div class="Works_tabCol4Div_style">
+
+                      <img src="{% static 'authentication/assets/images/submit.png'%}" class="tab_img_style center">
+
+                      <p class="Works_stapPTag_style">Step 1</p>
+                      <h6 class="text-center">MAKE YOUR ORDER</h6>
+                      <p class="text-center">You’ll be directly matched with a purchaser immediately</p>
+                    </div>
+                  </div>
+
+                  <div class="col-ld-4 col-md-4 col-sm-12 col-12">
+                    <div class="Works_tabCol4Div_style">
+
+                      <img src="{% static 'authentication/assets/images/direct-pay.png'%}" class="tab_img_style center">
+
+                      <p class="Works_stapPTag_style">Step 2</p>
+                      <h6 class="text-center">CONFIRMATION of PAYMENT RECEIVING</h6>
+                      <p class="text-center">We only transfer the USDT to a buyer once you confirm of receiving
+                        your payment</p>
+                    </div>
+                  </div>
+
+                  <div class="col-ld-4 col-md-4 col-sm-12 col-12">
+                    <div class="Works_tabCol4Div_style">
+
+                      <img src="{% static 'authentication/assets/images/release.png'%}" class="tab_img_style center">
+
+                      <p class="Works_stapPTag_style">Step 3</p>
+                      <h6 class="text-center">CRYPTOLINKX OFFERS ESCROWED USDT</h6>
+                      <p class="text-center">We have the best and most authentic P2P method to exchange crypto to fiat
+                      </p>
+                    </div>
+                  </div>
+
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+  </section>
+  <!-- Works section start here -->
+
+  <!-- MARKET  section start here -->
+  <section class="market_section">
+    <div class="container-fluid market_container_style">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+          <div class="market_page_heading">
+            <div class="text-center mb-3">
+              <h2 class="market_heading_font">LIVE MARKET CHART</h2>
+            </div>
+
+
+            <ul class="nav nav-tabs marketChart_ulTabs_style">
+              <li class="nav-item">
+                <button class="nav-link marketChart_Btn_style active" data-toggle="tab" href="#inr">USDT/INR</button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link marketChart_Btn_style" data-toggle="tab" href="#idr">USDT/IDR</button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link marketChart_Btn_style" data-toggle="tab" href="#rub">USDT/RUB</button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link marketChart_Btn_style" data-toggle="tab" href="#uah">USDT/UAH</button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link marketChart_Btn_style" data-toggle="tab" href="#ngn">USDT/NGN</button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link marketChart_Btn_style" data-toggle="tab" href="#sar">USDT/SAR</button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link marketChart_Btn_style" data-toggle="tab" href="#eur">USDT/EUR</button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link marketChart_Btn_style" data-toggle="tab" href="#try">USDT/TRY</button>
+              </li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <div id="inr" class="container tab-pane active"><br>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="p2p_oder_bok">
+                      <div class="order_bk_hed">
+                        <b>ORDER BOOK</b>
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs orderBook_uiTab_style">
+                          <li class="nav-item">
+                            <button class="nav-link orderBook_Btn_style active" data-toggle="tab"
+                              href="#INRMarketDepth">Market Depth</button>
+                          </li>
+                          <li class="nav-item">
+                            <button class="nav-link orderBook_Btn_style" data-toggle="tab" href="#INROrderVolume">Order
+                              Volume</button>
+                          </li>
+                        </ul>
+                      </div>
+                      <!-- Tab panes -->
+                      <div class="tab-content">
+                        <div id="INRMarketDepth" class="container tab-pane active"><br>
+                          <table class="orderBook_tbl_style">
+                            <tr>
+                              <th>VOLUME</th>
+                              <th>BUY PRICE</th>
+                              <th>SELL PRICE</th>
+                              <th>VOLUME</th>
+                            </tr>
+                            <tr>
+                              <td>530.00</td>
+                              <td>100.00</td>
+                              <td>73.55</td>
+                              <td>30.00</td>
+                            </tr>
+
+                          </table>
+                        </div>
+                        <div id="INROrderVolume" class="container tab-pane fade"><br>
+                          <table class="orderBook_tbl_style">
+                            <tr>
+                              <th>VOLUME</th>
+                              <th>BUY PRICE</th>
+                              <th>SELL PRICE</th>
+                              <th>VOLUME</th>
+                            </tr>
+                            <tr>
+                              <td>530.00</td>
+                              <td>100.00</td>
+                              <td>73.55</td>
+                              <td>30.00</td>
+                            </tr>
+
+                          </table>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="p2p_match_sec">
+                      <div class="matchtxt">MATCH HISTORY</div>
+
+                      <table class="matchHistory_Table_style ">
+                        <tr>
+                          <th>PRICE</th>
+                          <th>VOLUME</th>
+                          <th>TIME</th>
+                        </tr>
+                        <tr class="matchHistory_TableTr_red_style">
+                          <td class="matchHistory_TableTd_red_style"><i class="fas fa-arrow-up pr-1"></i>530.00</td>
+                          <td>100.00</td>
+                          <td>11:23:08</td>
+                        </tr>
+                        <tr class="matchHistory_TableTr_green_style">
+                          <td class="matchHistory_TableTd_green_style"><i class="fas fa-arrow-down pr-1"></i>530.00</td>
+                          <td>100.00</td>
+                          <td>11:23:08</td>
+                        </tr>
+
+                      </table>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="text-center mt-3">
+                  <button type="button" class="btn p2pMarket_btn_style">Visit Market <i
+                      class="fas fa-arrow-right"></i></button>
+                </div>
+
+              </div>
+
+              <div id="idr" class="container tab-pane fade"><br>
+                <h3>idr</h3>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                  consequat.</p>
+              </div>
+              <div id="rub" class="container tab-pane fade"><br>
+                <h3>rub</h3>
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                  totam rem aperiam.</p>
+              </div>
+              <div id="uah" class="container tab-pane fade"><br>
+                <h3>uah</h3>
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                  totam rem aperiam.</p>
+              </div>
+              <div id="ngn" class="container tab-pane fade"><br>
+                <h3>ngn</h3>
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                  totam rem aperiam.</p>
+              </div>
+              <div id="sar" class="container tab-pane fade"><br>
+                <h3>sar</h3>
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                  totam rem aperiam.</p>
+              </div>
+              <div id="eur" class="container tab-pane fade"><br>
+                <h3>eur</h3>
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                  totam rem aperiam.</p>
+              </div>
+              <div id="try" class="container tab-pane fade"><br>
+                <h3>try</h3>
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                  totam rem aperiam.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <!-- MARKET section close here -->
+
+  <!-- benefits section start here -->
+  <section class="p2p_benefits_section">
+    <div class="container-fluid p2p_benefits_container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+          <div class="text-center">
+            <h2 class="mt-4 benefits_heading_font">BENEFITS</h2>
+          </div>
+
+
+
+          <div class="row">
+            <div class="benefits_col4First_style">
+              <div class="benefits_firstDiv_style">
+                <h5 class="text-left mt-3">QUICKER</h5>
+                <p class="text-left">Instantaneous & automatedmatching</p>
+                <p class="text-left">High volume traders get XID</p>
+              </div>
+
+              <div class="benefits_secDiv_style">
+                <img src="{% static 'authentication/assets/images/faster.svg'%}" alt="faster">
+              </div>
+            </div>
+
+            <div class="benefits_col4Sec_style">
+
+
+              <div class="benefits_firstDiv_style">
+                <h5 class="text-left mt-3">COST-EFFICIENT</h5>
+                <p class="text-left">Totally free transactions</p>
+                <p class="text-left">Absolutely100% free of cost!</p>
+              </div>
+
+              <div class="benefits_secDiv_style">
+                <img src="{% static 'authentication/assets/images/cheaper.svg'%}" alt="cheaper">
+              </div>
+            </div>
+
+            <div class="benefits_col4Three_style">
+
+              <div class="benefits_firstDiv_style">
+                <h5 class="text-left mt-3">EASY-TO-USE</h5>
+                <p class="text-left">Free of cost transactions</p>
+                <p class="text-left">Secure with all trusted traders</p>
+              </div>
+
+              <div class="benefits_secDiv_style">
+                <img src="{% static 'authentication/assets/images/simpler.svg'%}" alt="simpler">
+              </div>
+            </div>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+    </div>
+    </div>
+  </section>
+  <!-- crypto_service section close here -->
+
+  <!-- featured section start here -->
+  <section class="p2p_featured_section">
+    <div class="container-fluid p2p_featured_container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-5 text-center">
+          <h2 class="mt-4 featured_heading_font">FEATURED IN</h2>
+        </div>
+
+        <div class="owl-carousel owl-theme">
+          <div class="item">
+            <div class="feat_box">
+              <img src="{% static 'authentication/assets/images/featured1.png'%}" class="img-fluid" alt="">
+            </div>
+          </div>
+          <div class="item">
+            <div class="feat_box">
+              <img src="{% static 'authentication/assets/images/featured1.png'%}" class="img-fluid" alt="">
+            </div>
+          </div>
+          <div class="item">
+            <div class="feat_box">
+              <img src="{% static 'authentication/assets/images/featured1.png'%}" class="img-fluid" alt="">
+            </div>
+          </div>
+          <div class="item">
+            <div class="feat_box">
+              <img src="{% static 'authentication/assets/images/featured1.png'%}" class="img-fluid" alt="">
+            </div>
+          </div>
+          <div class="item">
+            <div class="feat_box">
+              <img src="{% static 'authentication/assets/images/featured1.png'%}" class="img-fluid" alt="">
+            </div>
+          </div>
+          <div class="item">
+            <div class="feat_box">
+              <img src="{% static 'authentication/assets/images/featured1.png'%}" class="img-fluid" alt="">
+            </div>
+          </div>
+          <div class="item">
+            <div class="feat_box">
+              <img src="{% static 'authentication/assets/images/featured1.png'%}" class="img-fluid" alt="">
+            </div>
+          </div>
+          <div class="item">
+            <div class="feat_box">
+              <img src="{% static 'authentication/assets/images/featured1.png'%}" class="img-fluid" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- featured section close here -->
+
+  <!-- Testimonials section start here -->
+
+  <section class="p2p_testimonials_section">
+    <div class="container-fluid p2p_testimonials_container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-5 text-center">
+          <h2 class=" mt-4 testimonials_heading_font">TESTIMONIALS</h2>
+
+        </div>
+
+      </div>
+      <div class="row d-flex">
+        <div class="testimonials_col4First_style">
+
+          <div class="testimonials_imgDiv_style">
+            <i class="fas fa-sync-alt testimonials_icon_style"></i>
+          </div>
+
+          <div class="mt-5">
+            <p class="text-center mt-3">@CryptolinkXIndia I love the service.. CryptolinkX is the best exchange</p>
+
+            <div class="testimonials_ratingDiv_style text-center">
+              <i class="fas fa-star testimonials_ratingIcon_style"></i>
+              <i class="fas fa-star testimonials_ratingIcon_style"></i>
+              <i class="fas fa-star testimonials_ratingIcon_style"></i>
+              <i class="fas fa-star testimonials_ratingIcon_style"></i>
+              <i class="fas fa-star testimonials_ratingIcon_style"></i>
+            </div>
+          </div>
+
+
+        </div>
+
+        <div class="testimonials_col4Sec_style">
+
+          <div class="testimonials_imgDiv_style">
+            <!-- <i class="fas fa-sync-alt testimonials_icon_style"></i>+ -->
+            <i class="fab fa-twitter testimonials_icon_style"></i>
+          </div>
+
+          <div class="mt-5">
+            <p class="text-center mt-3">CryptolinkX is the WAZIR of Indian crypto exchange. Great CEO @NischalShetty &
+              great
+              team @CryptolinkXIndia.</p>
+
+            <div class="testimonials_ratingDiv_style text-center">
+              <i class="fas fa-star testimonials_ratingIcon_style"></i>
+              <i class="fas fa-star testimonials_ratingIcon_style"></i>
+              <i class="fas fa-star testimonials_ratingIcon_style"></i>
+              <i class="fas fa-star testimonials_ratingIcon_style"></i>
+              <i class="fas fa-star testimonials_ratingIcon_style"></i>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="testimonials_col4Three_style">
+
+          <div class="testimonials_imgDiv_style">
+            <!-- <i class="fas fa-sync-alt testimonials_icon_style"></i> -->
+            <i class="fab fa-google-play testimonials_icon_style"></i>
+          </div>
+
+          <div class="mt-5">
+            <p class="text-center mt-3">Way to go !! It has been a good experience with CryptolinkX !! Thanks and
+              congrats
+              for the all round show!!</p>
+
+            <div class="testimonials_ratingDiv_style text-center">
+              <i class="fas fa-star testimonials_ratingIcon_style"></i>
+              <i class="fas fa-star testimonials_ratingIcon_style"></i>
+              <i class="fas fa-star testimonials_ratingIcon_style"></i>
+              <i class="fas fa-star testimonials_ratingIcon_style"></i>
+              <i class="fas fa-star testimonials_ratingIcon_style"></i>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials section close here -->
+
+  <!-- stats section start here -->
+
+  <section class="p2p_stats_section">
+    <div class="container-fluid p2p_stats_container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-5 text-center">
+          <h2 class=" mt-4 stats_heading_font">STATS</h2>
+
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="stats_col4First_style">
+          <div class="stats_imgDiv_style">
+            <img src="{% static 'authentication/assets/images/statsOne.svg'%}" alt="faster">
+          </div>
+
+          <div>
+            <h4 class="text-center mt-3">$18 M+</h4>
+            <p class="text-center">P2P trades so far</p>
+          </div>
+        </div>
+
+        <div class="stats_col4Sec_style">
+          <div class="stats_imgDiv_style">
+            <img src="{% static 'authentication/assets/images/statsTwo.svg'%}" alt="faster">
+          </div>
+
+          <div>
+            <h4 class="text-center mt-3">2500+</h4>
+            <p class="text-center">5 star reviews</p>
+          </div>
+        </div>
+
+        <div class="stats_col4Three_style">
+          <div class="stats_imgDiv_style">
+            <img src="{% static 'authentication/assets/images/statsThree.svg'%}" alt="faster">
+          </div>
+
+          <div>
+            <h4 class="text-center mt-3">0</h4>
+            <p class="text-center">fraud cases</p>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="row">
+        <div class="stats_col4Four_style">
+          <div class="stats_imgDiv_style">
+            <img src="{% static 'authentication/assets/images/statsFour.svg'%}" alt="faster">
+          </div>
+
+          <div>
+            <h4 class="text-center mt-3">$60 M+</h4>
+            <p class="text-center">volume of trades</p>
+          </div>
+        </div>
+
+        <div class="stats_col4Five_style">
+          <div class="stats_imgDiv_style">
+            <img src="{% static 'authentication/assets/images/statsFive.svg'%}" alt="faster">
+          </div>
+
+          <div>
+            <h4 class="text-center mt-3">19.4 minutes</h4>
+            <p class="text-center">time taken</p>
+          </div>
+        </div>
+
+        <div class="stats_col4Six_style">
+          <div class="stats_imgDiv_style">
+            <img src="{% static 'authentication/assets/images/statsSix.svg'%}" alt="faster">
+          </div>
+
+          <div>
+            <h4 class="text-center mt-3">75,000+</h4>
+            <p class="text-center">app installs</p>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- stats section close here -->
+  {% endblock p2p %}

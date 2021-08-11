@@ -1,0 +1,1400 @@
+{% extends 'authentication/base.html' %}
+{% load static %}
+
+{% block bstyle %}
+style="background-color: rgb(236, 239, 241);"
+{% endblock bstyle %}
+{% block tnavbar %}
+{% endblock tnavbar %}
+{% block verify %}
+<!-- login form start here -->
+
+<section class="loginForm_section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 offset-lg-3 col-md-6 offset-md-3 col-sm-8 offset-sm-2 col-12">
+        <div class="loginForm_div_style">
+          <a class="pt-0 logo_aTag_style" href="index.html">
+            <img src="{% static 'authentication/assets/images/logo.png' %}" class="img-fluid login_logo_style"
+              alt="Cryptolinkx">
+          </a>
+          {{kyc_id}}
+{{document_type}}
+{{confirm_kyc_id}}
+{{kyc_front_pic}}
+{{kyc_back_pic}}
+{{kyc_selfie}}
+          <!-- <h3 class="lgn_heading">Check your inbox for a verification mail</h3>
+            <hr /> -->
+
+
+          <!-- <div class="row justify-content-center mt-0">
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center p-0 mb-2">
+                <div class="card px-0 pb-0 mb-3">
+                  <div class="row">
+                    <div class="col-md-12 mx-0">
+                      <form id="msform">
+                        
+                        <ul id="progressbar">
+                          <li class="active" id="account"><strong>EMAIL</strong></li>
+                          <li id="personal"><strong>SECURITY</strong></li>
+                          <li id="payment"><strong>WELCOME</strong></li>
+                        </ul> 
+                       
+                        <fieldset>
+                          <div>
+                            <h5 class="fs-title">Check your inbox for a verification mail</h5>
+                            <hr />
+                            <p>An email has been sent to</p>
+                            <p><b>demo@gmail.com</b> Don’t see it? Check your spam folders.</p>
+                            <br>
+                            <p>If the email address is wrong, <a href="#">restart the registration process.</a></p>
+                            <p>If you have not received the mail you can <a href="#">resend here.</a></p>
+                          </div> <input type="button" name="next" class="next action-button" value="Next Step" />
+                        </fieldset>
+                        <fieldset>
+                          <div>
+                            <h5 class="fs-title">Security</h5>
+                            <div class="row">
+                              <div class="col-md-8">
+                                <h5>Authenticator App</h5>
+                                <p>Recommended</p>
+                              </div>
+                              <div class="col-md-4">
+                                <form>
+                                  <input type="radio" id="male" name="gender" value="male" />
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                          <input type="button" name="previous" class="previous action-button-previous"
+                            value="Previous" /> <input type="button" name="next" class="next action-button"
+                            value="Next Step" />
+                        </fieldset>
+
+                        <fieldset>
+                          <div>
+                            <h5 class="fs-title">Select Your Country</h5>
+
+
+                          </div>
+                          <input type="button" name="previous" class="previous action-button-previous"
+                            value="Previous" /> <input type="button" name="make_payment" class="next action-button"
+                            value="Confirm" />
+                        </fieldset>
+
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+          <!-- <div class="container-fluid" id="grad1"> -->
+          <div class="row justify-content-center mt-0">
+            <div class="col-11 col-sm-12 col-md-12 col-lg-12 text-center p-0 mt-3 mb-2">
+              <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+                <h2><strong>Sign Up Your User Account</strong></h2>
+                <p>Fill all form field to go to next step</p>
+                <div class="row">
+                  <div class="col-md-12 mx-0">
+                    <div id="msform">
+                      <!-- progressbar -->
+                      <ul id="progressbar">
+                        <li class="active" id="account"><strong>EMAIL</strong></li>
+                        <li id="personal"><strong>SECURITY</strong></li>
+                        <li id="payment"><strong>WELCOME</strong></li>
+                      </ul> <!-- fieldsets -->
+                      {% if request.session.active == "False" %}
+                      <fieldset>
+                        <div>
+                          <h5 class="fs-title">Check your inbox for a verification mail</h5>
+                          <hr />
+                          <p>An email has been sent to</p>
+                          <p><b>{{request.session.email}}</b> Don’t see it? Check your spam folders.</p>
+                          <br>
+                          <p>If the email address is wrong, <a href="{% url 'register' %}">restart the registration
+                              process.</a></p>
+                          <p>If you have not received the mail you can <a href="{% url 'resend_mail' %}">resend
+                              here.</a></p>
+                        </div>
+                        <!-- <input type="button" name="next" class="next action-button" value="Next Step" /> -->
+                      </fieldset>
+                      {% endif %}
+                      {% if qr_verified == False and otp_verified == False %}
+                      <fieldset>
+                        <div>
+                          <h5 class="fs-title">Security</h5>
+                          <div class="row Security_row_style">
+
+                            <div class="col-md-10 col-sm-10 col-10">
+                              <div class="d-flex highly_sec_div">
+                                <h5 class="text-left mb-0">Authenticator App</h5>
+                                <p class="ml-3 Security_pTag_style mb-0">Recommended</p>
+                              </div>
+                              <p class="text-left highly_sec_txt">Highly Secure</p>
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-2">
+                              <div class="Security_input_style">
+
+                                <input type="radio" id="myBtn" name="Secure" value="Authenticator" data-toggle="modal"
+                                  data-target="#qrmodal" />
+                                <!-- Button trigger modal -->
+
+
+
+                                <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" id="Modal_button"> Open modal </button> -->
+                              </div>
+                            </div>
+
+                          </div>
+
+                          <div class="row Security_row_style mt-3">
+
+                            <div class="col-md-10 col-sm-10 col-10">
+                              <div class="d-flex highly_sec_div">
+                                <h5 class="text-left mb-0">Mobile SMS</h5>
+                              </div>
+                              <p class="text-left highly_sec_txt">Moderately Secure</p>
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-2">
+                              <div class="Security_input_style">
+                                <input type="radio" id="myBtn" name="Secure" value="Mobile SMS" data-toggle="modal"
+                                  data-target="#mobile_otp" />
+                              </div>
+                            </div>
+
+                          </div>
+
+                          <div class="row Security_row_style mt-3">
+
+                            <div class="col-md-10 col-sm-10 col-10">
+                              <div class="d-flex highly_sec_div">
+                                <h5 class="text-left mb-0">None</h5>
+                              </div>
+                              <p class="text-left highly_sec_txt">Not Secure</p>
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-2">
+                              <div class="Security_input_style">
+                                <input type="radio" id="myBtn" name="Secure" value="None" />
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                        <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                        <input type="button" name="next" class="next action-button" value="Next Step" />
+                      </fieldset>
+                      {% else %}
+
+                      <fieldset>
+                        <div>
+                          <h5 class="fs-title">Select Your Country</h5>
+                          <div class="text-left">
+                            <label class="country_txtlabel">Country</label><br />
+                            <!-- <select class="Country_select_style" name="country" id="countryName">
+                              <option value="IND">IND</option>
+                              <option value="IND">IND</option>
+                              <option value="SL">SL</option>
+                              <option value="NZ">NZ</option>
+                            </select> -->
+                            <div class="select-box">
+                              <div class="select-box__current" tabindex="1">
+                                <div class="select-box__value">
+                                  <input class="select-box__input " type="radio" id="0" value="1" name="Ben"
+                                    checked="checked" />
+                                  <p class="select-box__input-text">India</p>
+                                </div>
+                                <div class="select-box__value">
+                                  <input class="select-box__input" type="radio" id="1" value="2" name="Ben" />
+                                  <p class="select-box__input-text">USA</p>
+                                </div>
+                                <div class="select-box__value">
+                                  <input class="select-box__input" type="radio" id="2" value="3" name="Ben" />
+                                  <p class="select-box__input-text">UK</p>
+                                </div>
+                                <div class="select-box__value">
+                                  <input class="select-box__input" type="radio" id="3" value="4" name="Ben" />
+                                  <p class="select-box__input-text">Europe</p>
+                                </div>
+                                <div class="select-box__value">
+                                  <input class="select-box__input" type="radio" id="4" value="5" name="Ben" />
+                                  <p class="select-box__input-text">Russia</p>
+                                </div><img class="select-box__icon"
+                                  src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon"
+                                  aria-hidden="true" />
+                              </div>
+                              <ul class="select-box__list">
+                                <li>
+                                  <label class="select-box__option" for="0" aria-hidden="aria-hidden">India</label>
+                                </li>
+                                <li>
+                                  <label class="select-box__option" for="1" aria-hidden="aria-hidden">USA</label>
+                                </li>
+                                <li>
+                                  <label class="select-box__option" for="2" aria-hidden="aria-hidden">UK</label>
+                                </li>
+                                <li>
+                                  <label class="select-box__option" for="3" aria-hidden="aria-hidden">Europe</label>
+                                </li>
+                                <li>
+                                  <label class="select-box__option" for="4" aria-hidden="aria-hidden">Russia</label>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+
+                          <div class="text-left mt-3 mb-4">
+                            <label class="kyc_txtlabel">Type of KYC</label><br />
+                            <!-- <select class="Country_select_style" name="KYC" id="TypeKYC">
+                              <option value="One">One</option>
+                              <option value="Two">Two</option>
+                              <option value="Three">Three</option>
+                              <option value="Four">Four</option>
+                            </select> -->
+                            <div class="select-box1">
+                              <div class="select-box__current1" tabindex="01">
+                                <div class="select-box__value1">
+                                  <input class="select-box__input1 " type="radio" id="00" value="01" name="Ben1"
+                                    checked="checked" />
+                                  <p class="select-box__input-text1">Personal</p>
+                                </div>
+                                <div class="select-box__value1">
+                                  <input class="select-box__input1" type="radio" id="01" value="02" name="Ben1" />
+                                  <p class="select-box__input-text1">Company</p>
+                                </div><img class="select-box__icon"
+                                  src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon"
+                                  aria-hidden="true" />
+                              </div>
+                              <ul class="select-box__list1">
+                                <li>
+                                  <label class="select-box__option1" for="00" aria-hidden="aria-hidden">Personal</label>
+                                </li>
+                                <li>
+                                  <label class="select-box__option1" for="01" aria-hidden="aria-hidden">Company</label>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+
+                          <div class="container">
+                            <div class="kyc_div">
+                              <div class="without_kyc_div">
+                                <div class="without_kyctxt">WITHOUT KYC</div>
+                                <ul>
+                                  <li class="list_line">
+                                    <svg viewBox="0 0 48 48" width="12" height="12" fill="#FFC800">
+                                      <path
+                                        d="m24 48c-13.254834 0-24-10.745166-24-24s10.745166-24 24-24 24 10.745166 24 24-10.745166 24-24 24zm12.5693021-33.5729524c-.5066705-.502545-1.3281286-.502545-1.8349005 0l-15.5444523 15.4164894-5.9750331-5.9257883c-.5066706-.502545-1.3281287-.5024947-1.8349006 0-.5067213.5024947-.5067213 1.3171825 0 1.8197275l6.8924834 6.8355767c.5065185.5024947 1.3285848.5021429 1.8349006 0l16.4619025-16.3262275c.5067213-.5024947.5066706-1.3172328 0-1.8197778z"
+                                        fill="#55bd6c"></path>
+                                    </svg>
+                                    <span>Deposit</span>
+                                  </li>
+                                  <li class="list_line">
+                                    <svg viewBox="0 0 48 48" width="12" height="12" fill="#FFC800">
+                                      <path
+                                        d="m24 48c-13.254834 0-24-10.745166-24-24s10.745166-24 24-24 24 10.745166 24 24-10.745166 24-24 24zm12.5693021-33.5729524c-.5066705-.502545-1.3281286-.502545-1.8349005 0l-15.5444523 15.4164894-5.9750331-5.9257883c-.5066706-.502545-1.3281287-.5024947-1.8349006 0-.5067213.5024947-.5067213 1.3171825 0 1.8197275l6.8924834 6.8355767c.5065185.5024947 1.3285848.5021429 1.8349006 0l16.4619025-16.3262275c.5067213-.5024947.5066706-1.3172328 0-1.8197778z"
+                                        fill="#55bd6c"></path>
+                                    </svg>
+                                    <span>Trade</span>
+                                  </li>
+                                  <li class="list_line">
+                                    <svg viewBox="0 0 48 48" width="12" height="12" fill="rgba(28, 27, 33, 0.24)">
+                                      <path
+                                        d="m24 48c-13.254834 0-24-10.745166-24-24s10.745166-24 24-24 24 10.745166 24 24-10.745166 24-24 24zm2.5259167-23.5067083 9.039-9.039c.5615833-.5611042.5615833-1.4715209 0-2.032625-.5615834-.5615834-1.4710417-.5615834-2.032625 0l-9.039 9.039-9.0394792-9.039c-.5615833-.5615834-1.4710417-.5615834-2.032625 0-.5615833.5611041-.5615833 1.4715208 0 2.032625l9.0394792 9.039-9.0394792 9.039c-.5615833.5611041-.5615833 1.4715208 0 2.032625.2807917.2803125.6487917.4207083 1.0163125.4207083s.7355208-.1403958 1.0163125-.4211875l9.0394792-9.039 9.039 9.039c.2807916.2807917.6487916.4211875 1.0163125.4211875.3675208 0 .7355208-.1403958 1.0163125-.4211875.5615833-.5611042.5615833-1.4715208 0-2.032625z">
+                                      </path>
+                                    </svg>
+                                    <span class="withdrawal_txt">Withdrawal</span>
+                                  </li>
+                                  <li class="list_line">
+                                    <svg viewBox="0 0 48 48" width="12" height="12" fill="rgba(28, 27, 33, 0.24)">
+                                      <path
+                                        d="m24 48c-13.254834 0-24-10.745166-24-24s10.745166-24 24-24 24 10.745166 24 24-10.745166 24-24 24zm2.5259167-23.5067083 9.039-9.039c.5615833-.5611042.5615833-1.4715209 0-2.032625-.5615834-.5615834-1.4710417-.5615834-2.032625 0l-9.039 9.039-9.0394792-9.039c-.5615833-.5615834-1.4710417-.5615834-2.032625 0-.5615833.5611041-.5615833 1.4715208 0 2.032625l9.0394792 9.039-9.0394792 9.039c-.5615833.5611041-.5615833 1.4715208 0 2.032625.2807917.2803125.6487917.4207083 1.0163125.4207083s.7355208-.1403958 1.0163125-.4211875l9.0394792-9.039 9.039 9.039c.2807916.2807917.6487916.4211875 1.0163125.4211875.3675208 0 .7355208-.1403958 1.0163125-.4211875.5615833-.5611042.5615833-1.4715208 0-2.032625z">
+                                      </path>
+                                    </svg>
+                                    <span class="p2p_txt">P2P</span>
+                                  </li>
+                                </ul>
+                              </div>
+                              <div class="with_kyc_div">
+                                <div class="with_kyctxt">WITH KYC</div>
+                                <ul>
+                                  <li class="list_line">
+                                    <svg viewBox="0 0 48 48" width="12" height="12" fill="#FFC800">
+                                      <path
+                                        d="m24 48c-13.254834 0-24-10.745166-24-24s10.745166-24 24-24 24 10.745166 24 24-10.745166 24-24 24zm12.5693021-33.5729524c-.5066705-.502545-1.3281286-.502545-1.8349005 0l-15.5444523 15.4164894-5.9750331-5.9257883c-.5066706-.502545-1.3281287-.5024947-1.8349006 0-.5067213.5024947-.5067213 1.3171825 0 1.8197275l6.8924834 6.8355767c.5065185.5024947 1.3285848.5021429 1.8349006 0l16.4619025-16.3262275c.5067213-.5024947.5066706-1.3172328 0-1.8197778z"
+                                        fill="#55bd6c"></path>
+                                    </svg>
+                                    <span>Deposit</span>
+                                  </li>
+                                  <li class="list_line">
+                                    <svg viewBox="0 0 48 48" width="12" height="12" fill="#FFC800">
+                                      <path
+                                        d="m24 48c-13.254834 0-24-10.745166-24-24s10.745166-24 24-24 24 10.745166 24 24-10.745166 24-24 24zm12.5693021-33.5729524c-.5066705-.502545-1.3281286-.502545-1.8349005 0l-15.5444523 15.4164894-5.9750331-5.9257883c-.5066706-.502545-1.3281287-.5024947-1.8349006 0-.5067213.5024947-.5067213 1.3171825 0 1.8197275l6.8924834 6.8355767c.5065185.5024947 1.3285848.5021429 1.8349006 0l16.4619025-16.3262275c.5067213-.5024947.5066706-1.3172328 0-1.8197778z"
+                                        fill="#55bd6c"></path>
+                                    </svg>
+                                    <span>Trade</span>
+                                  </li>
+                                  <li class="list_line">
+                                    <svg viewBox="0 0 48 48" width="12" height="12" fill="#FFC800">
+                                      <path
+                                        d="m24 48c-13.254834 0-24-10.745166-24-24s10.745166-24 24-24 24 10.745166 24 24-10.745166 24-24 24zm12.5693021-33.5729524c-.5066705-.502545-1.3281286-.502545-1.8349005 0l-15.5444523 15.4164894-5.9750331-5.9257883c-.5066706-.502545-1.3281287-.5024947-1.8349006 0-.5067213.5024947-.5067213 1.3171825 0 1.8197275l6.8924834 6.8355767c.5065185.5024947 1.3285848.5021429 1.8349006 0l16.4619025-16.3262275c.5067213-.5024947.5066706-1.3172328 0-1.8197778z"
+                                        fill="#55bd6c"></path>
+                                    </svg>
+                                    <span>Withdrawal</span>
+                                  </li>
+                                  <li class="list_line">
+                                    <svg viewBox="0 0 48 48" width="12" height="12" fill="#FFC800">
+                                      <path
+                                        d="m24 48c-13.254834 0-24-10.745166-24-24s10.745166-24 24-24 24 10.745166 24 24-10.745166 24-24 24zm12.5693021-33.5729524c-.5066705-.502545-1.3281286-.502545-1.8349005 0l-15.5444523 15.4164894-5.9750331-5.9257883c-.5066706-.502545-1.3281287-.5024947-1.8349006 0-.5067213.5024947-.5067213 1.3171825 0 1.8197275l6.8924834 6.8355767c.5065185.5024947 1.3285848.5021429 1.8349006 0l16.4619025-16.3262275c.5067213-.5024947.5066706-1.3172328 0-1.8197778z"
+                                        fill="#55bd6c"></path>
+                                    </svg>
+                                    <span>P2P</span>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                        <input type="button" name="make_payment" class="next action-button" href="forgotPassword.html"
+                          onclick="window.location.href = 'file:///E:/laxit/cryptolinkX/exchange.html';" value="Done" /> -->
+                        <div class="btn_Kycdiv">
+                          <div class="btn_Kycdiv1">
+                            <a href="javascript:;" class="btn btn-primary">SKIP FOR NOW</a>
+                          </div>
+                          <div class="btn_Kycdiv2">
+                            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                              <li class="nav-item">
+                                <a class="nav-link cmplt_kyc" id="pills-completeKyc-tab" data-toggle="pill"
+                                  href="#pills-completeKyc" role="tab" aria-controls="pills-completeKyc"
+                                  aria-selected="false">COMPLETE KYC</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </fieldset>
+                      {% endif %}
+                      <fieldset>
+                        <div>
+                          <h2 class="fs-title text-center">Success !</h2> <br><br>
+                          <div class="row justify-content-center">
+                            <div class="col-3"> <img src="https://img.icons8.com/color/96/000000/ok--v2.png"
+                                class="fit-image"> </div>
+                          </div> <br><br>
+                          <div class="row justify-content-center">
+                            <div class="col-7 text-center">
+                              <h5>You Have Successfully Signed Up</h5>
+                            </div>
+                          </div>
+                        </div>
+                      </fieldset>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- </div> -->
+          <hr />
+
+          <!-- modal start-->
+          <!-- Modal -->
+
+          <div class="modal fade" id="qrmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Scan QR Code</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  {% if user_qrcode_obj %}
+                  <img src="{{user_qrcode_obj.qr_code.url}}" alt="user_qr_code" width="290" height="290">
+                  {% endif %}
+                  <p>Download <a href="javascript:;">Google Authenticator</a> or <a href="javascript:;">Authy</a> to
+                    scan this code.</p>
+                  <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#nxt_popup"
+                    data-dismiss="modal" aria-label="Close">NEXT</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- ------------------------------------------ NEXT modal ----------------------- -->
+          <div class="modal fade" id="nxt_popup" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">2FA Setup</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form action="{% url 'cryptolinkx' %}" method="post">
+                    {% csrf_token %}
+                    <h5 class="text-center">Two Factor Authentication</h5>
+                    <p>Enter the code generated in your Authenticator App</p>
+                    <div class="mt-5">
+                      <input class="w-100 p-1 my-2" id="qr" type="number" name="qr_otp" />
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">NEXT</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal -->
+          <div class="modal fade" id="mobile_otp" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">2FA Setup</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form id="myform" method="post">
+                    <h5 class="text-center">Register Your Mobile</h5>
+                    {% csrf_token %}
+                    <div class="mt-5">
+                      <label>Mobile Number</label><br />
+                      <input class="w-100 p-1" id="phone" name="phone" type="tel" />
+                    </div>
+                    <button type="submit" class="btn btn-primary login_btn_style w-100 mt-3">Send OTP</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal Verify OTP -->
+          <div class="modal fade" id="mobile_otp_verify" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">2FA Setup</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form action="{% url 'mobile_verify_otp' %}" method="post">
+                    <h5 class="text-center">Verify Your OTP</h5>
+                    {% csrf_token %}
+                    <div class="mt-5">
+                      <label>Enter OTP</label><br />
+                      <input class="w-100 p-1" id="mob_otp" name="mob_otp" type="number" />
+                    </div>
+                    <button type="submit" class="btn btn-primary login_btn_style w-100 mt-3" data-toggle="modal"
+                      data-target="#dd">Verify OTP</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <div id="myModal" class="modal"> -->
+
+          <!-- Modal content -->
+          <!-- <div class="modal-content">
+                <div class="row">
+                  <div class="col-md-10">
+                    <p><b>2FA Setup</b></p>
+                  </div>
+
+                  <div class="col-md-2">
+                    <span class="close">&times;</span>
+                  </div>
+                </div>
+                <hr />
+
+                <h5 class="text-center">Register Your Mobile</h5>
+
+                <div class="mt-5">
+                  <label>Mobile Number</label><br />
+                  <input class="w-100 p-1" id="phone" type="tel" />
+
+                </div>
+                <button type="button" class="btn btn-primary login_btn_style w-100 mt-3" data-toggle="modal" data-target="#dd">Send OTP</button>
+              </div>
+            </div> -->
+
+
+          <!-- <div id="dd" class="modal" style="z-index: 9999;"> -->
+
+          <!-- Modal content -->
+          <!-- <div class="modal-content">
+                <div class="row">
+                  <div class="col-md-10">
+                    <p><b>2FA Setup</b></p>
+                  </div>
+
+                  <div class="col-md-2">
+                    <span class="close">&times;</span>
+                  </div>
+                </div>
+                <hr />
+
+                <div>
+                  <h5 class="fs-title text-center">Security Settings updates !</h5> <br><br>
+                  <div class="row justify-content-center">
+                    <div class="col-3"> <img src="https://img.icons8.com/color/96/000000/ok--v2.png"
+                        class="fit-image"> </div>
+                  </div> <br><br>
+                  <div class="row justify-content-center">
+                    <div class="col-7 text-center">
+                      <h5>You 2FA is Set to Mobile</h5>
+                    </div>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-primary login_btn_style w-100 mt-3">OK</button>
+              </div>
+            </div> -->
+
+          <!-- modal end-->
+
+        </div>
+        <div class="kyc_form_div">
+          <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade" id="pills-completeKyc" role="tabpanel" aria-labelledby="pills-completeKyc-tab">
+              <div class="main_kycForm">
+                <form method="POST" action="{% url 'user_kyc' %}" enctype="multipart/form-data">
+                  {% csrf_token %}
+                  <div class="form_titletxt">Personal Info</div>
+                  <hr>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">FIRST NAME *</label>
+                    <input type="text" class="form-control"  name="first_name" id="">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">MIDDLE NAME</label>
+                    <input type="text" class="form-control"  name="mid_name" id="" >
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">LAST NAME</label>
+                    <input type="text" class="form-control"  name="last_name" id="" >
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">DATE OF BIRTH (DD-MM-YYYY) *</label>
+                    <input type="date" class="form-control"  name="dob" id="tenth_DOB">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">ADDRESS *</label>
+                    <textarea class="form-control" id=""  name="address" rows="3" ></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">STATE *</label>
+                    <!-- <input type="text" class="form-control" id=""> -->
+                    <div class="select-box3">
+                      <div class="select-box__current3" tabindex="001">
+                        <div class="select-box__value3">
+                          <input class="select-box__input3" type="radio" id="000" value="001" name="Ben2"
+                            checked="checked" />
+                          <p class="select-box__input-text3">Madhya Pradesh</p>
+                        </div>
+                        <div class="select-box__value3">
+                          <input class="select-box__input3" type="radio" id="001" value="002" name="Ben2" />
+                          <p class="select-box__input-text3">Assam</p>
+                        </div>
+                        <div class="select-box__value3">
+                          <input class="select-box__input3" type="radio" id="002" value="003" name="Ben2" />
+                          <p class="select-box__input-text3">Gujrat</p>
+                        </div>
+                        <div class="select-box__value3">
+                          <input class="select-box__input3" type="radio" id="003" value="004" name="Ben2" />
+                          <p class="select-box__input-text3">Rajasthan</p>
+                        </div>
+                        <div class="select-box__value">
+                          <input class="select-box__input3" type="radio" id="004" value="005" name="Ben2" />
+                          <p class="select-box__input-text3">Maharashtra</p>
+                        </div><img class="select-box__icon3" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg"
+                          alt="Arrow Icon" aria-hidden="true" />
+                      </div>
+                      <ul class="select-box__list3">
+                        <li>
+                          <label class="select-box__option3" for="000" aria-hidden="aria-hidden">Madhya Pradesh</label>
+                        </li>
+                        <li>
+                          <label class="select-box__option3" for="001" aria-hidden="aria-hidden">Assam</label>
+                        </li>
+                        <li>
+                          <label class="select-box__option3" for="002" aria-hidden="aria-hidden">Gujrat</label>
+                        </li>
+                        <li>
+                          <label class="select-box__option3" for="003" aria-hidden="aria-hidden">Rajasthan</label>
+                        </li>
+                        <li>
+                          <label class="select-box__option3" for="004" aria-hidden="aria-hidden">Maharashtra</label>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">CITY *</label>
+                    <input type="text" class="form-control"  name = "city" id="">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">PIN/ZIP CODE *</label>
+                    <input type="text" class="form-control"  name = "zipcode" id="">
+                  </div>
+                  <!-- <div class="form_titletxt">Pan Card</div>
+                  <hr>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">PAN NUMBER *</label>
+                    <input type="text" class="form-control" id="">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">RE-ENTER PAN NUMBER *</label>
+                    <input type="text" class="form-control" id="">
+                  </div>
+                  <div class="drop_filekyc_div">
+                    <div class="drop_filekyc_img">
+                      <img class="img-fluid" src="{% static 'authentication/assets/images/sample_pan_card.jpeg' %}"
+                        alt="">
+                    </div>
+                    <div class="drop_filekyc_content">
+                      <div class="drop_filekyc_content1">
+                        <span class="drop_filekyc_tile">Upload PAN Card</span>
+                        <span class="drop_filekyc_para">On desktop, simply drag and drop your file in this field.
+                          Acceptable formats: JPEG or PNG.</span>
+                      </div>
+                      <input class="full_upload" type="file">
+                      <div class="drop_filekyc_content2">
+                        <i class="fas fa-upload"></i>
+                      </div>
+                    </div>
+
+                  </div> -->
+                  <div class="form_titletxt">Document Type</div>
+                  <hr>
+                  <!-- <div class="">
+                    <div class="select-box4" id="colorselector">
+                      <div class="select-box__current4" tabindex="0001">
+                        <div class="select-box__value4">
+                          <input class="select-box__input4 " type="radio" id="0000" value="red" name="Ben3"
+                            checked="checked" />
+                          <p class="select-box__input-text4">SSN ID</p>
+                        </div>
+                        <div class="select-box__value4">
+                          <input class="select-box__input4" type="radio" id="0001" value="yellow" name="Ben3" />
+                          <p class="select-box__input-text4">Passport</p>
+                        </div>
+                        <div class="select-box__value">
+                          <input class="select-box__input4" type="radio" id="0003" value="blue" name="Ben3" />
+                          <p class="select-box__input-text4">Driving License</p>
+                        </div><img class="select-box__icon4" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg"
+                          alt="Arrow Icon" aria-hidden="true" />
+                      </div>
+                      <ul class="select-box__list4">
+                        <li>
+                          <label class="select-box__option4" for="0000" aria-hidden="aria-hidden">SSN ID</label>
+                        </li>
+                        <li>
+                          <label class="select-box__option4" for="0001" aria-hidden="aria-hidden">Passport</label>
+                        </li>
+                        <li>
+                          <label class="select-box__option4" for="0002" aria-hidden="aria-hidden">Driving License</label>
+                        </li>
+                      </ul>
+                    </div> -->
+                    <Select class="select-box4" name = "document_type"  id="colorselector">
+                      <option value="red">SSN ID</option>
+                      <option value="yellow">Passport</option>
+                      <option value="blue">Driving License</option>
+                    </Select>
+                    <div id="red" class="colors" style="display:none">
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">SSN ID NUMBER *</label>
+                        <input type="text" class="form-control" id="ssn_id" name="kyc_id">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">RE-ENTER SSN ID NUMBER *</label>
+                        <input type="text" class="form-control" id="confirm_ssn_id" name="confirm_kyc_id">
+                      </div>
+                      <div class="drop_fileadhr_div">
+                        <div class="drop_filekyc_img">
+                          <img class="img-fluid"
+                            src="{% static 'authentication/assets/images/sample_aadhaar_card_front.jpeg' %}" alt="">
+                        </div>
+                        <div class="drop_filekyc_content">
+                          <div class="drop_filekyc_content1">
+                            <span class="drop_filekyc_tile">Upload front of SSN ID</span>
+                            <span class="drop_filekyc_para">On desktop, simply drag and drop your file in this field.
+                              Acceptable formats: JPEG or PNG.</span>
+                          </div>
+                          <input class="full_upload" id="ssn_front_pic" name="kyc_front_pic" type="file">
+                          <div class="drop_filekyc_content2">
+                            <i class="fas fa-upload"></i>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="drop_fileadhrbck_div">
+                        <div class="drop_filekyc_content">
+                          <div class="drop_filekyc_content1">
+                            <span class="drop_filekyc_tile">Upload back of SSN ID</span>
+                            <span class="drop_filekyc_para">On desktop, simply drag and drop your file in this field.
+                              Acceptable formats: JPEG or PNG.</span>
+                          </div>
+                          <input class="full_upload" id="ssn_back_pic" name="kyc_back_pic" type="file">
+                          <div class="drop_filekyc_content2">
+                            <i class="fas fa-upload"></i>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="drop_fileadhrself_div">
+                        <div class="drop_filekyc_img">
+                          <img class="img-fluid" src="{% static 'authentication/assets/images/document_selfie.jpg' %}"
+                            alt="">
+                        </div>
+                        <div class="drop_filekyc_content">
+                          <div class="drop_filekyc_content1">
+                            <span class="drop_filekyc_tile">Upload selfie while holding your SSN ID</span>
+                            <span class="drop_filekyc_para">On desktop, simply drag and drop your file in this field.
+                              Acceptable formats: JPEG or PNG.</span>
+                          </div>
+                          <input class="full_upload" id="ssn_selfie" name="kyc_selfie" type="file">
+                          <div class="drop_filekyc_content2">
+                            <i class="fas fa-upload"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="yellow" class="colors" style="display:none">
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">PASSPORT NUMBER *</label>
+                        <input type="text" class="form-control" id="passport_id" name="kyc_id">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">RE-ENTER PASSPORT NUMBER *</label>
+                        <input type="text" class="form-control" id="passport_confirm_id" name="confirm_kyc_id">
+                      </div>
+                      <div class="drop_fileadhr_div">
+                        <div class="drop_filekyc_img">
+                          <img class="img-fluid" src="{% static 'authentication/assets/images/passport_scan.jpg' %}"
+                            alt="">
+                        </div>
+                        <div class="drop_filekyc_content">
+                          <div class="drop_filekyc_content1">
+                            <span class="drop_filekyc_tile">Upload front of Passport</span>
+                            <span class="drop_filekyc_para">On desktop, simply drag and drop your file in this field.
+                              Acceptable formats: JPEG or PNG.</span>
+                          </div>
+                          <input class="full_upload" id="passport_front" type="file" name="kyc_front_pic">
+                          <div class="drop_filekyc_content2">
+                            <i class="fas fa-upload"></i>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="drop_fileadhrbck_div">
+                        <div class="drop_filekyc_content">
+                          <div class="drop_filekyc_content1">
+                            <span class="drop_filekyc_tile">Upload back of Passport</span>
+                            <span class="drop_filekyc_para">On desktop, simply drag and drop your file in this field.
+                              Acceptable formats: JPEG or PNG.</span>
+                          </div>
+                          <input class="full_upload" id="passport_back" type="file" name="kyc_back_pic">
+                          <div class="drop_filekyc_content2">
+                            <i class="fas fa-upload"></i>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="drop_fileadhrself_div">
+                        <div class="drop_filekyc_img">
+                          <img class="img-fluid" src="{% static 'authentication/assets/images/document_selfie.jpg' %}"
+                            alt="">
+                        </div>
+                        <div class="drop_filekyc_content">
+                          <div class="drop_filekyc_content1">
+                            <span class="drop_filekyc_tile">Upload selfie while holding your Passport</span>
+                            <span class="drop_filekyc_para">On desktop, simply drag and drop your file in this field.
+                              Acceptable formats: JPEG or PNG.</span>
+                          </div>
+                          <input class="full_upload" id="passport_selfie" type="file" name="kyc_selfie">
+                          <div class="drop_filekyc_content2">
+                            <i class="fas fa-upload"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="blue" class="colors" style="display:none">
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">DRIVING LICENSE NUMBER *</label>
+                        <input type="text" class="form-control" id="driving_id" name="kyc_id">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">RE-ENTER DRIVING LICENSE NUMBER *</label>
+                        <input type="text" class="form-control" id="confirm_driving_id" name="confirm_kyc_id">
+                      </div>
+                      <div class="drop_fileadhr_div">
+                        <div class="drop_filekyc_img">
+                          <img class="img-fluid" src="{% static 'authentication/assets/images/document_scan.jpg' %}"
+                            alt="">
+                        </div>
+                        <div class="drop_filekyc_content">
+                          <div class="drop_filekyc_content1">
+                            <span class="drop_filekyc_tile">Upload front of Driving License</span>
+                            <span class="drop_filekyc_para">On desktop, simply drag and drop your file in this field.
+                              Acceptable formats: JPEG or PNG.</span>
+                          </div>
+                          <input class="full_upload" id="driving_front" type="file" name="kyc_front_pic">
+                          <div class="drop_filekyc_content2">
+                            <i class="fas fa-upload"></i>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="drop_fileadhrbck_div">
+                        <div class="drop_filekyc_content">
+                          <div class="drop_filekyc_content1">
+                            <span class="drop_filekyc_tile">Upload back of Driving License</span>
+                            <span class="drop_filekyc_para">On desktop, simply drag and drop your file in this field.
+                              Acceptable formats: JPEG or PNG.</span>
+                          </div>
+                          <input class="full_upload" id="driving_back" type="file" name="kyc_back_pic">
+                          <div class="drop_filekyc_content2">
+                            <i class="fas fa-upload"></i>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="drop_fileadhrself_div">
+                        <div class="drop_filekyc_img">
+                          <img class="img-fluid" src="{% static 'authentication/assets/images/document_selfie.jpg' %}"
+                            alt="">
+                        </div>
+                        <div class="drop_filekyc_content">
+                          <div class="drop_filekyc_content1">
+                            <span class="drop_filekyc_tile">Upload selfie while holding your Driving License</span>
+                            <span class="drop_filekyc_para">On desktop, simply drag and drop your file in this field.
+                              Acceptable formats: JPEG or PNG.</span>
+                          </div>
+                          <input class="full_upload" id="driving_selfie" type="file" name="kyc_selfie">
+                          <div class="drop_filekyc_content2">
+                            <i class="fas fa-upload"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- <nav>
+                      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link active" id="nav-adharCard-tab" data-toggle="tab"
+                          href="#nav-adharCard" role="tab" aria-controls="nav-adharCard"
+                          aria-selected="true">Aadhaar Card</a>
+                        <a class="nav-item nav-link" id="nav-passport-tab" data-toggle="tab" href="#nav-passport"
+                          role="tab" aria-controls="nav-passport" aria-selected="false">Passport</a>
+                        <a class="nav-item nav-link" id="nav-drivingLicense-tab" data-toggle="tab"
+                          href="#nav-drivingLicense" role="tab" aria-controls="nav-drivingLicense"
+                          aria-selected="false">Driving License</a>
+                      </div>
+                    </nav> -->
+                    <!-- <div class="tab-content" id="nav-tabContent">
+                      <div class="tab-pane fade show active" id="nav-adharCard" role="tabpanel"
+                        aria-labelledby="nav-adharCard-tab">
+                        <div class="form-group">
+                          <label for="exampleInputPassword1">AADHAAR NUMBER *</label>
+                          <input type="text" class="form-control" id="">
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputPassword1">RE-ENTER AADHAAR NUMBER *</label>
+                          <input type="text" class="form-control" id="">
+                        </div>
+                        <div class="drop_fileadhr_div">
+                          <div class="drop_filekyc_img">
+                            <img class="img-fluid"
+                              src="{% static 'authentication/assets/images/sample_aadhaar_card_front.jpeg' %}" alt="">
+                          </div>
+                          <div class="drop_filekyc_content">
+                            <div class="drop_filekyc_content1">
+                              <span class="drop_filekyc_tile">Upload front of Aadhaar Card</span>
+                              <span class="drop_filekyc_para">On desktop, simply drag and drop your file in this field.
+                                Acceptable formats: JPEG or PNG.</span>
+                            </div>
+                            <input class="full_upload" type="file">
+                            <div class="drop_filekyc_content2">
+                              <i class="fas fa-upload"></i>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="drop_fileadhrbck_div">
+                          <div class="drop_filekyc_content">
+                            <div class="drop_filekyc_content1">
+                              <span class="drop_filekyc_tile">Upload back of Aadhaar Card</span>
+                              <span class="drop_filekyc_para">On desktop, simply drag and drop your file in this field.
+                                Acceptable formats: JPEG or PNG.</span>
+                            </div>
+                            <input class="full_upload" type="file">
+                            <div class="drop_filekyc_content2">
+                              <i class="fas fa-upload"></i>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="drop_fileadhrself_div">
+                          <div class="drop_filekyc_img">
+                            <img class="img-fluid" src="{% static 'authentication/assets/images/document_selfie.jpg' %}"
+                              alt="">
+                          </div>
+                          <div class="drop_filekyc_content">
+                            <div class="drop_filekyc_content1">
+                              <span class="drop_filekyc_tile">Upload selfie while holding your Aadhaar Card</span>
+                              <span class="drop_filekyc_para">On desktop, simply drag and drop your file in this field.
+                                Acceptable formats: JPEG or PNG.</span>
+                            </div>
+                            <input class="full_upload" type="file">
+                            <div class="drop_filekyc_content2">
+                              <i class="fas fa-upload"></i>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+
+                      <div class="tab-pane fade" id="nav-passport" role="tabpanel" aria-labelledby="nav-passport-tab">
+                        <div class="form-group">
+                          <label for="exampleInputPassword1">PASSPORT NUMBER *</label>
+                          <input type="text" class="form-control" id="">
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputPassword1">RE-ENTER PASSPORT NUMBER *</label>
+                          <input type="text" class="form-control" id="">
+                        </div>
+                        <div class="drop_fileadhr_div">
+                          <div class="drop_filekyc_img">
+                            <img class="img-fluid"
+                              src="{% static 'authentication/assets/images/passport_scan.jpg' %}" alt="">
+                          </div>
+                          <div class="drop_filekyc_content">
+                            <div class="drop_filekyc_content1">
+                              <span class="drop_filekyc_tile">Upload front of Passport</span>
+                              <span class="drop_filekyc_para">On desktop, simply drag and drop your file in this field.
+                                Acceptable formats: JPEG or PNG.</span>
+                            </div>
+                            <input class="full_upload" type="file">
+                            <div class="drop_filekyc_content2">
+                              <i class="fas fa-upload"></i>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="drop_fileadhrbck_div">
+                          <div class="drop_filekyc_content">
+                            <div class="drop_filekyc_content1">
+                              <span class="drop_filekyc_tile">Upload back of Passport</span>
+                              <span class="drop_filekyc_para">On desktop, simply drag and drop your file in this field.
+                                Acceptable formats: JPEG or PNG.</span>
+                            </div>
+                            <input class="full_upload" type="file">
+                            <div class="drop_filekyc_content2">
+                              <i class="fas fa-upload"></i>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="drop_fileadhrself_div">
+                          <div class="drop_filekyc_img">
+                            <img class="img-fluid" src="{% static 'authentication/assets/images/document_selfie.jpg' %}"
+                              alt="">
+                          </div>
+                          <div class="drop_filekyc_content">
+                            <div class="drop_filekyc_content1">
+                              <span class="drop_filekyc_tile">Upload selfie while holding your Passport</span>
+                              <span class="drop_filekyc_para">On desktop, simply drag and drop your file in this field.
+                                Acceptable formats: JPEG or PNG.</span>
+                            </div>
+                            <input class="full_upload" type="file">
+                            <div class="drop_filekyc_content2">
+                              <i class="fas fa-upload"></i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="nav-drivingLicense" role="tabpanel"
+                        aria-labelledby="nav-drivingLicense-tab">
+                        <div class="form-group">
+                          <label for="exampleInputPassword1">DRIVING LICENSE NUMBER *</label>
+                          <input type="text" class="form-control" id="">
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputPassword1">RE-ENTER DRIVING LICENSE NUMBER *</label>
+                          <input type="text" class="form-control" id="">
+                        </div>
+                        <div class="drop_fileadhr_div">
+                          <div class="drop_filekyc_img">
+                            <img class="img-fluid"
+                              src="{% static 'authentication/assets/images/document_scan.jpg' %}" alt="">
+                          </div>
+                          <div class="drop_filekyc_content">
+                            <div class="drop_filekyc_content1">
+                              <span class="drop_filekyc_tile">Upload front of Driving License</span>
+                              <span class="drop_filekyc_para">On desktop, simply drag and drop your file in this field.
+                                Acceptable formats: JPEG or PNG.</span>
+                            </div>
+                            <input class="full_upload" type="file">
+                            <div class="drop_filekyc_content2">
+                              <i class="fas fa-upload"></i>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="drop_fileadhrbck_div">
+                          <div class="drop_filekyc_content">
+                            <div class="drop_filekyc_content1">
+                              <span class="drop_filekyc_tile">Upload back of Driving License</span>
+                              <span class="drop_filekyc_para">On desktop, simply drag and drop your file in this field.
+                                Acceptable formats: JPEG or PNG.</span>
+                            </div>
+                            <input class="full_upload" type="file">
+                            <div class="drop_filekyc_content2">
+                              <i class="fas fa-upload"></i>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="drop_fileadhrself_div">
+                          <div class="drop_filekyc_img">
+                            <img class="img-fluid" src="{% static 'authentication/assets/images/document_selfie.jpg' %}"
+                              alt="">
+                          </div>
+                          <div class="drop_filekyc_content">
+                            <div class="drop_filekyc_content1">
+                              <span class="drop_filekyc_tile">Upload selfie while holding your Driving License</span>
+                              <span class="drop_filekyc_para">On desktop, simply drag and drop your file in this field.
+                                Acceptable formats: JPEG or PNG.</span>
+                            </div>
+                            <input class="full_upload" type="file">
+                            <div class="drop_filekyc_content2">
+                              <i class="fas fa-upload"></i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div> -->
+                    <div class="kyc_form_lst_div">
+                      <div class="kyc_form_lst_tile">Ready to submit your application?</div>
+                      <div class="kyc_form_lst_para">Please verify the details you’re submitting. Once submitted, you won’t be
+                        able to change it unless you <a href="javascript:;">Contact us</a></div>
+                      <a href="{% url 'exchange'%} "><button type="submit" class="kyc_form_lst_btn">SUBMIT FOR VERIFICATION</button></a>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <!-- <div class="kyc_form_lst_div">
+                <div class="kyc_form_lst_tile">Ready to submit your application?</div>
+                <div class="kyc_form_lst_para">Please verify the details you’re submitting. Once submitted, you won’t be
+                  able to change it unless you <a href="javascript:;">Contact us</a></div>
+                <a class="kyc_form_lst_btn" href="javascript:;">SUBMIT FOR VERIFICATION</a>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- login form end here -->
+
+<!-- steps script start -->
+
+
+<!-- <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'> -->
+<script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css'>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<!-- <script>
+  $.noConflict();
+jQuery(document).ready(function ($) {
+    $("#tenth_DOB").datepicker();
+});
+  $(function(){
+  $( "#tenth_DOB" ).datepicker({ 
+    dateFormat: 'dd-mm-yy',             
+    changeMonth: true,
+    changeYear: true,
+    modal: false,
+    yearRange: "1947:2016",
+    onSelect: function(dateStr) {
+    
+    }                                   
+  });
+});
+</script> -->
+<script>
+  $(document).ready(function () {
+
+    var current_fs, next_fs, previous_fs; //fieldsets
+    var opacity;
+    $('#red').show();     
+    
+    // add ssn names
+    $('#ssn_id').attr('name','kyc_id');
+    $('#confirm_ssn_id').attr('name','confirm_kyc_id');
+    $('#ssn_front_pic').attr('name','kyc_front_pic');
+    $('#ssn_back_pic').attr('name','kyc_back_pic');
+    $('#ssn_selfie').attr('name','kyc_selfie');
+
+    // remove other names
+    $('#passport_id').removeAttr('name','kyc_id');
+    $('#passport_confirm_id').removeAttr('name','confirm_kyc_id');
+    $('#passport_front').removeAttr('name','kyc_front_pic');
+    $('#passport_back').removeAttr('name','kyc_back_pic');
+    $('#passport_selfie').removeAttr('name','kyc_selfie');
+    
+    $('#driving_id').removeAttr('name','kyc_id');
+    $('#confirm_driving_id').removeAttr('name','confirm_kyc_id');
+    $('#driving_front').removeAttr('name','kyc_front_pic');
+    $('#driving_back').removeAttr('name','kyc_back_pic');
+    $('#driving_selfie').removeAttr('name','kyc_selfie');
+
+    $(".next").click(function () { 
+
+      current_fs = $(this).parent();
+      next_fs = $(this).parent().next();
+
+      //Add Class Active
+      $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+
+      //show the next fieldset
+      next_fs.show();
+      //hide the current fieldset with style
+      current_fs.animate({ opacity: 0 }, {
+        step: function (now) {
+          // for making fielset appear animation
+          opacity = 1 - now;
+
+          current_fs.css({
+            'display': 'none',
+            'position': 'relative'
+          });
+          next_fs.css({ 'opacity': opacity });
+        },
+        duration: 600
+      });
+    });
+
+    // $(".previous").click(function () {
+
+    //   current_fs = $(this).parent();
+    //   previous_fs = $(this).parent().prev();
+
+    //   //Remove class active
+    //   $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+
+    //   //show the previous fieldset
+    //   previous_fs.show();
+
+    //   //hide the current fieldset with style                      
+    //   current_fs.animate({ opacity: 0 }, {
+    //     step: function (now) {
+    //       // for making fielset appear animation
+    //       opacity = 1 - now;
+
+    //       current_fs.css({
+    //         'display': 'none',
+    //         'position': 'relative'
+    //       });
+    //       previous_fs.css({ 'opacity': opacity });
+    //     },
+    //     duration: 600
+    //   });
+    // });
+
+    $('.radio-group .radio').click(function () {
+      $(this).parent().find('.radio').removeClass('selected');
+      $(this).addClass('selected');
+    });
+
+    $(".submit").click(function () {
+      return false;
+    })
+
+  });                                                         
+
+</script>
+
+<!-- steps script end -->
+
+<!-- modal script start-->
+<script>
+  // Get the modal
+  var modal = document.getElementById("myModal");
+
+  // Get the button that opens the modal
+  var btn = document.getElementById("myBtn");
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+
+  // When the user clicks the button, open the modal 
+  btn.onclick = function () {
+    modal.style.display = "block";
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function () {
+    modal.style.display = "none";
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
+
+<script>
+  $('#myform').on('submit', function (e) {
+    e.preventDefault();
+    $.ajax({
+      type: "POST",
+      url: "{% url 'mobile_verify' %}",
+      data: {
+        phone: $('#phone').val(),
+        csrfmiddlewaretoken: '{{csrf_token}}',
+        dataType: "json"
+      },
+      success: function (data) {
+        // console.log(status)
+        // console.log(data.msg);
+        // console.log(data.status);
+        // console.log(typeof (data.status));
+        // var output = data.msg;
+
+
+        console.log('sent successfully');
+        $('#mobile_otp').modal('hide');
+        $('#mobile_otp_verify').modal('show');
+        // var status = data.status;
+        // if (data.status != "200") {
+        //     $('#error_msg').text(output);
+        //     $('#error_msg').addClass('alert-danger');
+        // }
+        // else {
+        //     console.log('this 200');
+        //     $('#error_msg').removeClass('alert-danger');
+        //     $('#error_msg').addClass('alert-info');
+        //     $('#error_msg').text(output);
+        //     $('#myform').hide();
+        //     $('#hidden_div').removeAttr("style");
+        // }
+      }
+    });
+
+  });
+
+</script>
+<!-- <script>
+  $('#form2').on('submit', function (e) {
+      e.preventDefault();
+      $.ajax({
+          type: 'POST',
+          url: "{% url 'mobile_verify_otp' %}",
+          data: {
+              mob_otp: $('#mob_otp').val(),
+              csrfmiddlewaretoken: "{{csrf_token}}",
+              dataType: "json"
+          },
+          success: function (data) {
+                console.log('sent_successfully');
+              
+          }
+      })
+  });
+</script> -->
+
+<script>
+
+// This is for Verify KYC Doucment Type select option Jquery 
+
+$(function() {
+    $('#colorselector').change(function(){
+        $('.colors').hide();
+        $('#' + $(this).val()).show();
+
+
+        if('#'+$(this).val() == "#red"){
+          // add ssn names
+            $('#ssn_id').attr('name','kyc_id');
+            $('#confirm_ssn_id').attr('name','confirm_kyc_id');
+            $('#ssn_front_pic').attr('name','kyc_front_pic');
+            $('#ssn_back_pic').attr('name','kyc_back_pic');
+            $('#ssn_selfie').attr('name','kyc_selfie');
+
+          // remove other names
+          $('#passport_id').removeAttr('name','kyc_id');
+          $('#passport_confirm_id').removeAttr('name','confirm_kyc_id');
+          $('#passport_front').removeAttr('name','kyc_front_pic');
+          $('#passport_back').removeAttr('name','kyc_back_pic');
+          $('#passport_selfie').removeAttr('name','kyc_selfie');
+          
+          $('#driving_id').removeAttr('name','kyc_id');
+          $('#confirm_driving_id').removeAttr('name','confirm_kyc_id');
+          $('#driving_front').removeAttr('name','kyc_front_pic');
+          $('#driving_back').removeAttr('name','kyc_back_pic');
+          $('#driving_selfie').removeAttr('name','kyc_selfie');
+
+
+
+
+            console.log('this is red');
+
+        }
+        else if('#'+$(this).val() == "#yellow"){
+          
+          // add passport names
+          $('#passport_id').attr('name','kyc_id');
+          $('#passport_confirm_id').attr('name','confirm_kyc_id');
+          $('#passport_front').attr('name','kyc_front_pic');
+          $('#passport_back').attr('name','kyc_back_pic');
+          $('#passport_selfie').attr('name','kyc_selfie');
+
+          // remove other names
+          $('#ssn_id').removeAttr('name','kyc_id');
+          $('#confirm_ssn_id').removeAttr('name','confirm_kyc_id');
+          $('#ssn_front_pic').removeAttr('name','kyc_front_pic');
+          $('#ssn_back_pic').removeAttr('name','kyc_back_pic');
+          $('#ssn_selfie').removeAttr('name','kyc_selfie');
+          
+          $('#driving_id').removeAttr('name','kyc_id');
+          $('#confirm_driving_id').removeAttr('name','confirm_kyc_id');
+          $('#driving_front').removeAttr('name','kyc_front_pic');
+          $('#driving_back').removeAttr('name','kyc_back_pic');
+          $('#driving_selfie').removeAttr('name','kyc_selfie');
+            console.log('this is yellow');
+        }
+        else{
+
+          // add driving 
+          $('#driving_id').attr('name','kyc_id');
+          $('#confirm_driving_id').attr('name','confirm_kyc_id');
+          $('#driving_front').attr('name','kyc_front_pic');
+          $('#driving_back').attr('name','kyc_back_pic');
+          $('#driving_selfie').attr('name','kyc_selfie');
+          
+          // remove other
+          $('#ssn_id').removeattr('name','kyc_id');
+          $('#confirm_ssn_id').removeattr('name','confirm_kyc_id');
+          $('#ssn_front_pic').removeattr('name','kyc_front_pic');
+          $('#ssn_back_pic').removeattr('name','kyc_back_pic');
+          $('#ssn_selfie').removeattr('name','kyc_selfie');
+            console.log('this is green');
+          
+          $('#passport_id').removeAttr('name','kyc_id');
+          $('#passport_confirm_id').removeAttr('name','confirm_kyc_id');
+          $('#passport_front').removeAttr('name','kyc_front_pic');
+          $('#passport_back').removeAttr('name','kyc_back_pic');
+          $('#passport_selfie').removeAttr('name','kyc_selfie');
+          
+        }
+    });
+});
+</script>
+
+{% endblock verify %}
+{% block footer %}
+{% endblock footer %}
