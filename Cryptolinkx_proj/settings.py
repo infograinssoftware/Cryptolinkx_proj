@@ -231,3 +231,19 @@ LOGGING = {
         'level': 'WARNING',
     },
 }
+
+
+from bitmerchant.wallet import Wallet
+
+# Create a wallet, and a primary child wallet for your app
+my_wallet = Wallet.new_random_wallet()
+print(my_wallet.serialize_b58(private=True))  # Write this down or print it out and keep in a secure location
+project_0_wallet = my_wallet.get_child(0, is_prime=True)
+project_0_public = project_0_wallet.public_copy()
+print()  # Put this in your app's settings file
+
+
+## THINGS BELOW ARE PUBLIC FOR YOUR WEBSERVER
+
+# In your app's settings file, declare your public wallet:
+WALLET_PUBKEY = f"{project_0_public.serialize_b58(private=False)}"

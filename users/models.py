@@ -20,6 +20,7 @@ class Custom_User(AbstractUser):
     is_otp_verified = models.BooleanField(default = False)
     is_qrcode_verified = models.BooleanField(default = False)
     is_kyc_verified = models.BooleanField(default = False)
+    user_wallet_address = models.CharField(max_length = 200, default = '')
 
 
     USERNAME_FIELD = 'email'

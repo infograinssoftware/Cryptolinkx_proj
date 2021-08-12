@@ -15,6 +15,8 @@ from core.models import Currency_Wallet, CoinPair
 import qrcode
 import http.client
 
+from bitmerchant.wallet import Wallet
+from Cryptolinkx_proj.settings import WALLET_PUBKEY  # Created above
 
 def send_html_email(email, otp):
     print('inside html mail')
@@ -242,10 +244,26 @@ class Resend_Otp(View):
         
         return redirect('/auth/verifyotp')
 
+
+def create_user_wallet(user):
+
+    master_wallet = Wallet.deserialize(WALLET_PUBKEY)
+    print(master_wallet, 'master wallet')
+    user_wallet = master_wallet.create_new_address_for_user(user.id)
+    print(user_wallet, 'user wallet')
+    payment_address = user_wallet.to_address()
+    print(payment_address, 'payment address')
+    user_obj = Custom_User.objects.get(email = user.email)
+    user_obj.user_wallet_address = payment_address
+    user_obj.save()
+    return None
+
 def add_wallet_detail(user):
     private_key = random_key()
     public_key = privkey_to_pubkey(private_key)
     wallet_address = pubkey_to_address(public_key)
+
+    
     coin_obj = CoinPair.objects.all()
     
     all_coins = [Currency_Wallet(user = user, coin_pair = i, public_key = public_key, available_bal = 0, wallet_address = wallet_address, locked_bal = 0, total_bal = 0, usdt_bal = 0) for i in coin_obj]
@@ -308,6 +326,7 @@ class User_KYC_View(View):
         if kyc_obj:
             user_obj.is_kyc_verified = True
             user_obj.save()
+            # create_user_wallet(user_obj)
             return redirect('/exchange')
         return render(request, 'verification.html', {'kyc_id' : kyc_id, 'document_type' : document_type, 'confirm_kyc_id' : confirm_kyc_id, 'kyc_front_pic' : kyc_front_pic, 'kyc_back_pic' : kyc_back_pic, 'kyc_selfie' : kyc_selfie})
 
@@ -335,6 +354,8 @@ class User_Login(View):
             login(request, user)
             if not Currency_Wallet.objects.filter(user = request.user).exists():
                 add_wallet_detail(request.user)
+                create_user_wallet(user)
+
             return redirect('/')
 
         messages.error(request, 'Wrong email or passsword', 'warning')
