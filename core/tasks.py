@@ -68,8 +68,10 @@ def call_binance_api(self):
 
     try:
         # if CoinPair.objects.all().count()==0:
-        CoinPair.objects.bulk_create(l)
+        print('hello create')
+        CoinPair.objects.bulk_create(l, ignore_conflicts=False)
         # pass
+        print("Creating is giving error")
 
     except Exception as e:
         print(e)
@@ -79,6 +81,11 @@ def call_binance_api(self):
             coin_obj.pair_vol  = all_coins[i]["vol"]
             coin_obj.coin_price  = 150
             key_list.append(coin_obj)
-
-        CoinPair.objects.bulk_update(key_list, ['pair_vol', 'coin_price'])
+        print('hii')
+        try:
+            CoinPair.objects.bulk_update(key_list, ['pair_vol', 'coin_price'])
+        except Exception as p:
+            print(p)
+        print("updating is giving error")
+    
     return None

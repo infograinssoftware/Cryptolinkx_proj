@@ -178,7 +178,7 @@ CELERY_TASK_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'Asia/Kolkata'
 CELERY_RESULT_BACKEND = 'django-db'
 CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler' 
-
+# CELERYD_TASK_TIME_LIMIT = 600
 
 # CHANNEL_LAYERS = {
 #     "default": {

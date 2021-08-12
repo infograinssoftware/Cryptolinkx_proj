@@ -5,6 +5,9 @@ from celery import Celery
 # Set the default Django settings module for the 'celery' program.
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Cryptolinkx_proj.settings')
 
+
+os.environ.setdefault('FORKED_BY_MULTIPROCESSING', '1')
+
 app = Celery('Cryptolinkx_proj')
 
 # Using a string here means the worker doesn't have to serialize
