@@ -326,7 +326,7 @@ class User_KYC_View(View):
         if kyc_obj:
             user_obj.is_kyc_verified = True
             user_obj.save()
-            # create_user_wallet(user_obj)
+            create_user_wallet(user_obj)
             return redirect('/exchange')
         return render(request, 'verification.html', {'kyc_id' : kyc_id, 'document_type' : document_type, 'confirm_kyc_id' : confirm_kyc_id, 'kyc_front_pic' : kyc_front_pic, 'kyc_back_pic' : kyc_back_pic, 'kyc_selfie' : kyc_selfie})
 
