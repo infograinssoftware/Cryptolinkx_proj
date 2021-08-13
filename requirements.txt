@@ -6,8 +6,11 @@ async-timeout==3.0.1
 attrs==21.2.0
 autobahn==21.3.1
 Automat==20.2.0
+base58==2.1.0
 billiard==3.6.4.0
 bitcoin==1.1.42
+bitmerchant==0.1.8
+cachetools==4.2.2
 celery==5.0.5
 certifi==2021.5.30
 cffi==1.14.5
@@ -27,6 +30,7 @@ django-celery-results==2.1.0
 django-email-verification==0.1.0
 django-timezone-field==4.1.2
 dnspython==1.16.0
+ecdsa==0.17.0
 eventlet==0.31.0
 greenlet==1.1.0
 hiredis==2.0.0
