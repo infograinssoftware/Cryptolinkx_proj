@@ -6,6 +6,15 @@ from django.shortcuts import redirect, render
 from django.views.generic import View
 import requests
 from .models import CoinPair, Currency_Wallet
+
+
+
+def get_all_the_assets():
+    r = requests.get('https://api.wazirx.com/api/v2/market-status')
+    response = r.json()
+    funds_list = [{'name' : response['assets'][i]['name'], 'type' : response['assets'][i]['type']} for i in range(len(response['assets']))]
+    return funds_list
+
 # Create your views here.
 #(_______________________________________________________Index view_________________________________________________________)
 
@@ -75,8 +84,9 @@ class STFView(View):
 class FundsView(View):
     template_name = 'core/funds.html'
     def get(self, request, *args, **kwargs):
-        wallet_obj = Currency_Wallet.objects.filter(user = request.user)
-        return render(request,self.template_name,  {'all_wallets' : wallet_obj})  
+        all_assets = get_all_the_assets()
+        # wallet_obj = Currency_Wallet.objects.filter(user = request.user)
+        return render(request,self.template_name, {'all_wallets' : all_assets})  
 
 class AccountView(View):
     template_name = 'core/account.html'

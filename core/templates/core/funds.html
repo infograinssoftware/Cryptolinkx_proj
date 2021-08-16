@@ -69,10 +69,10 @@
                       <tr class="fund_table_body">
                         <td class="funds_tdStyle_style "> <img src="/static/authentication/assets/images/one.png" class="funds_tdimg_style"
                             alt="Cryptolinkx"></td>
-                        <td class="funds_tdTwoStyle_style">{{ i.coin_pair|truncatechars:4|cut:"..." }}</td>
-                        <td class="funds_tdStyle_style">{{i.available_bal}}</td>
-                        <td class="funds_tdStyle_style">{{i.locked_bal}}</td>
-                        <td class="funds_tdStyle_style">{{i.total_bal}}</td>
+                        <td class="funds_tdTwoStyle_style">{{ i.name }}</td>
+                        <td class="funds_tdStyle_style">({{i.type}})</td>
+                        <td class="funds_tdStyle_style">0</td>
+                        <td class="funds_tdStyle_style">0</td>
                         <td class="funds_tdStyle_style">0</td>
                         <td class="d-flex funds_tdStyle_style">
                           <button type="button" class="btn btn-primary funds_Depositbtn_style w-100 ">Deposit</button>

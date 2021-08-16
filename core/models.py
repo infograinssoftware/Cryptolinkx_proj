@@ -26,6 +26,8 @@ class Currency_Wallet(models.Model):
 class Wallet_Service(models.Model):
     user_wallet = models.ForeignKey(Currency_Wallet, on_delete = models.CASCADE)
     deposit_date = models.DateTimeField(auto_now_add = True)
-    
+
+
+
 
 
