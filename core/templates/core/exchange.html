@@ -1118,9 +1118,9 @@
             let num3 = new Number(usd_list[i]['pair_vol']);
             let base_value1 = (num1/num2)/100;
             let base_value2 = (num1/num3)/100;
-            btc_data += '<div class="list_data_div"><a class="a_div" href="javascript:;"><div class="market_div"><div class="currency_icon">$</div><div class="market"> <div class="market_name"><span class="market_name_txt">'+ btc_list[i]['pair_name'] +'<span class="sub_txt"></span></span></div><div class="market_change"> <span class="market_change_data">1.24%</span></div></div> </div><div class="price"><span class="price_value">$'+num1.toFixed(3)+'</span><span class="price_btm"></span></div></a></div>';
-            usdt_data += '<div class="list_data_div"><a class="a_div" href="javascript:;"><div class="market_div"><div class="currency_icon">$</div><div class="market"> <div class="market_name"><span class="market_name_txt">'+ usdt_list[i]['pair_name'] +'<span class="sub_txt"></span></span></div><div class="market_change"> <span class="market_change_data">1.24%</span></div></div> </div><div class="price"><span class="price_value">$'+num2.toFixed(3)+'</span><span class="price_btm">'+base_value1 +' BTC</span></div></a></div>';
-            usd_data += '<div class="list_data_div"><a class="a_div" href="javascript:;"><div class="market_div"><div class="currency_icon">$</div><div class="market"> <div class="market_name"><span class="market_name_txt">'+ usd_list[i]['pair_name'] +'<span class="sub_txt"></span></span></div><div class="market_change"> <span class="market_change_data">1.24%</span></div></div> </div><div class="price"><span class="price_value">$'+num3.toFixed(3)+'</span><span class="price_btm">'+base_value2 +' BTC</span></div></a></div>';
+            btc_data += '<div class="list_data_div"><a class="a_div" href="/exchange/'+btc_list[i]['pair_name']+'"><div class="market_div"><div class="currency_icon">$</div><div class="market"> <div class="market_name"><span class="market_name_txt">'+ btc_list[i]['pair_name'] +'<span class="sub_txt"></span></span></div><div class="market_change"> <span class="market_change_data">1.24%</span></div></div> </div><div class="price"><span class="price_value">$'+num1.toFixed(3)+'</span><span class="price_btm"></span></div></a></div>';
+            usdt_data += '<div class="list_data_div"><a class="a_div" href="/exchange/'+usdt_list[i]['pair_name']+'"><div class="market_div"><div class="currency_icon">$</div><div class="market"> <div class="market_name"><span class="market_name_txt">'+ usdt_list[i]['pair_name'] +'<span class="sub_txt"></span></span></div><div class="market_change"> <span class="market_change_data">1.24%</span></div></div> </div><div class="price"><span class="price_value">$'+num2.toFixed(3)+'</span><span class="price_btm">'+base_value1 +' BTC</span></div></a></div>';
+            usd_data += '<div class="list_data_div"><a class="a_div" href="/exchange/'+usd_list[i]['pair_name']+'"><div class="market_div"><div class="currency_icon">$</div><div class="market"> <div class="market_name"><span class="market_name_txt">'+ usd_list[i]['pair_name'] +'<span class="sub_txt"></span></span></div><div class="market_change"> <span class="market_change_data">1.24%</span></div></div> </div><div class="price"><span class="price_value">$'+num3.toFixed(3)+'</span><span class="price_btm">'+base_value2 +' BTC</span></div></a></div>';
             // eth_data += "<tr class =" + row_bg + "><td ><a href=" + eth_list[i]['pair_name'] + " class = 'text-decoration-none font-weight-bold text-" + text_color + "' >" + eth_list[i]['pair_name'] + "</a></td><td class = 'text-" + price_color + " bg-" + price_bg_color + " '>₹" + eth_list[i]['pair_vol'] + "</td><td></td></tr>";
 
             // console.log();
@@ -1140,7 +1140,7 @@
   function market_depth() {
     // var pair= 
     $.ajax({
-      url: "https://api.binance.com/api/v3/depth?symbol=BTCUSDT",
+      url: "https://api.binance.com/api/v3/depth?symbol={{pair_name}}",
       dataType: "json",
       type: "GET",
       success: function (event) {
