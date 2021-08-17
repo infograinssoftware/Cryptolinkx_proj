@@ -85,9 +85,8 @@ class FundsView(View):
     template_name = 'core/funds.html'
     def get(self, request, *args, **kwargs):
         all_assets = get_all_the_assets()
-        print('\n\n\n\n',all_assets,'\n\n\n\n')
         # wallet_obj = Currency_Wallet.objects.filter(user = request.user)
-        return render(request,self.template_name, {'all_wallets' : all_assets})  
+        return render(request,self.template_name, {'all_assets' : all_assets})  
 
 class AccountView(View):
     template_name = 'core/account.html'
