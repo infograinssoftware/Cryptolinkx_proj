@@ -27,6 +27,14 @@ class Wallet_Service(models.Model):
     user_wallet = models.ForeignKey(Currency_Wallet, on_delete = models.CASCADE)
     deposit_date = models.DateTimeField(auto_now_add = True)
 
+class P2p_Seller(models.Model):
+    coin_placer = models.ForeignKey(Custom_User, on_delete = models.CASCADE, related_name = 'p2p_sender')
+    unit_sell_price = models.FloatField()
+    sell_volume = models.FloatField()
+    sell_date = models.DateTimeField(auto_now_add = True)
+    user_cid_name = models.CharField(max_length = 20)
+    
+    
 
 
 
