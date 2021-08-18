@@ -33,7 +33,7 @@ class P2p_Seller(models.Model):
     sell_volume = models.FloatField()
     sell_total_price = models.FloatField()
     sell_date = models.DateTimeField(auto_now_add = True)
-    user_cid_name = models.CharField(max_length = 20)
+    user_cid_name = models.CharField(max_length = 20, blank  = True)
 
     def __str__(self):
         return f'{self.coin_placer}_________{self.user_cid_name}'
