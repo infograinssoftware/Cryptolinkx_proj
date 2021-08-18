@@ -71,7 +71,8 @@ class P2pView(View):
     login_template_name = 'core/p2plogin.html'
     def get(self, request, *args, **kwargs):
         if request.user.is_authenticated:
-            return render(request, template_name = self.login_template_name)
+            p2p_obj =  P2p_Seller.objects.filter(sell_pair_name = 'usdt/usd').order_by('-unit_sell_price')
+            return render(request, template_name = self.login_template_name, context = {'p2p_obj' : p2p_obj})
         return render(request, template_name = self.template_name)
 
     def post(self, request, *args, **kwargs):

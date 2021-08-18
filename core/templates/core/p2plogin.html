@@ -307,8 +307,17 @@
                             </div>
                             <div class="tab-pane fade " id="selers" role="tabpanel" aria-labelledby="selers-tab">
                                 <div class="xid_order_book_bodyselerspart">
+                                    
                                     <ul>
+                                        {% for i in p2p_obj %}
                                         <li class="xid_order_book_li">
+                                            <div>{{i.unit_sell_price}}</div>
+                                            <div>{{i.sell_volume}}</div>
+                                            <div>{{i.coin_placer.username}}</div>
+                                        </li>
+                                        {% endfor %}
+
+                                        <!-- <li class="xid_order_book_li">
                                             <div>10.21</div>
                                             <div>500.22</div>
                                             <div>20.31</div>
@@ -332,12 +341,7 @@
                                             <div>10.21</div>
                                             <div>500.22</div>
                                             <div>20.31</div>
-                                        </li>
-                                        <li class="xid_order_book_li">
-                                            <div>10.21</div>
-                                            <div>500.22</div>
-                                            <div>20.31</div>
-                                        </li>
+                                        </li> -->
                                     </ul>
                                 </div>
                             </div>
