@@ -2,10 +2,11 @@ import json
 from django.core import serializers
 from django.db.models.constraints import BaseConstraint
 from django.http import response, JsonResponse, HttpResponse
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render, get_object_or_404
 from django.views.generic import View
 import requests
 from .models import CoinPair, Currency_Wallet, P2p_Seller
+from users.models import Custom_User
 
 
 
@@ -74,13 +75,17 @@ class P2pView(View):
         return render(request, template_name = self.template_name)
 
     def post(self, request, *args, **kwargs):
+        sell_pair_name = request.POST.get('sell_pair_name', 'usdt/usd')
         unit_sell_price = request.POST.get('unit_sell_price')
         sell_volume = request.POST.get('sell_volume')
         sell_total_price = request.POST.get('sell_total_price')
-        user_cid_name = request.POST.get('user_cid_name', request.user.username)
+        user_cid_name = request.POST.get('user_cid_name', request.user.user_wallet_address)
+        print(request.user.email, 'is the user email')
 
+        
         try:
-            P2p_Seller.objects.create(coin_placer__user = request.user, unit_sell_price = unit_sell_price, sell_volume = sell_volume, sell_total_price = sell_total_price, user_cid_name = user_cid_name)
+            user = get_object_or_404(Custom_User, email = request.user.email)
+            P2p_Seller.objects.create(coin_placer = user, sell_pair_name = sell_pair_name, unit_sell_price = unit_sell_price, sell_volume = sell_volume, sell_total_price = sell_total_price, user_cid_name = user_cid_name)
         except Exception as e:
             print(e)
             pass
