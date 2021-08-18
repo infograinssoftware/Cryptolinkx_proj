@@ -78,10 +78,11 @@ a, a:hover {
     transform: translateX(0%);
 }
 
-.nav_menu .login_btn{
-    background: #108ad1;
+.login_btn{
+    background: #11b717;
     color: white !important;
     padding: 8px 15px;
+    box-shadow: 1px 0px 5px #000000
 }
 /*navbar css close here*/
 
@@ -989,8 +990,8 @@ th , td{
 }
 
 .p2pMarket_btn_style{
-    background-color: #108ad1;
-    border-color: #108ad1;
+    background-color: #05d635;
+    border-color: #05d635;
     color: #fff;
 }
 .p2pMarket_btn_style:focus{
@@ -1708,7 +1709,7 @@ th , td{
     margin: 0;
     padding: 0.4rem 0.8rem;
     border: none;
-    border-top: 2px solid #108ad1 !important;
+    border-top: 2px solid #55bd6c !important;
     font-weight: 500;
 }
 
@@ -1766,7 +1767,7 @@ th , td{
     border-radius: 2px !important;
     color: #000000 !important;
     margin: 0;
-    border-top: 2px solid #108ad1 !important;
+    border-top: 2px solid green !important;
     font-weight: 900;
     border-bottom: inset 2px solid black;
     outline: none !important;
@@ -1785,9 +1786,8 @@ th , td{
     border: 2px solid #108ad1;
     margin-bottom: 15px;
     padding-left: 8px;
-    margin-left: 5px;
     font-size: 14px;
-    width: 97%;
+    width: 100%;
     border-radius: 5px;
 }
 
@@ -1835,17 +1835,17 @@ th , td{
 }
 
 .exchange_LoginBtn_style, .exchange_LoginBtn_style:hover{
-    background-color: #108ad1;
-    border-color: #108ad1;
+    background-color: #55bd6c;
+    border-color: #55bd6c;
     width: 80%;
     margin-left: 10%;
     border-radius: 3px;
 }
 
 .exchange_AccountBtn_style, .exchange_AccountBtn_style:hover{
-    border-color: #108ad1;
+    border-color: #55bd6c;
     background-color: #ffffff;
-    color: #108ad1;
+    color: #55bd6c;
     width: 80%;
     margin-left: 10%;
     border-radius: 3px;
@@ -1932,16 +1932,16 @@ th , td{
     width: 100% !important;
 }
 .exchange_loginbtn_style{
-    background-color: #108ad1;
-    border-color: #108ad1;
+    background-color: #55bd6c;
+    border-color: #55bd6c;
     margin-bottom: 25px;
     margin-top: 25px;
 }
 .exchange_loginbtn_style:hover{
     color: white;
     opacity: .8;
-    background-color: #108ad1;
-    border-color: #108ad1;
+    background-color: #55bd6c;
+    border-color: #55bd6c;
 }
 
 .exchange_sellbtn_style{
@@ -2554,7 +2554,7 @@ select.list-dt:focus {
     border-radius: 2px !important;
     color: #000000 !important;
     margin: 0;
-    border-top: 2px solid #108ad1 !important;
+    border-top: 2px solid #03C503 !important;
     outline: none !important;
 }
 
@@ -2602,7 +2602,7 @@ select.list-dt:focus {
     border-radius: 2px !important;
     color: #131722 !important;
     margin: 0;
-    border-top: 2px solid #108ad1 !important;
+    border-top: 2px solid #03c503 !important;
     padding: 0.4rem 0.8rem;
 }
 .stf_tab_panes_style{
@@ -2663,8 +2663,8 @@ select.list-dt:focus {
     margin-top: 42px;
 }
 .stf_loginbtn_style, .stf_loginbtn_style:hover{
-    background-color: #108ad1;
-    border-color: #108ad1;
+    background-color: #03c503;
+    border-color: #03c503;
     width: 80%;
     margin-bottom: 10%;
     border-radius: 2px;
@@ -5113,7 +5113,6 @@ select.list-dt:focus {
   .tab-content .data_list_scrll {
     /* height: 50vh; */
     overflow-y: scroll;
-    padding: 0px 5px;
   }
 
   .exchange_section_style .exchange_box1 {
@@ -5230,7 +5229,7 @@ select.list-dt:focus {
 
   .exchange_section_style .exchange_box1::-webkit-scrollbar-thumb {
     border-radius: 50px;
-    background-color: #108ad1;
+    background-color: #55bd6c;
   }
 
   /* --------------------left-nav-tab-------------------------------------- */
@@ -5238,7 +5237,7 @@ select.list-dt:focus {
     background-color: #ffffff !important;
     border-radius: 2px !important;
     color: #000000 !important;
-    border-top: 2px solid #108ad1 !important;
+    border-top: 2px solid #55BD6C !important;
     font-weight: 600;
   }  
 
@@ -6472,7 +6471,7 @@ select.list-dt:focus {
         }
 
         .custom_navlink.active {
-            border-top: 2px solid #108ad1 !important;
+            border-top: 2px solid rgb(3, 197, 3) !important;
             font-weight: 700;
         }
 
@@ -6840,7 +6839,7 @@ select.list-dt:focus {
 
         .sel_body a {
             display: flex;
-            background-color: #108ad1;
+            background-color: #00C853;
             color: #fff;
             padding: 10px 30px;
             width: 100%;
