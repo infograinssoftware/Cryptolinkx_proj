@@ -68,7 +68,7 @@ class ExchangeView(View):
 class P2pView(View):
     template_name = 'core/p2p.html'
     login_template_name = 'core/p2plogin.html'
-    def get(self, request, *args, **k  wargs):
+    def get(self, request, *args, **kwargs):
         if request.user.is_authenticated:
             return render(request, template_name = self.login_template_name)
         return render(request, template_name = self.template_name)
