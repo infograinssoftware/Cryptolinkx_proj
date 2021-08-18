@@ -72,7 +72,8 @@ class P2pView(View):
     def get(self, request, *args, **kwargs):
         if request.user.is_authenticated:
             p2p_obj =  P2p_Seller.objects.filter(sell_pair_name = 'usdt/usd').order_by('-unit_sell_price')
-            return render(request, template_name = self.login_template_name, context = {'p2p_obj' : p2p_obj})
+            p2p_pair_option = CoinPair.objects.filter(pair_name__endswith = 'USDT')
+            return render(request, template_name = self.login_template_name, context = {'p2p_obj' : p2p_obj, 'p2p_pair_option' : p2p_pair_option})
         return render(request, template_name = self.template_name)
 
     def post(self, request, *args, **kwargs):
@@ -83,7 +84,6 @@ class P2pView(View):
         user_cid_name = request.POST.get('user_cid_name', request.user.user_wallet_address)
         print(request.user.email, 'is the user email')
 
-        
         try:
             user = get_object_or_404(Custom_User, email = request.user.email)
             P2p_Seller.objects.create(coin_placer = user, sell_pair_name = sell_pair_name, unit_sell_price = unit_sell_price, sell_volume = sell_volume, sell_total_price = sell_total_price, user_cid_name = user_cid_name)
@@ -101,7 +101,7 @@ class STFView(View):
 
 
 class FundsView(View):
-    template_name = 'core/funds.html'
+    template_name = 'core/funds.html'        
     def get(self, request, *args, **kwargs):
         all_assets = get_all_the_assets()
         # wallet_obj = Currency_Wallet.objects.filter(user , = request.user)

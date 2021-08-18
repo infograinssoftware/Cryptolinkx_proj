@@ -214,13 +214,15 @@
                     <div class="p2p_marketers_head">
                         <div class="p2p_marketers_head_select">
                             <select class="custom-select" id="inputGroupSelect01">
-                                <option selected>USDT/INR</option>
-                                <option value="1">USDT/IDR</option>
+                                {% for i in p2p_pair_option %}
+                                    <option selected>{{i.pair_name}}</option>
+                                {% endfor %}
+                                <!-- <option value="1">USDT/IDR</option>
                                 <option value="2">USDT/RUB</option>
-                                <option value="3">USDT/UAH</option>
+                                <option value="3">USDT/UAH</option> -->
                             </select>
                         </div>
-                        <div class="p2p_marketers_head_value">$72.00</div>
+                        <div class="p2p_marketers_head_value">${{p2p_pair_option.0.pair_vol}}</div>
                     </div>
                     <div class="p2p_marketers_body">
                         <div class="p2p_marketers_bdytitle">P2P Markets</div>
