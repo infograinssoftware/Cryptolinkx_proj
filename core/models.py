@@ -29,6 +29,7 @@ class Wallet_Service(models.Model):
 
 class P2p_Seller(models.Model):
     coin_placer = models.ForeignKey(Custom_User, on_delete = models.CASCADE, related_name = 'p2p_sender')
+    sell_pair_name = models.CharField(max_length = 50)
     unit_sell_price = models.FloatField()
     sell_volume = models.FloatField()
     sell_total_price = models.FloatField()

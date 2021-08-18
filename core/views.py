@@ -5,7 +5,7 @@ from django.http import response, JsonResponse, HttpResponse
 from django.shortcuts import redirect, render
 from django.views.generic import View
 import requests
-from .models import CoinPair, Currency_Wallet
+from .models import CoinPair, Currency_Wallet, P2p_Seller
 
 
 
@@ -72,12 +72,25 @@ class P2pView(View):
         if request.user.is_authenticated:
             return render(request, template_name = self.login_template_name)
         return render(request, template_name = self.template_name)
+
+    def post(self, request, *args, **kwargs):
+        unit_sell_price = request.POST.get('unit_sell_price')
+        sell_volume = request.POST.get('sell_volume')
+        sell_total_price = request.POST.get('sell_total_price')
+        user_cid_name = request.POST.get('user_cid_name', request.user.username)
+
+        try:
+            P2p_Seller.objects.create(coin_placer__user = request.user, unit_sell_price = unit_sell_price, sell_volume = sell_volume, sell_total_price = sell_total_price, user_cid_name = user_cid_name)
+        except Exception as e:
+            print(e)
+            pass
+        return render(request,template_name = self.login_template_name)
     
  
 class STFView(View):
     template_name = 'core/stf.html'
     def get(self, request, *args, **kwargs):
-
+        
         return render(request, template_name = self.template_name)   
 
 
