@@ -564,7 +564,15 @@ console.log(socket);
 
 socket.onopen =  (function(e){
     console.log('connected on frontend');
-})
+});
+
+socket.onmessage = function(e){
+    
+    all_data = JSON.parse(e.data);
+    fetched_pairs = JSON.parse(all_data['fetched_pairs']);
+    console.log(fetched_pairs,'msg recieved');
+    
+};
 </script>
 
     {% endblock p2p_login %}

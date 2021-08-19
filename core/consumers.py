@@ -64,19 +64,26 @@ class ExchangeConsumer(AsyncWebsocketConsumer):
         return all_coins
 
 
+#(___________________________________________P2P Consumer______________________________________________ )
+
+
 class P2PConsumer(AsyncWebsocketConsumer):
     async def connect(self):
         self.room_group_name = 'p2p_group'
 
         # Join room group
-        # await self.channel_layer.group_add(
-        #     self.room_group_name,
-        #     self.channel_name
-        # )
+        await self.channel_layer.group_add(
+            self.room_group_name,
+            self.channel_name
+        )
 
         await self.accept()
         print('connected')
-        await self.send(json.dumps({'msg' : 'connected'}))
+
+        self.fetched_pairs = await self.get_some_pairs()
+        self.json_fetched_pairs = await sync_to_async(serialize)('json', self.fetched_pairs)
+
+        await self.send(text_data = json.dumps({'msg' : 'connected', 'fetched_pairs' : self.json_fetched_pairs}))
 
     async def receive(self, text_data):
         pass
@@ -84,3 +91,12 @@ class P2PConsumer(AsyncWebsocketConsumer):
     async def disconnect(self, close_code):
         pass
     
+
+#   getting some pairs to for p2p pairs
+
+    @database_sync_to_async
+    def get_some_pairs(self):
+
+        p2p_pair_option = CoinPair.objects.filter(pair_name__endswith = 'USDT')
+
+        return p2p_pair_option
