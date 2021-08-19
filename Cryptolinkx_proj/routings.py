@@ -14,7 +14,7 @@ application = ProtocolTypeRouter({
         URLRouter([
             path("ws/exchange/", ExchangeConsumer.as_asgi()),
             path("ws/p2p/", P2PConsumer.as_asgi()),
-        
+            path("ws/p2p/<str:pair_name>", P2PConsumer.as_asgi()),
         ])
     ),
 })
