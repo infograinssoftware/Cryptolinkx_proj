@@ -62,3 +62,25 @@ class ExchangeConsumer(AsyncWebsocketConsumer):
         all_coins =  CoinPair.objects.all().order_by('id')
         print(all_coins)
         return all_coins
+
+
+class P2PConsumer(AsyncWebsocketConsumer):
+    async def connect(self):
+        self.room_group_name = 'p2p_group'
+
+        # Join room group
+        # await self.channel_layer.group_add(
+        #     self.room_group_name,
+        #     self.channel_name
+        # )
+
+        await self.accept()
+        print('connected')
+        await self.send(json.dumps({'msg' : 'connected'}))
+
+    async def receive(self, text_data):
+        pass
+
+    async def disconnect(self, close_code):
+        pass
+    

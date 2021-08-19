@@ -554,4 +554,17 @@
             </div>
         </div>
     </div>
+
+
+
+<script>
+console.log('sdfdsfdsf');
+var socket = new WebSocket('ws://'+window.location.host + '/ws/p2p/')
+console.log(socket);
+
+socket.onopen =  (function(e){
+    console.log('connected on frontend');
+})
+</script>
+
     {% endblock p2p_login %}
