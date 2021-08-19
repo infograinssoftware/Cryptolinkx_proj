@@ -105,7 +105,13 @@ class P2PConsumer(AsyncWebsocketConsumer):
         # ))
 
     async def receive(self, text_data):
-      
+
+        if not self.pair_name:
+            self.pair_name = 'BTCUSDT'
+        
+        self.single_coin =  await self.getting_single_pair_name()
+        print(self.single_coin.pair_vol)
+        self.json_single_coin = await sync_to_async(serialize)('json', [self.single_coin])
         await self.channel_layer.group_send(
             self.room_group_name,
             {
