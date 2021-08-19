@@ -56,7 +56,7 @@ class ExchangeView(View):
             # eth_list = serializers.serialize('json', eth_list)
 
             pair_name = kwargs.get('pair_name', 'BTCUSDT')
-            print(pair_name,'dsfsdafsdfsdfsdfsdf')
+
             if request.is_ajax():
                 # return JsonResponse({'pair_name': pair_name, 'btc_list': btc_list})
                 return JsonResponse({'pair_name': pair_name, 'btc_list': btc_list, 'len_btc' : len(btc_list), 'usdt_list': usdt_list, 'eth_list': eth_list, 'len_eth' : len(eth_list), 'len_usdt' : len(usdt_list), 'usd_list': usd_list, 'url':'/exchange'}, safe = False)
@@ -82,7 +82,6 @@ class P2pView(View):
         sell_volume = request.POST.get('sell_volume')
         sell_total_price = request.POST.get('sell_total_price')
         user_cid_name = request.POST.get('user_cid_name', request.user.user_wallet_address)
-        print(request.user.email, 'is the user email')
 
         try:
             user = get_object_or_404(Custom_User, email = request.user.email)
