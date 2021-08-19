@@ -80,10 +80,11 @@ class P2PConsumer(AsyncWebsocketConsumer):
         self.single_coin =  await self.getting_single_pair_name()
         self.json_single_coin = await sync_to_async(serialize)('json', [self.single_coin])
 
-        print(self.json_single_coin)
+       
 
         # Join room group
         await self.channel_layer.group_add(
+            
             self.room_group_name,
             self.channel_name
         )
@@ -94,15 +95,40 @@ class P2PConsumer(AsyncWebsocketConsumer):
         self.fetched_pairs = await self.get_some_pairs()
         self.json_fetched_pairs = await sync_to_async(serialize)('json', self.fetched_pairs)
 
-        await self.send(text_data = json.dumps({'msg' : 'connected', 'fetched_pairs' : self.json_fetched_pairs, 'single_pair' : self.json_single_coin }))
+        # await self.send(
+        #     text_data = json.dumps(
+        #         {
+        #             'msg' : 'connected', 
+        #             'fetched_pairs' : self.json_fetched_pairs, 
+        #             'single_pair' : self.json_single_coin 
+        #         }
+        # ))
 
     async def receive(self, text_data):
-        print(text_data['msg'])
-        
+      
+        await self.channel_layer.group_send(
+            self.room_group_name,
+            {
+                'type' : 'p2p_pairs',
+                'msg'  : json.loads(text_data)['msg'],
+                'fetched_pairs' : self.json_fetched_pairs, 
+                'single_pair' : self.json_single_coin 
+            }
+        )
 
-    async def disconnect(self, close_code):
-        pass
-    
+
+    async def p2p_pairs(self, event):
+        msg = event['msg']
+        fetched_pairs = event['fetched_pairs']
+        single_pair = event['single_pair']
+
+        await self.send(text_data = json.dumps({
+
+                'msg' : 'connected', 
+                'fetched_pairs' : self.json_fetched_pairs, 
+                'single_pair' : self.json_single_coin 
+        }))
+
 
 #   getting some pairs to for p2p pairs
 
@@ -118,3 +144,11 @@ class P2PConsumer(AsyncWebsocketConsumer):
     def getting_single_pair_name(self):
         single_obj = CoinPair.objects.get(pair_name = self.pair_name)
         return single_obj
+
+
+    async def disconnect(self, close_code):
+        await self.channel_layer.group_discard(
+            self.room_group_name,
+            self.channel_name
+        )
+    

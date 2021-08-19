@@ -558,27 +558,28 @@
 
 
 <script>
-console.log('sdfdsfdsf');
+// console.log('sdfdsfdsf');
 var socket = new WebSocket('ws://'+ window.location.host + '/ws/p2p/{{pair_show}}')
-console.log(socket);
+// console.log(socket);
 
 socket.onopen =  (function(e){
     console.log('connected on frontend');
+    socket.send(JSON.stringify({'msg' : 'hello from frontend'}))
 });
 
 socket.onmessage = function(e){
     
     all_data = JSON.parse(e.data);
-    console.log(all_data);
+    // console.log(all_data);
     single_pair = JSON.parse(all_data['single_pair'])[0]['fields']['pair_vol'];
-    console.log(single_pair);
+    // console.log(single_pair);
 
     document.getElementById('pair_price').innerHTML = single_pair;
 
     fetched_pairs = JSON.parse(all_data['fetched_pairs']);
     let option = ''
     for(i in fetched_pairs){
-        console.log(fetched_pairs[i]['fields']['pair_name']);
+        // console.log(fetched_pairs[i]['fields']['pair_name']);
         if(fetched_pairs[i]['fields']['pair_name'] == "{{pair_show}}"){
             select = "selected";
         }
@@ -586,7 +587,7 @@ socket.onmessage = function(e){
             select = "";
         }
         option  += '<option '+ select +' value="/p2p/'+ fetched_pairs[i]['fields']['pair_name'] +'">'+ fetched_pairs[i]['fields']['pair_name'] +'</option>';
-        console.log(option);
+        // console.log(option);
     }
     // console.log(option);
     document.getElementById('inputGroupSelect01').innerHTML = option;
@@ -598,7 +599,7 @@ socket.onmessage = function(e){
 <script type="text/javascript">
   function handleSelect(elm)
   {
-    console.log(elm.value);
+    // console.log(elm.value);
     window.location = elm.value;
   }
 </script>
