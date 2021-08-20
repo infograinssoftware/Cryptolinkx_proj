@@ -555,7 +555,13 @@
         </div>
     </div>
 
-
+    <script type="text/javascript">
+        function handleSelect(elm)
+        {
+          // console.log(elm.value);
+          window.location = elm.value;
+        }
+      </script>
 
 <script>
 // console.log('sdfdsfdsf');
@@ -596,13 +602,7 @@ socket.onmessage = function(e){
 };
 </script>
 
-<script type="text/javascript">
-  function handleSelect(elm)
-  {
-    // console.log(elm.value);
-    window.location = elm.value;
-  }
-</script>
+
 
 
     {% endblock p2p_login %}
