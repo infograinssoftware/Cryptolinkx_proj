@@ -100,11 +100,11 @@ class P2PConsumer(AsyncWebsocketConsumer):
 
 
         if  json.loads(text_data)['msg'] == "sell":
-            self.current_user = json.loads(text_data['current_user']) 
-            self.unit_sell_price = json.loads(text_data['unit_sell_price'])
-            self.sell_volume = json.loads(text_data['sell_volume']) 
-            self.sell_total_price = json.loads(text_data['sell_total_price']) 
-            self.user_cid_name = json.loads(text_data['user_cid_name'])
+            self.current_user = json.loads(text_data)['current_user'] 
+            self.unit_sell_price = json.loads(text_data)['unit_sell_price']
+            self.sell_volume = json.loads(text_data)['sell_volume'] 
+            self.sell_total_price = json.loads(text_data)['sell_total_price'] 
+            self.user_cid_name = json.loads(text_data)['user_cid_name']
 
             await self.channel_layer.group_send(
                 self.room_group_name,
