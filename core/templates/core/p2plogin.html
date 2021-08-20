@@ -473,8 +473,7 @@
                                     <a href="javascript:;">ADD ACCOUNT</a>
                                 </div> -->
                                 <!-- <div class="tab-pane fade active" id="by" role="tabpanel" aria-labelledby="by-tab"> -->
-                                <form action="{% url 'ptop' %}" method="post">
-                                    {% csrf_token %}
+                               
                                     <div class="inputField_div">
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
@@ -483,7 +482,7 @@
                                                     <b>INR</b>
                                                 </span>
                                             </div>
-                                            <input type="text" class="form-control" id="basic-url"
+                                            <input type="text" class="form-control" id="unit_sell_price_id"
                                                 name="unit_sell_price" aria-describedby="basic-addon3">
                                         </div>
                                         <div class="input-group mb-3">
@@ -493,7 +492,7 @@
                                                     <b>USDT</b>
                                                 </span>
                                             </div>
-                                            <input type="text" class="form-control" id="basic-url" name="sell_volume"
+                                            <input type="text" class="form-control" id="sell_volume_id" name="sell_volume"
                                                 aria-describedby="basic-addon3">
                                         </div>
                                         <div class="input-group mb-3">
@@ -503,7 +502,7 @@
                                                     <b>INR</b>
                                                 </span>
                                             </div>
-                                            <input type="text" class="form-control" id="basic-url"
+                                            <input type="text" class="form-control" id="sell_total_price_id"
                                                 name="sell_total_price" aria-describedby="basic-addon3">
                                         </div>
                                     </div>
@@ -514,7 +513,7 @@
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">ENTER XID OF PREFERRED
                                                         SELLER</label>
-                                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                                    <input type="email" class="form-control" id="user_cid_name_id"
                                                         aria-describedby="emailHelp" name="user_cid_name"
                                                         placeholder="Eg: cryptotrader">
                                                     <small id="emailHelp" class="form-text text-muted"><a
@@ -543,8 +542,8 @@
                                             </div>
                                         </details>
                                     </div>
-                                    <input class="by_divBtn bg-danger" type="submit" value="SELL">
-                                </form>
+                                    <input id="sell_p2p_id" onclick="sell_p2p()"  class="by_divBtn bg-danger" type="button" value="SELL">
+                                
                                 <span class="lst_feetxt">Fee: 0.00%</span>
                                 <!-- </div> -->
                             </div>
@@ -564,6 +563,18 @@
       </script>
 
 <script>
+    var val = 0;
+    function sell_p2p(){
+        val = 1;
+    }
+</script>
+
+
+
+
+
+<script>
+
 // console.log('sdfdsfdsf');
 var socket = new WebSocket('ws://'+ window.location.host + '/ws/p2p/{{pair_show}}')
 // console.log(socket);
@@ -574,8 +585,13 @@ socket.onopen =  (function(e){
 });
 
 socket.onmessage = function(e){
-    
+
+
     all_data = JSON.parse(e.data);
+
+    console.log(all_data, 'data after sell');
+
+
     // console.log(all_data);
     single_pair = JSON.parse(all_data['single_pair'])[0]['fields']['pair_vol'];
     // console.log(single_pair, 'single pair is here');
@@ -596,7 +612,22 @@ socket.onmessage = function(e){
         // console.log(option);
     }
     // console.log(option);
+
+    if(val == 1){
+        let current_user = "{{request.user}}";
+        let unit_sell_price = document.getElementById('unit_sell_price_id').value;
+        let sell_volume = document.getElementById('sell_volume_id').value;
+        let sell_total_price = document.getElementById('sell_total_price_id').value;
+        let user_cid_name = document.getElementById('user_cid_name_id').value;
+        console.log(current_user, unit_sell_price, sell_volume, sell_total_price, user_cid_name);
+        val = 0;
+        socket.send(JSON.stringify({'msg': 'sell',  'current_user' : current_user, 'unit_sell_price' : unit_sell_price, 'sell_volume' : sell_volume, 'sell_total_price' : sell_total_price, 'user_cid_name' : user_cid_name}));
+    }
     document.getElementById('inputGroupSelect01').innerHTML = option;
+
+
+
+
     socket.send(JSON.stringify({'msg': 'send_next_coin'}));
     // console.log(fetched_pairs,'msg recieved');
 };
