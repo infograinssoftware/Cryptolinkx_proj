@@ -631,6 +631,12 @@ socket.onmessage = function(e){
     socket.send(JSON.stringify({'msg': 'send_next_coin'}));
     // console.log(fetched_pairs,'msg recieved');
 };
+
+
+
+socket.close =  (function(e){
+    console.log('disconnected');
+});
 </script>
 
 
