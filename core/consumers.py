@@ -95,14 +95,6 @@ class P2PConsumer(AsyncWebsocketConsumer):
         self.fetched_pairs = await self.get_some_pairs()
         self.json_fetched_pairs = await sync_to_async(serialize)('json', self.fetched_pairs)
 
-        # await self.send(
-        #     text_data = json.dumps(
-        #         {
-        #             'msg' : 'connected', 
-        #             'fetched_pairs' : self.json_fetched_pairs, 
-        #             'single_pair' : self.json_single_coin 
-        #         }
-        # ))
 
     async def receive(self, text_data):
 
@@ -112,6 +104,7 @@ class P2PConsumer(AsyncWebsocketConsumer):
         self.single_coin =  await self.getting_single_pair_name()
         print(self.single_coin.pair_vol)
         self.json_single_coin = await sync_to_async(serialize)('json', [self.single_coin])
+        
         await self.channel_layer.group_send(
             self.room_group_name,
             {

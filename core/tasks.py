@@ -64,28 +64,31 @@ def call_binance_api(self):
     all_coins.extend(eth_list[:30])
     all_coins.extend(usd_list)
     
+
+
     l = [CoinPair(pair_name = all_coins[i]["symbol"], pair_vol = all_coins[i]["vol"], coin_price  = 150) for i in range(len(all_coins))]
 
-    try:
-        # if CoinPair.objects.all().count()==0:
-        print('hello create')
-        CoinPair.objects.bulk_create(l, ignore_conflicts=False)
-        # pass
-        print("Creating is giving error")
+    
 
-    except Exception as e:
-        print(e)
-        key_list = []
-        for i in range(120):
-            coin_obj = CoinPair.objects.get(pair_name = all_coins[i]["symbol"])
-            coin_obj.pair_vol  = all_coins[i]["vol"]
-            coin_obj.coin_price  = 150
-            key_list.append(coin_obj)
-        print('hii')
-        try:
-            CoinPair.objects.bulk_update(key_list, ['pair_vol', 'coin_price'])
-        except Exception as p:
-            print(p)
-        print("updating is giving error")
+    
+    # if CoinPair.objects.all().count()==0:
+    # print('hello create', 'dhfashdfkhasudfhuiahsdfuuhd')
+    CoinPair.objects.bulk_create(l, ignore_conflicts = True)
+    # pass
+    # print("Creating is giving error")
+
+    # print(e)
+    key_list = []
+    for i in range(120):
+        coin_obj = CoinPair.objects.get(pair_name = all_coins[i]["symbol"])
+        coin_obj.pair_vol  = all_coins[i]["vol"]
+        coin_obj.coin_price  = 150
+        key_list.append(coin_obj)
+    # print('hii')
+    try:
+        CoinPair.objects.bulk_update(key_list, ['pair_vol', 'coin_price'])
+    except Exception as p:
+        pass
+    # print("updating is giving error")
     
     return None
