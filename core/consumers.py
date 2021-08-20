@@ -152,11 +152,11 @@ class P2PConsumer(AsyncWebsocketConsumer):
 
     async def p2p_sell_data_save(self, event):
       
-        self.current_user = json.dumps(event['current_user'])
-        self.unit_sell_price = json.dumps(event['unit_sell_price'])
-        self.sell_volume = json.dumps(event['sell_volume'])
-        self.sell_total_price = json.dumps(event['sell_total_price'])
-        self.user_cid_name = json.dumps(event['user_cid_name'])
+        self.current_user = json.dumps(event)['current_user']
+        self.unit_sell_price = json.dumps(event)['unit_sell_price']
+        self.sell_volume = json.dumps(event)['sell_volume']
+        self.sell_total_price = json.dumps(event)['sell_total_price']
+        self.user_cid_name = json.dumps(event)['user_cid_name']
         
         await self.send(text_data = json.dumps({
 
