@@ -310,14 +310,10 @@
                             <div class="tab-pane fade " id="selers" role="tabpanel" aria-labelledby="selers-tab">
                                 <div class="xid_order_book_bodyselerspart">
                                     
-                                    <ul>
-                                        {% for i in p2p_obj %}
-                                        <li class="xid_order_book_li">
-                                            <div>{{i.unit_sell_price}}</div>
-                                            <div>{{i.sell_volume}}</div>
-                                            <div>{{i.coin_placer.username}}</div>
-                                        </li>
-                                        {% endfor %}
+                                    <ul id="show_sellers">
+                                        
+                                        
+                                        
 
                                         <!-- <li class="xid_order_book_li">
                                             <div>10.21</div>
@@ -586,11 +582,14 @@ socket.onopen =  (function(e){
 
 socket.onmessage = function(e){
 
-
+    show_sellers = ""
     all_data = JSON.parse(e.data);
     if(all_data['msg'] == "sold"){
         console.log(all_data, 'data after sell');
-        socket.send(JSON.stringify({'msg': 'send_next_coin'}));
+        show_sellers += '<li class="xid_order_book_li"> <div>'+ all_data['unit_sell_price']+'</div> <div>'+ all_data['sell_volume'] +'</div> <div>'+  all_data['current_user'] +'</div> </li>'
+        // socket.send(JSON.stringify({'msg': 'send_next_coin'}));
+        console.log(show_sellers, 'sdfhsuadhfuosduofh');
+        document.getElementById('show_sellers').innerHTML += show_sellers;
     }
 
     else{
