@@ -588,9 +588,12 @@ socket.onmessage = function(e){
 
 
     all_data = JSON.parse(e.data);
+    if(all_data['msg'] == "sold"){
+        console.log(all_data, 'data after sell');
+        socket.send(JSON.stringify({'msg': 'send_next_coin'}));
+    }
 
-    console.log(all_data, 'data after sell');
-
+    else{
 
     // console.log(all_data);
     single_pair = JSON.parse(all_data['single_pair'])[0]['fields']['pair_vol'];
@@ -629,6 +632,7 @@ socket.onmessage = function(e){
 
 
     socket.send(JSON.stringify({'msg': 'send_next_coin'}));
+    }
     // console.log(fetched_pairs,'msg recieved');
 };
 

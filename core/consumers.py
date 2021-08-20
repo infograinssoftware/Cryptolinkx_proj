@@ -98,7 +98,8 @@ class P2PConsumer(AsyncWebsocketConsumer):
 
     async def receive(self, text_data):
 
-
+#       checking that user is selling or not
+        # print(json.loads(text_data)['msg'])
         if  json.loads(text_data)['msg'] == "sell":
             self.current_user = json.loads(text_data)['current_user'] 
             self.unit_sell_price = json.loads(text_data)['unit_sell_price']
@@ -110,11 +111,11 @@ class P2PConsumer(AsyncWebsocketConsumer):
                 self.room_group_name,
                 {
                     'type' : 'p2p_sell_data_save',
-                    'current_user' : current_user,
-                    'unit_sell_price' : unit_sell_price,
-                    'sell_volume' : sell_volume,
-                    'sell_total_price' : sell_total_price,
-                    'user_cid_name' : user_cid_name,
+                    'current_user' : self.current_user,
+                    'unit_sell_price' : self.unit_sell_price,
+                    'sell_volume' : self.sell_volume,
+                    'sell_total_price' : self.sell_total_price,
+                    'user_cid_name' : self.user_cid_name,
                     'msg' : 'sell_done'
                 }
             )
@@ -151,21 +152,23 @@ class P2PConsumer(AsyncWebsocketConsumer):
         }))
 
     async def p2p_sell_data_save(self, event):
-      
-        self.current_user = json.dumps(event)['current_user']
-        self.unit_sell_price = json.dumps(event)['unit_sell_price']
-        self.sell_volume = json.dumps(event)['sell_volume']
-        self.sell_total_price = json.dumps(event)['sell_total_price']
-        self.user_cid_name = json.dumps(event)['user_cid_name']
+        
+
+        current_user = event['current_user']
+        unit_sell_price = event['unit_sell_price']
+        sell_volume = event['sell_volume']
+        sell_total_price = event['sell_total_price']
+        user_cid_name = event['user_cid_name']
+        print(current_user, unit_sell_price, sell_volume, sell_total_price, user_cid_name)
         
         await self.send(text_data = json.dumps({
 
                 'msg' : 'sold', 
-                'current_user' : self.current_user,
-                'unit_sell_price' : self.unit_sell_price,
-                'sell_volume' : self.sell_volume,
-                'sell_total_price' : self.sell_total_price,
-                'user_cid_name' : self.user_cid_name,
+                'current_user' : current_user,
+                'unit_sell_price' : unit_sell_price,
+                'sell_volume' : sell_volume,
+                'sell_total_price' : sell_total_price,
+                'user_cid_name' : user_cid_name,
         }))
 
 #   getting some pairs to for p2p pairs
