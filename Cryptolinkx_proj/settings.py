@@ -186,6 +186,7 @@ CELERYD_TASK_TIME_LIMIT = 600
 #     }
 # }
 
+# Channels server conf
 
 CHANNEL_LAYERS = {
     "default": {
