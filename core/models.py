@@ -40,7 +40,17 @@ class P2p_Seller(models.Model):
         return f'{self.coin_placer}_________{self.user_cid_name}'
     
         
-    
+class P2p_Buyers(models.Model):
+    coin_buyer = models.ForeignKey(Custom_User, on_delete = models.CASCADE, related_name = 'p2p_sender')
+    buy_pair_name = models.CharField(max_length = 50)
+    unit_buy_price = models.FloatField()
+    buy_volume = models.FloatField()
+    buy_total_price = models.FloatField()
+    buy_date = models.DateTimeField(auto_now_add = True)
+    buyer_cid_name = models.CharField(max_length = 20, blank  = True)
+
+    def __str__(self):
+        return f'{self.coin_buyer}_________{self.buyer_cid_name}'
 
 
 
