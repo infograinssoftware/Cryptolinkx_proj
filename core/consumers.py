@@ -60,7 +60,7 @@ class ExchangeConsumer(AsyncWebsocketConsumer):
     @database_sync_to_async
     def get_all_the_coins(self):
         all_coins =  CoinPair.objects.all().order_by('id')
-        print(all_coins)
+        # print(all_coins)
         return all_coins
 
 

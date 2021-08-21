@@ -41,7 +41,7 @@ class P2p_Seller(models.Model):
     
         
 class P2p_Buyers(models.Model):
-    coin_buyer = models.ForeignKey(Custom_User, on_delete = models.CASCADE, related_name = 'p2p_sender')
+    coin_buyer = models.ForeignKey(Custom_User, on_delete = models.CASCADE, related_name = 'p2p_buyer')
     buy_pair_name = models.CharField(max_length = 50)
     unit_buy_price = models.FloatField()
     buy_volume = models.FloatField()
