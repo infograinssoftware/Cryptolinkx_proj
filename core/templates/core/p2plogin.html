@@ -618,9 +618,9 @@ socket.onmessage = function(e){
         option  += '<option '+ select +' value="/p2p/'+ fetched_pairs[i]['fields']['pair_name'] +'">'+ fetched_pairs[i]['fields']['pair_name'] +'</option>';
         // console.log(option);
     }
+
     // console.log(option);
-    console.log(val);
-    console.log(val2)
+   
     if(val == 1){
         let current_user = "{{request.user}}";
         let unit_sell_price = document.getElementById('unit_sell_price_id').value;
@@ -644,9 +644,7 @@ socket.onmessage = function(e){
     document.getElementById('inputGroupSelect01').innerHTML = option;
 
 
-
-
-    socket.send(JSON.stringify({'msg': 'send_next_coin'}));
+        
     }
     // console.log(fetched_pairs,'msg recieved');
 };
