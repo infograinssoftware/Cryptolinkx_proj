@@ -193,4 +193,3 @@ class P2PConsumer(AsyncWebsocketConsumer):
             self.room_group_name,
             self.channel_name
         )
-    
