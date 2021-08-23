@@ -5,6 +5,7 @@ from .models import CoinPair
 from django.core.serializers import serialize
 from asgiref.sync import sync_to_async
 import time 
+import asyncio
 
 class ExchangeConsumer(AsyncWebsocketConsumer):
     async def connect(self):
@@ -98,10 +99,11 @@ class P2PConsumer(AsyncWebsocketConsumer):
 
     async def receive(self, text_data):
 
+        
 #       checking that user is selling or not
         # print(json.loads(text_data)['msg'])
-        if json.loads(text_data)['msg'] == "buy":
-            print('buy is called')
+        # if json.loads(text_data)['msg'] == "buy":
+        #     print('buy is called')
     
         if  json.loads(text_data)['msg'] == "sell":
             self.current_user = json.loads(text_data)['current_user'] 
@@ -122,8 +124,9 @@ class P2PConsumer(AsyncWebsocketConsumer):
                     'msg' : 'sell_done'
                 }
             )
-
-
+        print('sdhfsdfasdf')
+        await asyncio.sleep(1)
+        print('dfasdflsdfsdf')
         if not self.pair_name:
             self.pair_name = 'BTCUSDT'
         
@@ -164,6 +167,7 @@ class P2PConsumer(AsyncWebsocketConsumer):
         user_cid_name = event['user_cid_name']
         print(current_user, unit_sell_price, sell_volume, sell_total_price, user_cid_name)
         
+        print('testing issue of websockets')
         await self.send(text_data = json.dumps({
 
                 'msg' : 'sold', 
