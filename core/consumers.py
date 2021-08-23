@@ -100,6 +100,9 @@ class P2PConsumer(AsyncWebsocketConsumer):
 
 #       checking that user is selling or not
         # print(json.loads(text_data)['msg'])
+        if json.loads(text_data)['msg'] == "buy":
+            print('buy is called')
+    
         if  json.loads(text_data)['msg'] == "sell":
             self.current_user = json.loads(text_data)['current_user'] 
             self.unit_sell_price = json.loads(text_data)['unit_sell_price']
