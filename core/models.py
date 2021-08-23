@@ -50,7 +50,7 @@ class P2p_Buyers(models.Model):
     buyer_cid_name = models.CharField(max_length = 20, blank  = True)
 
     def __str__(self):
-        return f'{self.coin_buyer}_________{self.buyer_cid_name}'
+        return f'{self.coin_buyer}_________{self.buy_pair_name}'
 
 
 
