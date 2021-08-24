@@ -273,37 +273,8 @@
                             <div class="tab-pane fade show active " id="buyrs" role="tabpanel"
                                 aria-labelledby="buyrs-tab">
                                 <div class="xid_order_book_bodybuyrspart">
-                                    <ul>
-                                        <li class="xid_order_book_li">
-                                            <div>10.21</div>
-                                            <div>500.22</div>
-                                            <div>20.31</div>
-                                        </li>
-                                        <li class="xid_order_book_li">
-                                            <div>10.21</div>
-                                            <div>500.22</div>
-                                            <div>20.31</div>
-                                        </li>
-                                        <li class="xid_order_book_li">
-                                            <div>10.21</div>
-                                            <div>500.22</div>
-                                            <div>20.31</div>
-                                        </li>
-                                        <li class="xid_order_book_li">
-                                            <div>10.21</div>
-                                            <div>500.22</div>
-                                            <div>20.31</div>
-                                        </li>
-                                        <li class="xid_order_book_li">
-                                            <div>10.21</div>
-                                            <div>500.22</div>
-                                            <div>20.31</div>
-                                        </li>
-                                        <li class="xid_order_book_li">
-                                            <div>10.21</div>
-                                            <div>500.22</div>
-                                            <div>20.31</div>
-                                        </li>
+                                    <ul id="show_buyers">
+                                        
                                     </ul>
                                 </div>
                             </div>
@@ -570,10 +541,6 @@
     }
 </script>
 
-
-
-
-
 <script>
 
 // console.log('sdfdsfdsf');
@@ -588,9 +555,17 @@ socket.onopen =  (function(e){
 socket.onmessage = function(e){
 
     show_sellers = "";
-    
+    show_buyers = "";
     all_data = JSON.parse(e.data);
-    if(all_data['msg'] == "sold"){
+
+    if(all_data['msg'] == "bought"){
+        console.log(all_data, 'data after bought');
+        show_buyers += '<li class="xid_order_book_li"> <div>'+ all_data['unit_buy_price']+'</div> <div>'+ all_data['buy_volume'] +'</div> <div>'+  all_data['current_user'] +'</div> </li>'
+        // socket.send(JSON.stringify({'msg': 'send_next_coin'}));
+        console.log(show_buyers, 'sdfhsuadhfuosduofh');
+        document.getElementById('show_buyers').innerHTML += show_buyers;
+    }
+    else if(all_data['msg'] == "sold"){
         console.log(all_data, 'data after sell');
         show_sellers += '<li class="xid_order_book_li"> <div>'+ all_data['unit_sell_price']+'</div> <div>'+ all_data['sell_volume'] +'</div> <div>'+  all_data['current_user'] +'</div> </li>'
         // socket.send(JSON.stringify({'msg': 'send_next_coin'}));
@@ -640,7 +615,7 @@ socket.onmessage = function(e){
         let user_cid_name2 = document.getElementById('user_cid_name_id2').value;
         console.log(current_user, unit_buy_price, buy_volume, buy_total_price, user_cid_name2);
         val2 = 10;
-        // socket.send(JSON.stringify({'msg': 'buy',  'current_user' : current_user, 'unit_sell_price' : unit_sell_price, 'sell_volume' : sell_volume, 'sell_total_price' : sell_total_price, 'user_cid_name' : user_cid_name}));
+        socket.send(JSON.stringify({'msg': 'buy',  'current_user' : current_user, 'unit_buy_price' : unit_buy_price, 'buy_volume' : buy_volume, 'buy_total_price' : buy_total_price, 'user_cid_name2' : user_cid_name2}));
     }
     document.getElementById('inputGroupSelect01').innerHTML = option;
 
