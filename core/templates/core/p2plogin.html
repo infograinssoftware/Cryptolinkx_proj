@@ -410,7 +410,7 @@
                                                 <b>INR</b>
                                             </span>
                                         </div>
-                                        <input type="text" class="form-control" id="basic-url"
+                                        <input type="text"  class="form-control" id="unit_buy_price_id"
                                             aria-describedby="basic-addon3">
                                     </div>
                                     <div class="input-group mb-3">
@@ -420,7 +420,7 @@
                                                 <b>USDT</b>
                                             </span>
                                         </div>
-                                        <input type="text" class="form-control" id="basic-url"
+                                        <input type="text" class="form-control" id="buy_volume_id"
                                             aria-describedby="basic-addon3">
                                     </div>
                                     <div class="input-group mb-3">
@@ -430,7 +430,7 @@
                                                 <b>INR</b>
                                             </span>
                                         </div>
-                                        <input type="text" class="form-control" id="basic-url"
+                                        <input type="text" class="form-control" id="buy_total_price_id"
                                             aria-describedby="basic-addon3">
                                     </div>
                                 </div>
@@ -440,7 +440,7 @@
                                         <div class="hidden_div">
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">ENTER XID OF PREFERRED SELLER</label>
-                                                <input type="email" class="form-control" id="exampleInputEmail1"
+                                                <input type="email" class="form-control" id="user_cid_name_id2"
                                                     aria-describedby="emailHelp" placeholder="Eg: cryptotrader">
                                                 <small id="emailHelp" class="form-text text-muted"><a
                                                         href="javascript:;">HOW IT WORKS <i
@@ -459,7 +459,7 @@
                                         </div>
                                     </details>
                                 </div>
-                                <a class="by_divBtn" href="javascript:;">BUY</a>
+                                <input id="buy_p2p_id" onclick="buy_p2p()"  class="by_divBtn bg-danger" type="button" value="BUY">
                                 <span class="lst_feetxt">Fee: 0.00%</span>
                             </div>
 
@@ -563,6 +563,11 @@
     function sell_p2p(){
         val = 1;
     }
+
+    var val2 = 10;
+    function buy_p2p(){
+        val2 = 11;
+    }
 </script>
 
 
@@ -582,7 +587,8 @@ socket.onopen =  (function(e){
 
 socket.onmessage = function(e){
 
-    show_sellers = ""
+    show_sellers = "";
+    
     all_data = JSON.parse(e.data);
     if(all_data['msg'] == "sold"){
         console.log(all_data, 'data after sell');
@@ -593,7 +599,7 @@ socket.onmessage = function(e){
     }
 
     else{
-
+        console.log('hello');
     // console.log(all_data);
     single_pair = JSON.parse(all_data['single_pair'])[0]['fields']['pair_vol'];
     // console.log(single_pair, 'single pair is here');
@@ -613,8 +619,9 @@ socket.onmessage = function(e){
         option  += '<option '+ select +' value="/p2p/'+ fetched_pairs[i]['fields']['pair_name'] +'">'+ fetched_pairs[i]['fields']['pair_name'] +'</option>';
         // console.log(option);
     }
-    // console.log(option);
 
+    // console.log(option);
+   
     if(val == 1){
         let current_user = "{{request.user}}";
         let unit_sell_price = document.getElementById('unit_sell_price_id').value;
@@ -625,9 +632,22 @@ socket.onmessage = function(e){
         val = 0;
         socket.send(JSON.stringify({'msg': 'sell',  'current_user' : current_user, 'unit_sell_price' : unit_sell_price, 'sell_volume' : sell_volume, 'sell_total_price' : sell_total_price, 'user_cid_name' : user_cid_name}));
     }
+    if(val2 == 11){
+        let current_user = "{{request.user}}";
+        let unit_buy_price = document.getElementById('unit_buy_price_id').value;
+        let buy_volume = document.getElementById('buy_volume_id').value;
+        let buy_total_price = document.getElementById('buy_total_price_id').value;
+        let user_cid_name2 = document.getElementById('user_cid_name_id2').value;
+        console.log(current_user, unit_buy_price, buy_volume, buy_total_price, user_cid_name2);
+        val2 = 10;
+        // socket.send(JSON.stringify({'msg': 'buy',  'current_user' : current_user, 'unit_sell_price' : unit_sell_price, 'sell_volume' : sell_volume, 'sell_total_price' : sell_total_price, 'user_cid_name' : user_cid_name}));
+    }
     document.getElementById('inputGroupSelect01').innerHTML = option;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 26955d6f441ae40b0e8d745dc81db2a3f51902c4
     socket.send(JSON.stringify({'msg': 'send_next_coin'}));
     }
     // console.log(fetched_pairs,'msg recieved');

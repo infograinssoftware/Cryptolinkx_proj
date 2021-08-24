@@ -186,12 +186,15 @@ CELERYD_TASK_TIME_LIMIT = 600
 #     }
 # }
 
+# Channels server conf
 
 CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
             "hosts": [("127.0.0.1", 6379)],
+            "capacity": 5000,
+            "expiry": 5,
         },
     },
 }
