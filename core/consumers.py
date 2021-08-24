@@ -141,9 +141,9 @@ class P2PConsumer(AsyncWebsocketConsumer):
                     'msg' : 'sell_done'
                 }
             )
-        print('sdhfsdfasdf')
+        # print('sdhfsdfasdf')
         await asyncio.sleep(1)
-        print('dfasdflsdfsdf')
+        # print('dfasdflsdfsdf')
         if not self.pair_name:
             self.pair_name = 'BTCUSDT'
         
