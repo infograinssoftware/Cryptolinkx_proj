@@ -628,8 +628,6 @@ socket.onmessage = function(e){
     document.getElementById('inputGroupSelect01').innerHTML = option;
 
 
-
-
     socket.send(JSON.stringify({'msg': 'send_next_coin'}));
     }
     // console.log(fetched_pairs,'msg recieved');
