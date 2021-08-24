@@ -37,8 +37,16 @@
                             <div class="tab-pane fade show active " id="marketDept" role="tabpanel"
                                 aria-labelledby="marketDept-tab">
                                 <div class="market_depth_bdydiv">
-                                    <div class="p2p_order_book_div_body_buypart">
-                                        <ul>
+                                    <div class="p2p_order_book_div_body_buypart" >
+                                        <!-- <tbody id="trade-history"> -->
+  
+                                            <!-- <tr>
+                                              <td>43,84,980</td>
+                                              <td>43,84,980</td>
+                                              <td>0.0025</td>
+                                            </tr> -->
+                                        <!-- </tbody> -->
+                                        <ul id="trade-history">
                                             <li class="buypart_li">
                                                 <div>516.00</div>
                                                 <div>70.00</div>
@@ -630,9 +638,46 @@ socket.onmessage = function(e){
 socket.onclose =  (function(e){
     console.log('disconnected');
 });
+
 </script>
-
-
-
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+    trade_history();
+    function trade_history() {
+      $.ajax({
+        url: "https://api.binance.com/api/v3/trades?symbol=BTCUSDT&limit=10",
+        type: "GET",
+        dataType: "json",
+        success: function (event) {
+          t_history = "";
+          prev = 0;
+          for (let i = 0; i < 5; i++) {
+            let tt = event[i]['time'];
+            let t_time = new Date(tt).toTimeString("en-US").slice(0, 8);
+            prev = event[i]['price'];
+            if (parseInt(event[i + 1]['price']) > parseInt(prev)) {
+              price_color = "danger";
+            }
+            else {
+              price_color = "success";
+            };
+            // console.log(parseInt(event[0]['price'])); 
+            // document.getElementsByClassName("buy-input")[0].value = parseFloat(event[0]['price']);
+            // document.getElementsByClassName("buy-input")[1].value = parseFloat(event[0]['price']);
+            let num1 = new Number(event[i]['price']);
+           
+            t_history += '<li class="sellpart_li bg-' + price_color + '"><div class="text-white' + ' bg-' + price_color + ' font-weight-bold">'+ num1.toFixed(1) +'</div><div class="text-white bg-' + price_color + '">' + event[i]['qty'] + '</div></li>';
+            
+            // t_history += '<tr class="bg-' + price_color + '" ><td class="text-white' + ' bg-' + price_color + ' font-weight-bold">' + num1.toFixed(3) + '</td><td class="text-white bg-' + price_color + '">' + event[i]['qty'] + '</td><td class="text-white bg-' + price_color + '">' + t_time + '</td></tr>';
+          }
+          document.getElementById('trade-history').innerHTML = t_history;
+        }
+      });
+    };
+    setInterval(function () {
+    
+    trade_history();
+  }, 4000);
+  </script>
 
     {% endblock p2p_login %}
