@@ -46,7 +46,7 @@
                                               <td>0.0025</td>
                                             </tr> -->
                                         <!-- </tbody> -->
-                                        <ul id="trade-history">
+                                        <ul id="bids">
                                             <li class="buypart_li">
                                                 <div>516.00</div>
                                                 <div>70.00</div>
@@ -74,7 +74,7 @@
                                         </ul>
                                     </div>
                                     <div class="p2p_order_book_div_body_sellpart">
-                                        <ul>
+                                        <ul id="bids2">
                                             <li class="sellpart_li">
                                                 <div>204.00</div>
                                                 <div>32</div>
@@ -177,7 +177,7 @@
                         <div>TIME</div>
                     </div>
                     <div class="match_history_body">
-                        <ul>
+                        <ul id="trade-history">
                             <li class="match_history_li">
                                 <div>70.55</div>
                                 <div>101.001</div>
@@ -651,7 +651,7 @@ socket.onclose =  (function(e){
         success: function (event) {
           t_history = "";
           prev = 0;
-          for (let i = 0; i < 5; i++) {
+          for (let i = 0; i <7; i++) {
             let tt = event[i]['time'];
             let t_time = new Date(tt).toTimeString("en-US").slice(0, 8);
             prev = event[i]['price'];
@@ -666,7 +666,7 @@ socket.onclose =  (function(e){
             // document.getElementsByClassName("buy-input")[1].value = parseFloat(event[0]['price']);
             let num1 = new Number(event[i]['price']);
            
-            t_history += '<li class="sellpart_li bg-' + price_color + '"><div class="text-white' + ' bg-' + price_color + ' font-weight-bold">'+ num1.toFixed(1) +'</div><div class="text-white bg-' + price_color + '">' + event[i]['qty'] + '</div></li>';
+            t_history += '<li class="sellpart_li bg-' + price_color + '"><div class="text-white' + ' bg-' + price_color + ' font-weight-bold">'+ num1.toFixed(1) +'</div><div class="text-white bg-' + price_color + '">' + event[i]['qty'] + '</div><div  class="text-white bg-' + price_color + '">' + t_time + '</div></li>';
             
             // t_history += '<tr class="bg-' + price_color + '" ><td class="text-white' + ' bg-' + price_color + ' font-weight-bold">' + num1.toFixed(3) + '</td><td class="text-white bg-' + price_color + '">' + event[i]['qty'] + '</td><td class="text-white bg-' + price_color + '">' + t_time + '</td></tr>';
           }
@@ -674,9 +674,37 @@ socket.onclose =  (function(e){
         }
       });
     };
+
+    market_depth();
+    function market_depth() {
+    // var pair= 
+    $.ajax({
+      url: "https://api.binance.com/api/v3/depth?symbol=BTCUSDT",
+      dataType: "json",
+      type: "GET",
+      success: function (event) {
+        bids = "";
+        bids2 = "";
+        asks = "";
+        for (let i = 0; i <= 5; i++) {
+          let num1 = new Number(event['bids'][i][0]);
+          let num2 = new Number(event['asks'][i][0]);
+
+          bids += '<li class="buypart_li"><div class="text-success ">' + event['bids'][i][1] + '</div> <div class="text-success font-weight-bold">' + num1.toFixed(3) + '</div> </li>'
+          bids2 += '<li class="buypart_li"><div class="text-danger font-weight-bold ">' + num2.toFixed(3) + '</div> <div class="text-danger">' + event['asks'][i][1] + '</div> </li>'
+
+          //   bids += '<tr><td class="exchange_MarketDepthTD_style text-success ">' + event['bids'][i][1] + '</td><td class="exchange_MarketDepthTD_style text-success font-weight-bold">' + num1.toFixed(3) + '</td><td class="exchange_MarketDepthTD_style text-danger font-weight-bold">' + num2.toFixed(3) + '</td><td class="exchange_MarketDepthTD_style text-danger">' + event['asks'][i][1] + '</td></tr>';
+        }
+        document.getElementById('bids').innerHTML = bids;
+        document.getElementById('bids2').innerHTML = bids2;
+
+      }
+    });
+  };
+
     setInterval(function () {
-    
     trade_history();
+    market_depth();
   }, 4000);
   </script>
 
