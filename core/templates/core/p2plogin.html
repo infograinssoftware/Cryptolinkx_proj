@@ -685,7 +685,7 @@ socket.onclose =  (function(e){
       success: function (event) {
         bids = "";
         bids2 = "";
-        asks = "";
+        
         for (let i = 0; i <= 5; i++) {
           let num1 = new Number(event['bids'][i][0]);
           let num2 = new Number(event['asks'][i][0]);
