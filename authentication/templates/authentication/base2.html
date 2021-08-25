@@ -1,0 +1,77 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{% static 'authentication/assets/css/all.css' %}">
+  <!-- Google Fonts Roboto -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="{% static 'authentication/assets/css/bootstrap.min.css' %}">
+  <!-- Your custom styles -->
+  <link rel="stylesheet" href="{% static 'authentication/assets/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'authentication/assets/css/page_style.css' %}">
+  <title>Flowcal Registration </title>
+</head>
+<body>
+    {% block register %}
+    {% endblock register %}
+    {% block login %}
+    {% endblock login %}
+    {% block resetpassword %}
+    {% endblock resetpassword %}
+    {% block resetform %}
+    {% endblock resetform %}
+    {% block confirm %}
+    {% endblock confirm %}
+    {% block complete %}
+    {% endblock complete %}
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="{% static 'authentication/assets/js/jquery.min.js' %}"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="{% static 'authentication/assets/js/popper.min.js' %}"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="{% static 'authentication/assets/js/bootstrap.min.js' %}"></script>
+  <!-- Fontawesome JavaScript -->
+  <script type="text/javascript" src="{% static 'authentication/assets/js/all.js' %}"></script>
+  <!-- Your custom scripts -->
+  <script type="text/javascript" src="{% static 'authentication/assets/js/page_scrip.js' %}"></script>
+  
+
+
+  <script>
+
+    $('#reg_form').on('submit', function(e){
+      e.preventDefault();
+      $.ajax({
+        type: "POST",
+        url: "{% url 'register' %}",
+        data:{
+          full_name : $('#name').val(),
+          email: $('#email').val(),
+          password: $('#paas').val(),
+          cfm_password: $('#cnf-paas').val(),
+          csrfmiddlewaretoken:'{{csrf_token}}',
+          dataType: 'json',
+        },
+        success:function(e){
+          console.log(e, e.status);
+          console.log('submited successfully');
+          if (e.status == "200")
+          {
+            window.location = e.url;
+          }
+        }
+      })
+  
+    });
+  </script>
+</body>
+
+</html>

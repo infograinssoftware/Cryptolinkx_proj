@@ -54,7 +54,7 @@
             {% if not request.user.is_authenticated %}
             
             <li class="nav-item nav_li">
-              <a class="nav-link nav-anim login_btn" href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i> Login</a>
+              <a class="nav-link login_btn" href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i> Login</a>
             </li>
             <li class="nav-item nav_li">
               <a class="nav-link nav-anim" href="{% url 'register' %}"><i class="fas fa-user-plus"></i> Signup</a>
@@ -117,9 +117,6 @@
     {% block funds %}
     {% endblock funds %}
 
-    {% block account %}
-    {% endblock account %}
-
 
     {% block index %}
     {% endblock index %}
@@ -130,6 +127,8 @@
     {% block verify %}
     {% endblock verify %}
 
+    {% block account %}
+    {% endblock account %}
 
     {% block footer %}
   <!-- footer section start here -->
