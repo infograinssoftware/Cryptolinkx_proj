@@ -30,7 +30,6 @@ class Index(View):
     #         if res[i]['quote_currency'] == 'USD':
     #             l.append({'sym': res[i]['id'], 'vol' : res[i]['base_increment']})
     #             count = count + 1
-
         return render(request, template_name = self.template_name)
 
 
@@ -117,4 +116,3 @@ class AccountView(View):
 
         return render(request, template_name = self.template_name)  
 
-        

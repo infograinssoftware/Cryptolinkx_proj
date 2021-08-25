@@ -438,7 +438,7 @@
                                         </div>
                                     </details>
                                 </div>
-                                <input id="buy_p2p_id" onclick="buy_p2p()"  class="by_divBtn bg-danger" type="button" value="BUY">
+                                <input id="buy_p2p_id" onclick="buy_p2p()" class="by_divBtn bg-danger" type="button" value="BUY">
                                 <span class="lst_feetxt">Fee: 0.00%</span>
                             </div>
 
@@ -645,7 +645,7 @@ socket.onclose =  (function(e){
     trade_history();
     function trade_history() {
       $.ajax({
-        url: "https://api.binance.com/api/v3/trades?symbol=BTCUSDT&limit=10",
+        url: "https://api.binance.com/api/v3/trades?symbol={{pair_show}}&limit=10",
         type: "GET",
         dataType: "json",
         success: function (event) {
@@ -679,7 +679,7 @@ socket.onclose =  (function(e){
     function market_depth() {
     // var pair= 
     $.ajax({
-      url: "https://api.binance.com/api/v3/depth?symbol=BTCUSDT",
+      url: "https://api.binance.com/api/v3/depth?symbol={{pair_show}}",
       dataType: "json",
       type: "GET",
       success: function (event) {
