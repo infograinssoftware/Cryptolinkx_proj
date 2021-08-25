@@ -116,3 +116,5 @@ class AccountView(View):
     def get(self, request, *args, **kwargs):
 
         return render(request, template_name = self.template_name)  
+
+        
