@@ -11,9 +11,14 @@ from users.models import Custom_User
 
 
 def get_all_the_assets():
+
     r = requests.get('https://api.wazirx.com/api/v2/market-status')
-    response = r.json()
-    funds_list = [{'name' : response['assets'][i]['name'], 'type' : response['assets'][i]['type']} for i in range(len(response['assets']))]
+    print(dir(r),'skjdfhjksadhfjksdfho')
+    funds_list = []
+    if r.status_code != 403:
+        response = r.json()
+        print(response,'jhgjhgjhh')
+        funds_list = [{'name' : response['assets'][i]['name'], 'type' : response['assets'][i]['type']} for i in range(len(response['assets']))]
     return funds_list
 
 # Create your views here.
@@ -106,7 +111,10 @@ class STFView(View):
 class FundsView(View):
     template_name = 'core/funds.html'        
     def get(self, request, *args, **kwargs):
+        print('sdfhasjkdfjksahdfhsjkadfksadkfhsadfkshdkfhskdhfksahdfkhsdahfusahdf')
         all_assets = get_all_the_assets()
+        # print(all_assets)
+        # all_assets = ""
         # wallet_obj = Currency_Wallet.objects.filter(user , = request.user)
         return render(request,self.template_name, {'all_assets' : all_assets})  
 

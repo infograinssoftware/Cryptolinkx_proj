@@ -65,7 +65,7 @@
                       </tr>
                     </thead>
                     <tbody>
-
+{% if all_assets %}
                       {% for i in all_assets %}
 
                       <tr class="fund_table_body">
@@ -84,7 +84,8 @@
                       {% endfor %}
                     </tbody>
                     </table> 
-                 
+                    {% endif %}
+
                 </div>
               </div>
               <div id="transferHistory" class="container tab-pane fade"><br>
