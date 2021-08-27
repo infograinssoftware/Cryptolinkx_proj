@@ -29,8 +29,8 @@ urlpatterns = [
     path('auth/',include('authentication.urls')),
     path('cryptolinkx_admin/',include('superadmin.urls')),
     path('email/', include(email_urls)),
-    re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT})
+    # re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT})
 ]
 
-#urlpatterns += staticfiles_urlpatterns()
-#urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += staticfiles_urlpatterns()
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
