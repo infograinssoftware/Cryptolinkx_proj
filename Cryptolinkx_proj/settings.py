@@ -48,10 +48,10 @@ INSTALLED_APPS = [
     'django_email_verification',
     'django_celery_results',
     'django_celery_beat',
-    'actstream',
+    # 'actstream',
 ]
 
-SITE_ID = 1
+# SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
