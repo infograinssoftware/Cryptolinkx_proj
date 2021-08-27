@@ -51,7 +51,6 @@ INSTALLED_APPS = [
     'actstream',
 ]
 
-
 SITE_ID = 1
 
 MIDDLEWARE = [
