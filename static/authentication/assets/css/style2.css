@@ -6,7 +6,7 @@ body {
     font-family: 'Lexend', sans-serif;
     font-family: 'Raleway', sans-serif;
     color: #555;
-    background-color: #ECEFF1;
+    background-color: whitesmoke;
 }
 
 * {
@@ -57,7 +57,6 @@ a, a:hover {
     transform: translateX(-100%);
 }
 
-
 .nav_menu {
     background: #fff !important;
     padding: 0px 15px;
@@ -76,12 +75,6 @@ a, a:hover {
     background-color: transparent;
     color: #0A669B !important;
     transform: translateX(0%);
-}
-
-.nav_menu .login_btn{
-    /* background: #108ad1;
-    color: white !important; */
-    padding: 8px 15px;
 }
 /*navbar css close here*/
 
@@ -218,7 +211,7 @@ a, a:hover {
     display: inline-block;
     width: 100%;
     padding: 50px 30px;
-    background-color: #FCFDFF;
+    background-color: aliceblue;
     /* background: url('../images/featured_bg.jpg');
     background-repeat: no-repeat;
     background-position: center;
@@ -274,7 +267,7 @@ a, a:hover {
 }
 
 .service_section .serv_card_div .card-text{
-    color: gainsboro;
+    color: lightslategrey;
 }
 
 .service_section .heading_font {
@@ -287,7 +280,7 @@ a, a:hover {
     text-align: center;
     color: #fff;
     letter-spacing: 1.5px;
-    background: linear-gradient( 90deg, rgb(24 45 64) 0%, rgba(16, 138, 209, 1) 50%, rgb(24 45 64) 100%);
+	background: linear-gradient( 90deg, rgb(24 45 64) 0%, rgba(16, 138, 209, 1) 50%, rgb(24 45 64) 100%);
     padding: 5px 0;
 }
 
@@ -381,31 +374,17 @@ a, a:hover {
     border: 4px solid #108ad1;
     position: absolute;
     top: 0;
-    left: 34%;
+    left: 30%;
     background: #fff;
-    z-index: 1;
 }
 .team_txt {
     background: #fff;
-    box-shadow: 0 0 5px 0 rgb(16 138 209);
+    box-shadow: 0 0 15px 0 rgb(0 0 0 / 55%);
     border-radius: 8px;
     padding: 25px 15px 15px;
     text-align: center;
     padding-top: 60px;
-    min-height: 310px;
-    overflow: hidden;
-    position: relative;
-    transition: all .5s;
 }
-
-.team_txt:hover.team_txt::before {
-    background: #ffffff5e;
-}
-.team_txt:hover {
-    background: linear-gradient(45deg, #0069ff, #000000);
-}
-.team_txt:hover.team_txt p{color: #fff;}
-.team_txt:hover.team_txt h3{color: #fff;}
 .team_txt h3 {
     font-size: 20px;
     line-height: 30px;
@@ -436,7 +415,6 @@ a, a:hover {
 .crypto_dtl_box .heading_font {
     margin-bottom: 25px;
     text-transform: capitalize;
-    text-align: left;
 }
 .crypto_dtl_box {
     display: inline-block;
@@ -629,7 +607,7 @@ footer{
 /* banner section Style Start */
 
 .p2p_banner_section{
-    /* padding: 50px 30px; */
+    padding: 50px 30px;
     background: #108ad1;
 }
 
@@ -648,10 +626,6 @@ footer{
     background-position: left bottom;
 } */
 
-.marketChart_ulTabs_style{
-    justify-content: center;
-}
-
 .nav-tabs{
     border: none;
 }
@@ -662,8 +636,8 @@ footer{
 }
 
 .p2p_howWorkLi_style{
-    width: 30%;
-    /* margin-right: 10px; */
+    width: 15%;
+    margin-right: 10px;
 }
 
 .p2p_howWorkLi_style > button{
@@ -687,40 +661,33 @@ footer{
 
 .p2p_howWorkBtn_style.active{
     border-color: transparent !important;
-    background-color: transparent !important;
-    border-radius: 2px !important;
-    color: #000000 !important;
+    background-color: #108ad1 !important;
+    border-radius: 22px !important;
+    color: #ffffff !important; 
     margin-left: 25px;
-    font-size: 20px;
-    font-weight: 600;
     outline: none !important;
-    border-bottom: 3px solid #108ad1 !important;
     margin-right: 20px;
 }
 
 .p2p_howWorkBtn_style{
-    border-radius: 2px !important;
+    border-radius: 22px !important;
     margin: 10px;
     margin-left: 20px;
-    background-color: transparent !important;
-    border: none !important;
+    background-color: #ffffff !important;
+    border: 1px solid #f1f1f1 !important;
     margin-right: 20px;
-    color: rgb(0 0 0 / 21%);
+    color: #222;
     text-align: center;
-    font-size: 20px;
-    font-weight: 600;
 }
 
 
 
 .p2p_howWorkBtn_style:focus{
     border-color: transparent !important;
-    background-color: transparent !important;
-    border-radius: 2px !important;
-    color: #000000 !important;
-    margin: 10px;
+    background-color: #108ad1 !important;
+    border-radius: 22px !important;
+    color: #ffffff !important; margin: 10px;
     margin-left: 25px;
-    border-bottom: 3px solid #108ad1 !important;
     outline: none !important;
     margin-right: 20px;
 }
@@ -730,7 +697,6 @@ footer{
 
 .Works_section_style {
     padding: 50px 30px 50px 30px;
-    background: #F9FAFD;
 }
 
 .WorksSection_container_style{
@@ -741,18 +707,12 @@ footer{
     margin-top: 20px;
     font-size: 30px;
     line-height: 40px;
-    font-weight: bold;
+    font-weight: 600;
     margin-bottom: 15px;
-    text-transform: uppercase;
     display: inline-block;
-    color: #000000;
-    background: transparent;
+    color: #108ad1;
     letter-spacing: 1.5px;
     font-family: 'Raleway', sans-serif;
-}
-
-.page_heading{
-    text-align: center;
 }
 
 .Works_text_style h5 {
@@ -773,17 +733,15 @@ footer{
     color: #108ad1;
     text-align: center;
     font-weight: bold;
-    font-size: 22px;
 }
 
 .Works_tabCol4Div_style{
     padding: 20px;
     transition: 0.5s all ease;
-    min-height: 280px;
 }
 
 .Works_tabCol4Div_style:hover{
-    box-shadow: 0px 2px 20px 20px rgb(0 0 0 / 2%);
+    box-shadow: 0px 2px 10px 0 rgb(0 0 0 / 40%);
     transition: 0.5s all ease;
 }
 
@@ -799,7 +757,7 @@ footer{
 
 /* P2P market Style Start */
 .market_section {
-    background: #ffffff;
+    
     padding: 0 30px 50px 30px;
     /* background: url('../images/featured_bg.jpg');
     background-repeat: no-repeat;
@@ -809,7 +767,6 @@ footer{
 
 .market_container_style{
     /* box-shadow: 0px 2px 10px 0 rgb(0 0 0 / 40%); */
-    padding: 10px;
 }
 
 .market_page_heading{
@@ -820,7 +777,7 @@ footer{
 .market_page_heading .market_heading_font {
     font-size: 30px;
     line-height: 40px;
-    font-weight: bold;
+    font-weight: 600;
     margin-bottom: 15px;
     display: inline-block;
     color: #108ad1;
@@ -844,48 +801,31 @@ footer{
     margin: 10px;
     outline: none;
 } */
-.p2p_oder_bok{
-    box-shadow: 0px 0px 3px #80808014;
-    height: 100%;
-}
-.order_bk_hed b{
-    padding-left: 15px;
-}
+
 .marketChart_Btn_style{
-    border-radius: 2px !important;
+    border-radius: 22px !important;
     margin: 10px;
     margin-left: 20px;
     background-color: #ffffff !important;
     border: 1px solid #f1f1f1 !important;
-    color: lightgray;
 }
 
 .marketChart_Btn_style.active{
     border-color: transparent !important;
-    background-color: #ffffff !important;
-    border-radius: 2px !important;
-    color: #000000 !important;
-    border-top: 2px solid #108ad1 !important;
+    background-color: #108ad1 !important;
+    border-radius: 22px !important;
+    color: #ffffff !important;
     margin: 10px;
-    margin-left: 20px;
     outline: none;
 }
 
 .marketChart_Btn_style:focus{
     border-color: transparent !important;
-    background-color: #fff !important;
-    border-radius: 2px !important;
-    color: #000000 !important;
+    background-color: #108ad1 !important;
+    border-radius: 22px !important;
+    color: #ffffff !important;
     margin: 10px;
-    margin-left: 20px;
-    border-top: 2px solid #108ad1 !important;
     outline: none;
-}
-
-.order_bk_hed{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .marketChart_Btn_style:hover{
@@ -901,29 +841,27 @@ footer{
 } */
 
 .orderBook_Btn_style{
-    border-radius: 2px !important;
-    /* margin: 10px; */
-    /* margin-left: 20px; */
+    border-radius: 22px !important;
+    margin: 10px;
+    margin-left: 20px;
     background-color: #ffffff !important;
     border: 1px solid #f1f1f1 !important;
 }
 
 .orderBook_Btn_style.active{
     border-color: transparent !important;
-    background-color: #fff !important;
-    border-radius: 2px !important;
-    color: #000000 !important;
-    border-top: 2px solid #108ad1 !important;
-    /* margin: 10px; */
+    background-color: #108ad1 !important;
+    border-radius: 22px !important;
+    color: #ffffff !important;
+    margin: 10px;
     outline: none;
 }
 .orderBook_Btn_style:focus{
     border-color: transparent !important;
-    background-color: #fff !important;
-    border-radius: 2px !important;
-    color: #000000 !important;
-    /* margin: 10px; */
-    border-top: 2px solid #108ad1 !important;
+    background-color: #108ad1 !important;
+    border-radius: 22px !important;
+    color: #ffffff !important;
+    margin: 10px;
     outline: none;
 }
 .orderBook_Btn_style:hover{
@@ -934,28 +872,11 @@ footer{
     width: 100% !important;
 }
 
-.orderBook_tbl_style th{
-    color: grey;
-    font-size: 14px;
-}
-
-.p2p_match_sec{
-    box-shadow: 0px 0px 3px #80808014;
-    height: 100%; 
-}
-
-.p2p_match_sec .matchtxt{
-    padding: 10px 15px;
-    font-weight: bold;
-}
 .matchHistory_Table_style{
     width:100%;
     margin-top: 70px;
 }
-.matchHistory_Table_style th{
-    font-size: 14px;
-    color: grey;
-}
+
 .matchHistory_Table_style  tr  th {
     text-align: center;
 }
@@ -993,12 +914,7 @@ th , td{
     border-color: #108ad1;
     color: #fff;
 }
-.p2pMarket_btn_style:focus{
-    box-shadow: none;
-}
-.p2pMarket_btn_style:hover{
-    opacity: .8;
-}
+
 /* P2P market Style End */
 
 /* P2P benefits Style start */
@@ -1007,7 +923,6 @@ th , td{
     /* background-color: #bbcbf5;  */
     /* height: 600px; */
     padding: 0 30px 50px 30px;
-    background: #fff;
 }
 
 .p2p_benefits_container{
@@ -1023,7 +938,7 @@ th , td{
 .benefits_heading_font{
     font-size: 30px;
     line-height: 40px;
-    font-weight: bold;
+    font-weight: 600;
     margin-bottom: 15px;
     display: inline-block;
     color: #108ad1;
@@ -1034,79 +949,75 @@ th , td{
 .benefits_col4First_style{
     display: flex;
     flex-shrink: 1;
-    margin: 50px 25px 20px 25px;
+    margin: 20px 25px;
     width: 29.3333%;
     height: 215px;
     border-radius: 8px;
-    /* box-shadow: #0a669b2e 0px 0px 3px; */
     box-shadow: rgb(0 0 0 / 4%) 0px 2px 45px 0px;
     padding: 25px 16px;
     background: rgb(255, 255, 255);
     overflow: hidden;
     position: relative;
+    background-color: #d4e0ff;
     transition: 0.5s all ease;
 }
 
 .benefits_col4First_style:hover{
-    /* margin: 20px 10px;
+    margin: 20px 10px;
     width: 30.3333%;
-    height: 230px; */
-    box-shadow: rgb(0 0 0 / 4%) 0px 2px 45px 0px;
+    height: 230px;
+    box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
     transition: 0.5s all ease;
-    transform: translateY(-30px);
 }
 
 .benefits_col4Sec_style{
     display: flex;
     flex-shrink: 1;
-    margin: 125px 25px 20px 25px;
+    /* margin: 50px ​25px 20px 25px; */
+    margin: 50px 25px 20px 25px;
     width: 29.3333%;
     height: 215px;
     border-radius: 8px;
+    box-shadow: rgb(0 0 0 / 4%) 0px 2px 45px 0px;
     padding: 25px 16px;
-    box-shadow: #0a669b2e 0px 0px 3px;
     background: rgb(255, 255, 255);
     overflow: hidden;
     position: relative;
-    color: white;
-    background-image: linear-gradient( 
-45deg
- ,black, #0a449ba1, transparent);
+    background-color: #d4e0ff;
     transition: 0.5s all ease;
 }
 
 .benefits_col4Sec_style:hover{
-    /* margin: 50px 10px 20px 10px; */
-    /* width: 30.3333%; */
-    /* height: 230px; */
-    box-shadow: rgb(0 0 0 / 4%) 0px 2px 45px 0px;
+    margin: 50px 10px 20px 10px;
+    width: 30.3333%;
+    height: 230px;
+    box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
     transition: 0.5s all ease;
-    transform: translateY(-30px);
 }
 
 .benefits_col4Three_style{
     display: flex;
     flex-shrink: 1;
-    margin: 200px 25px 20px 25px;
+    /* margin: 100px ​25px 20px 25px; */
+    margin: 100px 25px 20px 25px;
     width: 29.3333%;
     height: 215px;
     border-radius: 8px;
-    /* box-shadow: #0a669b2e 0px 0px 3px; */
     box-shadow: rgb(0 0 0 / 4%) 0px 2px 45px 0px;
     padding: 25px 16px;
     background: rgb(255, 255, 255);
     overflow: hidden;
     position: relative;
+    background-color: #d4e0ff;
     transition: 0.5s all ease;
 }
 
 .benefits_col4Three_style:hover{
-    /* margin: 100px 10px 20px 10px;
+    margin: 100px 10px 20px 10px;
     width: 30.3333%;
-    height: 230px; */
-    box-shadow: rgb(0 0 0 / 4%) 0px 2px 45px 0px;
+    height: 230px;
+    box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
     transition: 0.5s all ease;
-    transform: translateY(-30px);
 }
 
 .benefits_firstDiv_style{
@@ -1180,7 +1091,6 @@ th , td{
 .p2p_featured_section{
     /* background-color: #bbcbf5;  */
     /* height: 600px; */
-    background: #fcfdff;
     padding-bottom: 40px;
     padding: 0 30px 0 30px;
 }
@@ -1212,7 +1122,6 @@ th , td{
 .p2p_testimonials_section{
     /* background-color: #bbcbf5;  */
     padding: 50px 30px;
-    background: #F9FAFD;
 }
 
 .p2p_testimonials_container{
@@ -1223,7 +1132,7 @@ th , td{
 .testimonials_heading_font{
     font-size: 30px;
     line-height: 40px;
-    font-weight: bold;
+    font-weight: 600;
     margin-bottom: 15px;
     display: inline-block;
     color: #108ad1;
@@ -1246,13 +1155,13 @@ th , td{
     background: rgb(255, 255, 255);
     overflow: hidden;
     position: relative;
-    /* background-color: #bbcbf5; */
+    background-color: #bbcbf5;
     transition: 0.5s all ease;
 }
 
 .testimonials_col4First_style:hover{
-    /* width: 29.3333%;
-    height: 230px; */
+    width: 29.3333%;
+    height: 230px;
     box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
     transition: 0.5s all ease;
 }
@@ -1260,7 +1169,7 @@ th , td{
 .testimonials_col4Sec_style{
     display: flex;
     flex-shrink: 1;
-    margin: 20px 30px 20px 30px;
+    margin: 50px 30px 20px 30px;
     flex-direction: column;
     width: 28.3333%;
     height: 215px;
@@ -1272,13 +1181,13 @@ th , td{
     background: rgb(255, 255, 255);
     overflow: hidden;
     position: relative;
-    /* background-color: #bbcbf5; */
+    background-color: #bbcbf5;
     transition: 0.5s all ease;
 }
 
 .testimonials_col4Sec_style:hover{
-    /* width: 29.3333%;
-    height: 230px; */
+    width: 29.3333%;
+    height: 230px;
     box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
     transition: 0.5s all ease;
 }
@@ -1286,7 +1195,7 @@ th , td{
 .testimonials_col4Three_style{
     display: flex;
     flex-shrink: 1;
-    margin: 20px 30px 20px 30px;
+    margin: 100px 30px 20px 30px;
     flex-direction: column;
     width: 28.3333%;
     height: 215px;
@@ -1298,13 +1207,13 @@ th , td{
     background: rgb(255, 255, 255);
     overflow: hidden;
     position: relative;
-    /* background-color: #bbcbf5; */
+    background-color: #bbcbf5;
     transition: 0.5s all ease;
 }
 
 .testimonials_col4Three_style:hover{
-    /* width: 29.3333%;
-    height: 230px; */
+    width: 29.3333%;
+    height: 230px;
     box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
     transition: 0.5s all ease;
 }
@@ -1348,7 +1257,6 @@ th , td{
     /* background-color: #bbcbf5;  */
     /* padding-top: 40px; */
     padding: 0 30px 50px 30px;
-    background-color: #2359a5;
 }
 
 .p2p_stats_container{
@@ -1359,10 +1267,10 @@ th , td{
 .stats_heading_font{
     font-size: 30px;
     line-height: 40px;
-    font-weight: bold;
+    font-weight: 600;
     margin-bottom: 15px;
     display: inline-block;
-    color: #ffffff;
+    color: #108ad1;
     letter-spacing: 1.5px;
     font-family: 'Raleway', sans-serif;
 }
@@ -1375,19 +1283,19 @@ th , td{
     width: 28.3333%;
     height: 180px;
     border-radius: 8px;
-    box-shadow: rgb(255 255 255 / 67%) 0px 2px 45px 0px;
+    box-shadow: rgb(0 0 0 / 4%) 0px 2px 45px 0px;
     padding: 25px 16px;
     background: rgb(255, 255, 255);
     overflow: hidden;
     position: relative;
     padding-right: 0;
     padding-left: 0;
-    background-color: #f7f9ff;
+    background-color: #bbcbf5;
     transition: 0.5s all ease;
 }
 .stats_col4First_style:hover {
-    /* width: 29.3333%;
-    height: 200px; */
+    width: 29.3333%;
+    height: 200px;
     box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
     transition: 0.5s all ease;
 }
@@ -1395,24 +1303,24 @@ th , td{
 .stats_col4Sec_style{
     display: flex;
     flex-shrink: 1;
-    margin: 20px 30px;
+    margin: 50px 30px 20px 30px;
     flex-direction: column;
     width: 28.3333%;
     height: 180px;
     border-radius: 8px;
-    box-shadow: rgb(255 255 255 / 67%) 0px 2px 45px 0px;
+    box-shadow: rgb(0 0 0 / 4%) 0px 2px 45px 0px;
     padding: 25px 16px;
     background: rgb(255, 255, 255);
     overflow: hidden;
     position: relative;
     padding-right: 0;
     padding-left: 0;
-    background-color: #f7f9ff;
+    background-color: #bbcbf5;
     transition: 0.5s all ease;
 }
 .stats_col4Sec_style:hover {
-    /* width: 29.3333%;
-    height: 200px; */
+    width: 29.3333%;
+    height: 200px;
     box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
     transition: 0.5s all ease;
 }
@@ -1420,24 +1328,24 @@ th , td{
 .stats_col4Three_style{
     display: flex;
     flex-shrink: 1;
-    margin: 20px 30px;
+    margin: 100px 30px 20px 30px;
     flex-direction: column;
     width: 28.3333%;
     height: 180px;
     border-radius: 8px;
-    box-shadow: rgb(255 255 255 / 67%) 0px 2px 45px 0px;
+    box-shadow: rgb(0 0 0 / 4%) 0px 2px 45px 0px;
     padding: 25px 16px;
     background: rgb(255, 255, 255);
     overflow: hidden;
     position: relative;
     padding-right: 0;
     padding-left: 0;
-    background-color: #f7f9ff;
+    background-color: #bbcbf5;
     transition: 0.5s all ease;
 }
 .stats_col4Three_style:hover {
-    /* width: 29.3333%;
-    height: 200px; */
+    width: 29.3333%;
+    height: 200px;
     box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
     transition: 0.5s all ease;
 }
@@ -1450,19 +1358,19 @@ th , td{
     width: 28.3333%;
     height: 180px;
     border-radius: 8px;
-    box-shadow: rgb(255 255 255 / 67%) 0px 2px 45px 0px;
+    box-shadow: rgb(0 0 0 / 4%) 0px 2px 45px 0px;
     padding: 25px 16px;
     background: rgb(255, 255, 255);
     overflow: hidden;
     position: relative;
     padding-right: 0;
     padding-left: 0;
-    background-color: #f7f9ff;
+    background-color: #bbcbf5;
     transition: 0.5s all ease;
 }
 .stats_col4Four_style:hover {
-    /* width: 29.3333%;
-    height: 200px; */
+    width: 29.3333%;
+    height: 200px;
     box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
     transition: 0.5s all ease;
 }
@@ -1470,24 +1378,24 @@ th , td{
 .stats_col4Five_style{
     display: flex;
     flex-shrink: 1;
-    margin: 20px 30px;
+    margin:  50px 30px 20px 30px;
     flex-direction: column;
     width: 28.3333%;
-    height: 180px;
+    height: 200px;
     border-radius: 8px;
-    box-shadow: rgb(255 255 255 / 67%) 0px 2px 45px 0px;
+    box-shadow: rgb(0 0 0 / 4%) 0px 2px 45px 0px;
     padding: 25px 16px;
     background: rgb(255, 255, 255);
     overflow: hidden;
     position: relative;
     padding-right: 0;
     padding-left: 0;
-    background-color: #f7f9ff;
+    background-color: #bbcbf5;
     transition: 0.5s all ease;
 }
 .stats_col4Five_style:hover {
-    /* width: 29.3333%;
-    height: 215px; */
+    width: 29.3333%;
+    height: 215px;
     box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
     transition: 0.5s all ease;
 }
@@ -1495,24 +1403,24 @@ th , td{
 .stats_col4Six_style{
     display: flex;
     flex-shrink: 1;
-    margin: 20px 30px;
+    margin: 100px 30px 20px 30px;
     flex-direction: column;
     width: 28.3333%;
-    height: 180px;
+    height: 200px;
     border-radius: 8px;
-    box-shadow: rgb(255 255 255 / 67%) 0px 2px 45px 0px;
+    box-shadow: rgb(0 0 0 / 4%) 0px 2px 45px 0px;
     padding: 25px 16px;
     background: rgb(255, 255, 255);
     overflow: hidden;
     position: relative;
     padding-right: 0;
     padding-left: 0;
-    background-color: #f7f9ff;
+    background-color: #bbcbf5;
     transition: 0.5s all ease;
 }
 .stats_col4Six_style:hover {
-    /* width: 29.3333%;
-    height: 215px; */
+    width: 29.3333%;
+    height: 215px;
     box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
     transition: 0.5s all ease;
 }
@@ -1575,7 +1483,7 @@ th , td{
     max-width: 100%;
     /* margin-left: 15px; */
     /* margin-right: 15px; */
-    /* padding: 10px; */
+    padding: 10px;
     font-size: 14px;
     margin-top: 5px;
 }
@@ -1605,15 +1513,15 @@ th , td{
 }
 
 .exchange_Col3Threed_style .ul{
-    /* padding: 10px; */
-    justify-content: space-between;
-    background-color: #f7fafc;
+    padding: 10px;
+    justify-content: center;
+    background-color: #15567b;
 }
 
 .exchange_Col3Threed_style.exchange_Threed_style .ul{
-    /* padding: 10px; */
-    justify-content: space-between;
-    background-color: #f7fafc;
+    padding: 10px;
+    justify-content: center;
+    background-color: aliceblue;
 }
 
 .exchange_Threed_style{
@@ -1687,28 +1595,28 @@ th , td{
     border-radius: 3px !important;
     margin: 0;
     margin-left: 5px;
-    background-color: #f7fafc !important;
+    background-color: #ffffff !important;
     border: none !important;
     padding: 0.4rem 0.8rem;
-    color: rgb(150, 150, 150);
+    color: gainsboro;
 }
 .exchange_Btn_style:focus{
     border-color: transparent !important;
-    background-color: #f7fafc !important;
+    background-color: #108ad1 !important;
     border-radius: 3px !important;
-    color: #9598a1 !important;
+    color: #ffffff !important;
     margin: 0;
     outline: none !important;
 }
 .exchange_Btn_style.active{
     border-color: transparent !important;
-    background-color: #ffffff !important;
+    background-color: #eaf7ff !important;
     border-radius: 0px !important;
     color: black !important;
     margin: 0;
     padding: 0.4rem 0.8rem;
     border: none;
-    border-top: 2px solid #108ad1 !important;
+    border-bottom: 2px solid #108ad1 !important;
     font-weight: 500;
 }
 
@@ -1716,7 +1624,7 @@ th , td{
     cursor: pointer;
     box-shadow: none;
     border-radius: 0px !important;
-    border-bottom: none !important;
+    border-bottom: 2px solid #108ad1 !important;
 }
 
 /* .exchange_orderBtnActive_style{
@@ -1746,38 +1654,35 @@ th , td{
     border-radius: 3px !important;
     margin: 0;
     /* margin-left: 6px; */
-    background-color: #f7fafc !important;
-    /* border: 1px solid #f1f1f1 !important; */
-    color: #9598a1;
+    background-color: #ffffff !important;
+    border: 1px solid #f1f1f1 !important;
+    color: #0a669b;
     font-weight: 900;
     padding: 0.4rem 0.8rem;
 }
 .exchange_orderBtn_style:focus{
     border-color: transparent !important;
-    background-color: #f7fafc !important;
+    background-color: #108ad1 !important;
     border-radius: 3px !important;
-    color: #9598a1 !important;
+    color: #ffffff !important;
     margin: 0;
     outline: none !important;
 }
 .exchange_orderBtn_style.active{
     border-color: transparent !important;
     background-color: #ffffff !important;
-    border-radius: 2px !important;
-    color: #000000 !important;
+    border-radius: 3px !important;
+    color: #0a669b !important;
     margin: 0;
-    border-top: 2px solid #108ad1 !important;
     font-weight: 900;
     border-bottom: inset 2px solid black;
     outline: none !important;
-     /* box-shadow: inset 0px 0px 10px; */
+    box-shadow: inset 0px 0px 10px;
 }
 
 .exchange_orderBtn_style:hover{
     cursor: pointer;
-    /* box-shadow: inset 0px 0px 10px #0a669b; */
-    border: none;
-    color: black;
+    box-shadow: inset 0px 0px 10px #0a669b;
 }
 
 .exchange_search_style {
@@ -1785,9 +1690,8 @@ th , td{
     border: 2px solid #108ad1;
     margin-bottom: 15px;
     padding-left: 8px;
-    margin-left: 5px;
     font-size: 14px;
-    width: 97%;
+    width: 100%;
     border-radius: 5px;
 }
 
@@ -1798,12 +1702,11 @@ th , td{
 .exchange_page_heading{
     display: flex;
     justify-content: space-between;
-    background: #F7FAFC;
+    background: #15567b;
     margin-bottom: 5px;
     align-items: center;
-    color: #000000;
-    font-weight: 500;
     padding: 10px;
+    color: #fff;
 }
 
 .exchange_page_heading p{
@@ -1817,7 +1720,6 @@ th , td{
 .exchange_page_heading .heading_font_style span{
     padding-left: 5px;
     font-size: 12px;
-    color: #b5b5b5;
 }
 .history_tbl_style{
     width: 100%;
@@ -1826,12 +1728,12 @@ th , td{
 
 .exchange_li_style{
     font-size: 13px;
-    /* margin-left: 10px; */
+    margin-left: 10px;
 }
 
 .exchange_liOne_style{
     font-size: 12.5px;
-    /* margin-left: 5px; */
+    margin-left: 5px;
 }
 
 .exchange_LoginBtn_style, .exchange_LoginBtn_style:hover{
@@ -1936,12 +1838,6 @@ th , td{
     border-color: #108ad1;
     margin-bottom: 25px;
     margin-top: 25px;
-}
-.exchange_loginbtn_style:hover{
-    color: white;
-    opacity: .8;
-    background-color: #108ad1;
-    border-color: #108ad1;
 }
 
 .exchange_sellbtn_style{
@@ -2396,24 +2292,16 @@ select.list-dt:focus {
 }
 .stf_Col3_style{
     /* max-width: 91%; */
-    box-shadow: 0px 0px 3px 0 rgb(0 0 0 / 40%);
-    /* max-width: 22%; */
-    /* margin-left: 15px;
-    margin-right: 15px; */
-    /* padding-top: 15px; */
-    height: 100%;
-    background: white;
-    text-align: center;
-    padding: 10px;
-}
-.stf_Col3_style h5{
-    font-weight: bold;
-    font-size: 16px;
+    box-shadow: 0px 2px 10px 0 rgb(0 0 0 / 40%);
+    max-width: 22%;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-top: 15px;
+    height: 620px;
 }
 .stf_search_style{
     width: 100%;
     height: 40px;
-    padding: 0px 10px;
 }
 .stf_Lefttable_style{
     position: relative;
@@ -2461,56 +2349,30 @@ select.list-dt:focus {
     width: 105px;
 }
 .stf_Col6Div_style{
-    /* max-width: 100%; */
-    /* margin: 20px 0; */
+    max-width: 100%;
 }
 .stf_page_heading{
     display: flex;
     justify-content: space-between;
 }
 .stf_Col6_style{
-    box-shadow: 0px 0px 3px 0 rgb(0 0 0 / 40%);
+    box-shadow: 0px 2px 10px 0 rgb(0 0 0 / 40%);
     max-width: 100%;
     /* margin-left: 15px;
     margin-right: 15px; */
-    /* padding: 10px; */
-    margin-bottom: 10px;
-    background: #fff;
-}
-
-.stf_xoom_head {
-    display: flex;
-    justify-content: space-between;
-    padding: 5px 10px;
-    background: #f7fafc;
-    align-items: center;
-}
-.stf_xoom_head p{
-    margin: 0%;
-}
-.stf_xoom_body {
     padding: 10px;
+    margin-bottom: 10px;
 }
 .stf_Col6One_style{
-    box-shadow: 0px 0px 3px 0 rgb(0 0 0 / 40%);
+    box-shadow: 0px 2px 10px 0 rgb(0 0 0 / 40%);
     max-width: 100%;
     /* margin-left: 15px;
     margin-right: 15px; */
-    /* padding: 10px; */
+    padding: 10px;
     margin-bottom: 10px;
     margin-top: 38px;
-    background: #fff;
 }
-.portfolio_headtxt{
-        padding: 10px;
-        background: #f7fafc;
-        color: black;
-}
-.heading_font_style{
-    /* padding: 10px; */
-    background: #f7fafc;
-    color: black;
-}
+
 
 .stf_Cancelbtn_style{
     background-color: #108ad1;
@@ -2530,79 +2392,70 @@ select.list-dt:focus {
 }
 .stf_liOne_style{
     font-size: 12.5px;
-    /* margin-left: 5px; */
+    margin-left: 5px;
 }
 .stf_orderBtn_style{
-    border-radius: 2px !important;
+    border-radius: 22px !important;
     margin: 0;
-    background-color: #f7fafc !important;
-    border: none !important;
-    color: #9598a1;
+    background-color: #ffffff !important;
+    border: 1px solid #f1f1f1 !important;
+    color: #222;
     padding: 0.4rem 0.8rem;
 }
 .stf_orderBtn_style:focus{
     border-color: transparent !important;
-    background-color: #f7fafc !important;
-    border-radius: 2px !important;
-    color: #131722 !important;
+    background-color: #108ad1 !important;
+    border-radius: 22px !important;
+    color: #ffffff !important;
     margin: 0;
     outline: none !important;
 }
 .stf_orderBtn_style.active{
     border-color: transparent !important;
-    background-color: #ffffff !important;
-    border-radius: 2px !important;
-    color: #000000 !important;
+    background-color: #108ad1 !important;
+    border-radius: 22px !important;
+    color: #ffffff !important;
     margin: 0;
-    border-top: 2px solid #108ad1 !important;
     outline: none !important;
 }
 
 .stf_orderBtn_style:hover{
     cursor: pointer;
-    color: black;
-    /* box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%); */
+    box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
 }
 .stf_Col3Threed_style{
-    box-shadow: 0px 0px 3px 0 rgb(0 0 0 / 40%);
+    box-shadow: 0px 2px 10px 0 rgb(0 0 0 / 40%);
     max-width: 100%;
     margin-left: 15px;
     margin-right: 15px;
-    /* padding-top: 15px; */
-    background: #fff;
-}
-.stf_Col3Threed_style ul{
-    justify-content: space-between;
-    background: #F7FAFC;
+    padding-top: 15px;
 }
 .stf_li_style{
     font-size: 13px;
-    /* margin-left: 10px; */
+    margin-left: 10px;
 }
 .stf_Btn_style{
-    border-radius: 2px !important;
+    border-radius: 22px !important;
     margin: 0;
     margin-left: 5px;
-    background-color: #f7fafc !important;
-    border: none !important;
-    color: #9598a1;
+    background-color: #ffffff !important;
+    border: 1px solid #f1f1f1 !important;
     padding: 0.4rem 0.8rem;
 }
 .stf_Btn_style:focus{
     border-color: transparent !important;
-    background-color: #f7fafc !important;
-    border-radius: 2px !important;
-    color: #9598a1 !important;
+    background-color: #108ad1 !important;
+    border-radius: 22px !important;
+    color: #ffffff !important;
     margin: 0;
     outline: none !important;
 }
 .stf_Btn_style.active{
     border-color: transparent !important;
-    background-color: #ffffff !important;
-    border-radius: 2px !important;
-    color: #131722 !important;
+    background-color: #108ad1 !important;
+    border-radius: 22px !important;
+    color: #ffffff !important;
     margin: 0;
-    border-top: 2px solid #108ad1 !important;
     padding: 0.4rem 0.8rem;
 }
 .stf_tab_panes_style{
@@ -2617,7 +2470,7 @@ select.list-dt:focus {
     background-color: transparent;
     border-color: red;
     color: red;
-    border-radius: 2px;
+    border-radius: 22px;
     margin-bottom: 15px;
 }
 .stf_CancelAllBtn_style:hover{
@@ -2628,21 +2481,15 @@ select.list-dt:focus {
 
 .stf_Btn_style:hover{
     cursor: pointer;
-    /* box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%); */
+    box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
 }
 .stf_Col4_style{
-    box-shadow: 0px 0px 3px 0 rgb(0 0 0 / 40%);
-    max-width: 100%;
-    /* margin-left: 14px; */
+    box-shadow: 0px 2px 10px 0 rgb(0 0 0 / 40%);
+    max-width: 95.5%;
+    margin-left: 14px;
     /* margin-right: 15px; */
-    /* padding-top: 15px; */
+    padding-top: 15px;
     font-size: 15px;
-    background: #fff;
-}
-.stf_Col4_style h6{
-    padding: 10px;
-    background: #f7fafc;
-    color: #000000;
 }
 .stf_table_style{
     margin-left: -22px;
@@ -2667,24 +2514,17 @@ select.list-dt:focus {
     border-color: #108ad1;
     width: 80%;
     margin-bottom: 10%;
-    border-radius: 2px;
+    border-radius: 20px;
 }
 
 .stf_sellbtn_style{
     margin-bottom: 25px;
     margin-top: 25px;
-    border-radius: 2px;
+    border-radius: 20px;
 }
 
 .stf_md3_style{
-    border: 1px solid lightgray;
-    display: flex;
-    align-items: center;
-}
-
-.stf_md3_style p{
-    margin: 0;
-    font-size: 14px;
+    border-right: 1px solid lightgray;
 }
 
 /* scroll bar style start */
@@ -2725,66 +2565,45 @@ select.list-dt:focus {
 
 
 /* funds page style start */
-.fund_head{
-    border-bottom: 1px solid gray;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-}
-.fund_table_body{
-    background: #fffdfd;
-}
-.fund_head p{
-    margin: 0;
-    font-size: 14px;
-    font-weight: 600;
-}
+
 .funds_tab_panes_style{
     /* height: 474px; */
     margin-left: 10px;
 }
 .funds_liOne_style{
     font-size: 12.5px;
-    /* margin-left: 5px; */
+    margin-left: 5px;
 }
 .funds_orderBtn_style{
-    border-radius: 2px !important;
+    border-radius: 22px !important;
     margin: 0;
-    background-color: #eceff1 !important;
+    background-color: #ffffff !important;
     border: 1px solid #f1f1f1 !important;
-    color: #9598a1;
-    font-weight: 600;
+    color: #222;
     padding: 0.4rem 0.8rem;
-    font-size: 15px;
 }
 .funds_orderBtn_style:focus{
     border-color: transparent !important;
-    background-color: #eceff1 !important;
-    border-radius: 2px !important;
-    color: #9598a1 !important;
+    background-color: #108ad1 !important;
+    border-radius: 22px !important;
+    color: #ffffff !important;
     margin: 0;
     outline: none !important;
 }
 .funds_orderBtn_style.active{
     border-color: transparent !important;
-    background-color: #eceff1 !important;
-    border-radius: 2px !important;
-    color: #0a669b !important;
+    background-color: #108ad1 !important;
+    border-radius: 22px !important;
+    color: #ffffff !important;
     margin: 0;
-    font-size: 15px;
-    border-bottom: 2px solid #0a669b !important;
-    font-weight: 600;
     outline: none !important;
-    letter-spacing: 1px;
 }
 .funds_orderBtn_style:hover{
     cursor: pointer;
-    color: grey;
-    /* box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%); */
+    box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
 }
 .funds_logoImg_style{
-    height: 25px;
+    height: 30px;
     margin-right: 15px;
 }
 .funds_tdimg_style{
@@ -2792,70 +2611,46 @@ select.list-dt:focus {
 }
 .funds_pTag_style{
     color: #108ad1;
-    font-size: 14px;
-    font-weight: 600;
 }
-.fund_table_head{
-    background: white;
-    color: #bbbbbb;
-    font-size: 14px;
-}
+
 .funds_row_style{
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
 }
 
 .funds_container_style{
-    /* box-shadow: 0px 2px 10px 0 rgb(0 0 0 / 40%); */
+    box-shadow: 0px 2px 10px 0 rgb(0 0 0 / 40%);
     margin-top: 40px;
     margin-bottom: 40px;
 }
 
 .funds_Depositbtn_style{
     background-color: transparent;
-    border-color: #9598a1;
-    color: #9598a1;
+    border-color: #108ad1;
+    color: #108ad1;
     width: 80%;
     margin-bottom: 5%;
     margin-top: 5%;
-    border-radius: 2px;
+    border-radius: 20px;
     margin-right: 10px;
 }
 .funds_Depositbtn_style:hover{
-    background-color: #0bc335;
-    border-color: #0bc335;
+    background-color: #108ad1 ;
+    border-color: #108ad1;
     width: 80%;
     margin-bottom: 5%;
     margin-top: 5%;
-    border-radius: 2px;
+    border-radius: 20px;
     margin-right: 10px;
-}
-.funds_Depositbtn_style:focus{
-    box-shadow: none !important;
-}
-.funds_Depositbtn_style:active{
-    color: #fff;
-    background-color: #0bc335 !important;
-    border-color: #0bc335 !important;
 }
 .funds_Withdrawbtn_style{
     background-color: transparent;
-    border-color: #9598a1;
-    color: #9598a1;
+    border-color: red;
+    color: red;
     width: 80%;
     margin-bottom: 5%;
     margin-top: 5%;
-    border-radius: 2px;
-}
-
-.funds_Withdrawbtn_style:focus{
-    box-shadow: none !important;
-}
-.funds_Withdrawbtn_style:active{
-    color: #fff;
-    background-color: #c30b0b !important;
-    border-color: #c30b0b !important;
+    border-radius: 20px;
 }
 
 .funds_thStyle_style{
@@ -2863,19 +2658,16 @@ select.list-dt:focus {
 }
 .funds_tdStyle_style{
     text-align: center;
-    vertical-align: middle !important;
-    padding: 0px !important;
+    vertical-align:middle !important;
 }
 .funds_tdTwoStyle_style{
     text-align: center;
     width: 200px;
-    font-size: 14px;
-    font-weight: 600;
-    vertical-align: middle !important;
+    vertical-align:middle !important;
 }
 .funds_input_style{
     width: 100%;
-    height: 25px;
+    height: 32px;
 }
 
 /* switch style start */
@@ -2958,10 +2750,10 @@ select.list-dt:focus {
   
   .switch-handle {
     position: absolute;
-    top: 8px;
+    top: 4px;
     left: 4px;
-    width: 10px;
-    height: 10px;
+    width: 18px;
+    height: 18px;
     background: white;
     border-radius: 10px;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
@@ -2996,9 +2788,7 @@ select.list-dt:focus {
   }
 
   /* switch style end */
-.transfer_table{
-    background-color: #fff;
-}
+
 /* funds page style end */
 
 /* excahnge page css start here */
@@ -3092,11 +2882,11 @@ select.list-dt:focus {
         max-width: 91%;
         margin-bottom: 10px;
     }
-    /* .exchange_Col4_style .pl-3{
+    .exchange_Col4_style h6.pl-3{
         padding: 10px;
         background: #15567b;
         color: #fff;
-    } */
+    }
     .exchange_Col3Threed_style{
         margin-right: 0;
         margin-top: 20px;
@@ -3119,8 +2909,8 @@ select.list-dt:focus {
                 padding: 0;                
             }
             .banner_h4_style {
-                font-size: 30px;
-                line-height: 30px;
+                font-size: 40px;
+                line-height: 50px;
             }
             .banner_img{
                 width: 100%;
@@ -3129,11 +2919,9 @@ select.list-dt:focus {
         /* banner Style end */
 
         /* work section style start */
-        .Works_text_style .heading_font_style{
-            font-size: 22px;
-        }
+
             .Works_section_style{
-                padding: 0px 0 50px 0;
+                padding: 50px 0 50px 0;
             }
             .p2p_howWorkLi_style{
                 width: 46%;
@@ -3372,10 +3160,6 @@ select.list-dt:focus {
 
     /* work section style start */
 
-    .Works_text_style .heading_font_style{
-        font-size: 20px;
-    }
-
         .Works_section_style{
             padding: 50px 0 50px 0;
         }
@@ -3612,8 +3396,8 @@ select.list-dt:focus {
             padding: 0;                
         }
         .banner_h4_style {
-            font-size: 35px;
-            line-height: 35px;
+            font-size: 40px;
+            line-height: 50px;
         }
         .banner_img{
             width: 100%;
@@ -3889,7 +3673,7 @@ select.list-dt:focus {
 
     /* market section style start */
         .market_section {
-            padding: 0 0px 50px 0px;
+            padding: 0 10px 50px 10px;
         }
         .marketChart_ulTabs_style{
             overflow-x: scroll !important;
@@ -3900,17 +3684,16 @@ select.list-dt:focus {
             margin-left: 5px;
         }
         .orderBook_Btn_style{
-            /* margin-left: 5px; */
-            font-size: 12px;
+            margin-left: 5px;
         }
         .orderBook_uiTab_style{
             /* overflow-x: scroll !important; */
             flex-wrap: nowrap !important;
-            /* margin-right: -16px; */
+            margin-right: -16px;
         }
         .orderBook_tbl_style{
             width: 100%;
-            /* margin-left: -40px; */
+            margin-left: -40px;
             font-size: 14px;
         }
         .matchHistory_h6_style{
@@ -5113,7 +4896,6 @@ select.list-dt:focus {
   .tab-content .data_list_scrll {
     /* height: 50vh; */
     overflow-y: scroll;
-    padding: 0px 5px;
   }
 
   .exchange_section_style .exchange_box1 {
@@ -5130,9 +4912,9 @@ select.list-dt:focus {
 
   .exchange_BtnOne_style:focus {
     border-color: transparent !important;
-    background-color: #f7fafc !important;
+    background-color: #15567b !important;
     border-radius: 0px !important;
-    color: #9598a1 !important;
+    color: #ffffff !important;
     outline: none !important;
     border: none !important;
   }
@@ -5140,13 +4922,13 @@ select.list-dt:focus {
   .exchange_BtnOne_style {
     border-radius: 2px !important;
     margin: 0;
-    background-color: #f7fafc !important;
+    background-color: #15567b !important;
     /* border: 1px solid #ececec !important; */
-    padding: 2px 18px;
+    padding: 2px 10px;
     font-size: 12px;
     margin: 5px 1px;
     font-weight: 600;
-    color: #9598a1;
+    color: #fff;
   }
 
   .exchange_BtnOne_style:hover {
@@ -5230,15 +5012,15 @@ select.list-dt:focus {
 
   .exchange_section_style .exchange_box1::-webkit-scrollbar-thumb {
     border-radius: 50px;
-    background-color: #108ad1;
+    background-color: #15567b;
   }
 
   /* --------------------left-nav-tab-------------------------------------- */
  .exchange_BtnOne_style.active {
     background-color: #ffffff !important;
     border-radius: 2px !important;
-    color: #000000 !important;
-    border-top: 2px solid #108ad1 !important;
+    color: #1848cc !important;
+    /* border-top: 2px solid black !important; */
     font-weight: 600;
   }  
 
@@ -5325,12 +5107,13 @@ select.list-dt:focus {
 
   /* -------------------------------------------------- 03 / July / 2021 changes ---------------------------------------------------- */
   .nav_div {
-    background-color: #f7fafc;
+    background-color: #15567b;
+    padding: 13px 10px 0 10px;
   }
 
-  /* .tab-content {
+  .tab-content {
     padding: 10px;
-  } */
+  }
 
   .exchange_Col3_style {
     padding: 0%;
@@ -5344,13 +5127,6 @@ select.list-dt:focus {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
-    padding: 0 0 0 10px;
-    background-color: #f7fafc;
-  }
-
-  .order_book h6{
-    margin: 0%;
   }
 
   .currency_icon {
@@ -5373,7 +5149,6 @@ select.list-dt:focus {
     .banner_img{
         width: 365px;
         height: auto;
-        padding: 10px 0 10px 10px;
     }
     .heading_font{
         font-size: 25px;
@@ -5445,11 +5220,6 @@ select.list-dt:focus {
     }
 
 }
-.exchange_Col4_style .pl-3{
-    padding: 10px;
-    background: #f7fafc;
-    color: #000;
-}
 
 /* ------------------------------------------------------Footer start----------------------------------------------------------------------  */
 .footer_logo{
@@ -5480,13 +5250,11 @@ select.list-dt:focus {
     list-style-type: none;
 }
 .about_div ul li{
-    /* position: relative; */
+    position: relative;
     overflow: hidden;
 }
 .about_div ul li a{
     color: grey;
-    position: relative;
-    overflow: hidden;
 }
 .about_div ul li a:hover{
     color: #0A669B;
@@ -5503,7 +5271,7 @@ select.list-dt:focus {
     height: 100%;
     border-bottom: 2px solid #0A669B;
     transition: all .5s;
-    transform: translateX(-105%);
+    transform: translateX(-100%);
 }
 .product_divtxt{
     font-size: 20px;
@@ -5514,13 +5282,11 @@ select.list-dt:focus {
     list-style-type: none;
 }
 .product_div ul li{
-    /* position: relative; */
+    position: relative;
     overflow: hidden;
 }
 .product_div ul li a{
     color: grey;
-    position: relative;
-    overflow: hidden;
 }
 .product_div ul li a:hover{
     color: #0A669B;
@@ -5537,7 +5303,7 @@ select.list-dt:focus {
     height: 100%;
     border-bottom: 2px solid #0A669B;
     transition: all .5s;
-    transform: translateX(-105%);
+    transform: translateX(-100%);
 }
 .legal_divtxt{
     font-size: 20px;
@@ -5548,13 +5314,11 @@ select.list-dt:focus {
     list-style-type: none;
 }
 .legal_div ul li{
-    /* position: relative; */
+    position: relative;
     overflow: hidden;
 }
 .legal_div ul li a{
     color: grey;
-    position: relative;
-    overflow: hidden;
 }
 .legal_div ul li a:hover{
     color: #0A669B;
@@ -5571,7 +5335,7 @@ select.list-dt:focus {
     height: 100%;
     border-bottom: 2px solid #0A669B;
     transition: all .5s;
-    transform: translateX(-105%);
+    transform: translateX(-100%);
 }
 .support_divtxt{
     font-size: 20px;
@@ -5582,13 +5346,11 @@ select.list-dt:focus {
     list-style-type: none;
 }
 .Support_div ul li{
-    /* position: relative; */
+    position: relative;
     overflow: hidden;
 }
 .Support_div ul li a{
     color: grey;
-    position: relative;
-    overflow: hidden;
 }
 .Support_div ul li a:hover{
     color: #0A669B;
@@ -5605,7 +5367,7 @@ select.list-dt:focus {
     height: 100%;
     border-bottom: 2px solid #0A669B;
     transition: all .5s;
-    transform: translateX(-105%);
+    transform: translateX(-100%);
 }
 .social_divtxt{
     font-size: 20px;
@@ -5619,13 +5381,11 @@ select.list-dt:focus {
     list-style-type: none;
 }
 .social_div ul li{
-    /* position: relative; */
+    position: relative;
     overflow: hidden;
 }
 .social_div ul li a{
     color: grey;
-    position: relative;
-    overflow: hidden;
 }
 .social_div ul li a:hover{
     color: #0A669B;
@@ -5642,7 +5402,7 @@ select.list-dt:focus {
     height: 100%;
     border-bottom: 2px solid #0A669B;
     transition: all .5s;
-    transform: translateX(-105%);
+    transform: translateX(-100%);
 }
 .buy_cryptotxt{
     font-size: 20px;
@@ -5653,13 +5413,11 @@ select.list-dt:focus {
     list-style-type: none;
 }
 .buy_crypto_div ul li{
-    /* position: relative; */
+    position: relative;
     overflow: hidden;
 }
 .buy_crypto_div ul li a{
     color: grey;
-    position: relative;
-    overflow: hidden;
 }
 .buy_crypto_div ul li a:hover{
     color: #0A669B;
@@ -5676,7 +5434,7 @@ select.list-dt:focus {
     height: 100%;
     border-bottom: 2px solid #0A669B;
     transition: all .5s;
-    transform: translateX(-105%);
+    transform: translateX(-100%);
 }
 /* ------------------------------------------------------Footer end----------------------------------------------------------------------  */
 
@@ -6437,7 +6195,6 @@ select.list-dt:focus {
         /* ----------------------------------------------------Order Book start------------------------------------------------ */
         .p2p_order_book_div {
             box-shadow: 0px 0px 2px gray;
-            background-color: #ffffff;
         }
 
         .p2p_order_book_txt {
@@ -6445,7 +6202,6 @@ select.list-dt:focus {
             font-size: 14px;
             font-weight: bold;
         }
-
 
         .p2p_order_book_div_head {
             display: flex;
@@ -6473,7 +6229,7 @@ select.list-dt:focus {
         }
 
         .custom_navlink.active {
-            border-top: 2px solid #108ad1 !important;
+            border-top: 2px solid rgb(3, 197, 3) !important;
             font-weight: 700;
         }
 
@@ -6484,7 +6240,6 @@ select.list-dt:focus {
 
         .p2p_order_book_div_body_buypart {
             width: 50%;
-            margin: 0px 4px;
         }
 
         .p2p_order_book_div_body_buypart ul {
@@ -6499,7 +6254,6 @@ select.list-dt:focus {
 
         .p2p_order_book_div_body_sellpart {
             width: 50%;
-            margin: 0px 4px;
         }
 
         .p2p_order_book_div_body_sellpart ul {
@@ -6516,7 +6270,6 @@ select.list-dt:focus {
         /* ----------------------------------- Match History start------------------------------------------------------------ */
         .match_history {
             box-shadow: 0px 0px 2px gray;
-            background-color: #ffffff;
         }
 
         .match_history_head {
@@ -6552,7 +6305,6 @@ select.list-dt:focus {
         /* ----------------------------------- P2P Marketers start------------------------------------------------------------ */
         .p2p_marketers_div {
             box-shadow: 0px 0px 2px grey;
-            background-color: #ffffff;
         }
 
         .p2p_marketers_head {
@@ -6579,7 +6331,6 @@ select.list-dt:focus {
             flex-direction: column;
             align-items: center;
             padding: 20px;
-            overflow: hidden;
         }
 
         .p2p_marketers_bdyimg{
@@ -6635,11 +6386,9 @@ select.list-dt:focus {
         }
 
         /* ----------------------------------- P2P Marketers end------------------------------------------------------------ */
-
         /* ----------------------------------- XID ORDER BOOK start------------------------------------------------------------ */
         .xid_order_book_div {
             box-shadow: 0px 0px 2px grey;
-            background-color: #ffffff;
         }
 
         .xid_order_book_head {
@@ -6669,36 +6418,11 @@ select.list-dt:focus {
             display: flex;
             justify-content: space-around;
         }
-        .xid_order_book_headnav ul{
-            flex-wrap: nowrap;
-        }
-
-        @media screen and (max-width: 425px){
-            .xid_order_book_head{
-                flex-wrap: wrap;
-            }
-            .xid_order_book_headtxt{
-                width: 100%;
-                text-align: center;
-                padding: 10px;
-            }
-            .xid_order_book_headnav{
-                width: 100%;
-            }
-            .xid_order_book_headnav .nav-tabs{
-                justify-content: space-between;
-            }
-
-            .hidden_div_btmsec_cont div{
-                padding: 5px;
-            }
-        }
 
         /* ----------------------------------- XID ORDER BOOK end------------------------------------------------------------ */
         /* ----------------------------------- Vrfy Account Start------------------------------------------------------------ */
         .vrfy_accnt_div {
             box-shadow: 0px 0px 2px grey;
-            background-color: #ffffff;
         }
         .vrfy_accnt_div_head{
             background-color: #F2F2F9;
@@ -6740,7 +6464,6 @@ select.list-dt:focus {
         /* ----------------------------------- by and sell Div start------------------------------------------------------------ */
         .by_div {
             box-shadow: 0px 0px 2px grey;
-            background-color: #ffffff;
         }
 
         .by_div_head {
@@ -6824,7 +6547,6 @@ select.list-dt:focus {
 
         .hidden_div_btmsec_cont {
             display: flex;
-            flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
         }
@@ -6867,7 +6589,7 @@ select.list-dt:focus {
 
         .sel_body a {
             display: flex;
-            background-color: #108ad1;
+            background-color: #00C853;
             color: #fff;
             padding: 10px 30px;
             width: 100%;
@@ -6876,939 +6598,17 @@ select.list-dt:focus {
 
         /* ----------------------------------- by and sell Div end------------------------------------------------------------ */
         /* -------------------------------------------P2P Logged In page Responsive start ------------------------------------------------------- */
-        @media screen and (max-width:1320px){
-            .p2p_order_book_div_head{
-                flex-wrap: wrap;
-            }
-            .p2p_order_book_txt{
-                padding: 10px;
-                text-align: center;
-                width: 100%;
-            }
-            .p2p_order_book_div_nav {
-                width: 100%;
-            }
-
-            .p2p_order_book_div_nav .nav-tabs{
-                justify-content: space-between;
-            }
-        }
         @media screen and (max-width:425px){
             .p2p_order_book_div_nav ul{
-                justify-content: space-between;
+                justify-content: flex-end;
             }
             .p2p_order_book_txt{
-                width: 100%;
-                text-align: center;
-                padding: 10px;
+                width: 60%;
             }
             .xid_order_book_headnav ul{
                 justify-content: flex-end;
-                flex-wrap: wrap;
-            }
-            .p2p_marketers_head_value{
-                font-size: 16px;
-            }
-            .hidden_div_btmsec_cont a{
-                font-size: 11px;
-                font-weight: 600;
-            }
-            .p2p_order_book_div_nav {
-                width: 100%;
-            }
-            .custom_navlink.active{
-                font-size: 13px;
-            }
-            .custom_navlink{
-                font-size: 13px;
-            }
-            .p2p_order_book_div_head{
-                flex-wrap: wrap;
             }
 
         }
         /* -------------------------------------------P2P Logged In page Responsive end ------------------------------------------------------- */
         /* -------------------------------------------------p2pLogin Page Start --------------------------------------------------------------------- */
-        /* --------- new STF css start--------------------------- */
-        .stf_exchng_left_data .stf_list_head_txt{
-             display: flex;
-             width: 100%;
-             justify-content: space-between;
-             padding: 5px;
-        }
-
-        .stf_list_head_txt .pair a, .change a{
-            font-size: 14px;
-            color: black;
-        }
-
-        .stf_list_head_txt .vol a{
-            font-size: 14px;
-            color: limegreen;
-        }
-        .stf_section_style .data_list_scrll .list_data_div .a_div{
-            display: flex;
-            width: 100%;
-            justify-content: space-between;
-            place-items: center;
-        }
-        .stf_Col3_style .stf_exchange_search_style{
-            width: 100%;
-            padding: 0 10px;
-        }
-        @media screen and (max-width:758px){
-            .stf_Col6Div_style{
-                margin: 20px 0;
-            }
-        }
-        .portfolio_headsec{
-            /* display: flex; */
-            border-bottom: 1px solid lightgray;
-        }
-        .stf_Col6One_style .nav-tabs{
-            padding: 10px;
-        }
-
-        .asset_data_div{
-            border: 1px solid grey;
-            border-radius: 5px; 
-        }
-
-        .asset_data_div_head{
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 1px solid lightgrey;
-            padding: 10px;
-        }
-
-        .asset_data_div_body{
-            line-height: 2;
-            padding: 10px;
-        }
-
-        .asset_data_div_head div{
-            font-size: 12px;
-            font-weight: bold;
-        }
-
-        @media screen and (max-width:375px){
-                    .asset_data_div_head div{
-                        font-size: 10px;
-            }
-        }        
-
-        .asset_data_div_row{
-            display: flex;
-            justify-content: space-between;
-        }
-        .asset_data_div_row .col1 svg{
-            color: #286198;
-        }
-
-        .asset_data_div_row .col2 svg{
-            color: #4D86BD;
-        }
-
-        .asset_data_div_row .col3 svg{
-            color: #71AAE1;
-        }
-
-        .asset_data_div_row .col4 svg{
-            color: #95CEFF;
-        }
-        /* --------------- chart ------------------- */
-        #chart_container svg{
-            width: 100%;
-            height: auto;
-        }
-
-        .highcharts-figure, .highcharts-data-table table {
-            /* min-width: 320px; 
-            max-width: 660px; */
-            margin: 1em auto;
-        }
-        
-        .highcharts-data-table table {
-            font-family: Verdana, sans-serif;
-            border-collapse: collapse;
-            border: 1px solid #EBEBEB;
-            margin: 10px auto;
-            text-align: center;
-            width: 100%;
-            max-width: 500px;
-        }
-        .highcharts-data-table caption {
-            padding: 1em 0;
-            font-size: 1.2em;
-            color: #555;
-        }
-        .highcharts-data-table th {
-            font-weight: 600;
-            padding: 0.5em;
-        }
-        .highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
-            padding: 0.5em;
-        }
-        .highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
-            background: #f8f8f8;
-        }
-        .highcharts-data-table tr:hover {
-            background: #f1f7ff;
-        }
-        .exchangeBuy_inputspn{
-            font-size: 11px;
-            color: grey;
-            padding-left: 15px;
-        }
-
-        text.highcharts-credits {
-            display: none;
-        }
-        /* --------- new STF css end--------------------------- */
-/* crypto-chart  */
-#header-toolbar-chart-styles {
-    display: none;
-}
-#header-toolbar-compare {
-    display: none;
-}
-.group-3uonVBsm{
-    margin-left: 0% !important;
-}
-
-
-
-/* ----------------------------- account page  --------------------------------------------------------------------- */
-                    /* --------------------------------------------------------------- Account Page Start ------------------------------------------------------- */
-                    .account_page {
-                        display: flex;
-                        margin: 50px auto;
-                        width: 75%;
-                    }
-                    
-                    .account_page .menu_div {
-                        align-items: flex-start;
-                        background-color: #fff;
-                        box-shadow: 0 2px 4px 0 rgb(0 0 0 / 16%);
-                    }
-                    
-                    .account_page .account_menu .nav-link {
-                        color: #1c1b21;
-                        font-weight: 500;
-                        padding: 15px;
-                    }
-                    
-                    .account_page .account_menu .nav-link .menu_txt {
-                        padding-left: 10px;
-                        font-size: 14px;
-                        font-weight: bold;
-                        letter-spacing: 1px;
-                    }
-                    
-                    .account_page .account_menu .nav-pills .nav-link.active,
-                    .account_page .account_menu .nav-pills .show>.nav-link {
-                        color: #3067F0;
-                        background-color: transparent;
-                        border-left: 2px solid #3067F0;
-                        border-radius: 0px;
-                    }
-                    
-                    .account_page .account_menu .nav-link:focus,
-                    .account_page .account_menu .nav-link:hover {
-                        color: #3067F0;
-                    }
-                    
-                    .account_page .account_menu .nav-pills .nav-link {
-                        width: 100%;
-                        text-align: left;
-                        border-bottom: 1px solid lightgrey;
-                        border-radius: 0px;
-                        display: flex;
-                        align-items: center;
-                    }
-                    
-                    .account_page .account_menu {
-                        width: 30%;
-                    }
-                    
-                    .account_page .tab-content {
-                        width: 70%;
-                        margin-left: 10px;
-                    }
-                    
-                    .account_page .account_container {
-                        width: 100%;
-                        display: flex;
-                    }
-                    
-                    /* -----------------------------------------------------side menu end ---------------------------------------------------- */
-                    
-                    /* -------------------------------------------------profile section start---------------------------------------------------  */
-                    .account_page .profile_section {
-                        display: flex;
-                        flex-direction: column;
-                    }
-                    
-                    .account_page .profile_section_header {
-                        display: flex;
-                        align-items: center;
-                        margin-bottom: 9px;
-                    }
-                    
-                    .account_page .profile_section_header_txt {
-                        padding-left: 15px;
-                        font-size: 18px;
-                        font-weight: bold;
-                    }
-                    
-                    .account_page .profile_section_body {
-                        background-color: #fff;
-                        box-shadow: 0 2px 4px 0 rgb(0 0 0 / 16%);
-                        display: flex;
-                        flex-direction: column;
-                        padding: 16px 18px;
-                    }
-                    
-                    .account_page .email_div {
-                        display: flex;
-                        flex-direction: column;
-                        margin-bottom: 12px;
-                    }
-                    
-                    .account_page .mobile_div {
-                        display: flex;
-                        flex-direction: column;
-                    }
-                    
-                    .account_page .mobile_div a {
-                        width: 225px;
-                    }
-                    
-                    .account_page .profile_section_body label {
-                        display: inline-block;
-                        font-size: 10px;
-                        letter-spacing: 1.5px;
-                    }
-                    
-                    .account_page .mobile_div .btn {
-                        padding: 2px 15px;
-                        font-weight: 500;
-                        margin-top: 5px;
-                    }
-                    
-                    /* -------------------------------------------------profile section end---------------------------------------------------  */
-                    
-                    /* -------------------------------------------------currency preference section start------------------------------------------  */
-                    .account_page .currency_pre_section {
-                        display: flex;
-                        flex-direction: column;
-                    }
-                    
-                    .account_page .currency_pre_header {
-                        display: flex;
-                        align-items: center;
-                        margin-bottom: 9px;
-                    }
-                    
-                    .account_page .currency_pre_section_header_txt {
-                        padding-left: 15px;
-                        font-size: 18px;
-                        font-weight: bold;
-                    }
-                    
-                    .account_page .currency_pre_body {
-                        background-color: #fff;
-                        box-shadow: 0 2px 4px 0 rgb(0 0 0 / 16%);
-                        display: flex;
-                        flex-direction: column;
-                        padding: 16px 18px;
-                        overflow: hidden;
-                    }
-                    
-                    .account_page .radio_div {
-                        position: relative;
-                        display: flex;
-                        align-items: center;
-                        padding: 20px;
-                        border-bottom: 1px solid lightgrey;
-                    }
-                    
-                    .account_page .radio_dot {
-                        position: absolute;
-                        top: 22px;
-                        right: 20px;
-                    }
-                    
-                    .account_page .currency_img_div {
-                        position: absolute;
-                        top: 18px;
-                        left: 0px;
-                    }
-                    
-                    .account_page .radio_div label {
-                        padding-left: 15px;
-                    }
-                    
-                    .account_page .radio_div input {
-                        cursor: pointer;
-                    }
-                    
-                    .account_page .radio_div input::after {
-                        content: '';
-                        position: absolute;
-                        top: -204%;
-                        right: 0%;
-                        width: 644px;
-                        height: 64px;
-                        background-color: #a52a2a00;
-                    }
-                    
-                    .account_page .currency_pre_bottom {
-                        background-color: white;
-                        margin-top: 20px;
-                        padding: 15px;
-                        box-shadow: 0 2px 4px 0 rgb(0 0 0 / 16%);
-                        text-decoration: none;
-                    }
-                    
-                    .account_page .currency_pre_bottom:hover {
-                        background-color: rgb(255 252 252);
-                    }
-                    
-                    .account_page .currency_pre_bottom_txt {
-                        color: red;
-                        font-weight: bold;
-                        letter-spacing: 1px;
-                    }
-                    
-                    /* -------------------------------------------------currency preference section end------------------------------------------  */
-                    /* -------------------------------------------------payment option section start------------------------------------------  */
-                    
-                    .account_page .payment_opt_section {
-                        display: flex;
-                        flex-direction: column;
-                    }
-                    
-                    .account_page .payment_opt_header {
-                        display: flex;
-                        align-items: center;
-                        margin-bottom: 9px;
-                    }
-                    
-                    .account_page .payment_opt_section_header_txt {
-                        padding-left: 15px;
-                        font-size: 18px;
-                        font-weight: bold;
-                    }
-                    
-                    .account_page .payment_body_top {
-                        display: flex;
-                        background-color: rgb(247, 250, 252);
-                        padding: 16px 12px;
-                        -webkit-box-pack: justify;
-                        justify-content: space-between;
-                        position: relative;
-                    }
-                    
-                    .account_page .submit_div {
-                        display: flex;
-                        flex-direction: column;
-                        margin: 8px 16px 0px;
-                        align-items: center;
-                        z-index: 1;
-                        background-color: #f7fafc;
-                    }
-                    
-                    .account_page .submit_div::after {
-                        content: "";
-                        position: absolute;
-                        top: 40%;
-                        margin-top: -1px;
-                        height: 2px;
-                        width: calc(100% - 135px);
-                        left: 65px;
-                        background: rgb(48, 103, 240);
-                        z-index: -1;
-                    }
-                    
-                    .account_page .review_div {
-                        display: flex;
-                        flex-direction: column;
-                        margin: 8px 16px 0px;
-                        align-items: center;
-                        z-index: 1;
-                        background-color: #f7fafc;
-                    }
-                    
-                    .account_page .done_div {
-                        display: flex;
-                        flex-direction: column;
-                        margin: 8px 16px 0px;
-                        align-items: center;
-                        z-index: 1;
-                        background-color: #f7fafc;
-                    }
-                    
-                    .account_page .payment_body_container {
-                        background-color: #fff;
-                        padding: 15px;
-                    }
-                    
-                    .account_page .payment_kyc_titletxt {
-                        font-size: 20px;
-                        border-bottom: 1px solid lightgray;
-                        padding-bottom: 6px;
-                        margin-bottom: 5px;
-                    }
-                    
-                    .account_page .payment_kyc_para {
-                        font-size: 15px;
-                    }
-                    
-                    .account_page .table_div {
-                        display: flex;
-                        justify-content: center;
-                    }
-                    
-                    .account_page .table_tag {
-                        width: 80%;
-                        border: 1px solid lightgray;
-                        margin: 15px 0;
-                    }
-                    
-                    .account_page thead {
-                        background-color: grey;
-                        text-align: center;
-                    }
-                    
-                    .account_page .tbody_list {
-                        display: flex;
-                        justify-content: space-between;
-                        padding: 10px;
-                    }
-                    
-                    .account_page .submit_btn {
-                        width: 100%;
-                    }
-                    
-                    .account_page .table_title_div {
-                        padding: 15px;
-                    }
-                    
-                    /* -------------------------------------------------payment option section end------------------------------------------  */
-                    /* -------------------------------------------------Notification prefrence section start------------------------------------------  */
-                    .account_page .notification_pre_section {
-                        display: flex;
-                        flex-direction: column;
-                    }
-                    
-                    .account_page .notification_pre_header {
-                        display: flex;
-                        align-items: center;
-                        margin-bottom: 9px;
-                    }
-                    
-                    .account_page .notification_pre_section_header_txt {
-                        padding-left: 15px;
-                        font-size: 18px;
-                        font-weight: bold;
-                    }
-                    
-                    .account_page .price_div {
-                        display: flex;
-                        background-color: white;
-                        padding: 20px;
-                        justify-content: space-between;
-                    }
-                    
-                    .account_page .price_txt {
-                        font-weight: 500;
-                    }
-                    
-                    .account_page .referral_div {
-                        display: flex;
-                        background-color: white;
-                        padding: 20px;
-                        justify-content: space-between;
-                    }
-                    
-                    .account_page .referral_txt {
-                        font-weight: 500;
-                    }
-                    
-                    /* -------------------------------------------------Notification prefrence section end------------------------------------------  */
-                    /* -------------------------------------------------Fees section start------------------------------------------  */
-                    .account_page .fee_section {
-                        display: flex;
-                        flex-direction: column;
-                    }
-                    
-                    .account_page .fee_header {
-                        display: flex;
-                        align-items: center;
-                        margin-bottom: 9px;
-                    }
-                    
-                    .account_page .fee_section_header_txt {
-                        padding-left: 15px;
-                        font-size: 18px;
-                        font-weight: bold;
-                    }
-                    
-                    .account_page .fee_body {
-                        display: flex;
-                        justify-content: space-between;
-                        background-color: #fff;
-                        box-shadow: 0 2px 4px 0 rgb(0 0 0 / 16%);
-                        padding: 20px;
-                    }
-                    
-                    .account_page .fee_body_title {
-                        font-size: 14px;
-                        font-weight: bold;
-                    }
-                    
-                    .account_page .fee_body_content {
-                        font-size: 14px;
-                        color: #9a9797;
-                    }
-                    
-                    /* -------------------------------------------------Fees section end------------------------------------------  */
-                    /* ------------------------------------------------two factor authentication start---------------------------------- */
-                    .account_page .authentication_section {
-                        display: flex;
-                        flex-direction: column;
-                    }
-                    
-                    .account_page .authentication_header {
-                        display: flex;
-                        align-items: center;
-                        margin-bottom: 9px;
-                    }
-                    
-                    .account_page .authentication_section_header_txt {
-                        padding-left: 15px;
-                        font-size: 18px;
-                        font-weight: bold;
-                    }
-                    
-                    .account_page .authentication_list_div {
-                        background-color: #fff;
-                        display: flex;
-                        justify-content: space-between;
-                        padding: 15px;
-                        align-items: center;
-                    }
-                    
-                    .account_page .authentication_head {
-                        display: flex;
-                        align-items: center;
-                    }
-                    
-                    .account_page .authentication_app {
-                        font-weight: 500;
-                    }
-                    
-                    .account_page .highly_secure {
-                        font-size: 14px;
-                        color: lightgray;
-                    }
-                    
-                    .account_page .recommended {
-                        color: #00d800;
-                        font-size: 12px;
-                        font-weight: 500;
-                        padding: 10px;
-                    }
-                    
-                    .account_page .authentication_radiobtn input {
-                        cursor: pointer;
-                    }
-                    
-                    .account_page .authentication_bottom {
-                        margin-top: 10px;
-                        font-size: 15px;
-                        padding: 15px;
-                    }
-                    
-                    /* ------------------------------------------------two factor authentication end---------------------------------- */
-                    /* ------------------------------------------------activity logs start---------------------------------- */
-                    .account_page .activity_log_section {
-                        display: flex;
-                        flex-direction: column;
-                    }
-                    
-                    .account_page .activity_log_header {
-                        display: flex;
-                        align-items: center;
-                        margin-bottom: 9px;
-                    }
-                    
-                    .account_page .activity_log_section_header_txt {
-                        padding-left: 15px;
-                        font-size: 18px;
-                        font-weight: bold;
-                    }
-                    
-                    .account_page .activity_logs_row {
-                        background-color: #fff;
-                        display: flex;
-                        flex-direction: column;
-                        padding: 15px;
-                        letter-spacing: .7px;
-                        line-height: 2;
-                        border-bottom: 1px solid lightgray;
-                    }
-                    
-                    .account_page .activity_logs_row_content {
-                        display: flex;
-                    }
-                    
-                    .account_page .activity_logs_row_title {
-                        width: 20%;
-                        font-size: 14px;
-                        font-weight: 600;
-                        color: gray;
-                    }
-                    
-                    .account_page .activity_logs_row_descp {
-                        font-size: 14px;
-                        font-weight: 600;
-                    }
-                    
-                    .account_page .activity_logs_row_descp3 {
-                        font-size: 14px;
-                        font-weight: 600;
-                        color: rgb(5, 92, 255);
-                    }
-                    
-                    .account_page .activity_logs_body {
-                        position: relative;
-                    }
-                    
-                    .account_page .activity_paging {
-                        position: absolute;
-                        right: 0;
-                    }
-                    
-                    /* ------------------------------------------------activity logs end---------------------------------- */
-                    /* ------------------------------------------------download trading report start---------------------------------- */
-                    .account_page .trading_repo_section {
-                        display: flex;
-                        flex-direction: column;
-                    }
-                    
-                    .account_page .trading_repo_header {
-                        display: flex;
-                        align-items: center;
-                        margin-bottom: 9px;
-                    }
-                    
-                    .account_page .trading_repo_section_header_txt {
-                        padding-left: 15px;
-                        font-size: 18px;
-                        font-weight: bold;
-                    }
-                    
-                    .account_page .trading_repo_body {
-                        display: flex;
-                        flex-direction: column;
-                        background-color: #fff;
-                        padding: 20px;
-                    }
-                    
-                    .account_page .trading_repo_body_date {
-                        display: flex;
-                        flex-wrap: wrap;
-                        justify-content: center;
-                    }
-                    
-                    .account_page .trading_repo_from_date {
-                        display: flex;
-                        flex-direction: column;
-                        padding: 2px 20px 10px 20px;
-                        border: 1px solid lightgray;
-                        border-radius: 5px 0 0 5px;
-                    }
-                    
-                    .account_page .trading_repo_to_date {
-                        display: flex;
-                        flex-direction: column;
-                        padding: 2px 20px 10px 20px;
-                        border: 1px solid lightgray;
-                        border-radius: 0 5px 5px 0;
-                    }
-                    
-                    .account_page .trading_repo_from_date .from_date_txt {
-                        font-size: 12px;
-                        color: grey;
-                    }
-                    
-                    .account_page .trading_repo_to_date .to_date_txt {
-                        font-size: 12px;
-                        color: grey;
-                    }
-                    
-                    .account_page .trading_repo_body_title {
-                        font-weight: bold;
-                        margin-bottom: 10px;
-                        border-bottom: 1px solid grey;
-                        padding-bottom: 5px;
-                    }
-                    
-                    .account_page .trading_repo_list_head {
-                        margin: 10px 0;
-                    }
-                    
-                    /* ------------------------------------------------download trading report end---------------------------------- */
-                    /* ------------------------------------------------privacy control start---------------------------------- */
-                    .account_page .privacy_control_section {
-                        display: flex;
-                        flex-direction: column;
-                    }
-                     
-                    .account_page .privacy_control_header {
-                        display: flex;
-                        align-items: center;
-                        margin-bottom: 9px;
-                    }
-                    
-                    .account_page .privacy_control_section_header_txt {
-                        padding-left: 15px;
-                        font-size: 18px;
-                        font-weight: bold;
-                    }
-                    
-                    .account_page .privacy_control_body {
-                        padding: 15px;
-                        background-color: #fff;
-                    }
-                    
-                    .account_page .privacy_control_title {
-                        font-weight: bold;
-                        border-bottom: 1px solid lightgray;
-                        padding-bottom: 5px;
-                        margin-bottom: 5px;
-                    }
-                    
-                    .account_page .privacy_control_para {
-                        padding-bottom: 10px;
-                    }
-                    
-                    /* ------------------------------------------------privacy control end---------------------------------- */
-                    /* ------------------------------------------------coupon rewards start---------------------------------- */
-                    .account_page .coupon_rewards_section {
-                        display: flex;
-                        flex-direction: column;
-                    }
-                    
-                    .account_page .coupon_rewards_header {
-                        display: flex;
-                        align-items: center;
-                        margin-bottom: 9px;
-                    }
-                    
-                    .account_page .coupon_rewards_section_header_txt {
-                        padding-left: 15px;
-                        font-size: 18px;
-                        font-weight: bold;
-                    }
-                    
-                    .account_page .coupon_rewards_body {
-                        padding: 20px;
-                        background-color: #fff;
-                    }
-                    
-                    .account_page .coupon_rewards_head {
-                        display: flex;
-                        justify-content: space-between;
-                    }
-                     
-                    .account_page .coupon_rewards_head_txt {
-                        font-weight: bold;
-                        font-size: 20px;
-                    }
-                    
-                    .account_page .coupon_rewards_head_para {
-                        font-size: 14px;
-                    }
-                    
-                    .account_page .coupon_rewards_title {
-                        font-size: 15px;
-                        font-weight: bold;
-                        color: #504f4f;
-                        padding-bottom: 10px;
-                    }
-                    
-                    .account_page .coupon_rewards_input {
-                        display: flex;
-                        justify-content: space-between;
-                    }
-                    
-                    .account_page .coupon_rewards_input input {
-                        width: 80%;
-                    }
-                    
-                    .account_page .coupon_rewards_input button {
-                        width: 18%;
-                    }
-                    
-                    /* ------------------------------------------------coupon rewards end---------------------------------- */
-                    
-                    /* -----------------------------------------------------responsive account page start------------------------------------------------------------------------- */
-                    @media screen and (max-width:1024px) {
-                        .account_page {
-                            margin: 30px auto;
-                        }
-                    }
-                    
-                    @media screen and (max-width:830px) {
-                        .account_container {
-                            flex-wrap: wrap;
-                        }
-                    
-                        .account_page .account_menu,
-                        .account_page .tab-content {
-                            width: 100%;
-                        }
-                    
-                        .account_menu h4 {
-                            margin-top: 20px;
-                        }
-
-                        .account_container .tab-content{
-                            margin-top: 25px;
-                        }
-                    }
-                    
-                    @media screen and (max-width:425px) {
-                        .account_page .activity_logs_row_content {
-                            justify-content: space-between;
-                        }
-                    
-                        .account_page .activity_paging {
-                            top: -30px;
-                        }
-                    
-                        .account_page .coupon_rewards_input input {
-                            width: 65%;
-                        }
-                    
-                        .account_page .coupon_rewards_input button {
-                            width: 34%;
-                        }
-                    
-                        .account_page {
-                            width: 100%;
-                            padding: 10px;
-                        }
-                    }
-                    
-                    @media screen and (max-width:375px) {
-                        .account_page .coupon_rewards_head {
-                            flex-wrap: wrap-reverse;
-                        }
-                    }
-                    
-                    /* -----------------------------------------------------responsive account page end------------------------------------------------------------------------- */
-                    

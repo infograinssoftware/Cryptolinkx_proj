@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'django_email_verification',
     'django_celery_results',
     'django_celery_beat',
-    # 'actstream',
+
 ]
 
 # SITE_ID = 1

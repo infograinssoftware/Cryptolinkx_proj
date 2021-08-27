@@ -79,8 +79,8 @@ a, a:hover {
 }
 
 .nav_menu .login_btn{
-    /* background: #108ad1;
-    color: white !important; */
+    background: #108ad1;
+    color: white !important;
     padding: 8px 15px;
 }
 /*navbar css close here*/
@@ -1690,7 +1690,7 @@ th , td{
     background-color: #f7fafc !important;
     border: none !important;
     padding: 0.4rem 0.8rem;
-    color: rgb(150, 150, 150);
+    color: gainsboro;
 }
 .exchange_Btn_style:focus{
     border-color: transparent !important;
@@ -2958,7 +2958,7 @@ select.list-dt:focus {
   
   .switch-handle {
     position: absolute;
-    top: 8px;
+    top: 4px;
     left: 4px;
     width: 10px;
     height: 10px;
@@ -6446,7 +6446,6 @@ select.list-dt:focus {
             font-weight: bold;
         }
 
-
         .p2p_order_book_div_head {
             display: flex;
             justify-content: space-between;
@@ -6484,7 +6483,6 @@ select.list-dt:focus {
 
         .p2p_order_book_div_body_buypart {
             width: 50%;
-            margin: 0px 4px;
         }
 
         .p2p_order_book_div_body_buypart ul {
@@ -6499,7 +6497,6 @@ select.list-dt:focus {
 
         .p2p_order_book_div_body_sellpart {
             width: 50%;
-            margin: 0px 4px;
         }
 
         .p2p_order_book_div_body_sellpart ul {
@@ -6579,7 +6576,6 @@ select.list-dt:focus {
             flex-direction: column;
             align-items: center;
             padding: 20px;
-            overflow: hidden;
         }
 
         .p2p_marketers_bdyimg{
@@ -6635,7 +6631,6 @@ select.list-dt:focus {
         }
 
         /* ----------------------------------- P2P Marketers end------------------------------------------------------------ */
-
         /* ----------------------------------- XID ORDER BOOK start------------------------------------------------------------ */
         .xid_order_book_div {
             box-shadow: 0px 0px 2px grey;
@@ -6671,27 +6666,6 @@ select.list-dt:focus {
         }
         .xid_order_book_headnav ul{
             flex-wrap: nowrap;
-        }
-
-        @media screen and (max-width: 425px){
-            .xid_order_book_head{
-                flex-wrap: wrap;
-            }
-            .xid_order_book_headtxt{
-                width: 100%;
-                text-align: center;
-                padding: 10px;
-            }
-            .xid_order_book_headnav{
-                width: 100%;
-            }
-            .xid_order_book_headnav .nav-tabs{
-                justify-content: space-between;
-            }
-
-            .hidden_div_btmsec_cont div{
-                padding: 5px;
-            }
         }
 
         /* ----------------------------------- XID ORDER BOOK end------------------------------------------------------------ */
@@ -6824,7 +6798,6 @@ select.list-dt:focus {
 
         .hidden_div_btmsec_cont {
             display: flex;
-            flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
         }
@@ -6876,53 +6849,15 @@ select.list-dt:focus {
 
         /* ----------------------------------- by and sell Div end------------------------------------------------------------ */
         /* -------------------------------------------P2P Logged In page Responsive start ------------------------------------------------------- */
-        @media screen and (max-width:1320px){
-            .p2p_order_book_div_head{
-                flex-wrap: wrap;
-            }
-            .p2p_order_book_txt{
-                padding: 10px;
-                text-align: center;
-                width: 100%;
-            }
-            .p2p_order_book_div_nav {
-                width: 100%;
-            }
-
-            .p2p_order_book_div_nav .nav-tabs{
-                justify-content: space-between;
-            }
-        }
         @media screen and (max-width:425px){
             .p2p_order_book_div_nav ul{
-                justify-content: space-between;
+                justify-content: flex-end;
             }
             .p2p_order_book_txt{
-                width: 100%;
-                text-align: center;
-                padding: 10px;
+                width: 60%;
             }
             .xid_order_book_headnav ul{
                 justify-content: flex-end;
-                flex-wrap: wrap;
-            }
-            .p2p_marketers_head_value{
-                font-size: 16px;
-            }
-            .hidden_div_btmsec_cont a{
-                font-size: 11px;
-                font-weight: 600;
-            }
-            .p2p_order_book_div_nav {
-                width: 100%;
-            }
-            .custom_navlink.active{
-                font-size: 13px;
-            }
-            .custom_navlink{
-                font-size: 13px;
-            }
-            .p2p_order_book_div_head{
                 flex-wrap: wrap;
             }
 
@@ -7076,739 +7011,3 @@ select.list-dt:focus {
     margin-left: 0% !important;
 }
 
-
-
-/* ----------------------------- account page  --------------------------------------------------------------------- */
-                    /* --------------------------------------------------------------- Account Page Start ------------------------------------------------------- */
-                    .account_page {
-                        display: flex;
-                        margin: 50px auto;
-                        width: 75%;
-                    }
-                    
-                    .account_page .menu_div {
-                        align-items: flex-start;
-                        background-color: #fff;
-                        box-shadow: 0 2px 4px 0 rgb(0 0 0 / 16%);
-                    }
-                    
-                    .account_page .account_menu .nav-link {
-                        color: #1c1b21;
-                        font-weight: 500;
-                        padding: 15px;
-                    }
-                    
-                    .account_page .account_menu .nav-link .menu_txt {
-                        padding-left: 10px;
-                        font-size: 14px;
-                        font-weight: bold;
-                        letter-spacing: 1px;
-                    }
-                    
-                    .account_page .account_menu .nav-pills .nav-link.active,
-                    .account_page .account_menu .nav-pills .show>.nav-link {
-                        color: #3067F0;
-                        background-color: transparent;
-                        border-left: 2px solid #3067F0;
-                        border-radius: 0px;
-                    }
-                    
-                    .account_page .account_menu .nav-link:focus,
-                    .account_page .account_menu .nav-link:hover {
-                        color: #3067F0;
-                    }
-                    
-                    .account_page .account_menu .nav-pills .nav-link {
-                        width: 100%;
-                        text-align: left;
-                        border-bottom: 1px solid lightgrey;
-                        border-radius: 0px;
-                        display: flex;
-                        align-items: center;
-                    }
-                    
-                    .account_page .account_menu {
-                        width: 30%;
-                    }
-                    
-                    .account_page .tab-content {
-                        width: 70%;
-                        margin-left: 10px;
-                    }
-                    
-                    .account_page .account_container {
-                        width: 100%;
-                        display: flex;
-                    }
-                    
-                    /* -----------------------------------------------------side menu end ---------------------------------------------------- */
-                    
-                    /* -------------------------------------------------profile section start---------------------------------------------------  */
-                    .account_page .profile_section {
-                        display: flex;
-                        flex-direction: column;
-                    }
-                    
-                    .account_page .profile_section_header {
-                        display: flex;
-                        align-items: center;
-                        margin-bottom: 9px;
-                    }
-                    
-                    .account_page .profile_section_header_txt {
-                        padding-left: 15px;
-                        font-size: 18px;
-                        font-weight: bold;
-                    }
-                    
-                    .account_page .profile_section_body {
-                        background-color: #fff;
-                        box-shadow: 0 2px 4px 0 rgb(0 0 0 / 16%);
-                        display: flex;
-                        flex-direction: column;
-                        padding: 16px 18px;
-                    }
-                    
-                    .account_page .email_div {
-                        display: flex;
-                        flex-direction: column;
-                        margin-bottom: 12px;
-                    }
-                    
-                    .account_page .mobile_div {
-                        display: flex;
-                        flex-direction: column;
-                    }
-                    
-                    .account_page .mobile_div a {
-                        width: 225px;
-                    }
-                    
-                    .account_page .profile_section_body label {
-                        display: inline-block;
-                        font-size: 10px;
-                        letter-spacing: 1.5px;
-                    }
-                    
-                    .account_page .mobile_div .btn {
-                        padding: 2px 15px;
-                        font-weight: 500;
-                        margin-top: 5px;
-                    }
-                    
-                    /* -------------------------------------------------profile section end---------------------------------------------------  */
-                    
-                    /* -------------------------------------------------currency preference section start------------------------------------------  */
-                    .account_page .currency_pre_section {
-                        display: flex;
-                        flex-direction: column;
-                    }
-                    
-                    .account_page .currency_pre_header {
-                        display: flex;
-                        align-items: center;
-                        margin-bottom: 9px;
-                    }
-                    
-                    .account_page .currency_pre_section_header_txt {
-                        padding-left: 15px;
-                        font-size: 18px;
-                        font-weight: bold;
-                    }
-                    
-                    .account_page .currency_pre_body {
-                        background-color: #fff;
-                        box-shadow: 0 2px 4px 0 rgb(0 0 0 / 16%);
-                        display: flex;
-                        flex-direction: column;
-                        padding: 16px 18px;
-                        overflow: hidden;
-                    }
-                    
-                    .account_page .radio_div {
-                        position: relative;
-                        display: flex;
-                        align-items: center;
-                        padding: 20px;
-                        border-bottom: 1px solid lightgrey;
-                    }
-                    
-                    .account_page .radio_dot {
-                        position: absolute;
-                        top: 22px;
-                        right: 20px;
-                    }
-                    
-                    .account_page .currency_img_div {
-                        position: absolute;
-                        top: 18px;
-                        left: 0px;
-                    }
-                    
-                    .account_page .radio_div label {
-                        padding-left: 15px;
-                    }
-                    
-                    .account_page .radio_div input {
-                        cursor: pointer;
-                    }
-                    
-                    .account_page .radio_div input::after {
-                        content: '';
-                        position: absolute;
-                        top: -204%;
-                        right: 0%;
-                        width: 644px;
-                        height: 64px;
-                        background-color: #a52a2a00;
-                    }
-                    
-                    .account_page .currency_pre_bottom {
-                        background-color: white;
-                        margin-top: 20px;
-                        padding: 15px;
-                        box-shadow: 0 2px 4px 0 rgb(0 0 0 / 16%);
-                        text-decoration: none;
-                    }
-                    
-                    .account_page .currency_pre_bottom:hover {
-                        background-color: rgb(255 252 252);
-                    }
-                    
-                    .account_page .currency_pre_bottom_txt {
-                        color: red;
-                        font-weight: bold;
-                        letter-spacing: 1px;
-                    }
-                    
-                    /* -------------------------------------------------currency preference section end------------------------------------------  */
-                    /* -------------------------------------------------payment option section start------------------------------------------  */
-                    
-                    .account_page .payment_opt_section {
-                        display: flex;
-                        flex-direction: column;
-                    }
-                    
-                    .account_page .payment_opt_header {
-                        display: flex;
-                        align-items: center;
-                        margin-bottom: 9px;
-                    }
-                    
-                    .account_page .payment_opt_section_header_txt {
-                        padding-left: 15px;
-                        font-size: 18px;
-                        font-weight: bold;
-                    }
-                    
-                    .account_page .payment_body_top {
-                        display: flex;
-                        background-color: rgb(247, 250, 252);
-                        padding: 16px 12px;
-                        -webkit-box-pack: justify;
-                        justify-content: space-between;
-                        position: relative;
-                    }
-                    
-                    .account_page .submit_div {
-                        display: flex;
-                        flex-direction: column;
-                        margin: 8px 16px 0px;
-                        align-items: center;
-                        z-index: 1;
-                        background-color: #f7fafc;
-                    }
-                    
-                    .account_page .submit_div::after {
-                        content: "";
-                        position: absolute;
-                        top: 40%;
-                        margin-top: -1px;
-                        height: 2px;
-                        width: calc(100% - 135px);
-                        left: 65px;
-                        background: rgb(48, 103, 240);
-                        z-index: -1;
-                    }
-                    
-                    .account_page .review_div {
-                        display: flex;
-                        flex-direction: column;
-                        margin: 8px 16px 0px;
-                        align-items: center;
-                        z-index: 1;
-                        background-color: #f7fafc;
-                    }
-                    
-                    .account_page .done_div {
-                        display: flex;
-                        flex-direction: column;
-                        margin: 8px 16px 0px;
-                        align-items: center;
-                        z-index: 1;
-                        background-color: #f7fafc;
-                    }
-                    
-                    .account_page .payment_body_container {
-                        background-color: #fff;
-                        padding: 15px;
-                    }
-                    
-                    .account_page .payment_kyc_titletxt {
-                        font-size: 20px;
-                        border-bottom: 1px solid lightgray;
-                        padding-bottom: 6px;
-                        margin-bottom: 5px;
-                    }
-                    
-                    .account_page .payment_kyc_para {
-                        font-size: 15px;
-                    }
-                    
-                    .account_page .table_div {
-                        display: flex;
-                        justify-content: center;
-                    }
-                    
-                    .account_page .table_tag {
-                        width: 80%;
-                        border: 1px solid lightgray;
-                        margin: 15px 0;
-                    }
-                    
-                    .account_page thead {
-                        background-color: grey;
-                        text-align: center;
-                    }
-                    
-                    .account_page .tbody_list {
-                        display: flex;
-                        justify-content: space-between;
-                        padding: 10px;
-                    }
-                    
-                    .account_page .submit_btn {
-                        width: 100%;
-                    }
-                    
-                    .account_page .table_title_div {
-                        padding: 15px;
-                    }
-                    
-                    /* -------------------------------------------------payment option section end------------------------------------------  */
-                    /* -------------------------------------------------Notification prefrence section start------------------------------------------  */
-                    .account_page .notification_pre_section {
-                        display: flex;
-                        flex-direction: column;
-                    }
-                    
-                    .account_page .notification_pre_header {
-                        display: flex;
-                        align-items: center;
-                        margin-bottom: 9px;
-                    }
-                    
-                    .account_page .notification_pre_section_header_txt {
-                        padding-left: 15px;
-                        font-size: 18px;
-                        font-weight: bold;
-                    }
-                    
-                    .account_page .price_div {
-                        display: flex;
-                        background-color: white;
-                        padding: 20px;
-                        justify-content: space-between;
-                    }
-                    
-                    .account_page .price_txt {
-                        font-weight: 500;
-                    }
-                    
-                    .account_page .referral_div {
-                        display: flex;
-                        background-color: white;
-                        padding: 20px;
-                        justify-content: space-between;
-                    }
-                    
-                    .account_page .referral_txt {
-                        font-weight: 500;
-                    }
-                    
-                    /* -------------------------------------------------Notification prefrence section end------------------------------------------  */
-                    /* -------------------------------------------------Fees section start------------------------------------------  */
-                    .account_page .fee_section {
-                        display: flex;
-                        flex-direction: column;
-                    }
-                    
-                    .account_page .fee_header {
-                        display: flex;
-                        align-items: center;
-                        margin-bottom: 9px;
-                    }
-                    
-                    .account_page .fee_section_header_txt {
-                        padding-left: 15px;
-                        font-size: 18px;
-                        font-weight: bold;
-                    }
-                    
-                    .account_page .fee_body {
-                        display: flex;
-                        justify-content: space-between;
-                        background-color: #fff;
-                        box-shadow: 0 2px 4px 0 rgb(0 0 0 / 16%);
-                        padding: 20px;
-                    }
-                    
-                    .account_page .fee_body_title {
-                        font-size: 14px;
-                        font-weight: bold;
-                    }
-                    
-                    .account_page .fee_body_content {
-                        font-size: 14px;
-                        color: #9a9797;
-                    }
-                    
-                    /* -------------------------------------------------Fees section end------------------------------------------  */
-                    /* ------------------------------------------------two factor authentication start---------------------------------- */
-                    .account_page .authentication_section {
-                        display: flex;
-                        flex-direction: column;
-                    }
-                    
-                    .account_page .authentication_header {
-                        display: flex;
-                        align-items: center;
-                        margin-bottom: 9px;
-                    }
-                    
-                    .account_page .authentication_section_header_txt {
-                        padding-left: 15px;
-                        font-size: 18px;
-                        font-weight: bold;
-                    }
-                    
-                    .account_page .authentication_list_div {
-                        background-color: #fff;
-                        display: flex;
-                        justify-content: space-between;
-                        padding: 15px;
-                        align-items: center;
-                    }
-                    
-                    .account_page .authentication_head {
-                        display: flex;
-                        align-items: center;
-                    }
-                    
-                    .account_page .authentication_app {
-                        font-weight: 500;
-                    }
-                    
-                    .account_page .highly_secure {
-                        font-size: 14px;
-                        color: lightgray;
-                    }
-                    
-                    .account_page .recommended {
-                        color: #00d800;
-                        font-size: 12px;
-                        font-weight: 500;
-                        padding: 10px;
-                    }
-                    
-                    .account_page .authentication_radiobtn input {
-                        cursor: pointer;
-                    }
-                    
-                    .account_page .authentication_bottom {
-                        margin-top: 10px;
-                        font-size: 15px;
-                        padding: 15px;
-                    }
-                    
-                    /* ------------------------------------------------two factor authentication end---------------------------------- */
-                    /* ------------------------------------------------activity logs start---------------------------------- */
-                    .account_page .activity_log_section {
-                        display: flex;
-                        flex-direction: column;
-                    }
-                    
-                    .account_page .activity_log_header {
-                        display: flex;
-                        align-items: center;
-                        margin-bottom: 9px;
-                    }
-                    
-                    .account_page .activity_log_section_header_txt {
-                        padding-left: 15px;
-                        font-size: 18px;
-                        font-weight: bold;
-                    }
-                    
-                    .account_page .activity_logs_row {
-                        background-color: #fff;
-                        display: flex;
-                        flex-direction: column;
-                        padding: 15px;
-                        letter-spacing: .7px;
-                        line-height: 2;
-                        border-bottom: 1px solid lightgray;
-                    }
-                    
-                    .account_page .activity_logs_row_content {
-                        display: flex;
-                    }
-                    
-                    .account_page .activity_logs_row_title {
-                        width: 20%;
-                        font-size: 14px;
-                        font-weight: 600;
-                        color: gray;
-                    }
-                    
-                    .account_page .activity_logs_row_descp {
-                        font-size: 14px;
-                        font-weight: 600;
-                    }
-                    
-                    .account_page .activity_logs_row_descp3 {
-                        font-size: 14px;
-                        font-weight: 600;
-                        color: rgb(5, 92, 255);
-                    }
-                    
-                    .account_page .activity_logs_body {
-                        position: relative;
-                    }
-                    
-                    .account_page .activity_paging {
-                        position: absolute;
-                        right: 0;
-                    }
-                    
-                    /* ------------------------------------------------activity logs end---------------------------------- */
-                    /* ------------------------------------------------download trading report start---------------------------------- */
-                    .account_page .trading_repo_section {
-                        display: flex;
-                        flex-direction: column;
-                    }
-                    
-                    .account_page .trading_repo_header {
-                        display: flex;
-                        align-items: center;
-                        margin-bottom: 9px;
-                    }
-                    
-                    .account_page .trading_repo_section_header_txt {
-                        padding-left: 15px;
-                        font-size: 18px;
-                        font-weight: bold;
-                    }
-                    
-                    .account_page .trading_repo_body {
-                        display: flex;
-                        flex-direction: column;
-                        background-color: #fff;
-                        padding: 20px;
-                    }
-                    
-                    .account_page .trading_repo_body_date {
-                        display: flex;
-                        flex-wrap: wrap;
-                        justify-content: center;
-                    }
-                    
-                    .account_page .trading_repo_from_date {
-                        display: flex;
-                        flex-direction: column;
-                        padding: 2px 20px 10px 20px;
-                        border: 1px solid lightgray;
-                        border-radius: 5px 0 0 5px;
-                    }
-                    
-                    .account_page .trading_repo_to_date {
-                        display: flex;
-                        flex-direction: column;
-                        padding: 2px 20px 10px 20px;
-                        border: 1px solid lightgray;
-                        border-radius: 0 5px 5px 0;
-                    }
-                    
-                    .account_page .trading_repo_from_date .from_date_txt {
-                        font-size: 12px;
-                        color: grey;
-                    }
-                    
-                    .account_page .trading_repo_to_date .to_date_txt {
-                        font-size: 12px;
-                        color: grey;
-                    }
-                    
-                    .account_page .trading_repo_body_title {
-                        font-weight: bold;
-                        margin-bottom: 10px;
-                        border-bottom: 1px solid grey;
-                        padding-bottom: 5px;
-                    }
-                    
-                    .account_page .trading_repo_list_head {
-                        margin: 10px 0;
-                    }
-                    
-                    /* ------------------------------------------------download trading report end---------------------------------- */
-                    /* ------------------------------------------------privacy control start---------------------------------- */
-                    .account_page .privacy_control_section {
-                        display: flex;
-                        flex-direction: column;
-                    }
-                     
-                    .account_page .privacy_control_header {
-                        display: flex;
-                        align-items: center;
-                        margin-bottom: 9px;
-                    }
-                    
-                    .account_page .privacy_control_section_header_txt {
-                        padding-left: 15px;
-                        font-size: 18px;
-                        font-weight: bold;
-                    }
-                    
-                    .account_page .privacy_control_body {
-                        padding: 15px;
-                        background-color: #fff;
-                    }
-                    
-                    .account_page .privacy_control_title {
-                        font-weight: bold;
-                        border-bottom: 1px solid lightgray;
-                        padding-bottom: 5px;
-                        margin-bottom: 5px;
-                    }
-                    
-                    .account_page .privacy_control_para {
-                        padding-bottom: 10px;
-                    }
-                    
-                    /* ------------------------------------------------privacy control end---------------------------------- */
-                    /* ------------------------------------------------coupon rewards start---------------------------------- */
-                    .account_page .coupon_rewards_section {
-                        display: flex;
-                        flex-direction: column;
-                    }
-                    
-                    .account_page .coupon_rewards_header {
-                        display: flex;
-                        align-items: center;
-                        margin-bottom: 9px;
-                    }
-                    
-                    .account_page .coupon_rewards_section_header_txt {
-                        padding-left: 15px;
-                        font-size: 18px;
-                        font-weight: bold;
-                    }
-                    
-                    .account_page .coupon_rewards_body {
-                        padding: 20px;
-                        background-color: #fff;
-                    }
-                    
-                    .account_page .coupon_rewards_head {
-                        display: flex;
-                        justify-content: space-between;
-                    }
-                     
-                    .account_page .coupon_rewards_head_txt {
-                        font-weight: bold;
-                        font-size: 20px;
-                    }
-                    
-                    .account_page .coupon_rewards_head_para {
-                        font-size: 14px;
-                    }
-                    
-                    .account_page .coupon_rewards_title {
-                        font-size: 15px;
-                        font-weight: bold;
-                        color: #504f4f;
-                        padding-bottom: 10px;
-                    }
-                    
-                    .account_page .coupon_rewards_input {
-                        display: flex;
-                        justify-content: space-between;
-                    }
-                    
-                    .account_page .coupon_rewards_input input {
-                        width: 80%;
-                    }
-                    
-                    .account_page .coupon_rewards_input button {
-                        width: 18%;
-                    }
-                    
-                    /* ------------------------------------------------coupon rewards end---------------------------------- */
-                    
-                    /* -----------------------------------------------------responsive account page start------------------------------------------------------------------------- */
-                    @media screen and (max-width:1024px) {
-                        .account_page {
-                            margin: 30px auto;
-                        }
-                    }
-                    
-                    @media screen and (max-width:830px) {
-                        .account_container {
-                            flex-wrap: wrap;
-                        }
-                    
-                        .account_page .account_menu,
-                        .account_page .tab-content {
-                            width: 100%;
-                        }
-                    
-                        .account_menu h4 {
-                            margin-top: 20px;
-                        }
-
-                        .account_container .tab-content{
-                            margin-top: 25px;
-                        }
-                    }
-                    
-                    @media screen and (max-width:425px) {
-                        .account_page .activity_logs_row_content {
-                            justify-content: space-between;
-                        }
-                    
-                        .account_page .activity_paging {
-                            top: -30px;
-                        }
-                    
-                        .account_page .coupon_rewards_input input {
-                            width: 65%;
-                        }
-                    
-                        .account_page .coupon_rewards_input button {
-                            width: 34%;
-                        }
-                    
-                        .account_page {
-                            width: 100%;
-                            padding: 10px;
-                        }
-                    }
-                    
-                    @media screen and (max-width:375px) {
-                        .account_page .coupon_rewards_head {
-                            flex-wrap: wrap-reverse;
-                        }
-                    }
-                    
-                    /* -----------------------------------------------------responsive account page end------------------------------------------------------------------------- */
-                    
