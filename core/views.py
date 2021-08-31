@@ -120,6 +120,5 @@ class FundsView(View):
 class AccountView(View):
     template_name = 'core/account.html'
     def get(self, request, *args, **kwargs):
-
         return render(request, template_name = self.template_name)  
 
