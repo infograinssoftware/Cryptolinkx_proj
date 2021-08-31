@@ -115,6 +115,8 @@ class FundsView(View):
         # wallet_obj = Currency_Wallet.objects.filter(user , = request.user)
         return render(request,self.template_name, {'all_assets' : all_assets})  
 
+#account page changes
+
 class AccountView(View):
     template_name = 'core/account.html'
     def get(self, request, *args, **kwargs):
